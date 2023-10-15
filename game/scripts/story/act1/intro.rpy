@@ -18,7 +18,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    play music "<from 5>cloud.wav"
+    play music "<from 5>/audio/cloud.wav"
 
     scene menmi-apartment-morning
     with vpunch
@@ -48,7 +48,7 @@ label start:
     You can't see it, but I'm twerking right now. Do I know how to twerk? Just trust.
     """
 
-    play sound "doorbell.wav"
+    play sound "/audio/doorbell.wav"
 
     m "Ah! That's the first time I've heard the door buzzer. It's a shock to the senses." with vpunch
 
@@ -65,7 +65,7 @@ label start:
     I tear open a box labeled “Clothes” and throw on a roomy sweatshirt that only mildly smells like teenage regret.
     """
 
-    play sound "stomping.wav"
+    play sound "/audio/stomping.wav"
 
     m "Be right there!"
 
