@@ -84,7 +84,7 @@ label start:
 
     show ups
 
-    u "I've got a package for Ms. Menmi?"
+    u "I've got a package for Ms. Menmi."
 
     m """
     Yes, that's me!
