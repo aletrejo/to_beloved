@@ -81,6 +81,9 @@ define gui.notify_text_size = 24
 ## The size of the game's title.
 define gui.title_text_size = 80
 
+## Fredoka
+define config.font_name_map["fredoka"] = "Fredoka.ttf"
+
 
 ## Main and Game Menus #########################################################
 
