@@ -1,0 +1,293 @@
+label week_1_night:
+    scene image Solid("#ffc6ebff") with fade
+    show text "{font=fredoka}{size=288}Week 1 \nNight{/size}{/font}" at truecenter with dissolve
+    pause
+    scene city-night with dissolve
+    m "“Aahhh, it's finally over! Work is finally over!”"
+    show allie neutral with dissolve
+    al "“Time to drink booze, let loose.”"
+    m "“Yes, please! There's a place I've been meaning to check out. One of my friends from home is a bartender there!”"
+    al "“You don't say? Sounds like an opportunity for free drinks. Let's go!”"
+
+label naji_introduction:
+    scene lounge-outside with dissolve
+    show allie neutral at right with dissolve
+    m "“I think this is it – The William Collins”"
+    al "“Ooh la la...a cocktail lounge. You've got some fancy friends.”"
+    m """
+    “Haha Naji's just a regular guy! We grew up living next door to each other. He's the most unpretentious person you'll ever meet.”
+
+    Although hanging out at an upscale establishment certainly improves my chances of meeting a dashing gentleman who'll sweep me off my feet...
+    """
+    c "You've gotta be sweet to get the sugar, baby."
+    m """
+    I can be sweet! I'll be anything if it snags me a gentleman.
+
+    I hold out my hand to Allie and bow obsequiously.
+
+    “Shall we?”
+    """
+    al "“Let's.”"
+    scene lounge-inside with dissolve
+    m "“Wow, look at this place. Doesn't it just scream ‘romance’?”"
+    "Rowdy Patron" "“Oh yeah? Just try to touch me, tough guy. I freakin' dare ya!”"
+    "Unruly Guest" "“I wouldn't touch you if you were a Kopenhagen mink coat!”"
+    al "“It's screaming something, that's for sure.”"
+    m "What's going on? A fight?"
+    "Unruly Guest" "“I saw you knock over my drink on purpose! I demand payment for the cleaning of my Louboutins!”"
+    "Rowdy Patron" "“Looking down on me, eh? I'll have you know I own SEVEN Bouloutins.”"
+    "Unruly Guest" "“I don't care how many Louboutins you own, just give me my money!”"
+    m """
+    A crowd is gathering around the ruckus, servers and customers looking on in transfixed horror.
+
+    Someone's got to do something.
+
+    Before I can even start to formulate a plan, a firm, familiar voice calls out.
+    """
+    show naji bar neutral with dissolve
+    n "“Good evening, gentlemen.”"
+    m """
+    Naji!
+
+    I want to call out to him, but this doesn't feel like the right moment.
+    """
+    $ naji_name = "Naji"
+    n """
+    “If you don't mind me interjecting, I saw the entire incident from the bar.”
+
+    “I'm sorry that your new shoes were caught in an accident, sir. Those were a gift from your late nephew, if I recall correctly?”
+    """
+    "Unruly Guest" "“Y-yes, he was always on the cutting edge of fashion, you know? A little hype bee, that one.”"
+    n "“Hype beast,” Naji clarifies."
+    "Unruly Guest" "“Poor boy, he was strangled by his own shoelaces when they got caught in an airplane turbine. Flown so young.”"
+    m "“Why was he wearing shoelaces around his neck?”"
+    al "“Neckshoeties. So hot right now.”"
+    "Unruly Guest" "“I'm surprised that you remember that, Naji. I told you that a while ago.”"
+    n """
+    “It's part of a bartender's job to listen to their customers.”
+
+    “And from my observations, I can attest that this gentleman did not spill your drink intentionally. He was picking up your wallet and accidentally knocked your drink over on the way up.”
+
+    “It must be frustrating to have your intentions misunderstood! You know what they say – ‘No good deed goes unpunished’. Still, I hope we can right this wrong together.”
+    """
+    "Rowdy Patron" "“Yes! That's exactly what happened. Thank you. Here, your wallet.”"
+    "Unruly Guest" "“!!! I hadn't even noticed I'd dropped it. I'm so embarrassed – I was blaming you when this whole thing was caused by my own carelessness...”"
+    "Rowdy Patron" "“That's alright, man. I'm sorry I got heated. It's just that...everybody always assumes I'm up to no good just because of my face. I just get defensive, is all.”"
+    "Unruly Guest" "“No offense taken. And for what it's worth...there's nothing wrong with your face.”"
+    "Rowdy Patron" "“Hey...you wanna go somewhere? Grab a drink or something?”"
+    "Unruly Guest" "“I-I've already had a couple.”"
+    "Rowdy Patron" "“Not one on me, you haven't.”"
+    m "I can hardly believe it, but the two walk out smiling."
+    hide naji bar neutral with dissolve
+    show allie neutral with dissolve
+    al "“Wow...that guy's got a way with people.”"
+    m "Is that guy...really my friend?"
+    hide allie neutral with dissolve
+    m """
+    Allie's not the only one who's impressed. Several of the bar patrons and staff crowd around Naji, patting him on the back and showering him with praise.
+
+    I overhear a waitress talking to a customer swirling a dirty martini.
+    """
+    "Customer" "“The new guy's charming, isn't he? Easy on the eyes, too.”"
+    "Waitress" "“You don't even know. He's been picking up shifts, settling disputes, even helping folks out with their personal errands. We all love him here!”"
+    "Customer" "“There's no way a guy like that's single.”"
+    "Waitress" "“You'd be surprised. I've never seen him bring anyone around.”"
+    "Customer" "“Well, he's not going to be on the market for long...”"
+    "Waitress" "“You better get to him before...what's that app everyone's using now? Blender? Smoothie Meets French Toast?”"
+    m """
+    It feels a little strange to hear about Naji from their perspective.
+
+    I mean, this is the kid who ate leaves with me off of our neighbors' bushes because I told him that's where salad came from.
+
+    I've never thought about him like that before...
+    """
+    scene lounge-inside:
+        blur 24
+    m """
+    I look down at myself, suddenly hyper-aware of the salad dressing stain from lunch on my Ham Taylor blouse.
+
+    I'm no hype bee.
+    """
+    al "“Hey, Town Hero over there is your friend, right? Aren't you going to say ‘hi’?”"
+    m "But he's surrounded by all those people. What if he thinks I'm annoying?"
+label choice_9:
+    menu:
+        m "What should I do?"
+        
+        "Call out to Naji":
+            c """
+            Naji is expecting you. You came here to see him. Why wouldn't he want to see you, too?
+
+            He's been your friend for...how long have you been avoiding salads?
+            """
+            m "I'm getting too into my own head over this. I need to snap out of it."
+            $ renpy.notify("+5 Self-Awareness")
+            $ self_awareness += 5
+            m "“Hey, Naj! Over here!”"
+            call choice_9a
+            jump after_choice_9
+        "Wait for Naji to come over":
+            c "Don't get in his way. He'll see you eventually. Wait for him."
+            m """
+            But I've already seen *him*. Why do I feel so weird about calling out to him?
+
+            Regular people wouldn't think twice about this. Why am I so awkward?
+            """
+            call choice_9bc
+            jump after_choice_9
+        "Don't bother him":
+            c "He's clearly busy in his exciting new city life. Why would he concern himself with a nobody from his hometown?"
+            m "I'd better not bother him..."
+            call choice_9bc
+            jump after_choice_9
+
+label choice_9a:
+    scene lounge-inside with dissolve
+    show naji bar neutral with dissolve
+    m "Naji turns around, expression transforming as he registers my voice."
+    n "“Menmi! You're here!”"
+    m """
+    His face is more angular, but his eyes shine the same way they did when he used to peek out at me from behind the curtains of the house across the street.
+
+    “Nice negotiation skills, bud. Where were those when we got grounded for tattooing my parents' couch?”
+    """
+    n "“In our defense, it had arms”"
+    m "“So did those hooligans who were just here. I thought I was about to witness my first city bar brawl.”"
+    return
+
+label choice_9bc:
+    scene lounge-inside with dissolve
+    show allie neutral with dissolve
+    m """
+    I try to chat with Allie about work, but their eyes remain trained on Naji.
+
+    I don't know why I feel sad about that. Who wouldn't be transfixed by him?
+
+    Allie holds out their hand, enthusiastically waving over the bar.
+    """
+    al "“Yoo-hoo! Can we get some service down here?”"
+    hide allie neutral with dissolve
+    show naji bar neutral with dissolve
+    n "“Of course! Thanks for waiting–"
+    n "Menmi? How long have you been here?”"
+    m "Naji blinks at me. He seems surprised."
+    n "“Why didn't you say ‘hi’?”"
+    m "“Ah, I didn't want to disturb you while you were...busy”"
+    if self_awareness <=30:
+        c "You are so awkward."
+    return
+
+label after_choice_9:
+    n "“Oh, that? It wasn't a big deal.”"
+    n "“You'd do the same.”"
+    m """
+    His smile is so warm.
+
+    “Naj. This is my friend, Allie. New friend, meet old friend. Old friend, new friend.”
+    """
+    al "“It's an honor to be served a cosmo by a local hero.”"
+    n "“Ha - copy that.”"
+    m "Naji's cheeks dimple as he smiles to himself and makes Allie their drink."
+    n "“Enough about me. How have you been, Menmi? Today was your first day of city life, wasn't it?”"
+    m """
+    “It's been eventful!”
+
+    “A personal trainer gave me his card, and my mysterious boss might moonlight as a model.”
+    """
+    al "“It's true -- we've seen him lunch with Heidi Plum.”"
+    m "I pretend not to notice Naji fumble the tumbler he's pouring out of."
+    n """
+    “Haha...that's great. I'm glad you've met so many...prospects on your first day."
+
+    "You are still looking for a boyfriend, I presume?"
+    """
+    al "“Oh? Are you looking for your special someone, Menmi?”"
+    n """
+    “Menmi's been in love with Love before the word 'puberty' even entered our vocabulary.”
+
+    “Do you know how many Fishney Princess movies I've had to sit through with her?”
+
+    “It was always the same story -- everybody is unfairly mean to this beautiful, empathetic, free-spirited -- *perfect* -- girl.” 
+    
+    “All she needs to do to solve all her problems is to fundamentally change the way other people think.”
+    """
+    al "“It's not me. It's them!”"
+    n "“Exactly. Not very realistic.”"
+    m """
+    I roll my eyes. This is an old argument between me and Naji.
+
+    “That's how *you* see it. To me, they're stories about women overcoming unfair and oppressive circumstances.”
+    """
+    n "“Then why does she always have to have her beliefs validated by someone in power -- the prince she marries, the villagers she wins over, her dad, the king?”"
+
+    m """
+    “So that everyone knows that she was right!”
+
+    I can feel myself getting heated.
+    """
+
+label choice_10:
+    menu:
+        m "What should I do?"
+
+        "Convince him":
+            c "He's attacking you. Defend yourself."
+            m """
+            I bite my lip, feeling acrid tears push at the hollow space behind my eyes.
+
+            Why is Naji being so *mean*? Someone as popular as him wouldn't understand what it's like to need to feel loved and accepted.
+            """
+            n """
+            “Woah, woah. I'm just teasing you, Menmi.”
+
+            “I'm sorry. I won't do it again.”
+            """
+            m """
+            His sudden shift in tone makes me realize I might have been taking this too seriously...
+
+            I collect myself.
+            """
+        "Drop it":
+            c "You're getting too worked up over this. It doesn't matter. You can have different opinions."
+            m """
+            “Agree to disagree,” I shrug. “Sorry I *tortured* you with all those movies.”
+
+            Naji grins.
+            """
+            $ renpy.notify("+10 Self-Awareness")
+            $ self_awareness += 10
+            n "“I didn't say *that*. And I'm sure I've put you through your fair share of un-entertainment.”"
+
+label after_choice_10:
+    m "“I had to watch all your *hilarious* stand-up comedy specials.”"
+    n "“Hey, they were funny!”"
+    m "“Nobody who's actually funny has to actually try that hard.”"
+    n "“Oh yeah? Explain this then.”"
+    m "“Naji slowly lowers himself behind the bar into a crouch.”"
+    n "“Menmi, you set the bar too damn high.”"
+    m "An involuntary chortle forces its way out of my throat."
+    m """
+    “OK, you got me.” It's just so unexpected and corny that I have to laugh.
+
+    The familiar comfort I feel around Naji me forget all about the awkwardness from before.
+
+    What was I thinking? This was my old friend. The fact that he's popular in the dating pool shouldn't change anything...
+
+    I think.
+    """
+    m """
+    We spend the rest of the evening chatting companionably over delicious cocktails Naji whips up like some sort of mixed drink magician.
+
+    At some point around midnight, we said goodbye to Naji, and I stumbled home singing to myself, feeling as bubbly inside as the rosé nightcap I just had.
+
+    So this is life in Applecore City? Maybe it's not all sunshine and rainbows, sure, but there's more than enough to keep me occupied.
+    """
+    scene city-day with fade
+    m """
+    The rest of the week flew by so quickly, I barely have a chance to register what was going on.
+
+    Gym in the mornings...work all day...the occasional trip to the Collins' when I'm not too beat.
+    """
+    scene city-night with dissolve
+    m "It's a whirlwind of activity, but I find the blistering pace intoxicating."
+    jump weekend_1

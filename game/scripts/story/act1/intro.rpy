@@ -1,14 +1,26 @@
 ﻿# The script of the game goes in this file.
 
+# Dynamic characters
+default behemoth_name = "???"
+define be = Character("[behemoth_name]", color="#A9A9A9")
+default joule_name = "???"
+define j = Character("[joule_name]", color="#0064C2", image="joule")
+default devan_name = "???"
+define d = Character("[devan_name]", color='#800DCD', image="dev")
+default naji_name = "???"
+define n = Character("[naji_name]", color='#E59A34',  image="naji")
+
+
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character ("Menmi", color='#F52088')
-define c = Character ("Menmi's Conscience", color='#750F41')
-define n = Character ("Naji", color='#E59A34')
-define j = Character ("Joule", color='#0064C2')
-define d = Character ("Devan", color='#800DCD')
-define u = Character ("Delivery Guy", color="#6c431a", image="delivery-guy.png")
+define m = Character("Menmi", color='#F52088')
+define c = Character("Menmi's Conscience", color='#750F41')
+define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
+define al = Character("Allie", color="#66b704", image="allie")
+
+# Global variables
+default self_awareness = 0
 
 # Images used in-game
 image tutorial box = "tutorial-box.png"
@@ -100,7 +112,7 @@ label start:
     scene menmi-apartment-door:
         blur 24
 
-    show delivery-guy at truecenter:
+    show delivery-guy at center:
         blur 24
     
     m """
@@ -143,11 +155,14 @@ label conscience_tutorial:
         m "Should I hit on the delivery guy?"
 
         "I don't know, it might be awkward":
-            m "If he sees my place like this, he might not be into me. Besides, this isn't the time or place. {w}{color=#F52088}{b}+5 Self-Awareness{/b}{/color}"
-        
+            $ renpy.notify("+5 Self-Awareness")
+            $ self_awareness += 5
+            m "If he sees my place like this, he might not be into me. Besides, this isn't the time or place."
         "You miss every shot you don't take!":
             m "I know what I want, and I have to be proactive about it. No one's going to hand love to me on a platter, uh, package."
-            m "Would you like to come inside for a drink?{w}{color=#F52088}{b}+5 Self-Awareness{/b}{/color}"
+            $ renpy.notify("+5 Self-Awareness")
+            $ self_awareness += 5
+            m "Would you like to come inside for a drink?"
 label self_awareness_tutorial:
     window hide
     show tutorial box
@@ -280,6 +295,9 @@ label choosing_prince:
             m "It'll happen. I know it will. Everything is coming to pass, just as I planned it."
     scene applecore-city with dissolve
     m "Now that my story's been written, all that's left to do is live it!"
-        
-pause
-return
+    window hide
+    scene image Solid("#ffc6ebff") with dissolve
+    show text "{font=fredoka}{size=288}To BeLoved{/size}{/font}" at truecenter 
+    with dissolve
+    pause
+    jump week_1_morning
