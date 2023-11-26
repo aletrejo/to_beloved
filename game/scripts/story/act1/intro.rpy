@@ -55,7 +55,7 @@ label start:
     with dissolve
 
     m """
-    Isn't it just the picture of perfection? The staggering skyscrapers, the constant commotion of the crowds, 
+    Isn't it just the picture of perfection? The staggering skyscrapers, the constant commotion of the crowds,
     the mystery odors of human body gumbo.
 
     My life starts now. Look out world, Menmi is officially entering her City Biddy Era.
@@ -114,55 +114,40 @@ label start:
 
     show delivery-guy at center:
         blur 24
-    
+
     m """
-    What would it be like to date a delivery man? It'd be kinda wild to be with someone so in-demand in this post-pandemic, 
+    What would it be like to date a delivery man? It'd be kinda wild to be with someone so in-demand in this post-pandemic,
     pro-postal world.
 
-    Like, he'd find excuses to come visit me – “Oh I'm just in the neighborhood because of a delivery,” 
+    Like, he'd find excuses to come visit me – “Oh I'm just in the neighborhood because of a delivery,”
     but his roguish grin and the takeout for two will say otherwise.
 
     You're doing some essential work to my heart, baby.
 
-    It sounds so romantic! Should I invite him in?
+
     """
 
-    c "Come now, scatterbrains – with our apartment in this state? Where's he going to sit, the toilet?" with vpunch
+    m "Would you like to put that down...inside?"
 
-    m "Ugh, it's that naggy inner voice again. Such a party pooper. No pun intended. What is she, my mom?"
+    u "Ma'am, please just sign for the package."
 
-label conscience_tutorial:
-    window hide
-    hide delivery-guy
-    show tutorial box
-    screen conscience():
-        vbox:
-            xalign 0.5
-            yalign 0.5
-            xmaximum 1000
-            box_wrap True
-            text "{size=+10}{i}Menmi's Conscience{/i}":
-                xalign 0.5
-            text "Decisions are difficult when we all contain multitudes. Whether she likes it or not, Menmi's Conscience, or \"inner voice\", will sometimes chime in to help her weigh her options."
-            text "As in life, the choices you make may affect the tone your Conscience takes. Occasional self-skepticism can build Self-Awareness, but a running dialogue of self-criticism and doubt results in a negative worldview, which makes life sucky!"
-        
-    show screen conscience with dissolve
-    pause
-    hide screen conscience
-    hide tutorial box
-    window show
+    m "Ignored. What's *that* supposed to mean?"
+
+
     menu:
-        m "Should I hit on the delivery guy?"
+        m "How should I interpret his silence?"
 
-        "I don't know, it might be awkward":
+        "He rejected you.":
+            c "You're so cringe. You don't even have a couch. Where would he sit - the toilet?"
+            $ renpy.notify("+0 Self-Awareness")
+            $ self_awareness += 0
+
+        "He's probably in a rush":
+            c "We're in Applecore City. People are busy. At least you shot your shot."
+            play sound "/audio/awareness-ding.mp3"
             $ renpy.notify("+5 Self-Awareness")
             $ self_awareness += 5
-            m "If he sees my place like this, he might not be into me. Besides, this isn't the time or place."
-        "You miss every shot you don't take!":
-            m "I know what I want, and I have to be proactive about it. No one's going to hand love to me on a platter, uh, package."
-            $ renpy.notify("+5 Self-Awareness")
-            $ self_awareness += 5
-            m "Would you like to come inside for a drink?"
+
 label self_awareness_tutorial:
     window hide
     show tutorial box
@@ -172,22 +157,16 @@ label self_awareness_tutorial:
             yalign 0.5
             xmaximum 1000
             box_wrap True
-            text "{size=+10}{i}Self-Awareness{/i}":
+            text "{size=+10}{i}Self-Awareness & Conscience{/i}":
                 xalign 0.5
-            text "Nice job -- you just gained some Self-Awareness. When Menmi makes sound decisions and processes events mindfully, she gains insight into her own behaviors and emotions."
-            text "Accumulating Self-Awareness helps Menmi get through life with less distortion and more resilience, self-esteem, and stability. Having more Self-Awareness also allows opens up more possibilities for Menmi's Conscience."   
+            text "Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her. Self-Awareness allows Menmi to distinguish between the voices that help and the ones that hinder."
+            text "As Menmi's Conscience, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors  while recognizing that it's normal to make mistakes."
     show screen self_awareness with dissolve
     pause
     hide screen self_awareness
     hide tutorial box
 
 label after_tutorial:
-    show delivery-guy
-    u "Ma'am, please just sign for the package."
-    m "He seems to be in a rush. I know when to cut my losses."
-    c "There's always next time."
-    m "Thanks! Take care."
-    m "I grab the package and shut the door behind me. Oh well, plenty where that came from! I hope all the guys in Mangottan are this cute."
     scene applecore-city
     with dissolve
     m """
@@ -195,7 +174,7 @@ label after_tutorial:
 
     Oh, it's from Mom!
 
-    Ripping open the package reveals a cute planner with some sticker sheets. 
+    Ripping open the package reveals a cute planner with some sticker sheets.
 
     There's a note on it:
 
@@ -220,16 +199,18 @@ label planner_tutorial:
             box_wrap True
             text "{size=+10}{i}Menmi's Planner{/i}":
                 xalign 0.5
-            text "Player chooses cover for planner and decorates it with stickers"   
+            text "Menmi's planner isn't just her schedule, it's also a journal! (Listen, everyone has side hustles nowadays, even planners). Check back to see her thoughts on each activity throughout the week."
     show screen planner with dissolve
     pause
     hide screen planner
     hide tutorial box
     window show
     m """
-    {i}Gasp{/i}...Oh my god?
+    *Gasp*...Oh my god?
 
-    It's perfect? Did I really do this? Great job, Menmi. Take that, expectations!
+    It's *perfect*? Did I really do this? Great job, Menmi. Take that, expectations!
+
+    Whose expectations? I'm not sure!
     """
     scene planner with dissolve
     m """
@@ -240,9 +221,13 @@ label planner_tutorial:
     scene gym-inside with dissolve
     m "Mornings are at the gym! Gotta start the day strong with my favorite workout — Spotting hot guys."
     scene office-inside with dissolve
-    m "Then, it's time to head to my dream job. I'm so excited to make a difference in the world!"
+    m "Primetime is grind time. I managed to land my dream job at a PR firm. I’m so excited to make a difference in the world!"
     scene lounge-inside with dissolve
     m "At the end of the day, I'll unwind with a drink. One of my friends from home is a bartender! Ooooohh getting wasted on a weeknight? We grow up so fast"
+    scene menmi-apartment-sunset with dissolve
+    m "And weekends? Weekends are when the magic happens so I'll have to choose how to utilize them carefully."
+    scene planner with dissolve
+    m "Pretty sure I'm going to be washed after my first week, so I'm going to take a cleansing bath."
 
 label choosing_prince:
     scene applecore-city with dissolve
@@ -265,23 +250,50 @@ label choosing_prince:
         "Effortlessly cool and competent":
             m "A mature person who strides through life with unwavering confidence, admired by all. He's always in control...until {i}I{/i} make him lose it."
     m "It's not like I'm expecting it to be all fun and games, of course! Give me more credit than that. I'm a realist at heart."
-    c "Are you, though?"
     menu:
-        m "Yes! I know all the red flags:"
+        m "I know *all* the red flags:"
 
         "Flawed first impressions that transform into a lasting love":
-            m "A string of misunderstandings! A tense, yet thrilling rivalry. Witty banter! Stubborn prides! The belated realization that your petty enmity is rooted in an unshakeable sense of trust! Ah, the initial bitterness makes the happy ending all the sweeter."
+            m """ A string of misunderstandings! A tense, yet thrilling rivalry.
+
+            Witty banter! Stubborn prides! The belated realization that your petty enmity is rooted in an unshakeable sense of trust!
+
+            Ah, the initial bitterness makes the happy ending all the sweeter.
+            """
         "Traditional family members who don't want to see us together":
-            m "His dad, a CEO mafia boss undercover buddy cop sultan, forbids him from consorting with commoners, lest he be lured away from his responsibility to the family “business”. Us against the world! Overthrowing the patriarchy! Singing out the moon roof of a limousine!"
+            m """
+            His dad, a CEO mafia boss undercover buddy cop sultan, forbids him from consorting with commoners,
+
+            lest he be lured away from his responsibility to the family “business”.
+
+            Us against the world! Overthrowing the patriarchy! Singing out the moon roof of a limousine!
+
+            """
         "Vengeful exes hellbent on sabotaging our happiness":
-            m "Naturally, he'll be a man in demand. You know, a skater boy? To whom she said  ‘see ya later boi’? I'll never forget how desirable he is because his ex(es) will constantly be coming after me like they don't have anything better to do!"
+            m """
+            Naturally, he'll be a man in demand. You know, a skater boy? To whom she said  ‘see ya later boi’?
+
+            I'll never forget how desirable he is because his ex(es) will constantly be coming after me like they don't have anything better to do!
+
+            """
+
         "A tragic accident that leaves us forever changed":
-            m "What would I lose? A hand? An eye? Consciousness? Gosh I hope I don't go into a coma – that would be so boring. For the readers. And worse yet? For me. *Gasp* Maybe my beautiful singing voice? I don't have a beautiful singing voice, but maybe I can look into podcasting?"
+            m """
+            What would I lose? A hand? An eye? Consciousness? Gosh I hope I don't go into a coma – that would be so boring. For *me*.
+
+            *Gasp* Maybe my beautiful singing voice? I don't have a beautiful singing voice, but maybe I can look into podcasting?
+
+            """
+
         "Supernatural secrets threatening to doom our fragile love":
-            m "Aaaahh what if he's an 800-year-old vampire nurse who's honest and lonely, but also resentful and idealistic? And I die before him? Oh my gosh I hope he's not mad at me for that."
+            m """
+            Aaaahh what if he's an 800-year-old vampire nurse who's honest and lonely, but also resentful and idealistic?
+
+            And I die before him? Oh my gosh I hope he isn't mad at me for that!
+            """
     scene menmi-apartment-afternoon with dissolve
     m """
-    I'm not naive. I know the world isn't all sunshine and six-packs.
+    I'm not naive. I know the world isn't all sunshine and six packs.
 
     But it's OK, because at the end of the day, as long as I have him, we will overcome the odds and make each other more perfect and whole people.
 
@@ -297,7 +309,7 @@ label choosing_prince:
     m "Now that my story's been written, all that's left to do is live it!"
     window hide
     scene image Solid("#ffc6ebff") with dissolve
-    show text "{font=fredoka}{size=288}To BeLoved{/size}{/font}" at truecenter 
+    show text "{font=fredoka}{size=288}To BeLoved{/size}{/font}" at truecenter
     with dissolve
     pause
     jump week_1_morning
