@@ -18,21 +18,21 @@ label week_1_day:
     """
     if self_awareness <=20:
         c "They're going to realize that hiring you was a mistake."
-    
+
     m "I haven't even met my boss yet."
     m "That reminds me, I should be proactive about introducing myself to people!"
     m "Ah! This person who just took the seat next to me looks like they might be friendly."
     show allie neutral with dissolve
     if self_awareness <=20:
         c "Don't say anything weird. You want them to like you.."
-    m "“Hey, I'm new here. My name's Menmi. I work in PR.”"
+    m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring gifts?”"
     m "To my relief, they reciprocate my smile."
-    al "Hey, name's Allie. I make stuff look good. Well, the graphics anyway, not the people -- that's your job." 
+    al "“Yeah, I'm giving a shit just by showing up. Name’s Allie. I make stuff look good. Well, the graphics anyway, not the people — that's your bag.“"
     al "Cool of you to introduce yourself. Most folks just try to skate by on icebreakers."
-    m "“Tell me about it -- I feel like I spend more time thinking about what to say than listening to other people's responses.”"
+    m "“Tell me about it — I feel like I spend more time thinking about what to say than listening to other people's responses.”"
     al "Ha! And by the end of it, you haven't gotten to know anyone, but it's *great* that you made up a name for your first car."
     m """
-    Talk about a journey of self-discovery!
+    {i}Drives{/i} me crazy!
 
     Allie laughs.
 
@@ -72,11 +72,11 @@ label devan_introduction:
 
     Dev turns back to the presenter, his pale eyes cutting into him. The poor guy crumples in on himself like a paper straw five seconds into sitting in iced coffee.
     """
-    d "I went over the hiring records prior to this meeting, and it seems that the organization has recruited quite a few upper-level managers in all departments." 
+    d "I went over the hiring records prior to this meeting, and it seems that the organization has recruited quite a few upper-level managers in all departments."
     d "So many executives can't possibly be fully billable with their current responsibilities."
     "Presenter" "Are you suggesting that we give managers menial paperwork?"
     d "I wouldn't call the work that keeps the company running menial, but this would be the obvious solution, wouldn't you agree?"
-    d "The managers will know how to do the day-to-day work, if they are as experienced as they should be." 
+    d "The managers will know how to do the day-to-day work, if they are as experienced as they should be."
     d "Besides, it wouldn't reflect well on leadership if the juniors are toiling away while the execs are day-drinking in their corner offices."
     "Presenter" "I wholeheartedly agree, Devan! Your plan is...logical, no doubt. I just worry that we will experience some pushback..."
     d "Then we will push back harder. We're all busy people. Let's call this meeting adjourned, hm?"

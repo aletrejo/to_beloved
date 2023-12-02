@@ -16,9 +16,12 @@ label week_1_morning:
     I pull on the cute crop top and shimmy into the patterned leggings I'd laid out the night before.
 
     I don't always plan my outfits, but this is my first time at a Mangottan gym. I need to look like a chic city girl to attract a cool city guy!
+
+    Hehe...just thinking about it gets my blood pumpin'.
+
     """
 label gym:
-    scene gym-inside
+    scene gym-inside with dissolve
     m """
     Wow, so this is Planet Figness?
 
@@ -102,7 +105,7 @@ label gym:
     """
     be "Well? It's just a drink...are you going to be a good girl or what?"
     m "Take it easy, Menmi. Don't want to barf at the gym on your first day."
-        
+
 label choice_6:
     menu:
         m "What should I do?"
@@ -130,7 +133,7 @@ label joule_introduction:
     m "It's like there's no right answer. This feeling of powerlessness is so frustrating..."
     j "Leave her alone."
     m "Huh? Who said that?"
-    show joule neutral
+    show joule neutral with dissolve
     j "Hey, Beast Mode. Can I help you with a Cool Down routine?"
     be "What did you say, shrimp-fried rice?"
     m """
@@ -162,12 +165,12 @@ label joule_introduction:
     m "“Sure, what's up?”, hoping I sound as cool as he does."
     j "You should be more careful. He put you in a really dangerous position. Judging by your build, there's no way you could have taken him if things got physical."
     m """
-    What the...I have all sorts of mixed feelings about that.
+    He's not *wrong*, but the way he's scolding me rubs me the wrong way.
 
-    Sure, this guy just saved me like some kind of sleeveless superhero, but this feels out of line
+    Sure, this guy just "saved" me, but he can't be blaming *me* for this, right?
     """
 label choice_7:
-    menu: 
+    menu:
         m "How should I respond?"
 
         "Speak out":
@@ -195,10 +198,10 @@ label choice_7:
 
             "Sorry I caused you trouble."
             """
-            j "It's OK -- I'm glad you're alright"
+            j "It's OK — I'm glad you're alright"
             m "A part of me throws up, then dies a little, then throws up AGAIN."
         "Walk away":
-            c "He's making you uncomfortable. Disengage."
+            c "Uncomfy feelings?! In *my* body? Disengage."
             m "I try to walk away, but he grabs my hand."
 label joule_response:
     j "You were scared, weren't you? I'd be, too"
@@ -208,10 +211,15 @@ label joule_response:
     m """
     He pulls out a business card and hands it to me. There's a black and white photo of him on it, the hard lighting capturing every line and contour of his chiseled build.
 
-    He's kind of hot.
+    He's kind of hot. Once you get over the patronizing remarks.
 
-    “Thanks. I'll think about it.”
+    Although there *is* something romantic about a rescue in a high octane situation that makes my inner feminist want to crunch up and die.
+
     """
+
+    c "Your inner feminist wants you to get swole and squat punch creeps."
+    m "Thanks. I'll think about it."
+
     j "Girls should know how to protect themselves...especially the pretty ones"
     hide joule neutral with dissolve
     scene gym-inside with dissolve:

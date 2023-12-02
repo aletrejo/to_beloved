@@ -113,7 +113,7 @@ label naji_introduction:
 label choice_9:
     menu:
         m "What should I do?"
-        
+
         "Call out to Naji":
             c """
             Naji is expecting you. You came here to see him. Why wouldn't he want to see you, too?
@@ -194,7 +194,7 @@ label after_choice_9:
 
     “A personal trainer gave me his card, and my mysterious boss might moonlight as a model.”
     """
-    al "“It's true -- we've seen him lunch with Heidi Plum.”"
+    al "“It's true — we've seen him lunch with Heidi Plum.”"
     m "I pretend not to notice Naji fumble the tumbler he's pouring out of."
     n """
     “Haha...that's great. I'm glad you've met so many...prospects on your first day."
@@ -207,8 +207,8 @@ label after_choice_9:
 
     “Do you know how many Fishney Princess movies I've had to sit through with her?”
 
-    “It was always the same story -- everybody is unfairly mean to this beautiful, empathetic, free-spirited -- *perfect* -- girl.” 
-    
+    “It was always the same story — everybody is unfairly mean to this beautiful, empathetic, free-spirited  *perfect* — girl.”
+
     “All she needs to do to solve all her problems is to fundamentally change the way other people think.”
     """
     al "“It's not me. It's them!”"
@@ -218,7 +218,7 @@ label after_choice_9:
 
     “That's how *you* see it. To me, they're stories about women overcoming unfair and oppressive circumstances.”
     """
-    n "“Then why does she always have to have her beliefs validated by someone in power -- the prince she marries, the villagers she wins over, her dad, the king?”"
+    n "“Then why does she always have to have her beliefs validated by someone in power — the prince she marries, the villagers she wins over, her dad, the king?”"
 
     m """
     “So that everyone knows that she was right!”
