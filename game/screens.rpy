@@ -1258,6 +1258,7 @@ style skip_triangle:
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen
 
 screen notify(message):
+    on "show" action Play("audio", "awareness-ding.mp3")
 
     zorder 100
     style_prefix "notify"

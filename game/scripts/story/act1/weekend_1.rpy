@@ -22,9 +22,9 @@ label choice_11:
             I can't believe I let myself laze about today.  Lesson learned for the future!
             """
         "Take it easy":
-            c "You gave it your all this week. You're allowed to relax. Not every second of your life has to be dedicated to productivity. Listen to your body. Listen to *me*."
             $ renpy.notify("+10 Self-Awareness")
             $ self_awareness += 10
+            c "You gave it your all this week. You're allowed to relax. Not every second of your life has to be dedicated to productivity. Listen to your body. Listen to *me*."
             m "It isn't good for me to constantly put pressure on myself to do things. There has to be balance. I have to remind myself of that."
 
 label bathtime_tutorial:
@@ -41,8 +41,201 @@ label bathtime_tutorial:
         m "Now, what kind of bath am I in the mood for today?"
 
         "Classic":
+            scene bathtime-classic with fade
             m "There's nothing like a simple bath to clear your head and refocus on your body."
         "Romantic":
+            scene bathtime-classic with fade
             m "The heady perfumes of lavender and cedar essential oils are so indulgent! Baths always make me feel like I'm being buoyed up into a higher plane of awareness..."
         "Fruity":
+            scene bathtime-classic with fade
             m "The sweet and fresh scents of citrus fill me with playful bliss! I feel like I'm in a fresh jug of lemonade. Aahhh, baths are so refreshing."
+    window hide
+    show tutorial box
+    screen bathtime():
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            xmaximum 1000
+            box_wrap True
+            text "{size=+10}{i}Bathtime{/i}":
+                xalign 0.5
+            text "Bathtime is Men-ME time! By making time to take a bath, Menmi performs self-care, replenishing her mental and physical energy."
+            text "The bath is the perfect place to ponder and process the events of Menmi's week. You'll be able to guide the flow of Menmi's reflections."
+            text "The more insight she gains into her life, the more Self-Awareness you'll earn."
+    show screen bathtime with dissolve
+    pause
+    hide screen bathtime
+    hide tutorial box
+    jump bathtime_1
+label bathtime_1:
+    m "It's been an eventful week. Out of everything's that's happened though, there's one thing I can't get off my mind."
+    menu:
+        m "What do I want to reflect on?"
+
+        "Naji":
+            jump naji_bathtime_1
+        "Myself" if self_awareness > 120:
+            jump myself_bathtime_1
+
+label naji_bathtime_1:
+    menu:
+        "I miss how close we used to be...":
+            menu:
+                "We were neighbors":
+                    menu:
+                        "Naji and I grew up across the street from each other":
+                            menu:
+                                "Our parents weren't very close, but we'd play together all the time":
+                                    menu:
+                                        "Naji's dad left when he was a baby, and his mom was always seeing some new guy.":
+                                            menu:
+                                                "I wonder if he keeps in touch with her.":
+                                                            $ renpy.notify("+10 Self-Awareness")
+                                                            $ self_awareness += 10
+                                                            jump naji_bathtime_1_mid_result
+
+                                "We're the same age, but I kind of saw him as a little brother":
+                                    menu:
+                                        "He used to follow me around and do whatever I wanted":
+                                            menu:
+                                                "He's changed.":
+                                                    menu:
+                                                        "It makes me uncomfortable":
+                                                            menu:
+                                                                "I thought I knew him better.":
+                                                                    menu:
+                                                                        "It makes me feel insecure that I don't know everything about him":
+                                                                            $ renpy.notify("+15 Self-Awareness")
+                                                                            $ self_awareness += 15
+                                                                            jump naji_bathtime_1_good_result
+                                                                        "It makes me jealous to think that there are others who are closer to him now":
+                                                                            $ renpy.notify("+20 Self-Awareness")
+                                                                            $ self_awareness += 20
+                                                                            jump naji_bathtime_1_best_result
+                                                "Naji would always listen to me vent about my feelings, but he never seemed as open with his own":
+                                                    menu bartending_menu:
+                                                        "Bartending suits him":
+                                                            $ renpy.notify("+15 Self-Awareness")
+                                                            $ self_awareness += 15
+                                                            jump naji_bathtime_1_good_result
+                                                        "Why is Naji's opinion of me such a big deal?":
+                                                            $ renpy.notify("+20 Self-Awareness")
+                                                            $ self_awareness += 20
+                                                            jump naji_bathtime_1_best_result
+                                "We're super comfortable with each other":
+                                    menu:
+                                        "Naji's always made people laugh like it was his job":
+                                            menu naji_has_the_rizz_menu:
+                                                "He's always had a way with people. Got the rizz, as they say.":
+                                                    menu naji_bartending_menu:
+                                                        "Bartending suits him":
+                                                                $ renpy.notify("+15 Self-Awareness")
+                                                                $ self_awareness += 15
+                                                                jump naji_bathtime_1_good_result
+                                                        "It makes me uncomfortable":
+                                                            jump naji_knew_him_better_menu
+                "He was my best friend":
+                    menu:
+                        "We used to mix bath bubbles in the inflatable pool and pretend we were at a spa":
+                            menu:
+                                "I have a lot of good memories with Naji.":
+                                    $ renpy.notify("+15 Self-Awareness")
+                                    $ self_awareness += 15
+                                    jump naji_bathtime_1_good_result
+                                "He's changed.":
+                                    menu naji_uncomfortable_menu:
+                                        "It makes me uncomfortable":
+                                            menu naji_knew_him_better_menu:
+                                                "I thought I knew him better.":
+                                                    menu:
+                                                        "It makes me feel insecure that I don't know everything about him":
+                                                            $ renpy.notify("+15 Self-Awareness")
+                                                            $ self_awareness += 15
+                                                            jump naji_bathtime_1_good_result
+                                                        "It makes me jealous to think that there are others who are closer to him now":
+                                                            $ renpy.notify("+20 Self-Awareness")
+                                                            $ self_awareness += 20
+                                                            jump naji_bathtime_1_best_result
+        "He seems to be doing well...":
+            menu:
+                "I'm happy for him":
+                    menu:
+                        "I didn't know he was so popular...":
+                            menu:
+                                "He's changed.":
+                                    jump naji_uncomfortable_menu
+                                "It makes sense.":
+                                    menu:
+                                        "It makes me uncomfortable":
+                                            jump naji_knew_him_better_menu
+                                        "By the time we were teens, I could see how he would be considered attractive...physically":
+                                            menu:
+                                                "I always worried that he was out of my league, though":
+                                                    $ renpy.notify("+10 Self-Awareness")
+                                                    $ self_awareness += 10
+                                                    jump naji_bathtime_1_mid_result
+                        "He's always had a way with people. Got the rizz, as they say.":
+                            jump naji_bartending_menu
+                "I can't help but feel a bit jealous":
+                    menu:
+                        "Compared to him, I must look like a loser.":
+                            menu:
+                                "I hope he doesn't think I'm silly for wanting to be in love":
+                                    menu:
+                                        "Why is Naji's opinion of me such a big deal?":
+                                            $ renpy.notify("+20 Self-Awareness")
+                                            $ self_awareness += 20
+                                            jump naji_bathtime_1_best_result
+                        "He's always had a way with people. Got the rizz, as they say.":
+                            jump naji_bartending_menu
+        "I can't believe he said that about my princess movies!":
+            $ renpy.notify("+10 Self-Awareness")
+            $ self_awareness += 10
+            jump naji_bathtime_1_mid_result
+label naji_bathtime_1_mid_result:
+    menu:
+        "I probably wouldn't have a chance, but there is something romantic about falling in love with your best friend...":
+            call after_bathtime_1
+            scene menmi-apartment-night with dissolve
+            m "I'm still working through my thoughts and feelings, but I've gotten some clarity. It's nice to slow down every now and then."
+            jump menmi_after_bath
+label naji_bathtime_1_good_result:
+    menu:
+        "Naji's grown with time. I'm curious about what else about him has changed...":
+            call after_bathtime_1
+            scene menmi-apartment-night with dissolve
+            m "Things are starting to feel a little clearer. I'm glad I took the time to reflect."
+            jump menmi_after_bath
+label naji_bathtime_1_best_result:
+    menu:
+        "Why do I feel so self-conscious around Naji now that he's different from how I remember? Maybe if I talk to him more, I can sort out my feelings.":
+            call after_bathtime_1
+            scene menmi-apartment-night with dissolve
+            m "What a rejuvenating bath! I feel completely cleansed and ready to take on whatever's ahead."
+            jump menmi_after_bath
+
+label myself_bathtime_1:
+    pause
+
+label after_bathtime_1:
+    scene bathtime-classic with dissolve
+    show tutorial box
+    screen narrative_tutorial():
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            xmaximum 1000
+            box_wrap True
+            text "{size=+10}{i}Creating A Narrative{/i}":
+                xalign 0.5
+            text "We internalize events and experiences by telling ourselves stories. In turn, through these narratives, we make sense of the world."
+            text "Because of this, Menmi may remember her bathtime ruminations when she goes about her daily life. Her narratives may even influence her thoughts and actions."
+            text "Narratives are flexible and naturally evolve over time, so be sure to check the planner and reflect regularly."
+    show screen narrative_tutorial with dissolve
+    pause
+    hide screen narrative_tutorial
+    hide tutorial box
+    return
+
+label menmi_after_bath:
+    m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"

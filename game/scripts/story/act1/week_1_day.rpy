@@ -128,6 +128,8 @@ label choice_8:
             call after_choice_8
             jump choice_8a
         "Accept his help":
+            $ renpy.notify("+10 Self-Awareness")
+            $ self_awareness += 10
             c "Listen to him. He's trying to tell you that he's got your back. Does this seem like the type of guy who'd try to test you?"
             m """
             The truth is, I don't know *what* kind of guy he is, but he has made it clear that he's on my side.
@@ -141,8 +143,6 @@ label choice_8:
 
             I'll see what I can do to push the deadline.
             """
-            $ renpy.notify("+10 Self-Awareness")
-            $ self_awareness += 10
             hide dev neutral
             m "Whew! That worked out better than I thought."
             call after_choice_8

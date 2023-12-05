@@ -138,15 +138,36 @@ label start:
         m "How should I interpret his silence?"
 
         "He rejected you.":
-            c "You're so cringe. You don't even have a couch. Where would he sit - the toilet?"
             $ renpy.notify("+0 Self-Awareness")
+            c "You're so cringe. You don't even have a couch. Where would he sit - the toilet?"
             $ self_awareness += 0
+            jump no_self_awareness_tutorial
 
         "He's probably in a rush":
-            c "We're in Applecore City. People are busy. At least you shot your shot."
-            play sound "/audio/awareness-ding.mp3"
             $ renpy.notify("+5 Self-Awareness")
+            c "We're in Applecore City. People are busy. At least you shot your shot."
             $ self_awareness += 5
+            jump self_awareness_tutorial
+
+label no_self_awareness_tutorial:
+    window hide
+    show tutorial box
+    screen no_self_awareness():
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            xmaximum 1000
+            box_wrap True
+            text "{size=+10}{i}Self-Awareness & Conscience{/i}":
+                xalign 0.5
+            text "Looks like you just missed out on some Self-Awareness, but no worries — we're all learning."
+            text "Self-Awareness allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
+            text "As Menmi's Conscience, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors  while recognizing that it's normal to make mistakes."
+    show screen no_self_awareness with dissolve
+    pause
+    hide screen no_self_awareness
+    hide tutorial box
+    jump after_tutorial
 
 label self_awareness_tutorial:
     window hide
@@ -159,12 +180,14 @@ label self_awareness_tutorial:
             box_wrap True
             text "{size=+10}{i}Self-Awareness & Conscience{/i}":
                 xalign 0.5
-            text "Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her. Self-Awareness allows Menmi to distinguish between the voices that help and the ones that hinder."
+            text "Nice job — you just gained some Self-Awareness."
+            text "Self-Awareness allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
             text "As Menmi's Conscience, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors  while recognizing that it's normal to make mistakes."
     show screen self_awareness with dissolve
     pause
     hide screen self_awareness
     hide tutorial box
+    jump after_tutorial
 
 label after_tutorial:
     scene applecore-city
@@ -188,6 +211,49 @@ label after_tutorial:
 
     I guess I {i}could use{/i} a little break from unpacking.
     """
+label pick_planner_pattern:
+    screen patterns():
+        text "{size=+20}{b}It's time to pick a planner cover!{/b}":
+                xalign 0.5
+                yalign 0.2
+        imagebutton:
+            xalign 0.2
+            yalign 0.5
+            auto "planner-pattern-1 %s" action Jump("planner_with_pattern_1")
+        imagebutton:
+            xalign 0.4
+            yalign 0.5
+            auto "planner-pattern-2 %s" action Jump("planner_with_pattern_2")
+        imagebutton:
+            xalign 0.6
+            yalign 0.5
+            auto "planner-pattern-3 %s" action Jump("planner_with_pattern_3")
+        imagebutton:
+            xalign 0.8
+            yalign 0.5
+            auto "planner-pattern-4 %s" action Jump("planner_with_pattern_4") 
+    show screen patterns with dissolve
+    pause
+label planner_with_pattern_1:
+    hide screen patterns
+    image bg tile_1 = Tile("pp-1.png")
+    show bg tile_1
+    jump planner_tutorial
+label planner_with_pattern_2:
+    hide screen patterns
+    image bg tile_2 = Tile("pp-2.png")
+    show bg tile_2
+    jump planner_tutorial
+label planner_with_pattern_3:
+    hide screen patterns
+    image bg tile_3 = Tile("pp-3.png")
+    show bg tile_3
+    jump planner_tutorial
+label planner_with_pattern_4:
+    hide screen patterns
+    image bg tile_4 = Tile("pp-4.png")
+    show bg tile_4
+    jump planner_tutorial
 label planner_tutorial:
     window hide
     show tutorial box

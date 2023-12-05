@@ -115,14 +115,14 @@ label choice_9:
         m "What should I do?"
 
         "Call out to Naji":
+            $ renpy.notify("+5 Self-Awareness")
+            $ self_awareness += 5
             c """
             Naji is expecting you. You came here to see him. Why wouldn't he want to see you, too?
 
             He's been your friend for...how long have you been avoiding salads?
             """
             m "I'm getting too into my own head over this. I need to snap out of it."
-            $ renpy.notify("+5 Self-Awareness")
-            $ self_awareness += 5
             m "“Hey, Naj! Over here!”"
             call choice_9a
             jump after_choice_9
@@ -248,14 +248,14 @@ label choice_10:
             I collect myself.
             """
         "Drop it":
+            $ renpy.notify("+10 Self-Awareness")
+            $ self_awareness += 10
             c "You're getting too worked up over this. It doesn't matter. You can have different opinions."
             m """
             “Agree to disagree,” I shrug. “Sorry I *tortured* you with all those movies.”
 
             Naji grins.
             """
-            $ renpy.notify("+10 Self-Awareness")
-            $ self_awareness += 10
             n "“I didn't say *that*. And I'm sure I've put you through your fair share of un-entertainment.”"
 
 label after_choice_10:

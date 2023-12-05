@@ -1,7 +1,4 @@
 label week_1_morning:
-    scene image Solid("#ffffff") with dissolve
-    show text "{font=fredoka}{size=164}{color=#DA0063}Act 1: Inciting Incident{/color}{/size}{/font}" at truecenter with dissolve
-    pause
     scene image Solid("#ffc6ebff") with dissolve
     show text "{font=fredoka}{size=288}Week 1 \nMorning{/size}{/font}" at truecenter with dissolve
     pause
