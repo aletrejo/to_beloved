@@ -27,7 +27,7 @@ label week_1_day:
         c "Don't say anything weird. You want them to like you.."
     m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring gifts?”"
     m "To my relief, they reciprocate my smile."
-    al "“Yeah, I'm giving a shit just by showing up. Name’s Allie. I make stuff look good. Well, the graphics anyway, not the people — that's your bag.“"
+    al "“Yeah, I'm giving a crap just by showing up. Name’s Allie. I make stuff look good. Well, the graphics anyway, not the people — that's your bag.“"
     al "Cool of you to introduce yourself. Most folks just try to skate by on icebreakers."
     m "“Tell me about it — I feel like I spend more time thinking about what to say than listening to other people's responses.”"
     al "Ha! And by the end of it, you haven't gotten to know anyone, but it's *great* that you made up a name for your first car."
@@ -92,7 +92,7 @@ label after_team_meeting:
     show dev neutral with dissolve
     m "I forget to catch my breath as my eyes catch pure glacier blue."
     d "Of course, the suggestion applies to myself as well."
-    m "“P-pardon?” He's even more intimidating up close.”"
+    m "“P-pardon?” He's even more intimidating up close."
     d "My apologies. I haven't introduced myself properly. My name is Devan. I will be your senior touchpoint."
     m "It takes me a moment to register what he means."
     m "“Y-you're my boss?”" with vpunch

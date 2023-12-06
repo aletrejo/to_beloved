@@ -59,9 +59,8 @@ label bathtime_tutorial:
             box_wrap True
             text "{size=+10}{i}Bathtime{/i}":
                 xalign 0.5
-            text "Bathtime is Men-ME time! By making time to take a bath, Menmi performs self-care, replenishing her mental and physical energy."
-            text "The bath is the perfect place to ponder and process the events of Menmi's week. You'll be able to guide the flow of Menmi's reflections."
-            text "The more insight she gains into her life, the more Self-Awareness you'll earn."
+            text "   The bath is the perfect place to ponder and process the events of Menmi's week. By making time to take a bath, Menmi performs self-care, replenishing her mental and physical energy. "
+            text "   Guide the flow of Menmi's reflections and earn Self-Awareness!"
     show screen bathtime with dissolve
     pause
     hide screen bathtime
@@ -88,11 +87,11 @@ label naji_bathtime_1:
                                 "Our parents weren't very close, but we'd play together all the time":
                                     menu:
                                         "Naji's dad left when he was a baby, and his mom was always seeing some new guy.":
-                                            menu:
+                                            menu dad_left:
                                                 "I wonder if he keeps in touch with her.":
-                                                            $ renpy.notify("+10 Self-Awareness")
-                                                            $ self_awareness += 10
-                                                            jump naji_bathtime_1_mid_result
+                                                            $ renpy.notify("+15 Self-Awareness")
+                                                            $ self_awareness += 15
+                                                            jump naji_bathtime_1_good_result
 
                                 "We're the same age, but I kind of saw him as a little brother":
                                     menu:
@@ -181,7 +180,7 @@ label naji_bathtime_1:
                         "Compared to him, I must look like a loser.":
                             menu:
                                 "I hope he doesn't think I'm silly for wanting to be in love":
-                                    menu:
+                                    menu naji_opinion:
                                         "Why is Naji's opinion of me such a big deal?":
                                             $ renpy.notify("+20 Self-Awareness")
                                             $ self_awareness += 20
@@ -189,7 +188,65 @@ label naji_bathtime_1:
                         "He's always had a way with people. Got the rizz, as they say.":
                             jump naji_bartending_menu
         "I can't believe he said that about my princess movies!":
-            $ renpy.notify("+10 Self-Awareness")
+            menu:
+                "It was upsetting":
+                    menu:
+                        "But why?":
+                            menu:
+                                "It threatened my worldview":
+                                    menu different_opinions:
+                                        "It's OK to have different opinions. Doesn't make either or us less right or wrong.":
+                                            jump believe_in_love
+                                        "Why is Naji's opinion of me such a big deal?":
+                                            jump naji_opinion
+                                        "Everyone has to believe in something, and I choose to believe in love!":
+                                            jump naji_bathtime_1_mid_result
+                                        "He disagreed with me":
+                                            jump different_opinions
+                                "I hope he doesn't think I'm silly for wanting to be in love":
+                                    menu believe_in_love:
+                                        "Everyone has to believe in something, and I choose to believe in love!":
+                                            $ renpy.notify("+10 Self-Awareness")
+                                            $ self_awareness += 10
+                                            jump naji_bathtime_1_mid_result
+                "Why'd he bring it up?":
+                    menu:
+                        "To hurt me":
+                            menu:
+                                "I hope he doesn't think I'm silly for wanting to be in love":
+                                    jump believe_in_love
+                                "That doesn't make sense":
+                                    jump tease_me
+                        "To tease me":
+                            menu tease_me:
+                                "We're super comfortable with each other":
+                                    jump naji_laugh_job
+                                "Naji's always made people laugh like it was his job":
+                                    menu naji_laugh_job:
+                                        "It makes me jealous to think that there are others who are closer to him now.":
+                                            menu:
+                                                "Why is Naji's opinion of me such a big deal?":
+                                                    jump naji_opinion
+
+                                        "He’s a good listener":
+                                            menu good_listener:
+                                                "Bartending suits him":
+                                                    $ renpy.notify("+15 Self-Awareness")
+                                                    $ self_awareness += 15
+                                                    jump naji_bathtime_1_good_result
+                                                "Naji would always listen to me vent about my feelings, but he never seemed as open with his own":
+                                                    menu naji_oppenness:
+                                                        "Maybe it was his way of coping":
+                                                            menu:
+                                                                "Naji's dad left when he was a baby, and his mom was always seeing some new guy.":
+                                                                    jump dad_left
+                                                        "Why is Naji's opinion of me such a big deal?":
+                                                            jump naji_opinion
+                                                        "Bartending suits him":
+                                                            jump bartending_menu
+
+
+
             $ self_awareness += 10
             jump naji_bathtime_1_mid_result
 label naji_bathtime_1_mid_result:
@@ -228,9 +285,9 @@ label after_bathtime_1:
             box_wrap True
             text "{size=+10}{i}Creating A Narrative{/i}":
                 xalign 0.5
-            text "We internalize events and experiences by telling ourselves stories. In turn, through these narratives, we make sense of the world."
-            text "Because of this, Menmi may remember her bathtime ruminations when she goes about her daily life. Her narratives may even influence her thoughts and actions."
-            text "Narratives are flexible and naturally evolve over time, so be sure to check the planner and reflect regularly."
+            text "   We internalize events and experiences by telling ourselves stories. In turn, through these narratives, we make sense of the world."
+            text "   Because of this, Menmi may remember her bathtime ruminations as she goes about her daily life. Her narratives may even influence her thoughts and actions."
+            text "   Narratives are flexible and naturally evolve over time, so be sure to check the planner and reflect regularly."
     show screen narrative_tutorial with dissolve
     pause
     hide screen narrative_tutorial

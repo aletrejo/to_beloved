@@ -92,8 +92,6 @@ label naji_introduction:
     "Waitress" "“You don't even know. He's been picking up shifts, settling disputes, even helping folks out with their personal errands. We all love him here!”"
     "Customer" "“There's no way a guy like that's single.”"
     "Waitress" "“You'd be surprised. I've never seen him bring anyone around.”"
-    "Customer" "“Well, he's not going to be on the market for long...”"
-    "Waitress" "“You better get to him before...what's that app everyone's using now? Blender? Smoothie Meets French Toast?”"
     m """
     It feels a little strange to hear about Naji from their perspective.
 
