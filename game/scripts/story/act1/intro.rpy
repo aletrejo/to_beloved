@@ -15,7 +15,7 @@ define n = Character("[naji_name]", color='#E59A34',  image="naji")
 # name of the character.
 
 define m = Character("Menmi", color='#F52088')
-define c = Character("Menmi's Conscience", color='#750F41')
+define c = Character("Conscience", color='#750F41')
 define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
 define al = Character("Allie", color="#66b704", image="allie")
 
@@ -82,10 +82,12 @@ label start:
 
     play sound "/audio/stomping.wav"
 
-    m "Be right there!"
+    m "“Be right there!”"
 
     scene menmi-apartment-door
     with dissolve
+
+    show delivery-guy with dissolve
 
     m """
     Standing in the doorway is a tall mystery man holding a small cardboard box.
@@ -97,12 +99,10 @@ label start:
     Oooh, Menmi! Don't get “carried away” by the UPS Man!
     """
 
-    show delivery-guy
-
-    u "I've got a package for Ms. Menmi?"
+    u "“I've got a package for Ms. Menmi?”"
 
     m """
-    Yes, that's me!
+    “Yes, that's me!”
 
     As he hands me the package, I feel electricity sparking at the brief synapse between our fingers.
 
@@ -124,12 +124,13 @@ label start:
 
     You're doing some essential work to my heart, baby.
 
-
     """
+    show delivery-guy at center:
+        blur 0
 
-    m "Would you like to put that down...inside?"
+    m "“Would you like to put that down...inside?”"
 
-    u "Ma'am, please just sign for the package."
+    u "“Ma'am, please just sign for the package.”"
 
     m "Ignored. What's *that* supposed to mean?"
 
@@ -139,7 +140,7 @@ label start:
 
         "He rejected you.":
             $ renpy.notify("+0 Self-Awareness")
-            c "You're so cringe. You don't even have a couch. Where would he sit - the toilet?"
+            c "You're so cringe. You don't even have a couch. Where's he gonna sit - the toilet?"
             $ self_awareness += 0
             jump no_self_awareness_tutorial
 
@@ -160,9 +161,9 @@ label no_self_awareness_tutorial:
             box_wrap True
             text "{size=+10}{i}Self-Awareness & Conscience{/i}":
                 xalign 0.5
-            text "Looks like you just missed out on some Self-Awareness, but no worries — we're all learning."
-            text "Self-Awareness allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
-            text "As Menmi's Conscience, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors  while recognizing that it's normal to make mistakes."
+            text "Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.{/size}"
+            text "{b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.{/size}"
+            text "As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors while recognizing that it's normal to make mistakes.{/size}"
     show screen no_self_awareness with dissolve
     pause
     hide screen no_self_awareness
@@ -180,9 +181,10 @@ label self_awareness_tutorial:
             box_wrap True
             text "{size=+10}{i}Self-Awareness & Conscience{/i}":
                 xalign 0.5
-            text "Nice job — you just gained some Self-Awareness."
-            text "Self-Awareness allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
-            text "As Menmi's Conscience, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors  while recognizing that it's normal to make mistakes."
+                yalign 0.5
+            text "   Nice job — you just gained some {b}Self-Awareness{/b}."
+            text "   {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
+            text "   As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors  while recognizing that it's normal to make mistakes."
     show screen self_awareness with dissolve
     pause
     hide screen self_awareness
@@ -213,7 +215,7 @@ label after_tutorial:
     """
 label pick_planner_pattern:
     screen patterns():
-        text "{size=+20}{b}It's time to pick a planner cover!{/b}":
+        text "{size=+20}{b}Which cover should I use?{/b}":
                 xalign 0.5
                 yalign 0.2
         imagebutton:
@@ -231,7 +233,7 @@ label pick_planner_pattern:
         imagebutton:
             xalign 0.8
             yalign 0.5
-            auto "planner-pattern-4 %s" action Jump("planner_with_pattern_4") 
+            auto "planner-pattern-4 %s" action Jump("planner_with_pattern_4")
     show screen patterns with dissolve
     pause
 label planner_with_pattern_1:
