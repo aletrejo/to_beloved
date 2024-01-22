@@ -28,8 +28,7 @@ label gym:
 
     Yikes! I gotta firm up these noodle arms!
 
-    Conscience
-    I can't believe you thought we looked good this morning.
+    Did I really think I looked *good* this morning?
     """
     scene gym-inside:
         blur 24
@@ -44,7 +43,7 @@ label gym:
             c "Everyone starts somewhere! I have to put in the work, do those reps, and get that bodyodyodyodody."
         "I look great!":
             c "You know what they say – fake it 'til you make it, hot stuff!"
-            m "I don't {i}feel{/i} hot, though. I feel exposed. I can't deny *that*."
+            m "I don't *feel* hot, though. I feel exposed. I can't deny *that*."
         "Nobody's judging me":
             c "You're being overly self-conscious. Nobody thinks about you as much as you think about you"
             $ renpy.notify("+10 Self-Awareness")
@@ -60,14 +59,14 @@ label gym:
 
     I grab my water bottle and step out of the Behemoth's way
 
-    “Oops! Sorry, it's all yours.”
+    “Oops! Sorry – all yours.”
 
     The Behemoth grunts and slams his empty water bucket under the spout.
     """
     with hpunch
     m "A few measly drops trickle out before the tap runs dry."
     $ behemoth_name = "Behemoth"
-    be "Tch. You used up all the water. Selfish brat."
+    be "“Tch. You used up all the water. Selfish brat.”"
     m """
     He turns toward me, leveling me with a beastly glare.
 
@@ -77,13 +76,13 @@ label gym:
 
     I don't mind sharing what I have with him if it helps.
     """
-    be "...Sure"
+    be "“...Sure”"
     m """
     I release the breath I didn't know I'd been holding in.
 
     “Great! I'm glad we could resolve-”
     """
-    be "But I don't want it in my bottle."
+    be "“But I don't want it in my bottle.”"
     m """
     A wide grin creeps its way across his face.
 
@@ -91,7 +90,7 @@ label gym:
 
     “Wh-what do you mean?”
     """
-    be "I want to drink from yours."
+    be "“I want to drink from yours.”"
     with hpunch
     m """
     “M-mine?” Excuse me? Is this total stranger really asking to put his mouth on *my* water bottle?
@@ -100,7 +99,7 @@ label gym:
 
     Does he know that he's basically asking for an indirect kiss?
     """
-    be "Well? It's just a drink...are you going to be a good girl or what?"
+    be "“Well? It's just a drink...are you going to be a good girl or what?”"
     m "Take it easy, Menmi. Don't want to barf at the gym on your first day."
 
 label choice_6:
@@ -128,25 +127,25 @@ label choice_6:
             m "Easier said than done...it's not like I can just hop over this human wall."
 label joule_introduction:
     m "It's like there's no right answer. This feeling of powerlessness is so frustrating..."
-    j "Leave her alone."
+    j "“Leave her alone.”"
     m "Huh? Who said that?"
     show joule neutral with dissolve
-    j "Hey, Beast Mode. Can I help you with a Cool Down routine?"
-    be "What did you say, shrimp-fried rice?"
+    j "“Hey, Beast Mode. Can I help you with a Cool Down routine?”"
+    be "“What did you say, Shrimp-Fried Rice?”"
     m """
     The guy standing in front of me is wearing a sleeveless shirt with the gym's logo on it. The ID card around his neck indicates that he works here.
 
     He's smaller than the Behemoth, but there's no fear at all in his defiant posture.
     """
-    j "She's clearly uncomfortable. Is that any way for a real man to act?"
+    j "“She's clearly uncomfortable. Is that any way for a real man to act?”"
     m """
     The Behemoth growls, veins rising in his biceps like a mountain range.
 
     He glances at the guy's ID card, though, and releases his grip.
     """
-    be "Tch. Talk about crap service. What kind of shitty gym runs out of water on paying customers?"
-    j "I've already alerted the appropriate personnel. This station should be refilled within the next few minutes."
-    j "Thanks for your patience, sir."
+    be "“Tch. Talk about crap service. What kind of shitty gym runs out of water on paying customers?”"
+    j "“I've already alerted the appropriate personnel. This station should be refilled within the next few minutes.”"
+    j "“Thanks for your patience, sir.”"
     m """
     His tone is professionally polite, but his smirk says otherwise...
 
@@ -181,11 +180,14 @@ label choice_7:
 
             "It wasn't my fault! I was just minding my own business when he approached me."
 
-            "It shouldn't be on the victim to change their behavior here! There was nothing tangible I could say or do that would level out the power imbalance."
+            "It shouldn't be on the victim to change their behavior here! There was nothing I could say or do that would level out the power imbalance."
 
             I can see him trying to lift this concept...mentally.
             """
             j "...You're right. I'm sorry that I implied that it was on you to change. That's not fair to you."
+
+            m "It's not ideal, but his apology makes me feel slightly better about the situation."
+
         "Apologize":
             c "This guy just did a nice thing for you. Don't ruin it by being ungrateful"
             m """
@@ -222,11 +224,8 @@ label joule_response:
     scene gym-inside with dissolve:
         blur 24
     m """
-    My heart's beating so fast, and I haven't done a single rep.
+    Against my better instincts, my heart is racing a mile a minute at his compliment.
 
-    D-did he just say what I think he said?
-
-    Thinking about his words, I pushed myself just a little harder that morning.
-
+    Looks like he's helping me with cardio already.
     """
     jump week_1_day
