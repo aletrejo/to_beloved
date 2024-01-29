@@ -18,6 +18,7 @@ define m = Character("Menmi", color='#F52088')
 define c = Character("Conscience", color='#750F41')
 define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
 define al = Character("Allie", color="#66b704", image="allie")
+define i = Character("Intrusive Inner Voice", color='#024059')
 
 # Global variables
 default self_awareness = 0
@@ -53,6 +54,8 @@ label start:
 
     scene applecore-city
     with dissolve
+
+    play sound "/audio/inhale.mp3"
 
     m """
     Isn't it just the picture of perfection? The staggering skyscrapers, the constant commotion of the crowds,
@@ -124,13 +127,39 @@ label start:
 
     You're doing some essential work to my heart, baby.
 
+    It sounds so romantic!
+
     """
+    stop music
+    play music "<from 13>/audio/cave-streams.mp3"
+    play sound "/audio/impact-slam.mp3"
+    scene menmi-apartment-door with vpunch:
+        blur 24
+        matrixcolor InvertMatrix(value=1.0)
+
+    show delivery-guy at center:
+        matrixcolor InvertMatrix(value=1.0)
+
+    i "It sounds like a bad idea. What if you get murderobbed??  Or worse, what if he rejects you?"
+
+    m """
+    Hush! I wish my brain settle down with these *second thoughts* or whatever. Where do these voices even come from?
+
+    Of course I see the practical perils of pickup, but love is a risk worth taking!
+    """
+    stop music
+    play music "<from 5>/audio/cloud.wav"
+    scene menmi-apartment-door:
+        blur 24
     show delivery-guy at center:
         blur 0
 
     m "“Would you like to put that down...inside?”"
 
     u "“Ma'am, please just sign for the package.”"
+    show delivery-guy at center with vpunch:
+        blur 0
+    play sound "/audio/impact-slam.mp3"
 
     m "Ignored. What's *that* supposed to mean?"
 
@@ -140,13 +169,13 @@ label start:
 
         "He rejected you.":
             $ renpy.notify("+0 Self-Awareness")
-            c "You're so cringe. You don't even have a couch. Where's he gonna sit - the toilet?"
+            c "So cringe. You don't even have a couch. Were you planning on having him sit on the toilet?"
             $ self_awareness += 0
             jump no_self_awareness_tutorial
 
         "He's probably in a rush":
             $ renpy.notify("+5 Self-Awareness")
-            c "We're in Applecore City. People are busy. At least you shot your shot."
+            c "We're in Applecore City, girl. People are busy! You shot your shot and got what ya got. Onward!"
             $ self_awareness += 5
             jump self_awareness_tutorial
 
@@ -163,7 +192,7 @@ label no_self_awareness_tutorial:
                 xalign 0.5
             text "Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.{/size}"
             text "{b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.{/size}"
-            text "As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors while recognizing that it's normal to make mistakes.{/size}"
+            text "As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she can both gain critical insight into her own behaviors and maintain a healthy sense of self.{/size}"
     show screen no_self_awareness with dissolve
     pause
     hide screen no_self_awareness
@@ -181,10 +210,10 @@ label self_awareness_tutorial:
             box_wrap True
             text "{size=+10}{i}Self-Awareness & Conscience{/i}":
                 xalign 0.5
-                yalign 0.5
+                yalign 0.6
             text "   Nice job — you just gained some {b}Self-Awareness{/b}."
             text "   {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
-            text "   As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she gains insight into her own behaviors  while recognizing that it's normal to make mistakes."
+            text "   As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfullyso that she can both gain critical insight into her own behaviors and maintain a healthy sense of self."
     show screen self_awareness with dissolve
     pause
     hide screen self_awareness
@@ -285,6 +314,8 @@ label planner_tutorial:
     OK. Time to fill it out. Blank pages sure are intimidating.
 
     It's a good thing I know what my weekday schedule already looks like.
+
+    Morning workouts, work during the day, and party after-hours. I just have to drop the stickers into the right place.
     """
     scene gym-inside with dissolve
     m "Mornings are at the gym! Gotta start the day strong with my favorite workout — Spotting hot guys."
@@ -299,6 +330,9 @@ label planner_tutorial:
 
 label choosing_prince:
     scene applecore-city with dissolve
+    stop music fadeout 1.0
+    play music "<from 20>/audio/reaching-the-sky.mp3" fadein 0.5
+
     m """
     There! My perfect first week in the perfect city at the start of my perfect life — perfectly planned!
 
