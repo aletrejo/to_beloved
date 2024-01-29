@@ -2,6 +2,8 @@ label week_1_morning:
     scene image Solid("#ffc6ebff") with dissolve
     show text "{font=fredoka}{size=288}Week 1 \nMorning{/size}{/font}" at truecenter with dissolve
     pause
+
+    play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
     scene menmi-apartment-morning with dissolve
     m """
     *Yaaaaawwwnnn* Good morning to the first day of the rest of my life!
@@ -22,85 +24,156 @@ label gym:
     m """
     Wow, so this is Planet Figness?
 
-    Walking towards the water filling station, I can't help but notice how bright and new everything looks, and there are already so many people here early in the morning!
+    Walking towards the water filling station, I can't help but notice how bright and new everything looks.
 
-    Everyone here is ripped! I glance at my own figure in the mirror... and cringe.
+    There are already so many people here early in the morning!
 
-    Yikes! I gotta firm up these noodle arms!
+    It's so admirable! But...am I 'mirin *too* much?
 
-    Did I really think I looked *good* this morning?
     """
-    scene gym-inside:
-        blur 24
-    menu:
-        m "How do I feel about this?"
 
-        "I should've covered up more...":
-            c "Why didn't you wear a sweatshirt? You're not ready for this yet..."
+    play sound "/audio/squeaky-toy-sad.mp3"
+
+    m "Everyone here is built like raw chicken while I'm parading around with noodle arms."
+
+    stop music
+    play music "<from 13>/audio/cave-streams.mp3"
+    play sound "/audio/impact-slam.mp3"
+
+    scene gym-inside with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+
+    i "I can’t believe you thought you looked good this morning."
+
+    m """I'm suddenly hyper aware of being *perceived*. Cool sweat coats my palms.
+
+    Why am I doing this again? I don't belong here.
+
+    I can't even stand correctly. Oh gosh, am I breathing weird?
+
+    I'm spiraling.
+
+    Calm down, Menmi.
+
+    """
+
+    scene gym-inside with vpunch:
+        blur 24
+    stop music
+    play music "/audio/happily-ever-after.mp3"
+
+label choice_5:
+    menu:
+        m "How should I think about this?"
+
+        "I should’ve covered up more...":
+            c "Why didn't you wear your teenage regretshirt? You're not ready for this yet..."
         "Time to start pumping iron":
             $ renpy.notify("+5 Self-Awareness")
             $ self_awareness += 5
-            c "Everyone starts somewhere! I have to put in the work, do those reps, and get that bodyodyodyodody."
-        "I look great!":
-            c "You know what they say – fake it 'til you make it, hot stuff!"
-            m "I don't *feel* hot, though. I feel exposed. I can't deny *that*."
+            c "Everyone starts somewhere! Put in the work, rip out some reps, and get that bodyodyodyodody."
+
+        "I look...great?":
+            c "You know what they say – fake it ‘til you make it, hot stuff!"
+            m "I don't *feel* hot. I feel exposed. Maybe that was too far a leap."
+
         "Nobody's judging me":
-            c "You're being overly self-conscious. Nobody thinks about you as much as you think about you"
             $ renpy.notify("+10 Self-Awareness")
             $ self_awareness += 10
-            m "It's natural to feel self-conscious, but people are probably more preoccupied with their own problems than with me."
-    scene gym-inside with vpunch
-    m "All of a sudden, I'm jolted out of my thoughts by a harsh voice."
+            c "You're being overly self-conscious. Nobody thinks about you as much as you think about you."
+            m """
+            They don't know what they're missing out on!
+
+            But it's true...everybody's leading their own rich inner lives. (Is it privilege to assume everybody's inner lives are rich?) """
+
+
+
+label behemoth_incident:
+    scene gym-inside with hpunch
+
+    m "All of a sudden, I’m jolted out of my thoughts by a harsh voice."
     be "Hey, brat. Quit hogging the watering hole."
     m """
     !!! I spin around, coming face-to-chest with a massive dude with a jutting brow and barrel-big arms.
 
-    He's scowling at me like I'd snatched his wooly mammoth bone.
+    He’s scowling at me like I’d snatched his wooly mammoth bone.
 
-    I grab my water bottle and step out of the Behemoth's way
+    I grab my water bottle and step out of the Behemoth’s way.
 
-    “Oops! Sorry – all yours.”
+    “Oops! Sorry, it’s all yours.”
 
     The Behemoth grunts and slams his empty water bucket under the spout.
-    """
-    with hpunch
-    m "A few measly drops trickle out before the tap runs dry."
-    $ behemoth_name = "Behemoth"
-    be "“Tch. You used up all the water. Selfish brat.”"
-    m """
-    He turns toward me, leveling me with a beastly glare.
 
-    He's frightening, but I feel a little bad for emptying the cooler. It's not his fault that the water ran out.
+    """
+
+    scene gym-inside with vpunch
+    play sound "/audio/impact-slam.mp3"
+
+    m "A few measly drops trickle out before the tap runs dry."
+
+    $ behemoth_name = "Behemoth"
+
+    be "“Tch. You used up all the water. Selfish brat.”"
+
+
+
+    m """He turns toward me, leveling me with a beastly glare.
+
+    He’s frightening, but I feel a little bad for emptying the cooler. It’s not his fault that the water ran out.
 
     “If you want, I can pour you some of mine.”
 
-    I don't mind sharing what I have with him if it helps.
-    """
-    be "“...Sure”"
-    m """
-    I release the breath I didn't know I'd been holding in.
+    I don’t mind sharing what I have with him if it helps.
 
-    “Great! I'm glad we could resolve-”
     """
+
+    be "“...Sure.”"
+
+    m """
+
+    I release the breath I didn’t know I’d been holding in.
+
+    “Great! I’m glad we could resolve-” """
+
     be "“But I don't want it in my bottle.”"
+
+    scene gym-inside with vpunch
+    stop music fadeout 1.5
+    play music "<from 15>/audio/cave-streams.mp3" fadein 1.0
+
     m """
-    A wide grin creeps its way across his face.
+    A wide grin creeps its way across his face. Predatory.
 
-    I don't like the way he's looking at me.
+    I don’t like the way he’s looking at me.
 
-    “Wh-what do you mean?”
+    “What do you mean?” I'm trying to keep my voice level.
+
     """
+
     be "“I want to drink from yours.”"
-    with hpunch
+
+    scene gym-inside with vpunch
+    play sound "/audio/impact-slam.mp3"
+
     m """
-    “M-mine?” Excuse me? Is this total stranger really asking to put his mouth on *my* water bottle?
+
+    A shudder runs through me.
+
+    “M-mine?” Excuse me? Is this total stranger really asking to put his mouth on *my* Stanlychee water bottle?
 
     The thought of his viscous saliva slobbering over the mouth of my bottle makes my stomach churn...
 
-    Does he know that he's basically asking for an indirect kiss?
+    Does he know that he’s basically asking for an indirect kiss?
+
     """
-    be "“Well? It's just a drink...are you going to be a good girl or what?”"
-    m "Take it easy, Menmi. Don't want to barf at the gym on your first day."
+
+    be "“Well? It’s just a drink...are you going to be a good girl or what?”"
+
+    m """ What a nauseating man.
+
+    Take it easy, Menmi. Don’t want to barf at the gym on your first day.
+
+    """
 
 label choice_6:
     menu:
@@ -125,6 +198,7 @@ label choice_6:
         "Ignore him and walk away":
             c "Any further engagement with this loser will only provoke him. Let's go."
             m "Easier said than done...it's not like I can just hop over this human wall."
+
 label joule_introduction:
     m "It's like there's no right answer. This feeling of powerlessness is so frustrating..."
     j "“Leave her alone.”"
