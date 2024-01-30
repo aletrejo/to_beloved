@@ -3,6 +3,8 @@ label week_1_day:
     show text "{font=fredoka}{size=288}Week 1 \nDay{/size}{/font}" at truecenter with dissolve
     pause
     scene office-inside with dissolve
+    play sound "/audio/office-sounds.mp3"
+    play music "<from 54>/audio/happily-ever-after.mp3" fadein 1.0
     m """
     Phew! I thought the gym was a workout, but my first day at the office makes it look like a promenade through a Victorian garden.
 
@@ -10,24 +12,45 @@ label week_1_day:
 
     It seems that business is booming for the company, and it's all hands on deck.
 
-    Literally. They assigned me slides that are due tonight...
+    Literally. The slides I was assigned are due *tonight*...
 
-    Truth be told, I'm pretty nervous about finishing them.
+    To be honest, I'm pretty nervous about finishing them in time.
 
     It doesn't help that I'm in this meeting instead of working on them...
     """
     if self_awareness <=20:
-        c "They're going to realize that hiring you was a mistake."
+        stop music
+        play sound "/audio/impact-slam.mp3"
+        scene office-inside with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
 
+        i "They're going to realize that hiring you was a mistake."
+        play music "/audio/happily-ever-after.mp3"
+
+    scene office-inside
     m "I haven't even met my boss yet."
     m "That reminds me, I should be proactive about introducing myself to people!"
+
+    play sound "/audio/chair-sit.mp3"
     m "Ah! This person who just took the seat next to me looks like they might be friendly."
     show allie neutral with dissolve
     if self_awareness <=20:
-        c "Don't say anything weird. You want them to like you.."
-    m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring gifts?”"
+        stop music
+        play sound "/audio/impact-slam.mp3"
+        scene office-inside with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
+        i "Don't say anything weird. You want them to like you.."
+        play music "<from 9>/audio/happily-ever-after.mp3"
+        scene office-inside
+
+    m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring anything?”"
     m "To my relief, they reciprocate my smile."
-    al "“Yeah, I'm giving a crap just by showing up. Name’s Allie. I make stuff look good. Well, the graphics anyway, not the people — that's your bag.“"
+    al """
+    “Yeah, I'm giving a crap just by showing up.”
+
+    “Name’s Allie.”
+
+    “I make stuff look good. Well, the graphics anyway, not the people — that's your bag.”"""
     al "Cool of you to introduce yourself. Most folks just try to skate by on icebreakers."
     m "“Tell me about it — I feel like I spend more time thinking about what to say than listening to other people's responses.”"
     al "Ha! And by the end of it, you haven't gotten to know anyone, but it's *great* that you made up a name for your first car."
@@ -36,17 +59,25 @@ label week_1_day:
 
     Allie laughs.
 
-    Something tells me we're going to get along like two peas in pea salad.
+    Nice, we're going to get along like two peas in pea salad.
 
     Somebody hushes us as the lights dim.
     """
+    stop sound
+    stop music fadeout 2.0
+
 label devan_introduction:
     scene office-inside-dark with dissolve
+
     m "I try to look attentive as a slightly harried-looking human resources officer presents a slide on employee retention."
     "Presenter" "So as you can see from this graph, although we're seeing a rise in new business, our current hiring rate isn't keeping pace with the work."
     "Presenter" "Everyone is taking on more work, and people are burning out because of it. If we don't do something, we'll see a significant drop in retention."
     m "Yikes! That explains the accelerated waterboarding, um, onboarding, they put me through."
     "Presenter" "Our proposed solution is to solicit more college graduates. They're fresh and tend to want to prove themselves. More eager, less ego."
+
+    stop music fadeout 1.0
+    play music "/audio/devs-theme.mp3"
+
     d "And that's a boon to you, is it?"
     m "I look around to see who the smooth baritone belongs to and see a statuesque man standing in the back with his arms folded."
     show dev neutral with dissolve

@@ -188,11 +188,15 @@ label no_self_awareness_tutorial:
             yalign 0.5
             xmaximum 1000
             box_wrap True
-            text "{size=+10}{i}Self-Awareness & Conscience{/i}":
+            text "{size=+10}{i}Self-Awareness & Conscience{/size}{/i}":
                 xalign 0.5
-            text "Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.{/size}"
-            text "{b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.{/size}"
-            text "As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she can both gain critical insight into her own behaviors and maintain a healthy sense of self.{/size}"
+            text """
+            {size=-5}Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.
+
+            {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
+
+            As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she can both gain critical insight into her own behaviors and maintain a healthy sense of self.
+            {/size}"""
     show screen no_self_awareness with dissolve
     pause
     hide screen no_self_awareness
@@ -210,10 +214,16 @@ label self_awareness_tutorial:
             box_wrap True
             text "{size=+10}{i}Self-Awareness & Conscience{/i}":
                 xalign 0.5
-                yalign 0.6
-            text "   Nice job — you just gained some {b}Self-Awareness{/b}."
-            text "   {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
-            text "   As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfullyso that she can both gain critical insight into her own behaviors and maintain a healthy sense of self."
+                yalign 0.5
+            text """
+            {size=-5}
+            Nice job — you just gained some {b}Self-Awareness{/b}.
+
+            {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
+
+            As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she can both gain critical insight into her own behaviors and maintain a healthy sense of self.
+            {/size}
+            """
     show screen self_awareness with dissolve
     pause
     hide screen self_awareness
