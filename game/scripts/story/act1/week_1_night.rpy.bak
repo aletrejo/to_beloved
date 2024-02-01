@@ -122,7 +122,7 @@ label choice_9:
             """
             m "I'm getting too into my own head over this. I need to snap out of it."
             m "“Hey, Naj! Over here!”"
-            call choice_9a from _call_choice_9a
+            call choice_9a
             jump after_choice_9
         "Wait for Naji to come over":
             c "Don't get in his way. He'll see you eventually. Wait for him."
@@ -131,12 +131,12 @@ label choice_9:
 
             Regular people wouldn't think twice about this. Why am I so awkward?
             """
-            call choice_9bc from _call_choice_9bc
+            call choice_9bc
             jump after_choice_9
         "Don't bother him":
             c "He's clearly busy in his exciting new city life. Why would he concern himself with a nobody from his hometown?"
             m "I'd better not bother him..."
-            call choice_9bc from _call_choice_9bc_1
+            call choice_9bc
             jump after_choice_9
 
 label choice_9a:

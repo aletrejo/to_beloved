@@ -209,7 +209,7 @@ label choice_8:
             """
             d "“I see. Well, I commend your dedication, but don't overdo it. Take care, Menmi.”"
             hide dev neutral
-            call after_choice_8 from _call_after_choice_8
+            call after_choice_8
             jump choice_8a
         "Accept his help":
             $ renpy.notify("+10 Self-Awareness")
@@ -232,7 +232,7 @@ label choice_8:
             """
             hide dev neutral
             m "Whew! That worked out better than I thought."
-            call after_choice_8 from _call_after_choice_8_1
+            call after_choice_8
             jump choice_8b
 label after_choice_8:
     stop music fadeout 1.0
