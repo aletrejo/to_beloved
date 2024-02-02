@@ -271,6 +271,6 @@ label choice_8b:
 
     It's amazing how much more focused and creative I feel when I'm not being pressured by a deadline.
 
-    At the end of the day, I'm ready to go out! I'm excited to see my friend Naji at his bar.
+    At the end of the day, I'm ready to go out! I'm excited to see my friend Naji, who's a bartender at a hotspot downtown.
     """
     jump week_1_night
