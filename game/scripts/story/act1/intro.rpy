@@ -15,10 +15,10 @@ define n = Character("[naji_name]", color='#E59A34',  image="naji")
 # name of the character.
 
 define m = Character("Menmi", color='#F52088')
-define c = Character("Conscience", color='#750F41')
+define c = Character("Conscience", color='#DB694F')
 define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
 define al = Character("Allie", color="#66b704", image="allie")
-define i = Character("Intrusive Inner Voice", color='#024059')
+define i = Character("Intrusive Inner Voice", color='#023F59')
 
 # Global variables
 default self_awareness = 0
@@ -98,6 +98,8 @@ label start:
     He's kind of hot. I can't help but notice how big his hands look wrapped around that tiny box.
 
     I wonder how they'd look around my...
+
+    hand.
 
     Oooh, Menmi! Don't get “carried away” by the UPS Man!
     """
@@ -181,18 +183,20 @@ label start:
 
 label no_self_awareness_tutorial:
     window hide
-    show tutorial box
+    show tutorial-box-awareness
     screen no_self_awareness():
         vbox:
             xalign 0.5
             yalign 0.5
             xmaximum 1000
             box_wrap True
-            text "{size=+10}{i}Self-Awareness & Conscience{/i}":
-                xalign 0.5
-            text "Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.{/size}"
-            text "{b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.{/size}"
-            text "As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she can both gain critical insight into her own behaviors and maintain a healthy sense of self.{/size}"
+            text """
+            {size=-5}Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.
+
+            {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.
+
+            As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she can both gain critical insight into her own behaviors and maintain a healthy sense of self.
+            {/size}"""
     show screen no_self_awareness with dissolve
     pause
     hide screen no_self_awareness
@@ -201,19 +205,22 @@ label no_self_awareness_tutorial:
 
 label self_awareness_tutorial:
     window hide
-    show tutorial box
+    show tutorial-box-awareness
     screen self_awareness():
         vbox:
             xalign 0.5
             yalign 0.5
             xmaximum 1000
             box_wrap True
-            text "{size=+10}{i}Self-Awareness & Conscience{/i}":
-                xalign 0.5
-                yalign 0.6
-            text "   Nice job — you just gained some {b}Self-Awareness{/b}."
-            text "   {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her."
-            text "   As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfullyso that she can both gain critical insight into her own behaviors and maintain a healthy sense of self."
+            text """
+            {size=-5}
+            Nice job — you just gained some {b}Self-Awareness{/b}.
+
+            {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.
+
+            As {b}Menmi's Conscience{/b}, you can not only help her make sound decisions, but process events mindfully and kindfully so that she can both gain critical insight into her own behaviors and maintain a healthy sense of self.
+            {/size}
+            """
     show screen self_awareness with dissolve
     pause
     hide screen self_awareness

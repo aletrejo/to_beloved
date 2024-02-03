@@ -252,21 +252,21 @@ label naji_bathtime_1:
 label naji_bathtime_1_mid_result:
     menu:
         "I probably wouldn't have a chance, but there is something romantic about falling in love with your best friend...":
-            call after_bathtime_1
+            call after_bathtime_1 from _call_after_bathtime_1
             scene menmi-apartment-night with dissolve
             m "I'm still working through my thoughts and feelings, but I've gotten some clarity. It's nice to slow down every now and then."
             jump menmi_after_bath
 label naji_bathtime_1_good_result:
     menu:
         "Naji's grown with time. I'm curious about what else about him has changed...":
-            call after_bathtime_1
+            call after_bathtime_1 from _call_after_bathtime_1_1
             scene menmi-apartment-night with dissolve
             m "Things are starting to feel a little clearer. I'm glad I took the time to reflect."
             jump menmi_after_bath
 label naji_bathtime_1_best_result:
     menu:
         "Why do I feel so self-conscious around Naji now that he's different from how I remember? Maybe if I talk to him more, I can sort out my feelings.":
-            call after_bathtime_1
+            call after_bathtime_1 from _call_after_bathtime_1_2
             scene menmi-apartment-night with dissolve
             m "What a rejuvenating bath! I feel completely cleansed and ready to take on whatever's ahead."
             jump menmi_after_bath

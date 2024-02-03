@@ -84,7 +84,7 @@ label choice_5:
             m """
             They don't know what they're missing out on!
 
-            But it's true...everybody's leading their own rich inner lives. (Is it privilege to assume everybody's inner lives are rich?) """
+            But it's true...everybody's leading their own rich inner lives (is it privileged to assume everybody's inner lives are rich?) """
 
 
 
@@ -105,17 +105,16 @@ label behemoth_incident:
     The Behemoth grunts and slams his empty water bucket under the spout.
 
     """
-
+    stop music fadeout 1.5
     scene gym-inside with vpunch
     play sound "/audio/impact-slam.mp3"
+    play music "<from 15>/audio/cave-streams.mp3" fadein 1.0
 
     m "A few measly drops trickle out before the tap runs dry."
 
     $ behemoth_name = "Behemoth"
 
     be "“Tch. You used up all the water. Selfish brat.”"
-
-
 
     m """He turns toward me, leveling me with a beastly glare.
 
@@ -138,11 +137,11 @@ label behemoth_incident:
     be "“But I don't want it in my bottle.”"
 
     scene gym-inside with vpunch
-    stop music fadeout 1.5
-    play music "<from 15>/audio/cave-streams.mp3" fadein 1.0
+
+    play sound "/audio/monster-growl.mp3"
+    m "A wide grin creeps its way across his face. Predatory."
 
     m """
-    A wide grin creeps its way across his face. Predatory.
 
     I don’t like the way he’s looking at me.
 
@@ -152,8 +151,9 @@ label behemoth_incident:
 
     be "“I want to drink from yours.”"
 
-    scene gym-inside with vpunch
     play sound "/audio/impact-slam.mp3"
+    scene gym-inside with vpunch
+
 
     m """
 
@@ -185,7 +185,7 @@ label choice_6:
             c "Did you do something to deserve this?"
         "Politely, but firmly decline":
             c "Put him in his place with a polite, but firm “No.” There's no need to engage with this guy anymore than you already have."
-            m "She's right, but why does doing that feel so scary? The way he's staring me down...I don't know, I feel like something bad's going to happen if I make him mad..."
+            m "I know that that's the right course of action, but why does it feel so scary? The way he’s staring me down...I don’t know, I feel like something bad’s going to happen if I make him mad..."
         "If he wants a tongue-lashing, I'll give it to him":
             c "Don't let him talk to you like that! Who cares if he's humongous? You can take him!"
             m "“I don't know how you can be so thirsty when you're clearly drinking your own Kool-Aid.”"
@@ -199,11 +199,29 @@ label choice_6:
             c "Any further engagement with this loser will only provoke him. Let's go."
             m "Easier said than done...it's not like I can just hop over this human wall."
 
+play sound "/audio/impact-slam.mp3"
+scene gym-inside with vpunch:
+    matrixcolor InvertMatrix(value=1.0)
+
+stop music fadeout 2.0
 label joule_introduction:
-    m "It's like there's no right answer. This feeling of powerlessness is so frustrating..."
+    play sound "/audio/heartbeat-fast.mp3"
+    m """
+    It's like there's no right answer. This feeling of powerlessness is so frustrating...
+
+    What should I do? Fight? Run? Call the manager?
+
+    It's hard to think over the relentless thrumming of my heart."""
+
+    stop sound fadeout 1.0
+
+    scene gym-inside with hpunch
+    play music "<from 22>/audio/joules-theme.mp3" volume 0.7
+
+
     j "“Leave her alone.”"
     m "Huh? Who said that?"
-    show joule neutral with dissolve
+    show joule-neutral with dissolve
     j "“Hey, Beast Mode. Can I help you with a Cool Down routine?”"
     be "“What did you say, Shrimp-Fried Rice?”"
     m """
@@ -211,6 +229,8 @@ label joule_introduction:
 
     He's smaller than the Behemoth, but there's no fear at all in his defiant posture.
     """
+    show joule-annoyed
+
     j "“She's clearly uncomfortable. Is that any way for a real man to act?”"
     m """
     The Behemoth growls, veins rising in his biceps like a mountain range.
@@ -219,6 +239,10 @@ label joule_introduction:
     """
     be "“Tch. Talk about crap service. What kind of shitty gym runs out of water on paying customers?”"
     j "“I've already alerted the appropriate personnel. This station should be refilled within the next few minutes.”"
+
+    hide joule-annoyed
+    show joule-smile
+
     j "“Thanks for your patience, sir.”"
     m """
     His tone is professionally polite, but his smirk says otherwise...
@@ -227,23 +251,32 @@ label joule_introduction:
 
     The tension in my shoulders releases.
     """
-    j "You OK? My name's Joule. I'm a trainer here."
+
+    hide joule-smile
+    show joule-neutral
+
+    j "“You OK? My name's Joule. I'm a trainer here.”"
     $ joule_name = "Joule"
     m "“Yeah, thanks for that.”"
-    j "No worries, but could I give you a piece of advice?"
+    j "“No worries, but could I give you a piece of advice?”"
     m "I tense up, bracing myself for the reprimand."
     m "“Sure, what's up?”, hoping I sound as cool as he does."
-    j "You should be more careful. He put you in a really dangerous position. Judging by your build, there's no way you could have taken him if things got physical."
+
+    show joule-annoyed
+    j "“You should be more careful. He put you in a really dangerous position. Judging by your build, there's no way you could have taken him if things got physical.”"
     m """
     He's not *wrong*, but the way he's scolding me rubs me the wrong way.
 
     Sure, this guy just "saved" me, but he can't be blaming *me* for this, right?
     """
+
+    stop music fadeout 15.0
+
 label choice_7:
     menu:
         m "How should I respond?"
 
-        "Speak out":
+        "Speak up":
             $ renpy.notify("+10 Self-Awareness")
             $ self_awareness += 10
             c "Stand up for yourself! That other dude was dangerous, but this guy seems like he'd be willing to hear you out."
@@ -254,10 +287,16 @@ label choice_7:
 
             "It wasn't my fault! I was just minding my own business when he approached me."
 
-            "It shouldn't be on the victim to change their behavior here! There was nothing I could say or do that would level out the power imbalance."
+            "It shouldn't be on the victim to change their behavior here! There was nothing I could say or do that would level out the power imbalance."""
 
-            I can see him trying to lift this concept...mentally.
-            """
+            hide joule-annoyed
+            show joule-thinking
+
+            m "I can see him trying to lift this concept...mentally."
+
+            hide joule-thinking
+            show joule-neutral
+
             j "...You're right. I'm sorry that I implied that it was on you to change. That's not fair to you."
 
             m "It's not ideal, but his apology makes me feel slightly better about the situation."
@@ -277,10 +316,16 @@ label choice_7:
             c "Uncomfy feelings?! In *my* body? Disengage."
             m "I try to walk away, but he grabs my hand."
 label joule_response:
-    j "You were scared, weren't you? I'd be, too"
+    play music "<from 21>/audio/reaching-the-sky.mp3" fadein 1.0
+    hide joule-annoyed
+    show joule-sad
+    j "“You were scared, weren't you? I'd be, too”"
     m "The look in his eyes...it's kind of sad."
     m "Something tells me this guy is just trying to help."
-    j "I'm not trying to shill my services or anything, honestly, but if you ever want to do something about your strength, just give me a ring."
+
+    hide joule-sad
+    show joule-neutral
+    j "“I'm not trying to shill my services or anything, honestly, but if you ever want to do something about your strength, just give me a ring.”"
     m """
     He pulls out a business card and hands it to me. There's a black and white photo of him on it, the hard lighting capturing every line and contour of his chiseled build.
 
@@ -293,13 +338,15 @@ label joule_response:
     c "Your inner feminist wants you to get swole and squat punch creeps."
     m "Thanks. I'll think about it."
 
-    j "Girls should know how to protect themselves...especially the pretty ones"
+    j "“Girls should know how to protect themselves...especially the pretty ones.”"
     hide joule neutral with dissolve
     scene gym-inside with dissolve:
         blur 24
     m """
-    Against my better instincts, my heart is racing a mile a minute at his compliment.
+    Against my better instincts, my heart is racing a mile a minute.
 
     Looks like he's helping me with cardio already.
     """
+
+    stop music fadeout 5.0
     jump week_1_day

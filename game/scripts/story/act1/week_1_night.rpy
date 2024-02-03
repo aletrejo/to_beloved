@@ -2,49 +2,80 @@ label week_1_night:
     scene image Solid("#ffc6ebff") with fade
     show text "{font=fredoka}{size=288}Week 1 \nNight{/size}{/font}" at truecenter with dissolve
     pause
+
+    play music "<from 9>/audio/happily-ever-after.mp3" fadein 1.0
     scene city-night with dissolve
     m "“Aahhh, it's finally over! Work is finally over!”"
-    show allie neutral with dissolve
+    show allie-smile with dissolve
     al "“Time to drink booze, let loose.”"
     m "“Yes, please! There's a place I've been meaning to check out. One of my friends from home is a bartender there!”"
     al "“You don't say? Sounds like an opportunity for free drinks. Let's go!”"
 
 label naji_introduction:
     scene lounge-outside with dissolve
-    show allie neutral at right with dissolve
+    show allie-neutral at right with dissolve
     m "“I think this is it – The William Collins”"
     al "“Ooh la la...a cocktail lounge. You've got some fancy friends.”"
     m """
-    “Haha Naji's just a regular guy! We grew up living next door to each other. He's the most unpretentious person you'll ever meet.”
+    “Haha Naji's just a regular guy! We were neighbors growing up.”
+
+    “He's the most unpretentious person you'll ever meet.”
 
     Although hanging out at an upscale establishment certainly improves my chances of meeting a dashing gentleman who'll sweep me off my feet...
     """
-    c "You've gotta be sweet to get the sugar, baby."
-    m """
-    I can be sweet! I'll be anything if it snags me a gentleman.
 
+    if self_awareness <=30:
+        stop music
+        play sound "/audio/impact-slam.mp3"
+        play music "<from 13>/audio/cave-streams.mp3"
+        scene lounge-outside with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
+        i "If you don't trip over your tongue first."
+        m "I can pronounciate words just fine!"
+        play music "<from 20>/audio/happily-ever-after.mp3"
+        scene lounge-outside
+        show allie-neutral at right
+
+    m """
     I hold out my hand to Allie and bow obsequiously.
 
     “Shall we?”
     """
     al "“Let's.”"
     scene lounge-inside with dissolve
+    stop music fadeout 2.0
+
     m "“Wow, look at this place. Doesn't it just scream ‘romance’?”"
+
+    play music "<from 9>/audio/monkey-business.mp3"
+
     "Rowdy Patron" "“Oh yeah? Just try to touch me, tough guy. I freakin' dare ya!”"
     "Unruly Guest" "“I wouldn't touch you if you were a Kopenhagen mink coat!”"
+
+    show allie-neutral at right with dissolve
+
     al "“It's screaming something, that's for sure.”"
+
+    hide allie-neutral with dissolve
+
     m "What's going on? A fight?"
     "Unruly Guest" "“I saw you knock over my drink on purpose! I demand payment for the cleaning of my Louboutins!”"
     "Rowdy Patron" "“Looking down on me, eh? I'll have you know I own SEVEN Bouloutins.”"
     "Unruly Guest" "“I don't care how many Louboutins you own, just give me my money!”"
+
+    stop music fadeout 5.0
+
     m """
     A crowd is gathering around the ruckus, servers and customers looking on in transfixed horror.
 
     Someone's got to do something.
 
-    Before I can even start to formulate a plan, a firm, familiar voice calls out.
+    Before I can even start to formulate a plan, a firm voice calls out.
     """
-    show naji bar neutral with dissolve
+
+    play music "<from 50>/audio/najis-theme.mp3"
+
+    show naji-bar-neutral with dissolve
     n "“Good evening, gentlemen.”"
     m """
     Naji!
@@ -53,36 +84,57 @@ label naji_introduction:
     """
     $ naji_name = "Naji"
     n """
-    “If you don't mind me interjecting, I saw the entire incident from the bar.”
+    “If you don't mind me cutting in, I saw the whole thing from the bar.”
 
-    “I'm sorry that your new shoes were caught in an accident, sir. Those were a gift from your late nephew, if I recall correctly?”
+    “I'm sorry that your new shoes were caught in an accident, sir. Those were a gift from your late nephew, weren't they?”
     """
     "Unruly Guest" "“Y-yes, he was always on the cutting edge of fashion, you know? A little hype bee, that one.”"
+
+    hide naji-bar-neutral
+    show naji-bar-frown
+
     n "“Hype beast,” Naji clarifies."
     "Unruly Guest" "“Poor boy, he was strangled by his own shoelaces when they got caught in an airplane turbine. Flown so young.”"
     m "“Why was he wearing shoelaces around his neck?”"
+
+    show allie-neutral at right with easeinright
+
     al "“Neckshoeties. So hot right now.”"
+
+    hide allie-neutral at right with easeoutright
+
     "Unruly Guest" "“I'm surprised that you remember that, Naji. I told you that a while ago.”"
+
+    hide naji-bar-frown
+    show naji-bar-smile
+
     n """
     “It's part of a bartender's job to listen to their customers.”
 
-    “And from my observations, I can attest that this gentleman did not spill your drink intentionally. He was picking up your wallet and accidentally knocked your drink over on the way up.”
+    “From what I observed, it was an accident. He was picking up your wallet and accidentally knocked your drink over on the way up.”
 
-    “It must be frustrating to have your intentions misunderstood! You know what they say – ‘No good deed goes unpunished’. Still, I hope we can right this wrong together.”
+    “You know what they say – ‘No good deed goes unpunished’. It must have been frustrating to be wrongly accused, but we can talk this out.”
     """
+    hide naji-bar-smile
+    show naji-bar-neutral
+
     "Rowdy Patron" "“Yes! That's exactly what happened. Thank you. Here, your wallet.”"
     "Unruly Guest" "“!!! I hadn't even noticed I'd dropped it. I'm so embarrassed – I was blaming you when this whole thing was caused by my own carelessness...”"
-    "Rowdy Patron" "“That's alright, man. I'm sorry I got heated. It's just that...everybody always assumes I'm up to no good just because of my face. I just get defensive, is all.”"
+    "Rowdy Patron" """
+    “That's alright, man. I'm sorry I got heated. It's just that...everybody always assumes I'm up to no good just because of my face.
+    I just get defensive, is all.”"""
     "Unruly Guest" "“No offense taken. And for what it's worth...there's nothing wrong with your face.”"
     "Rowdy Patron" "“Hey...you wanna go somewhere? Grab a drink or something?”"
     "Unruly Guest" "“I-I've already had a couple.”"
     "Rowdy Patron" "“Not one on me, you haven't.”"
+
+    hide naji-bar-neutral with dissolve
+
     m "I can hardly believe it, but the two walk out smiling."
-    hide naji bar neutral with dissolve
-    show allie neutral with dissolve
+    show allie-neutral with dissolve
     al "“Wow...that guy's got a way with people.”"
     m "Is that guy...really my friend?"
-    hide allie neutral with dissolve
+    hide allie-neutral with dissolve
     m """
     Allie's not the only one who's impressed. Several of the bar patrons and staff crowd around Naji, patting him on the back and showering him with praise.
 
@@ -92,17 +144,23 @@ label naji_introduction:
     "Waitress" "“You don't even know. He's been picking up shifts, settling disputes, even helping folks out with their personal errands. We all love him here!”"
     "Customer" "“There's no way a guy like that's single.”"
     "Waitress" "“You'd be surprised. I've never seen him bring anyone around.”"
+
+    stop music fadeout 2.0
+
     m """
     It feels a little strange to hear about Naji from their perspective.
 
-    I mean, this is the kid who ate leaves with me off of our neighbors' bushes because I told him that's where salad came from.
+    I mean, this is the kid who ate leaves with me off of our neighbors' bushes because I told him that's where salad came from."""
 
-    I've never thought about him like that before...
-    """
+    play music "<from 69>audio/cave-streams.mp3" fadein 1.0
+
+    m "I've never thought about him like that before..."
+
+
     scene lounge-inside:
         blur 24
     m """
-    I look down at myself, suddenly hyper-aware of the salad dressing stain from lunch on my Ham Taylor blouse.
+    I look down at myself, suddenly hyper-aware of the coffee stain on my Ham Taylor blouse.
 
     I'm no hype bee.
     """
@@ -120,42 +178,53 @@ label choice_9:
 
             He's been your friend for...how long have you been avoiding salads?
             """
+            stop music fadeout 2.0
+            play music "<from 16>/audio/najis-theme.mp3" fadein 1.0
             m "I'm getting too into my own head over this. I need to snap out of it."
             m "“Hey, Naj! Over here!”"
-            call choice_9a
+            call choice_9a from _call_choice_9a
             jump after_choice_9
         "Wait for Naji to come over":
             c "Don't get in his way. He'll see you eventually. Wait for him."
             m """
             But I've already seen *him*. Why do I feel so weird about calling out to him?
-
             Regular people wouldn't think twice about this. Why am I so awkward?
             """
-            call choice_9bc
+            call choice_9bc from _call_choice_9bc
             jump after_choice_9
         "Don't bother him":
             c "He's clearly busy in his exciting new city life. Why would he concern himself with a nobody from his hometown?"
             m "I'd better not bother him..."
-            call choice_9bc
+            call choice_9bc from _call_choice_9bc_1
             jump after_choice_9
 
 label choice_9a:
     scene lounge-inside with dissolve
-    show naji bar neutral with dissolve
+    show naji-bar-neutral with dissolve
     m "Naji turns around, expression transforming as he registers my voice."
+    hide naji-bar-neutral
+    show naji-bar-smile
     n "“Menmi! You're here!”"
+    hide naji-bar-smile
+    show naji-bar-neutral
     m """
     His face is more angular, but his eyes shine the same way they did when he used to peek out at me from behind the curtains of the house across the street.
 
     “Nice negotiation skills, bud. Where were those when we got grounded for tattooing my parents' couch?”
     """
+
+    hide naji-bar-neutral
+    show naji-bar-laugh
+
     n "“In our defense, it had arms”"
     m "“So did those hooligans who were just here. I thought I was about to witness my first city bar brawl.”"
     return
 
 label choice_9bc:
     scene lounge-inside with dissolve
-    show allie neutral with dissolve
+    show allie-neutral with dissolve
+    stop music fadeout 2.0
+    play music "/audio/najis-theme.mp3"
     m """
     I try to chat with Allie about work, but their eyes remain trained on Naji.
 
@@ -164,15 +233,15 @@ label choice_9bc:
     Allie holds out their hand, enthusiastically waving over the bar.
     """
     al "“Yoo-hoo! Can we get some service down here?”"
-    hide allie neutral with dissolve
-    show naji bar neutral with dissolve
-    n "“Of course! Thanks for waiting–"
-    n "Menmi? How long have you been here?”"
+    hide allie-neutral with dissolve
+    show naji-bar-smile with dissolve
+    n "“Of course! Thanks for waiting–”"
+    n "“Menmi? How long have you been here?”"
     m "Naji blinks at me. He seems surprised."
     n "“Why didn't you say ‘hi’?”"
     m "“Ah, I didn't want to disturb you while you were...busy”"
     if self_awareness <=30:
-        c "You are so awkward."
+        i "You are so awkward."
     return
 
 label after_choice_9:
