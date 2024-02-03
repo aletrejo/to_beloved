@@ -95,6 +95,7 @@ label naji_introduction:
 
     n "“Hype beast,” Naji clarifies."
     "Unruly Guest" "“Poor boy, he was strangled by his own shoelaces when they got caught in an airplane turbine. Flown so young.”"
+    n "“So fly.”"
     m "“Why was he wearing shoelaces around his neck?”"
 
     show allie-neutral at right with easeinright
@@ -111,7 +112,7 @@ label naji_introduction:
     n """
     “It's part of a bartender's job to listen to their customers.”
 
-    “From what I observed, it was an accident. He was picking up your wallet and accidentally knocked your drink over on the way up.”
+    “And from what I observed about the incident at hand, it was an accident. This fellow was picking up your wallet and knocked your drink over on the way up.”
 
     “You know what they say – ‘No good deed goes unpunished’. It must have been frustrating to be wrongly accused, but we can talk this out.”
     """
@@ -181,19 +182,25 @@ label choice_9:
             stop music fadeout 2.0
             play music "<from 16>/audio/najis-theme.mp3" fadein 1.0
             m "I'm getting too into my own head over this. I need to snap out of it."
+            $ renpy.notify("+5 Self-Awareness")
+            $ self_awareness += 5
+            $ naji_relationship += 5
             m "“Hey, Naj! Over here!”"
             call choice_9a from _call_choice_9a
             jump after_choice_9
         "Wait for Naji to come over":
             c "Don't get in his way. He'll see you eventually. Wait for him."
             m """
-            But I've already seen *him*. Why do I feel so weird about calling out to him?
-            Regular people wouldn't think twice about this. Why am I so awkward?
+            And just...stare at him until he comes over? Very cool, very suave, Menmi.
+
+            Why do I feel so weird about calling out to him?
+
+            Normal people wouldn't think twice about this. Why am I so *painfully* awkward?
             """
             call choice_9bc from _call_choice_9bc
             jump after_choice_9
         "Don't bother him":
-            c "He's clearly busy in his exciting new city life. Why would he concern himself with a nobody from his hometown?"
+            c "He's busy. What makes you think you're worthy of his attention right now?"
             m "I'd better not bother him..."
             call choice_9bc from _call_choice_9bc_1
             jump after_choice_9
@@ -228,7 +235,7 @@ label choice_9bc:
     m """
     I try to chat with Allie about work, but their eyes remain trained on Naji.
 
-    I don't know why I feel sad about that. Who wouldn't be transfixed by him?
+    I don't know why I feel sad about that. Who wouldn't be in awe of him?
 
     Allie holds out their hand, enthusiastically waving over the bar.
     """
@@ -236,15 +243,19 @@ label choice_9bc:
     hide allie-neutral with dissolve
     show naji-bar-smile with dissolve
     n "“Of course! Thanks for waiting–”"
+    hide naji-bar-smile
+    show naji-bar-surprise
     n "“Menmi? How long have you been here?”"
     m "Naji blinks at me. He seems surprised."
     n "“Why didn't you say ‘hi’?”"
     m "“Ah, I didn't want to disturb you while you were...busy”"
     if self_awareness <=30:
-        i "You are so awkward."
+        i "Way to be weird."
     return
 
 label after_choice_9:
+    hide naji-bar-laugh
+    show naji-bar-neutral
     n "“Oh, that? It wasn't a big deal.”"
     n "“You'd do the same.”"
     m """
@@ -253,101 +264,182 @@ label after_choice_9:
     “Naj. This is my friend, Allie. New friend, meet old friend. Old friend, new friend.”
     """
     al "“It's an honor to be served a cosmo by a local hero.”"
+    m "Smooth way to order a drink."
+
+    hide naji-bar-neutral
+    show naji-bar-smile
+
     n "“Ha - copy that.”"
     m "Naji's cheeks dimple as he smiles to himself and makes Allie their drink."
     n "“Enough about me. How have you been, Menmi? Today was your first day of city life, wasn't it?”"
-    m """
-    “It's been eventful!”
+    m "“It's been eventful!”"
 
-    “A personal trainer gave me his card, and my mysterious boss might moonlight as a model.”
-    """
+    hide naji-bar-smile
+    show naji-bar-surprise
+
+    m "“A personal trainer gave me his card, and my mysterious boss might moonlight as a model.”"
     al "“It's true — we've seen him lunch with Heidi Plum.”"
     m "I pretend not to notice Naji fumble the tumbler he's pouring out of."
-    n """
-    “Haha...that's great. I'm glad you've met so many...prospects on your first day."
 
-    "You are still looking for a boyfriend, I presume?"
-    """
-    al "“Oh? Are you looking for your special someone, Menmi?”"
-    n """
-    “Menmi's been in love with Love before the word 'puberty' even entered our vocabulary.”
+    hide naji-bar-surprise
+    show naji-bar-smile
 
-    “Do you know how many Fishney Princess movies I've had to sit through with her?”
-
-    “It was always the same story — everybody is unfairly mean to this beautiful, empathetic, free-spirited  *perfect* — girl.”
-
-    “All she needs to do to solve all her problems is to fundamentally change the way other people think.”
-    """
-    al "“It's not me. It's them!”"
-    n "“Exactly. Not very realistic.”"
+    n "“Is that so? Glad to hear it.”"
     m """
-    I roll my eyes. This is an old argument between me and Naji.
+    The smile's still plastered to his face, but there's a flatness to his tone that feels off.
 
-    “That's how *you* see it. To me, they're stories about women overcoming unfair and oppressive circumstances.”
-    """
-    n "“Then why does she always have to have her beliefs validated by someone in power — the prince she marries, the villagers she wins over, her dad, the king?”"
-
-    m """
-    “So that everyone knows that she was right!”
-
-    I can feel myself getting heated.
+    As Naji wipes down the already spotless counter in front of me, I debate whether to press him on it.
     """
 
 label choice_10:
     menu:
         m "What should I do?"
 
-        "Convince him":
-            c "He's attacking you. Defend yourself."
+        "Ask Naji about his feelings":
+            label choice_10a:
+            c "He won't tell you what's bothering him if you don't ask."
             m """
-            I bite my lip, feeling acrid tears push at the hollow space behind my eyes.
+            Naji's never been the most transparent about his feelings.
 
-            Why is Naji being so *mean*? Someone as popular as him wouldn't understand what it's like to need to feel loved and accepted.
+            “Did I say something to upset you, Naji?”
             """
-            n """
-            “Woah, woah. I'm just teasing you, Menmi.”
-
-            “I'm sorry. I won't do it again.”
-            """
+            hide naji-bar-smile
+            show naji-bar-surprise
+            m "His boyish curls seem to stiffen."
+            if naji_relationship <=0:
+                jump choice_10a_deflect
+            if naji_relationship >0:
+                jump choice_10a_honest
+        "Change the subject":
+            label choice_10b:
+            c "This doesn't seem like the right time to probe. You've just reunited after a long time apart, after all. Who knows what's going on with him?"
             m """
-            His sudden shift in tone makes me realize I might have been taking this too seriously...
+            Naji's never been the most forthcoming about his feelings.
 
-            I collect myself.
-            """
-        "Drop it":
-            $ renpy.notify("+10 Self-Awareness")
-            $ self_awareness += 10
-            c "You're getting too worked up over this. It doesn't matter. You can have different opinions."
+            It might be too early to discuss something he doesn't want to talk about.
+
+            Besides, am *I* even sure I want to know?
+
+            Better to keep things light...for now, at least. """
+            $ renpy.notify("+5 Self-Awareness")
+            $ self_awareness += 5
+            jump after_choice_10
+        "Feel him out":
+            c "He's not saying how he really feels, but you don't want to harsh the vibe when you've only just reunited."
             m """
-            “Agree to disagree,” I shrug. “Sorry I *tortured* you with all those movies.”
+            I watch Naji closely.
 
-            Naji grins.
-            """
-            n "“I didn't say *that*. And I'm sure I've put you through your fair share of un-entertainment.”"
+            At a glance, his smile seems to come easily as he serves Allie their drink, but there's a stiffness to his motions that wasn't there before.
+
+            He seems focused on not looking my way. """
+            menu:
+                "Probe Naji":
+                    jump choice_10a
+                "Drop it":
+                    jump choice_10b
+
+    label choice_10a_deflect:
+        hide naji-bar-surprise
+        show naji-bar-neutral
+        n "“Course not. If anything, I'm more offended you didn't bring your new friends to meet me.”"
+        m """
+        He totally just dodged the question. With a joke.
+
+        Oh well, I'll have to meet him where he's comfortable. Back to baseline banter.
+
+        “You didn't give me enough backstage passes to the show.”"""
+
+        hide naji-bar-neutral
+        show naji-bar-smile
+
+        m "He seems to like that."
+        n "“Do I look like an idol to you?”"
+
+        show allie-neutral at right with easeinright
+        al "*Sips drink*"
+        hide allie-neutral at right with easeoutright
+        m "“More like a comedian.”"
+
+        hide naji-bar-smile
+        show naji-bar-surprise
+
+        m "Naji's eyes widen in mock shock as he clutches at his “broken” heart."
+
+        jump after_choice_10
+
+
+    label choice_10a_honest:
+        hide naji-bar-surprise
+        show naji-bar-lookaway
+        n "“Nothing...it's just...”"
+
+        hide naji-bar-lookaway
+        show naji-bar-neutral
+
+        n "“It caught me off guard to hear that you've met so many potential love interests.”"
+        m "!!! “I never said I was trying to *date* them.”"
+        n """
+        “Oh come on, Menmi. You've been in love with 'love' since before 'puberty' even entered our vocabulary.”
+
+        “Remember all those Fishney princess movies you used to make me watch with you?” """
+
+        m """
+        “Don't assume things about me!”
+
+        “Besides, better a lover than a hater.”
+
+        I stick my tongue out at him. I know it's immature, but Naji tends to bring out this side of me.
+        """
+
 
 label after_choice_10:
-    m "“I had to watch all your *hilarious* stand-up comedy specials.”"
+    show naji-bar-neutral
+    m "“Remember when you used to make me watch all your *hilarious* stand-up comedy specials?”"
+    hide naji-bar-neutral
+    show naji-bar-surprise
     n "“Hey, they were funny!”"
     m "“Nobody who's actually funny has to actually try that hard.”"
+    hide naji-bar-surprise
+    show naji-bar-neutral
     n "“Oh yeah? Explain this then.”"
-    m "“Naji slowly lowers himself behind the bar into a crouch.”"
+    hide naji-bar-neutral with easeoutbottom
+    m "Naji slowly lowers himself behind the bar into a crouch."
     n "“Menmi, you set the bar too damn high.”"
     m "An involuntary chortle forces its way out of my throat."
     m """
-    “OK, you got me.” It's just so unexpected and corny that I have to laugh.
+    “You're right...truly inexplicable behavior.”
 
-    The familiar comfort I feel around Naji me forget all about the awkwardness from before.
+    The familiar comfort I feel around Naji me forget all about the awkwardness from before."""
 
+    show naji-bar-laugh with dissolve
+    stop music fadeout 5.0
+
+    m """
     What was I thinking? This was my old friend. The fact that he's popular in the dating pool shouldn't change anything...
 
     I think.
     """
+
+
+    if self_awareness <=30:
+        stop music
+        play sound "/audio/impact-slam.mp3"
+        scene lounge-inside with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
+        i """
+        Maybe it's something you should keep in mind...just in case.
+
+        Don't want to make a fool of yourself...though that might not be avoidable even if you tried.
+        """
+
+    play music "<from 22>/audio/happily-ever-after.mp3" fadein 1.0
+    show naji-bar-smile
     m """
     We spend the rest of the evening chatting companionably over delicious cocktails Naji whips up like some sort of mixed drink magician.
 
-    At some point around midnight, we said goodbye to Naji, and I stumbled home singing to myself, feeling as bubbly inside as the rosé nightcap I just had.
+    At some point around midnight, we said goodbye to Naji, and I stumbled home singing to myself, feeling as bubbly inside as the nightcap I just downed.
 
-    So this is life in Applecore City? Maybe it's not all sunshine and rainbows, sure, but there's more than enough to keep me occupied.
+    So this is life in Applecore City? Maybe it's not all sunshine and rainbows, sure, but that's why I've got to work hard!
     """
     scene city-day with fade
     m """
