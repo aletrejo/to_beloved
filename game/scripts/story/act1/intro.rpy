@@ -22,6 +22,9 @@ define i = Character("Intrusive Inner Voice", color='#023F59')
 
 # Global variables
 default self_awareness = 0
+default naji_relationship = 0
+default joule_relationship = 0
+default dev_relationship = 0
 
 # Images used in-game
 image tutorial box = "tutorial-box.png"
@@ -353,10 +356,13 @@ label choosing_prince:
         m "My prince charming is..."
 
         "Friendly, loyal, and compassionate":
+            $ naji_relationship += 5
             m "Someone who's kind, spends lots of time with me, and puts our love first. Obviously, I want him to be as crazy about me as I definitely will be about him."
         "Strong and protective":
+            $ joule_relationship += 5
             m "Someone who's always got my back and makes me feel safe from the dangerous world! What's dangerous about it? I don't know. Maybe that's part of the problem."
         "Effortlessly cool and competent":
+            $ dev_relationship += 5
             m "A mature person who strides through life with unwavering confidence, admired by all. He's always in control...until {i}I{/i} make him lose it."
     m "It's not like I'm expecting it to be all fun and games, of course! Give me more credit than that. I'm a realist at heart."
     menu:
