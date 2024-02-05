@@ -393,6 +393,7 @@ label choice_10:
 
 
 label after_choice_10:
+    hide naji-bar-smile
     show naji-bar-neutral
     m "“Remember when you used to make me watch all your *hilarious* stand-up comedy specials?”"
     hide naji-bar-neutral
