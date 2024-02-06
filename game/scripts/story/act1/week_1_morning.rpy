@@ -1,6 +1,8 @@
 label week_1_morning:
-    scene image Solid("#ffc6ebff") with dissolve
-    show text "{font=fredoka}{size=288}Week 1 \nMorning{/size}{/font}" at truecenter with dissolve
+    play sound "/audio/pencil-write.mp3"
+    scene city-morning with dissolve:
+        blur 10
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Morning{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
@@ -108,7 +110,7 @@ label behemoth_incident:
     stop music fadeout 1.5
     scene gym-inside with vpunch
     play sound "/audio/impact-slam.mp3"
-    play music "<from 15>/audio/cave-streams.mp3" fadein 1.0
+    play music "<from 9>/audio/faked-desire.mp3" fadein 1.0
 
     m "A few measly drops trickle out before the tap runs dry."
 
