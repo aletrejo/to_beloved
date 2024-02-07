@@ -327,6 +327,10 @@ label planner_tutorial:
 
     Morning workouts, work during the day, and party after-hours. I just have to drop the stickers into the right place.
     """
+    window hide
+    call screen planner_drag(_with_none=False) with dissolve
+    with dissolve
+label planner_tutorial_success:
     scene gym-inside with dissolve
     m "Mornings are at the gym! Gotta start the day strong with my favorite workout — Spotting hot guys."
     scene office-inside with dissolve
@@ -335,7 +339,7 @@ label planner_tutorial:
     m "At the end of the day, I'll unwind with a drink. One of my friends from home is a bartender! Ooooohh getting wasted on a weeknight? We grow up so fast"
     scene menmi-apartment-sunset with dissolve
     m "And weekends? Weekends are when the magic happens so I'll have to choose how to utilize them carefully."
-    scene planner with dissolve
+    scene planner-weekend1 with dissolve
     m "Pretty sure I'm going to be washed after my first week, so I'm going to take a cleansing bath."
 
 label choosing_prince:
