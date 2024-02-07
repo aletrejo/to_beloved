@@ -1,6 +1,8 @@
 label week_1_day:
-    scene image Solid("#ffc6ebff") with fade
-    show text "{font=fredoka}{size=288}Week 1 \nDay{/size}{/font}" at truecenter with dissolve
+    play sound "/audio/pencil-write.mp3"
+    scene city-day with dissolve:
+        blur 10
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Day{/size}{/font}{/color}" at truecenter with wiperight
     pause
     scene office-inside with dissolve
     play sound "/audio/office-sounds.mp3"

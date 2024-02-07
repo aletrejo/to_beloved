@@ -1,6 +1,8 @@
 label week_1_night:
-    scene image Solid("#ffc6ebff") with fade
-    show text "{font=fredoka}{size=288}Week 1 \nNight{/size}{/font}" at truecenter with dissolve
+    play sound "/audio/pencil-write.mp3"
+    scene city-night with dissolve:
+        blur 10
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Night{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 1.0
@@ -393,6 +395,7 @@ label choice_10:
 
 
 label after_choice_10:
+    hide naji-bar-smile
     show naji-bar-neutral
     m "“Remember when you used to make me watch all your *hilarious* stand-up comedy specials?”"
     hide naji-bar-neutral
