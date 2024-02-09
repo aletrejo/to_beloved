@@ -52,6 +52,8 @@ label bathtime_tutorial:
 
     Let's just say I'm {i}well equipped{/i}.
     """
+    stop music fadeout 2.0
+
     menu:
         m "Now, what kind of bath am I in the mood for today?"
 
@@ -65,6 +67,9 @@ label bathtime_tutorial:
             scene bathtime-fruity with fade
             m "The sweet and fresh scents of citrus fill me with playful bliss! I feel like I'm in a fresh jug of lemonade. Aahhh, baths are so refreshing."
     window hide
+
+    play music "/audio/bathtime-theme.mp3"
+
     show tutorial-box-bathtime
     screen bathtime():
         vbox:
@@ -430,26 +435,206 @@ label naji_bathtime_1_best_result:
             jump menmi_after_bath
 
 label myself_bathtime_1:
+    menu how_i_feel:
+        "How I feel...":
+            menu:
+                "I'm excited...":
+                    menu:
+                        "Meeting new people, experiencing new things, chasing down a whirlwind romance...":
+                            menu whirlwind_romance:
+                                    "It's all coming true like I planned":
+                                        menu like_I_planned:
+                                            "It's nice to know that I'm capable of achieving happiness for myself.":
+                                                $ renpy.notify("+20 Self-Awareness")
+                                                $ self_awareness += 20
+                                                jump me_bathtime_1_positive_result
+                                            "What if things don't go as planned?":
+                                                jump not_as_planned
+                                    "It's nice to know that I'm capable of achieving happiness for myself.":
+                                        $ renpy.notify("+20 Self-Awareness")
+                                        $ self_awareness += 20
+                                        jump me_bathtime_1_positive_result
+                                    "I'm going to have faith and enjoy the ride":
+                                        $ renpy.notify("+20 Self-Awareness")
+                                        $ self_awareness += 20
+                                        jump me_bathtime_1_change_result
+                                    "What if things don't go as planned?":
+                                        jump not_as_planned
+                "I'm uncertain...":
+                    menu:
+                        "I keep second-guessing myself and thinking about other possibilities...":
+                            menu second-guessing:
+                                "Do I feel like it's justified?":
+                                    jump justified
+                                "I wish I could redo some decisions":
+                                    menu redo:
+                                        "I'll get more chances. Nothing's unfixable.":
+                                            $ renpy.notify("+20 Self-Awareness")
+                                            $ self_awareness += 20
+                                            jump me_bathtime_1_positive_result
+                                        "I don't think I'm being dramatic when I say Disaster will befall me.":
+                                            jump disaster_befalls
+                                        "I think I just have to learn to accept that I don't know everything, but...":
+                                            jump dont_know_everything
+                        "What if things don't go as planned?":
+                            menu not_as_planned:
+                                "Things might not work out, but that's a natural part of life.":
+                                    menu part_of_life:
+                                        "I think I just have to learn to accept that I don't know everything, but...":
+                                                $ renpy.notify("+20 Self-Awareness")
+                                                $ self_awareness += 20
+                                                jump me_bathtime_1_change_result
+                                "I don't think I'm being dramatic when I say Disaster will befall me.":
+                                    menu disaster_befalls:
+                                        "Something about this feels familiar...":
+                                            menu feels_familiar:
+                                                "Where did I get that idea from?":
+                                                    menu that_idea:
+                                                        "My family":
+                                                            menu family_tree:
+                                                                "They taught me well.":
+                                                                    $ renpy.notify("+20 Self-Awareness")
+                                                                    $ self_awareness += 20
+                                                                    jump me_bathtime_1_practical_result
+                                                                "I need to move on.":
+                                                                    $ renpy.notify("+20 Self-Awareness")
+                                                                    $ self_awareness += 20
+                                                                    jump me_bathtime_1_positive_result
+                                                                "They may have shaped my past, but the future isn't set in stone.":
+                                                                    $ renpy.notify("+20 Self-Awareness")
+                                                                    $ self_awareness += 20
+                                                                    jump me_bathtime_1_change_result
+                                                        "My exes":
+                                                            jump family tree
+                                                        "Trick question, still me.":
+                                                            menu still_me:
+                                                                "I need to be a better person.":
+                                                                    jump better_person
+                                                                "Sometimes I feel insecure.":
+                                                                    menu insecure:
+                                                                        "I keep second-guessing myself and thinking about other possibilities...":
+                                                                        "I have to be better about that.":
+                                                                            $ renpy.notify("+20 Self-Awareness")
+                                                                            $ self_awareness += 20
+                                                                            jump me_bathtime_1_practical_result
+                                                                        "Do I feel like it's justified?":
+                                                                            menu justified
+                                                                                "There are times when I admit I can be hard on myself.":
+                                                                                    menu hard_on_myself
+                                                                                        "I think I just have to learn to accept that I don't know everything, but...":
+                                                                                            jump dont_know_everything
+                                                                                        "It's deserved. How else will I learn?":
+                                                                                            menu deserved:
+                                                                                                "I need to be a better person.":
+                                                                                                    menu better_person:
+                                                                                                        "I think I just have to learn to accept that I don't know everything, but...":
+                                                                                                            jump dont_know_everything
+                                                                                                        "Something about this feels familiar...":
+                                                                                                            jump feels_famliar
+                                                                                                "I don't think I'm being dramatic when I say Disaster will befall me.":
+                                                                                                    jump disaster_befalls
+                                                                                                "But I believe in myself.":
+                                                                                                    $ renpy.notify("+20 Self-Awareness")
+                                                                                                    $ self_awareness += 20
+                                                                                                    jump me_bathtime_1_positive_result
+                                                                                        "Something about this feels familiar...":
+                                                                                            jump feels_familiar
+                                                                                "Where did I get that idea from?":
+                                                                                    jump that_idea
+                                                                        "Where did I get that idea from?":
+                                                                            jump that_idea
+                                                                "I think I just have to learn to accept that I don't know everything, but...":
+                                                                    menu dont_know_everything:
+                                                                        "I'll get more chances. Nothing's unfixable.":
+                                                                            $ renpy.notify("+20 Self-Awareness")
+                                                                            $ self_awareness += 20
+                                                                            jump me_bathtime_1_positive_result
+                                                                        "I need to move on.":
+                                                                            $ renpy.notify("+20 Self-Awareness")
+                                                                            $ self_awareness += 20
+                                                                            jump me_bathtime_1_practical_result
+                                                                        "I'm going to have faith and enjoy the ride":
+                                                                            $ renpy.notify("+20 Self-Awareness")
+                                                                            $ self_awareness += 20
+                                                                            jump me_bathtime_1_change_result
+                                        "On second thought, no...":
+                                            menu second_thought:
+                                                "How I feel...":
+                                                    jump how_i_feel
+                                                "There are times when I admit I can be hard on myself.":
+                                                    jump hard_on_myself
+                                                "I need to move on.":
+                                                    $ renpy.notify("+20 Self-Awareness")
+                                                    $ self_awareness += 20
+                                                    jump me_bathtime_1_practical_result
+                                                "Where did I get that idea from?":
+                                                    jump that_idea
+                                                "I'm going to have faith and enjoy the ride":
+                                                    $ renpy.notify("+20 Self-Awareness")
+                                                    $ self_awareness += 20
+                                                    jump me_bathtime_1_positive_result
+                                        "It's deserved. How else will I learn?":
+                                            jump deserved
+                                "What if they do?":
+                                    menu things_work_out:
+                                        "I'm going to have faith and enjoy the ride":
+                                            $ renpy.notify("+20 Self-Awareness")
+                                            $ self_awareness += 20
+                                            jump me_bathtime_1_change_result
+                                        "I believe in myself":
+                                            $ renpy.notify("+20 Self-Awareness")
+                                            $ self_awareness += 20
+                                            jump me_bathtime_1_positive_result
+                                        "I need to move on.":
+                                            $ renpy.notify("+20 Self-Awareness")
+                                            $ self_awareness += 20
+                                            jump me_bathtime_1_practical_result
+                        "Sometimes I feel insecure.":
+                            menu insecure:
+                                "Where did I get that idea from?":
+                                    jump that_idea
+                                "I keep second-guessing myself and thinking about other possibilities...":
+                                    jump second-guessing
+                                "I have to be better about that.":
+                                    $ renpy.notify("+20 Self-Awareness")
+                                    $ self_awareness += 20
+                                    jump me_bathtime_1_practical_result
+                                "Do I feel like it's justified?":
+                                    jump justified
+                        "I think I just have to learn to accept that I don't know everything, but...":
+                            jump dont_know_everything
+                "I'm doubtful...":
+                    menu doubtful:
+                        "I keep second-guessing myself and thinking about other possibilities...":
+                            jump second-guessing
+                        "What if things don't go as planned?":
+                            jump not_as_planned
+        "My thoughts..."
+            "Have been rude!"
+            "Have been mostly positive"
+            "Have been negative"
+        "My choices..."
+            "I'm satisfied with them."
+            "I have regrets."
     pause
 
 label after_bathtime_1:
-    scene bathtime-classic with dissolve
-    show tutorial box
+    show tutorial-box-insights
     screen narrative_tutorial():
         vbox:
             xalign 0.5
-            yalign 0.5
+            yalign 0.6
             xmaximum 1000
             box_wrap True
-            text "{size=+10}{i}Creating A Narrative{/i}":
-                xalign 0.5
-            text "   We internalize events and experiences by telling ourselves stories. In turn, through these narratives, we make sense of the world."
-            text "   Because of this, Menmi may remember her bathtime ruminations as she goes about her daily life. Her narratives may even influence her thoughts and actions."
-            text "   Narratives are flexible and naturally evolve over time, so be sure to check the planner and reflect regularly."
+            text """
+            We make sense of our experiences by reflecting and internalizing them into {b}insights{/b}. In turn, these {b}insights{/b} help us make sense of the world and take appropriate action.
+
+            Menmi's bathtime {b}insights{/b} may come back to her in daily life. Check the planner to see which {b}insights{/b} are currently top-of-mind.
+            """
     show screen narrative_tutorial with dissolve
     pause
     hide screen narrative_tutorial
-    hide tutorial box
+    hide tutorial-box-insights
     return
 
 label menmi_after_bath:
