@@ -26,6 +26,7 @@ default naji_relationship = 0
 default joule_relationship = 0
 default dev_relationship = 0
 
+
 # Images used in-game
 image tutorial box = "tutorial-box.png"
 
@@ -337,7 +338,7 @@ label planner_tutorial_success:
     m "Primetime is grind time. I managed to land my dream job at a PR firm. I’m so excited to make a difference in the world!"
     scene lounge-inside with dissolve
     m "At the end of the day, I'll unwind with a drink. One of my friends from home is a bartender! Ooooohh getting wasted on a weeknight? We grow up so fast"
-    scene menmi-apartment-sunset with dissolve
+    scene menmi-apartment-afternoon with dissolve
     m "And weekends? Weekends are when the magic happens so I'll have to choose how to utilize them carefully."
     scene planner-weekend1 with dissolve
     m "Pretty sure I'm going to be washed after my first week, so I'm going to take a cleansing bath."

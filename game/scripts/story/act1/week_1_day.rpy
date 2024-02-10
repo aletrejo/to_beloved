@@ -42,6 +42,7 @@ label week_1_day:
         scene office-inside with vpunch:
             matrixcolor InvertMatrix(value=1.0)
         i "Don't say anything weird. You want them to like you.."
+        m "Hush! You're making me anxious. Socially."
         play music "<from 20>/audio/happily-ever-after.mp3"
         scene office-inside
 

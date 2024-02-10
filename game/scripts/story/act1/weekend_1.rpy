@@ -6,7 +6,6 @@ label weekend_1:
     pause
 
     scene menmi-apartment-morning with dissolve
-    play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
     m """
     Mmmmmm... Ah, did I sleep in? It's so late!
 
@@ -21,7 +20,7 @@ label weekend_1:
 
     scene menmi-apartment-morning
     stop music
-    play music "/audio/happily-ever-after.mp3"
+    play music "<from 13>/audio/happily-ever-after.mp3"
 
     m "I shouldn't be sleeping in when I have so much I need to do! But then again, I didn't have much planned for the weekend."
 
@@ -743,9 +742,9 @@ label menmi_after_bath:
     scene menmi-apartment-afternoon with dissolve
     m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"
 
-    scene planner-week-unfilled
+    scene planner-week-unfilled with dissolve
     m "I’m settling into my weekday routine, but I should plan what I want to do on the weekends."
-    i "Girl’s gotta have goals."
+    m "Girl’s gotta have goals."
 
     #Allow player to drag and drop either Bathtime or Go Out with Naji for Weekends 2-4
 
@@ -767,7 +766,7 @@ label reading_1:
     Alaynna was just about to start a false courtship with Krystof as a ploy to placate her status-obsessed mother.
 
     Little does she know that Krystoff is actually her great grandson from the future
-    who killed the *real* Krystoff in a hit-and-run caused by his self-driving Teslatke.
+    who killed the *real* Krystoff in a hit-and-run caused by his self-driving Teslatte.
 
     Will Alaynna travel back in time to kill Krystoff before he can commit the murder?
 
@@ -823,8 +822,6 @@ label after_reading:
     m """
     The drama! Who needs enemies when you've got *literature*?
 
-    So long for now, reality. I hardly knew thee. """
+    So long, reality. I hardly knew thee. """
 
-    hide menmi-apartment-night with fade
-
-    jump week2_4
+    jump week_2_4
