@@ -2,7 +2,7 @@ label week_1_morning:
     play sound "/audio/pencil-write.mp3"
     scene city-morning with dissolve:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Morning{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Morning{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
@@ -94,23 +94,24 @@ label behemoth_incident:
     scene gym-inside with hpunch
 
     m "All of a sudden, I’m jolted out of my thoughts by a harsh voice."
-    be "Hey, brat. Quit hogging the watering hole."
-    m """
-    !!! I spin around, coming face-to-chest with a massive dude with a jutting brow and barrel-big arms.
+    be "“Hey, brat. Quit hogging the watering hole.”"
+    m "!!! I spin around, coming face-to-chest with a massive dude with a jutting brow and barrel-big arms."
 
-    He’s scowling at me like I’d snatched his wooly mammoth bone.
+    play music "<from 9>/audio/faked-desire.mp3" fadein 1.0
+    show behemoth with dissolve
+
+    m """He’s scowling at me like I’d snatched his wooly mammoth bone.
 
     I grab my water bottle and step out of the Behemoth’s way.
 
     “Oops! Sorry, it’s all yours.”
 
     The Behemoth grunts and slams his empty water bucket under the spout.
-
     """
     stop music fadeout 1.5
     scene gym-inside with vpunch
+    show behemoth
     play sound "/audio/impact-slam.mp3"
-    play music "<from 9>/audio/faked-desire.mp3" fadein 1.0
 
     m "A few measly drops trickle out before the tap runs dry."
 
@@ -128,6 +129,8 @@ label behemoth_incident:
 
     """
 
+    play music "<from 9>/audio/faked-desire.mp3" fadein 2.0
+
     be "“...Sure.”"
 
     m """
@@ -138,9 +141,11 @@ label behemoth_incident:
 
     be "“But I don't want it in my bottle.”"
 
-    scene gym-inside with vpunch
-
     play sound "/audio/monster-growl.mp3"
+
+    hide behemoth
+    show behemoth-smile
+
     m "A wide grin creeps its way across his face. Predatory."
 
     m """
@@ -155,6 +160,7 @@ label behemoth_incident:
 
     play sound "/audio/impact-slam.mp3"
     scene gym-inside with vpunch
+    show behemoth-smile
 
 
     m """
@@ -204,8 +210,8 @@ label choice_6:
 play sound "/audio/impact-slam.mp3"
 scene gym-inside with vpunch:
     matrixcolor InvertMatrix(value=1.0)
-
 stop music fadeout 2.0
+
 label joule_introduction:
     play sound "/audio/heartbeat-fast.mp3"
     m """
@@ -225,6 +231,8 @@ label joule_introduction:
     m "Huh? Who said that?"
     show joule-neutral with dissolve
     j "“Hey, Beast Mode. Can I help you with a Cool Down routine?”"
+
+    show behemoth at left with vpunch
     be "“What did you say, Shrimp-Fried Rice?”"
     m """
     The guy standing in front of me is wearing a sleeveless shirt with the gym's logo on it. The ID card around his neck indicates that he works here.
@@ -249,10 +257,10 @@ label joule_introduction:
     m """
     His tone is professionally polite, but his smirk says otherwise...
 
-    The Behemoth audibly grumbles, but backs off.
+    The Behemoth audibly grumbles, but backs off. """
 
-    The tension in my shoulders releases.
-    """
+    hide behemoth with dissolve
+    m "The tension in my shoulders releases."
 
     hide joule-smile
     show joule-neutral

@@ -88,6 +88,26 @@ label bathtime_tutorial:
     hide screen bathtime
     hide tutorial-box-bathtime
     jump bathtime_1
+
+label week_2_4_bathtime:
+    play sound "/audio/pencil-write.mp3"
+    scene city-morning with dissolve:
+        blur 10
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 2-4{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    pause
+
+    scene menmi-apartment-morning
+    play music "<from 13>/audio/happily-ever-after.mp3" fadein 1.0
+    m """
+    Ah, the weekend's here! Which means it's time for me to soak in life one memory at a time.
+
+    I still have a lot to reflect on. Alright, time to marinate in my brothy thoughts and get some *winsight* into the situation.
+
+    """
+    jump bathtime_1
+    stop music fadeout 1.0
+    play music "/audio/bathtime-theme.mp3"
+
 label bathtime_1:
     m "It's been an eventful week. Out of everything's that's happened though, there's one thing I can't get off my mind."
     menu:
@@ -97,6 +117,8 @@ label bathtime_1:
             jump naji_bathtime_1
         "Myself" if self_awareness > 30:
             jump myself_bathtime_1
+
+#Ale: Any way to make the "thoughts" menu options fade in more slowly? Give a more dream-like effect
 
 label naji_bathtime_1:
     menu we_were_close:
@@ -746,7 +768,8 @@ label menmi_after_bath:
     m "I’m settling into my weekday routine, but I should plan what I want to do on the weekends."
     m "Girl’s gotta have goals."
 
-    #Allow player to drag and drop either Bathtime or Go Out with Naji for Weekends 2-4
+
+    #Ale: Allow player to drag and drop either Bathtime or Go Out with Naji for Weekends 2-4
 
 label reading_time:
     stop music fadeout 1.0
@@ -770,7 +793,7 @@ label reading_1:
 
     Will Alaynna travel back in time to kill Krystoff before he can commit the murder?
 
-    OR will she fall haplessly in love with him?
+    OR will she fall haplessly in love with him? *And* his friend?
 
     The future is anybody's guess. """
 
@@ -784,8 +807,7 @@ label reading_2:
 
     Celine is now confronted with a choice: to make a prince out of a pirate...
 
-    Or to take advantage of his innocence, sabotage his plans
-    ...and take the Whale for herself.
+    Or to betray his hard-won trust and take the Whale for herself...
     """
     jump after_reading
 
@@ -823,5 +845,7 @@ label after_reading:
     The drama! Who needs enemies when you've got *literature*?
 
     So long, reality. I hardly knew thee. """
+
+
 
     jump week_2_4

@@ -25,7 +25,7 @@ default self_awareness = 0
 default naji_relationship = 0
 default joule_relationship = 0
 default dev_relationship = 0
-
+default week = 0
 
 # Images used in-game
 image tutorial box = "tutorial-box.png"
@@ -42,7 +42,7 @@ label start:
 
     scene menmi-apartment-morning
     with vpunch
-
+    $ week += 1
 
     # These display lines of dialogue.
 
