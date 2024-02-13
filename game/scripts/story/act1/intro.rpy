@@ -1,5 +1,4 @@
-﻿# The script of the game goes in this file.
-
+﻿
 # Dynamic characters
 default behemoth_name = "???"
 define be = Character("[behemoth_name]", color="#A9A9A9")
@@ -38,11 +37,11 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
+    $ week += 1
     play music "<from 5>/audio/cloud.wav"
-
     scene menmi-apartment-morning
     with vpunch
-    $ week += 1
+
 
     # These display lines of dialogue.
 
