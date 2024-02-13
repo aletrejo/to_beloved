@@ -2,7 +2,7 @@ label week_1_night:
     play sound "/audio/pencil-write.mp3"
     scene city-night with dissolve:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Night{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Night{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 1.0

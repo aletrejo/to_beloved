@@ -1,9 +1,9 @@
 label week_2_4:
+    $ week += 1
     play sound "/audio/pencil-write.mp3"
     scene city-morning with fade:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 2{/size}{/font}{/color}{color=#000000}" at truecenter with wiperight
-    #have Week # change depending on number of previous loops
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
@@ -11,14 +11,25 @@ label week_2_4:
 
     m "Good morning MenME! I'm feeling refreshed and ready for the week ahead!"
 
-    #insert Insight-exclusive dialogue
+    #Ale: insert Insight-exclusive dialogue (see below)
+
+    #If any of these Insights were selected: I have to be better about that; I need to be a better person; I wish I could redo some decisions; I keep second-guessing myself and thinking about other possibilities... ; I'll learn from my mistakes]
+        #i "You'll have to do better this week to make up for your mistakes."
+        #m "I'll work hard to put myself back on track!"
+
+    #If any of these Insights were selected: Things might not work out, but that's a natural part of life; I'm going to have faith and enjoy the ride; I think I just have to learn to accept that I don't know everything, but...; They may have shaped my past, but the future isn't set in stone.]
+        #m "Whatever the future holds, I'll try to remain open so I can enjoy every moment as they come."
+
+    #If any of these Insights were selected: Insight: It's all coming true like I planned; It's nice to know that I'm capable of achieving happiness for myself; I believe in myself]
+        #m "Alright! I'm satisfied with my progress last week. I just have to keep it up, and I'll be living out my dreams in no time."
+        #i "Harder. Better. Faster. Stronger. You've got a lot working against you. That's why you have to push yourself on the path to success!"
 
 label gym_auto:
     scene gym-inside with fade
     default gym_options = ['gym_1', 'gym_2', 'gym_3','gym_4','gym_5','gym_6','gym_7','gym_8','gym_9']
     $ gym_chosen = renpy.random.choice(gym_options)
     if gym_chosen == 'gym_1':
-        m " workouts are working out just fine."
+        m "Workouts are working out just fine."
     if gym_chosen == 'gym_2':
         m "My morning gym routine is kicking me in the tighty whities (that’s my butt)!"
     if gym_chosen == 'gym_3':
@@ -44,7 +55,7 @@ label work_auto:
         m "Work is hectic, but I make it work."
     if work_chosen == 'work_2':
         m """
-        Listened to my coworkers complain to me today.
+        Listened to my coworkers complain today. Shared my own grievances.R
 
         It's nice to feel like I can help by lending an ear.
 
@@ -198,3 +209,8 @@ label allie_response:
         play music "<from 13>/audio/happily-ever-after.mp3"
 
     m "“Can't wait to hear about it on Monday!”"
+
+
+    #Ale: if Bathtime was selected jump week_2_4_bathtime (in weekend_1.rpy)
+    #Ale: if Go Out was selected jump naji_date_1/naji_date_2/naji_date_3 (make sure they occur in sequence)
+    jump naji_date_1
