@@ -252,7 +252,15 @@ label choice_9bc:
     n "“Why didn't you say ‘hi’?”"
     m "“Ah, I didn't want to disturb you while you were...busy”"
     if self_awareness <=30:
+        stop music
+        play sound "/audio/impact-slam.mp3"
+        play music "<from 13>/audio/cave-streams.mp3"
+        scene lounge-inside with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
         i "Way to be weird."
+        play music "<from 20>/audio/happily-ever-after.mp3"
+        scene lounge-inside
+        show naji-bar-surprise
     return
 
 label after_choice_9:
@@ -435,6 +443,7 @@ label after_choice_10:
         Don't want to make a fool of yourself...though that might not be avoidable even if you tried.
         """
 
+    scene lounge-inside
     play music "<from 22>/audio/happily-ever-after.mp3" fadein 1.0
     show naji-bar-smile
     m """
