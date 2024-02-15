@@ -25,6 +25,9 @@ default naji_relationship = 0
 default joule_relationship = 0
 default dev_relationship = 0
 default week = 0
+default n1 = False
+default n2 = False
+default n3 = False
 
 # Images used in-game
 image tutorial box = "tutorial-box.png"

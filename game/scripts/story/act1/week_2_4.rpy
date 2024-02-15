@@ -55,11 +55,10 @@ label work_auto:
         m "Work is hectic, but I make it work."
     if work_chosen == 'work_2':
         m """
-        Listened to my coworkers complain today. Shared my own grievances.R
+        Commiserated with my coworkers today.
 
-        It's nice to feel like I can help by lending an ear.
-
-        Who said work couldn't be community service? """
+        Yeah! Team bonding!
+         """
     if work_chosen == 'work_3':
         m "I’ve got a ton going on at work, but I need money to get the honey. Do your best, MenME!"
     if work_chosen == 'work_4':
@@ -211,6 +210,11 @@ label allie_response:
     m "“Can't wait to hear about it on Monday!”"
 
 
+
     #Ale: if Bathtime was selected jump week_2_4_bathtime (in weekend_1.rpy)
     #Ale: if Go Out was selected jump naji_date_1/naji_date_2/naji_date_3 (make sure they occur in sequence)
-    jump naji_date_1
+    if n1==False:
+        jump naji_date_1
+
+    elif n1==True:
+        jump naji_date_2

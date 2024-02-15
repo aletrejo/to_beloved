@@ -316,7 +316,7 @@ label after_choice_12:
 
         m "The surge of acrid heat in my chest feels almost...invigorating."
 
-        scene loung-inside with vpunch
+        scene lounge-inside with vpunch
 
     hide naji-bar-lookaway
     show naji-bar-neutral
@@ -348,6 +348,9 @@ label after_choice_12:
     i "Or maybe you're trying too hard to rationalize your curiosity."
     m "*Everything* is a rationalization."
 
+    scene lounge-inside with vpunch
+    show naji-bar-lookaway
+
 label choice_13:
     menu:
         "How should I respond to Naji?"
@@ -360,6 +363,8 @@ label choice_13:
 
             I raise my glass, and we toast. It was nice to be reconnected with Naji again, after all this time.
             """
+            hide naji-bar-lookaway
+            show naji-bar-smile
             n "“Wanna see something cool?”"
         "Change the topic":
             c "Are you uncomfy? I'm uncomfy. These vibes are *not* it."
@@ -376,10 +381,18 @@ label choice_13:
             n "“Yeah! Watch this.”"
         "Keep listening":
             c "You came here to find out more about Naji. Why not just listen and let him share as much as he wants us to know?"
+
             #Relevant Insights: He was my best friend; He used to follow me around and do whatever I wanted; Naji's grown with time. I'm curious about what else about him has changed...
             m "When we were kids, Naji and I held nothing back from each other."
+
             #Relevant Insights: Naji's mom dropped him off at our house a lot, so we spent a lot of time together; We're super comfortable with each other
-            m "From drama at school, to getting in trouble with parents, to our anxieties about the future, we trusted each other with our feelings, assured in the fact that we wouldn’t say or do anything to hurt each other without good reason."
+            m """
+            From drama at school, to getting in trouble with parents, to our anxieties about the future,
+
+            we trusted each other with our feelings, assured in the fact that we wouldn’t say or do anything to hurt each other without good reason.
+
+            """
+
             #Relevant Insights: He's changed; I thought I knew him better; It makes me uncomfortable; I miss how close we used to be...; I hope he can be open with me someday...
             m """
             What changed? I want us to trust each other.
@@ -415,8 +428,10 @@ label choice_13:
             “You mentioned a woman. What exactly was your relationship with her?”
             """
             hide naji-bar-neutral
-            show naji-bar-smile
+            show naji-bar-frown
             m "There’s a sad smile on his face and a slump in his shoulders."
+            hide naji-bar-frown
+            show naji-bar-smile
             n "“Ha...I had a feeling you’d ask.”"
             #If any of these Insights were selected: Everyone has to believe in something, and I choose to believe in love!; I hope he doesn't think I'm silly for wanting to be in love; Why is Naji's opinion of me such a big deal?
             #m "What's *that* supposed to mean?"
@@ -426,6 +441,12 @@ label choice_13:
             hide naji-bar-lookaway
             show naji-bar-frown
             n "“Hope that satisfies your curiosity.”"
+
+            play sound "/audio/impact-slam.mp3"
+            scene lounge-inside with vpunch:
+                matrixcolor InvertMatrix(value=1.0)
+            show naji-bar-frown at truecenter:
+                matrixcolor InvertMatrix(value=1.0)
             #Relevant Insights: It makes me feel insecure that I don't know everything about him; There were times I wondered if we could be more than friends...I always worried that he was out of my league, though
             m "Even though I expected it, a part of me recoils hearing about Naji doing things like that."
 
@@ -434,13 +455,15 @@ label choice_13:
                 #If any of these Insights were selected: We're the same age, but I kind of saw him as a little brother; I was protective of him
                 #m "Or is it because I see him like a brother?"
 
+            scene lounge-inside
+            show naji-bar-lookaway
             m "“And you? What did you want?”"
-            hide naji-bar-frown
-            show naji-bar-neutral
+            hide naji-bar-lookaway
+            show naji-bar-frown
             #Relevant Insights: Naji prioritizes the needs of others before his own; Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance; Maybe it was his way of coping
             n "“...I’m not sure, honestly. I was just going with the flow.”"
-            hide naji-bar-neutral
-            show naji-bar-smile
+            hide naji-bar-frown
+            show naji-bar-neutral
             n "“Anyway, that’s what happened. Hey, wanna see something cool?”"
             m """
             Surprise, surprise. He changed the topic.
@@ -459,7 +482,7 @@ label choice_13:
             m "Naji's voice tightened when he was talking about leaving home."
 
             scene lounge-inside
-            show naji-bar-lookaway with dissolve
+            show naji-bar-lookaway
 
             #Relevant Insights: We were neighbors; He was my best friend; Naji's mom dropped him off at our house a lot, so we spent a lot of time together; We were pretty close through high school, but lost touch after graduation; Maybe I was coming on too strong for our first time seeing each other in so long, but it's not like we're total strangers.
             m """
@@ -472,7 +495,8 @@ label choice_13:
             $ renpy.notify("+5 Self-Awareness")
             $ self_awareness += 5
 
-
+            hide naji-bar-lookaway
+            show naji-bar-neutral
 
             m "Naji clenches, unclenches a fist."
             n "“Well, you know how my mom’s always been sort of...unwell?”"
@@ -546,19 +570,27 @@ label after_choice_13:
     m "“That was pretty impressive. You’ve come a long way from those disgusting movie theater soft drink experiments.”"
 
     hide naji-bar-neutral
-    show naji-bar-surprise
+    show naji-bar-laugh
 
     m "A smirk inches its way across his face."
+    n "“The world just isn’t ready for Maximum Energy Wildberry Cool Blue Diet Mountain Brew.”"
 
-    hide naji-bar-surprise
+    hide naji-bar-laugh
     show naji-bar-neutral
 
-    n "“The world just isn’t ready for Maximum Energy Wildberry Cool Blue Diet Mountain Brew.”"
     m "“It tasted like carsick”"
+
+    hide naji-bar-laugh
+    show naji-bar-frown
+
     n "“To *you*”"
     m """ “Didn’t you put popcorn butter in it too?”
 
     Naji shrugs."""
+
+    hide naji-bar-frown
+    show naji-bar-smile
+
     n "“It was *there*. What else were we going to do with it?”"
 
     #Relevant Insights: Naji and I grew up across the street from each other; Naji's mom dropped him off at our house a lot, so we spent a lot of time together; We were neighbors
@@ -583,14 +615,27 @@ label after_choice_13:
     I laugh, rolling my eyes. Instead of matching my quip, though, Naji surprises me by replying in a soft voice."""
 
     hide naji-bar-neutral
-    show naji-bar-blush
+    show naji-bar-lookaway
 
     n "“I’m not. For most people.”"
 
-    hide naji-bar-blush with dissolve
+    hide naji-bar-lookaway with dissolve
+
+    $ renpy.notify("Naji feels closer to you!")
+    $ naji_relationship += 10
 
     #Relevant Insights: There were times I wondered if we could be more than friends...It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?
     m "Why does that make me feel kind of happy?"
 
-    $ renpy.notify("Naji feels closer to you!")
-    $ naji_relationship += 10
+label after_naji_date:
+    scene menmi-apartment-night with fade
+    #Relevant Insights: I have a lot of good memories with Naji.
+    m """
+    Hanging out with Naji always feels new and familiar at the same time.
+
+    It's a shame that the weekend's over, but there's always next weekend! What should I do? """
+
+    #Choose next weekend activity in planner
+
+    $ n1=True
+    jump reading_time
