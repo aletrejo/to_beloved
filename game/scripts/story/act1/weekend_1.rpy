@@ -846,6 +846,4 @@ label after_reading:
 
     So long, reality. I hardly knew thee. """
 
-
-
     jump week_2_4
