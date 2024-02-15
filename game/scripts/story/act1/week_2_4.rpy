@@ -14,8 +14,9 @@ label week_2_4:
     #Ale: insert Insight-exclusive dialogue (see below)
 
     #If any of these Insights were selected: I have to be better about that; I need to be a better person; I wish I could redo some decisions; I keep second-guessing myself and thinking about other possibilities... ; I'll learn from my mistakes]
-        #i "You'll have to do better this week to make up for your mistakes."
-        #m "I'll work hard to put myself back on track!"
+    if insight_dialogue_1:
+        i "You'll have to do better this week to make up for your mistakes."
+        m "I'll work hard to put myself back on track!"
 
     #If any of these Insights were selected: Things might not work out, but that's a natural part of life; I'm going to have faith and enjoy the ride; I think I just have to learn to accept that I don't know everything, but...; They may have shaped my past, but the future isn't set in stone.]
         #m "Whatever the future holds, I'll try to remain open so I can enjoy every moment as they come."
