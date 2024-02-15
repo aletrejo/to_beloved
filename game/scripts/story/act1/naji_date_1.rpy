@@ -638,4 +638,5 @@ label after_naji_date:
     #Choose next weekend activity in planner
 
     $ n1=True
+
     jump reading_time

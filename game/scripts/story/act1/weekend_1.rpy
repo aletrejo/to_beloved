@@ -769,7 +769,7 @@ label menmi_after_bath:
     m "Girl’s gotta have goals."
 
 
-    #Ale: Allow player to drag and drop either Bathtime or Go Out with Naji for Weekends 2-4
+    #Ale: Allow player to drag and drop either Bathtime or Go Out with Naji for Weekend 2
 
 label reading_time:
     stop music fadeout 1.0

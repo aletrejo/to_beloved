@@ -201,13 +201,13 @@ label choice_12:
 
             #Relevant Insights: He's not the type to share his feelings; Naji would always listen to me vent about my feelings, but he never seemed as open with his own; That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers.
             n "“I don't want to talk about this anymore. All I'll say is...”"
-            
+
         "There’s something deeper at play..." if self_awareness>=70:
             #Relevant Insights: Where did I get that idea from?; Naji prioritizes the needs of others before his own; Maybe it was his way of coping; My family; His past...
                 c "There's a way to make sense of this."
                 scene alleyway:
                     blur 30
-                show naji-lookaway:
+                show naji-lookaway at truecenter:
                     blur 50
                 m """
                 I reach into the past, recalling the details of Naji’s upbringing.
@@ -216,3 +216,131 @@ label choice_12:
 
                 I’d remember times when we'd play "laundry" while she nursed a hangover in her bedroom.
                 """
+
+                scene alleyway
+                show naji-lookaway
+
+                #Relevant Insights: Naji's mom dropped him off at our house a lot, so we spent a lot of time together; That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers; I wonder if he keeps in touch with her.
+                m """
+                “Naji, do you think this might have to do with your mom?"
+
+                He frowns, brow furrowing up as he stares at the space between Mimi's ears.
+                """
+                if self_awareness =<70:
+                    scene alleyway with vpunch:
+                        matrixcolor InvertMatrix(value=1.0)
+                    #Relevant Insights: Where did I get that idea from?; They may have shaped my past, but the future isn't set in stone.; I need to move on.
+                    m """Did I say something wrong?"
+
+                    I should've just taken him at face value. Feelings aren't meant to be examined!
+                    """
+                    scene alleyway
+
+                hide naji-lookaway
+                show naji-frown
+                n """
+                ...
+                “...I guess I never really thought of it that way, but you might have a point.”
+
+                *Sigh*
+                """
+                if naji_relationship >=20:
+                    hide naji-frown
+                    show naji-blush
+                    n "“I'm amazed by how well you know me.”"
+                    hide naji-blush
+                    show naji-frown
+
+                $ renpy.notify("+5 Self-Awareness")
+                $ self_awareness += 5
+
+                #Relevant Insights:  Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own; He had to go through a lot on his own.; Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance
+                n """
+                “I really admire Mimi's independence.
+
+                Mom was always relying on me or worse, whichever guy she was trying to impress that day.”
+                """
+                $ renpy.notify("Naji feels closer to you!")
+                $ naji_relationship += 10
+
+label after_choice_12:
+    #Relevant Insights: Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own; Maybe it was his way of coping; Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance.
+    show naji-smile
+    n "“I don’t want to interfere with her autonomy. If you love something, let it go, you know?”"
+
+    hide naji-smile
+    show naji-frown
+
+    m "“I can see where you're coming from.”"
+
+    #Relevant Insights: Everyone has to believe in something, and I choose to believe in love!
+    m """"But for me, if I love something, I’d want to keep it with me forever.”
+
+    Naji glances at me, a dark look crossing his face.
+    """
+    scene alleyway with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+    show naji-frown:
+        matrixcolor InvertMatrix(value=1.0)
+    i "I think he disagrees."
+    if self_awareness <60:
+        #Relevant Insights:  I keep second-guessing myself and thinking about other possibilities...I can't go back now, though.; Why's Naji's opinion of me such a big deal?; Maybe I shouldn't have talked about my love life...
+        m "I've upset him."
+        i "Nice going, scatterbrains!"
+    if self_awareness >=60:
+        #Relevant Insights: There are times when I admit I can be hard on myself.; I choose to believe in myself!; Everyone has to believe in something, and I choose to believe in love!
+        c "It's OK to disagree. You're different people, after all."
+        m "Yeah, and I'm not trying to convince him, either. Still..."
+
+    scene alleyway with vpunch
+    show naji-frown
+
+    #Relevant Insights: I need to be a better person.; I must have said something to make him uncomfortable; I hope he doesn't think I'm silly for wanting to be in love; I was protective of him
+    m """
+    The vibes are off. I need to fix them.
+
+    “It’s admirable that you empathize with Mimi so much, Naj. She clearly adores you.”
+    """
+
+    hide naji-frown
+    show naji-neutral
+    n "“Yeah...thanks. I’ll do everything I can to help her out without interfering with her life.”"
+
+    #Relevant Insights: Naji prioritizes the needs of others before his own; That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers.; I hope he can be open with me someday...
+    m "Phew! He took the olive branch."
+
+    #If any of these Insights were selected: He's not the type to share his feelings; It's deserved. How else will I learn?; Trick question, still me.; They taught me well.
+    #m "That was uncomfy for both of us!
+
+    m "“I’ll have to remember to save my sardines from pizza for Mimi!”"
+
+    hide naji-neutral
+    show naji-laugh
+
+    n "“Haha, since when did you eat pizza with sardines?”"
+    m """
+    “Since I met Mimi!”
+
+    “It’s called girl dinner. You wouldn’t get it.”
+    """
+
+    #Relevant Insights: He was my best friend; We're super comfortable with each other
+    m "Naji laughs, tension disappearing like noon dew."
+    n """
+    “Speaking of eating, should we get going?”
+
+    “I'm so hungry I could eat a bush!”
+    """
+    m "“Ha...I was hoping you'd forgotten that...”"
+
+    hide naji-laugh with dissolve
+    m """
+    As we head out, I take one last look at Mimi in the alley. Would she be there next time? With kittens? Or a new person? Or maybe...
+
+    Who can say for sure what the future holds?
+    """
+
+    #If any of these Insights were selected: I think I just have to learn to accept that I don't know everything, but...; I'm going to have faith and enjoy the ride; They may have shaped my past, but the future isn't set in stone
+    #m "Nothing to do but trust."
+
+    jump after_naji_date
