@@ -627,6 +627,8 @@ label after_choice_13:
     #Relevant Insights: There were times I wondered if we could be more than friends...It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?
     m "Why does that make me feel kind of happy?"
 
+    $ n1=True
+
 label after_naji_date:
     scene menmi-apartment-night with fade
     #Relevant Insights: I have a lot of good memories with Naji.
@@ -636,7 +638,5 @@ label after_naji_date:
     It's a shame that the weekend's over, but there's always next weekend! What should I do? """
 
     #Choose next weekend activity in planner
-
-    $ n1=True
 
     jump reading_time

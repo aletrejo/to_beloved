@@ -88,14 +88,14 @@ label naji_date_2:
     play sound "/audio/impact-slam.mp3"
     scene alleyway with vpunch:
         matrixcolor InvertMatrix(value=1.0)
-        m "So why are my cheeks burning?"
+    m "So why are my cheeks burning?"
 
-        if self_awareness<60:
-            #Relevant Insights: Maybe I shouldn't have talked about my love life...Compared to him, I must look like a loser; I hope he doesn't think I'm silly for wanting to be in love; I always worried that he was out of my league, though
-            i "Naji? Like *you*? Cool dumb thought, Menmi."
-        elif self_awareness>=60:
-            #Relevant Insights: There were times I wondered if we could be more than friends...;I have a lot of good memories with Naji; It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?; I choose to believe in myself!
-            c "I mean, he *did* get all defensive about it. You can be cautiously optimistic."
+    if self_awareness<60:
+        #Relevant Insights: Maybe I shouldn't have talked about my love life...Compared to him, I must look like a loser; I hope he doesn't think I'm silly for wanting to be in love; I always worried that he was out of my league, though
+        i "Naji? Like *you*? Cool dumb thought, Menmi."
+    elif self_awareness>=60:
+        #Relevant Insights: There were times I wondered if we could be more than friends...;I have a lot of good memories with Naji; It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?; I choose to believe in myself!
+        c "I mean, he *did* get all defensive about it. You can be cautiously optimistic."
 
     scene alleyway with vpunch
     play music "/audio/najis-theme.mp3"
@@ -105,7 +105,7 @@ label naji_date_2:
     m """
     I need to be present and focus on the moment in front of me.
 
-    The cat, having finished her meal, purrs happily as she squeezes her rounded form around his legs.
+    The cat, having finished her meal, purrs happily as she squeezes her round form around his legs.
 
     “Oh my gosh, Naji. Is she–”
     """
@@ -149,7 +149,7 @@ label naji_date_2:
     I can't read the subtext from this distance. We might have to get personal.
     """
 
-label choice_12:
+label choice_14:
     menu:
         "Agree":
             c "He wants to be reassured that he's doing the right thing. As his friend, you should validate his feelings."
@@ -226,7 +226,7 @@ label choice_12:
 
                 He frowns, brow furrowing up as he stares at the space between Mimi's ears.
                 """
-                if self_awareness =<70:
+                if self_awareness <=70:
                     scene alleyway with vpunch:
                         matrixcolor InvertMatrix(value=1.0)
                     #Relevant Insights: Where did I get that idea from?; They may have shaped my past, but the future isn't set in stone.; I need to move on.
@@ -263,7 +263,7 @@ label choice_12:
                 $ renpy.notify("Naji feels closer to you!")
                 $ naji_relationship += 10
 
-label after_choice_12:
+label after_choice_14:
     #Relevant Insights: Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own; Maybe it was his way of coping; Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance.
     show naji-smile
     n "“I don’t want to interfere with her autonomy. If you love something, let it go, you know?”"
@@ -278,9 +278,11 @@ label after_choice_12:
 
     Naji glances at me, a dark look crossing his face.
     """
+    stop music
+    play sound "/audio/impact-slam.mp3"
     scene alleyway with vpunch:
         matrixcolor InvertMatrix(value=1.0)
-    show naji-frown:
+    show naji-frown at truecenter:
         matrixcolor InvertMatrix(value=1.0)
     i "I think he disagrees."
     if self_awareness <60:
@@ -293,6 +295,7 @@ label after_choice_12:
         m "Yeah, and I'm not trying to convince him, either. Still..."
 
     scene alleyway with vpunch
+    play music "<from 15>/audio/najis-theme.mp3"
     show naji-frown
 
     #Relevant Insights: I need to be a better person.; I must have said something to make him uncomfortable; I hope he doesn't think I'm silly for wanting to be in love; I was protective of him
@@ -325,7 +328,7 @@ label after_choice_12:
     """
 
     #Relevant Insights: He was my best friend; We're super comfortable with each other
-    m "Naji laughs, tension disappearing like noon dew."
+    m "Naji laughs, tension disappearing like frost in the sun."
     n """
     “Speaking of eating, should we get going?”
 
@@ -339,6 +342,8 @@ label after_choice_12:
 
     Who can say for sure what the future holds?
     """
+
+    $ n2=True
 
     #If any of these Insights were selected: I think I just have to learn to accept that I don't know everything, but...; I'm going to have faith and enjoy the ride; They may have shaped my past, but the future isn't set in stone
     #m "Nothing to do but trust."
