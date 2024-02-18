@@ -145,31 +145,31 @@ label allie_response:
 
         “Though I'm skeptical that C-section babies are actually "born"” """
     if allie_chosen == 'allie_2':
-        al "“I'm going to my biannual clown school reunion.”"
+        al """“I'm helping to organize a triathlon for dogs.”
+
+        “No, the dogs won't be competing. They're spectating.”
+        """
     if allie_chosen == 'allie_3':
-        al """“Yeah, I'm going on a hike with my sensei up Bearclaw Mountain.”
+        al """“Yeah, I'm going on a hike with my chess sensei up Bearclaw Mountain.”
 
         “Do you know where I can buy a weighted blanket?”"""
     if allie_chosen == 'allie_4':
         al """
-        “I think I'll check out that 'anti-silent rave' going on downtown.”
+        “I think I'll check out that 'anti silent rave' going on downtown.”
 
-        “It's like a silent rave except everyone unplugs their headphones at the same time and plays whatever they're listening to from their phones.” """
+        “It's just like a regular rave except everyone plays their own music from their phone out loud at the same time.” """
     if allie_chosen == 'allie_5':
-        al "“I have relatives in town who are dying to see the bathrooms in Rye Bread Park. Tourists, am I right?”"
+        al "“I have relatives in town who are *dying* to free climb a skyscraper. Tourists, am I right?”"
     if allie_chosen == 'allie_6':
-        al """“I've gotta persuade squirrels to eat halal meat in Cilantro Park.”
-
-        “It's for an art installation. About ethics.”"""
+        al "“I'm going hunting for the Jersey Devilled Egg.”"
     if allie_chosen == 'allie_7':
         al """“I'm checking out that new high concept restaurant, {i}Food For Thought{/i}.”
 
-        “Eating is optional.”"""
+        “The menu is a series of poems written by Emory DeSassi, and each course is named after a different Middle Eastern philosopher.”"""
     if allie_chosen == 'allie_8':
-        al """
-        “I'm going to play skee-ball with my psychiatrist.”
+        al """“I'm going to play skee-ball with my high school guidance counselor.
 
-        “It's part of my exposure therapy. Healing is hard work!”"""
+        Gotta get good enough to join a league”"""
     if allie_chosen == 'allie_9':
         al """
         “I've got a little home improvement project going on.”
@@ -180,9 +180,9 @@ label allie_response:
 
         “It's cheaper than a salon bleach and twice as fun!”"""
     if allie_chosen == 'allie_11':
-        al "“Grocery shopping! Instant borscht, kettlecorn, half-baked bread — you know, pantry staples.”"
+        al "“Grocery shopping! Raw turkey breast, kettlecorn, half-baked bread — you know, pantry staples.”"
     if allie_chosen == 'allie_12':
-        al "“It's the solstice this weekend, so I'm just going to stay in...for safety.”"
+        al "“It's the Thanksgiving's Day Parade this weekend, so I'm just going to stay in...for safety reasons.”"
     if allie_chosen == 'allie_13':
         al "“I'm volunteering at the cockroach shelter. The clients are tough.”"
     if allie_chosen == 'allie_14':
@@ -190,7 +190,7 @@ label allie_response:
 
     m "Allie always has something interesting going on!"
 
-    if self_awareness <=50:
+    if self_awareness <=70:
         stop music
         play sound "/audio/impact-slam.mp3"
         scene city-night with vpunch:
@@ -207,14 +207,21 @@ label allie_response:
         show allie-neutral
         play music "<from 13>/audio/happily-ever-after.mp3"
 
-    m "“Can't wait to hear about it on Monday!”"
-
+    m "“I'm lucky to have such an interesting friend!”"
 
 
     #Ale: if Bathtime was selected jump week_2_4_bathtime (in weekend_1.rpy)
     #Ale: if Go Out was selected jump naji_date_1/naji_date_2/naji_date_3 (make sure they occur in sequence)
-    if n1==False:
+
+
+    if week = 5:
+        jump act_1_climax
+
+    elif n1==False:
         jump naji_date_1
 
-    elif n1==True:
+    elif n2==True:
+        jump naji_date_3
+
+    elif n1==True and n2==False:
         jump naji_date_2
