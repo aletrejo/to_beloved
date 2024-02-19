@@ -79,9 +79,9 @@ label bathtime_tutorial:
             text """
             Bathtime is Men-ME time! By making time to take a bath, Menmi performs self-care, replenishing her mental and physical energy.
 
-            The bath is the perfect place to ponder and process the events of Menmi’s week. You’ll be able to guide the flow of Menmi’s reflections.
+            The bath is the perfect place to ponder and process the events of Menmi's week. You'll be able to guide the flow of Menmi's reflections.
 
-            The more insight she gains into her life, the more {b}Self-Awareness{/b} you’ll earn.
+            The more insight she gains into her life, the more {b}Self-Awareness{/b} you'll earn.
             """
     show screen bathtime with dissolve
     pause
@@ -93,7 +93,7 @@ label week_2_4_bathtime:
     play sound "/audio/pencil-write.mp3"
     scene city-morning with dissolve:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 2-4{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     scene menmi-apartment-morning
@@ -104,13 +104,15 @@ label week_2_4_bathtime:
     I still have a lot to reflect on. Alright, time to marinate in my brothy thoughts and get some *winsight* into the situation.
 
     """
-    jump bathtime_1
     stop music fadeout 1.0
     play music "/audio/bathtime-theme.mp3"
-default bathtime_1_choices = []
-default insight_dialogue_1 = False
+    jump bathtime_1
 
 label bathtime_1:
+    default bathtime_1_choices = []
+    # Work around to clear list 
+    while bathtime_1_choices:
+        $ bathtime_1_choices.pop()
     m "It's been an eventful week. Out of everything's that's happened though, there's one thing I can't get off my mind."
     menu:
         m "What do I want to reflect on?"
@@ -614,7 +616,6 @@ label myself_bathtime_1:
                                                         jump me_bathtime_1_positive_result
                                                     "I'll learn from my mistakes":
                                                         $ bathtime_1_choices.append("I'll learn from my mistakes")
-                                                        $ insight_dialogue_1 = True
                                                         jump my_mistakes
                                             "What if things don't go as planned?":
                                                 $ bathtime_1_choices.append("What if things don't go as planned?")
@@ -636,15 +637,12 @@ label myself_bathtime_1:
                     menu:
                         "I keep second-guessing myself and thinking about other possibilities...":
                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
-                            $ insight_dialogue_1 = True
                             menu second_guessing:
                                 "Do I feel like it's justified?":
                                     $ bathtime_1_choices.append("Do I feel like it's justified?")
                                     jump justified
                                 "I wish I could redo some decisions":
                                     $ bathtime_1_choices.append("I wish I could redo some decisions")
-                                    $ insight_dialogue_1 = True
-                                    
                                     menu redo:
                                         "I'll get more chances. Nothing's unfixable.":
                                             $ bathtime_1_choices.append("I'll get more chances. Nothing's unfixable.")
@@ -675,7 +673,6 @@ label myself_bathtime_1:
                                             jump dont_know_everything
                                         "I'll learn from my mistakes":
                                             $ bathtime_1_choices.append("I'll learn from my mistakes")
-                                            $ insight_dialogue_1 = True
                                             jump my_mistakes
                                 "I don't think I'm being dramatic when I say Disaster will befall me.":
                                     $ bathtime_1_choices.append("I don't think I'm being dramatic when I say Disaster will befall me.")
@@ -724,22 +721,18 @@ label myself_bathtime_1:
                                                             menu still_me:
                                                                 "I need to be a better person.":
                                                                     $ bathtime_1_choices.append("I need to be a better person.")
-                                                                    $ insight_dialogue_1 = True
                                                                     jump better_person
                                                                 "Sometimes I feel insecure.":
                                                                     $ bathtime_1_choices.append("Sometimes I feel insecure.")
                                                                     menu insecure:
                                                                         "I keep second-guessing myself and thinking about other possibilities...":
                                                                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
-                                                                            $ insight_dialogue_1 = True
                                                                             jump second_guessing
                                                                         "I have to be better about that.":
-                                                                            $ insight_dialogue_1 = True
                                                                             $ bathtime_1_choices.append("I have to be better about that.")
                                                                             menu better_about_that:
                                                                                 "I'll learn from my mistakes":
                                                                                     $ bathtime_1_choices.append("I'll learn from my mistakes")
-                                                                                    $ insight_dialogue_1 = True
                                                                                     menu my_mistakes:
                                                                                         "They may have shaped my past, but the future isn't set in stone.":
                                                                                             $ bathtime_1_choices.append("They may have shaped my past, but the future isn't set in stone.")
@@ -777,7 +770,6 @@ label myself_bathtime_1:
                                                                                             $ bathtime_1_choices.append("It's deserved. How else will I learn?")
                                                                                             menu deserved:
                                                                                                 "I need to be a better person.":
-                                                                                                    $ insight_dialogue_1 = True
                                                                                                     $ bathtime_1_choices.append("I need to be a better person.")
                                                                                                     menu better_person:
                                                                                                         "I think I just have to learn to accept that I don't know everything, but...":
@@ -788,7 +780,6 @@ label myself_bathtime_1:
                                                                                                             jump feels_famliar
                                                                                                         "I'll learn from my mistakes":
                                                                                                             $ bathtime_1_choices.append("I'll learn from my mistakes")
-                                                                                                            $ insight_dialogue_1 = True
                                                                                                             jump my_mistakes
                                                                                                 "I don't think I'm being dramatic when I say Disaster will befall me.":
                                                                                                     $ bathtime_1_choices.append("I don't think I'm being dramatic when I say Disaster will befall me.")
@@ -800,14 +791,12 @@ label myself_bathtime_1:
                                                                                                     jump me_bathtime_1_positive_result
                                                                                                 "I'll learn from my mistakes":
                                                                                                     $ bathtime_1_choices.append("I'll learn from my mistakes")
-                                                                                                    $ insight_dialogue_1 = True
                                                                                                     jump my_mistakes
                                                                                         "Something about this feels familiar...":
                                                                                             $ bathtime_1_choices.append("Something about this feels familiar...")
                                                                                             jump feels_familiar
                                                                                         "I'll learn from my mistakes":
                                                                                             $ bathtime_1_choices.append("I'll learn from my mistakes")
-                                                                                            $ insight_dialogue_1 = True
                                                                                             jump my_mistakes
                                                                                 "Where did I get that idea from?":
                                                                                     $ bathtime_1_choices.append("Where did I get that idea from?")
@@ -897,7 +886,6 @@ label myself_bathtime_1:
                     menu doubtful:
                         "I keep second-guessing myself and thinking about other possibilities...":
                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
-                            $ insight_dialogue_1 = True
                             jump second_guessing
                         "What if things don't go as planned?":
                             $ bathtime_1_choices.append("What if things don't go as planned?")
@@ -940,7 +928,6 @@ label myself_bathtime_1:
                             jump hard_on_myself
                         "I need to be a better person.":
                             $ bathtime_1_choices.append("I need to be a better person.")
-                            $ insight_dialogue_1 = True
                             jump better_person
         "My choices...":
             $ bathtime_1_choices.append("My choices...")
@@ -962,7 +949,6 @@ label myself_bathtime_1:
                     menu:
                         "I keep second-guessing myself and thinking about other possibilities...":
                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
-                            $ insight_dialogue_1 = True
                             jump second_guessing
                         "It's deserved. How else will I learn?":
                             $ bathtime_1_choices.append("It's deserved. How else will I learn?")
@@ -976,7 +962,7 @@ label me_bathtime_1_positive_result:
         "It can be tough, but the only productive choice I have is to stay positive, believe in myself, and trust that everything will work out!":
             call after_bathtime_1 from _call_after_bathtime_1_3
             scene menmi-apartment-afternoon with dissolve
-            m "What a rejuvenating bath! I feel completely cleansed and ready to take on whatever’s ahead."
+            m "What a rejuvenating bath! I feel completely cleansed and ready to take on whatever's ahead."
             jump menmi_after_bath
 
 label me_bathtime_1_practical_result:
@@ -984,7 +970,7 @@ label me_bathtime_1_practical_result:
         "I might have some stuff to work out, but I can proceed with caution. What other choice do I have?":
             call after_bathtime_1 from _call_after_bathtime_1_4
             scene menmi-apartment-afternoon with dissolve
-            m "I’m still working through my thoughts and feelings, but I’ve gotten some clarity. It’s nice to slow down every now and then."
+            m "I'm still working through my thoughts and feelings, but I've gotten some clarity. It's nice to slow down every now and then."
             jump menmi_after_bath
 
 label me_bathtime_1_change_result:
@@ -992,7 +978,7 @@ label me_bathtime_1_change_result:
         "I need to give myself time to see how things play out, and check in with myself regularly. Change is the only constant, and I have to be ready for it.":
             call after_bathtime_1 from _call_after_bathtime_1_5
             scene menmi-apartment-afternoon with dissolve
-            m "Things are starting to feel a little clearer. I’m glad I took the time to reflect."
+            m "Things are starting to feel a little clearer. I'm glad I took the time to reflect."
             jump menmi_after_bath
     pause
 
@@ -1025,8 +1011,10 @@ label menmi_after_bath:
     m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"
 
     scene planner-week-unfilled with dissolve
-    m "I’m settling into my weekday routine, but I should plan what I want to do on the weekends."
-    m "Girl’s gotta have goals."
+    m "I'm settling into my weekday routine, but I should plan what I want to do on the weekends."
+    m "Girl's gotta have goals."
+
+    call screen planner_weekend(_with_none=False) with dissolve
 
 
     #Ale: Allow player to drag and drop either Bathtime or Go Out with Naji for Weekend 2
@@ -1036,7 +1024,7 @@ label reading_time:
     scene menmi-apartment-night with dissolve
     play music "/audio/reaching-the-sky.mp3" fadein 1.0
     m """
-    Now that my schedule’s settled, I’m going to snuggle in with a hot mug of tea and an even steamier romance novel.
+    Now that my schedule's settled, I'm going to snuggle in with a hot mug of tea and an even steamier romance novel.
 
     Where did I leave off? Oh right."""
 

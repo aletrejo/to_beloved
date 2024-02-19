@@ -54,7 +54,11 @@ label naji_date_3:
         play sound "/audio/impact-slam.mp3"
         scene bakery with vpunch:
             matrixcolor InvertMatrix(value=1.0)
-        # Related Insights: I have to be better about that; It's deserved; how else will I learn?; I'll learn from my mistakes
+        $ unlocks_dialogue = ["I have to be better about that", "It's deserved, how else will I learn?", "I'll learn from my mistakes"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
         i "If you were capable, you'd have gotten here earlier."
         scene bakery with vpunch
 
@@ -100,11 +104,19 @@ label naji_date_3:
     show naji-neutral
     n "“Yea.”"
 
-    #Relevant Insights: I have regrets.; I have to be better about that.; I need to be a better person.; Trick question, still me.; What if things don't go as planned?
+    $ unlocks_dialogue = ["I have regrets., I have to be better about that.", "I need to be a better person.", "Trick question, still me.", "What if things don't go as planned?"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
     m "He *is* right about being punctual, though. As hard as it is to admit, he *did* earn it by being here early."
 
     if self_awareness>=100:
-        #Relevant Insights: Naji prioritizes the needs of others before his own; He used to follow me around and do whatever I wanted; It's nice to know that I'm capable of achieving happiness for myself.; He's a good guy
+        $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "He used to follow me around and do whatever I wanted", "It's nice to know that I'm capable of achieving happiness for myself.", "He's a good guy"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
         m """
         But this is Naji we're talking about.
 
@@ -117,10 +129,18 @@ label naji_date_3:
         $ naji_relationship += 5
         n "“Ha, ya caught me.”"
 
-    #Relevant Insights: He's always had a way with people. Got the rizz, as they say; He's a good guy.; He was my best friend
+    $ unlocks_dialogue = ["He's always had a way with people. Got the rizz, as they say"," He's a good guy.", "He was my best friend"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
     n "“You knew I was planning on sharing them with you all along, right?”"
 
-    #Relevant Insights: It's all coming true like I planned; It's nice to know that I'm capable of achieving happiness for myself.
+    $ unlocks_dialogue = ["It's all coming true like I planned", "It's nice to know that I'm capable of achieving happiness for myself."]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
     m "“No cap. Shall we eat these in the park?”"
 
     scene park-day with pixellate
@@ -135,7 +155,11 @@ label naji_date_3:
     “Is this necessary?”
     """
 
-    #Relevant Insight: Meeting new people, experiencing new things, chasing down a whirlwind romance..
+    $ unlocks_dialogue = ["Meeting new people, experiencing new things, chasing down a whirlwind romance.."]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
     m """
     "It for my Instayam story!"
 
@@ -162,7 +186,11 @@ label naji_date_3:
     """
 
     show naji-neutral with dissolve
-    #Relevant Insights: Why is Naji's opinion of me such a big deal?
+    $ unlocks_dialogue = ["Why is Naji's opinion of me such a big deal?"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
     m """
     I take a peek next to me, trying to assess Naji's reaction.
 

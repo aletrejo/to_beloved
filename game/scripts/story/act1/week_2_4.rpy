@@ -10,20 +10,32 @@ label week_2_4:
     scene menmi-apartment-morning with dissolve
 
     m "Good morning MenME! I'm feeling refreshed and ready for the week ahead!"
-
-    #Ale: insert Insight-exclusive dialogue (see below)
-
-    #If any of these Insights were selected: I have to be better about that; I need to be a better person; I wish I could redo some decisions; I keep second-guessing myself and thinking about other possibilities... ; I'll learn from my mistakes]
-    if insight_dialogue_1:
+    default unlocks_dialogue = ["I have to be better about that", "I need to be a better person", "I wish I could redo some decisions", "I keep second-guessing myself and thinking about other possibilities...", "I'll learn from my mistakes"]
+    default dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+        scene menmi-apartment-morning with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
         i "You'll have to do better this week to make up for your mistakes."
+        scene menmi-apartment-morning
         m "I'll work hard to put myself back on track!"
 
-    #If any of these Insights were selected: Things might not work out, but that's a natural part of life; I'm going to have faith and enjoy the ride; I think I just have to learn to accept that I don't know everything, but...; They may have shaped my past, but the future isn't set in stone.]
-        #m "Whatever the future holds, I'll try to remain open so I can enjoy every moment as they come."
+    $ unlocks_dialogue = ["Things might not work out, but that's a natural part of life", "I'm going to have faith and enjoy the ride", "I think I just have to learn to accept that I don't know everything, but...", "They may have shaped my past, but the future isn't set in stone."]
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+        m "Whatever the future holds, I'll try to remain open so I can enjoy every moment as they come."
 
-    #If any of these Insights were selected: Insight: It's all coming true like I planned; It's nice to know that I'm capable of achieving happiness for myself; I believe in myself]
-        #m "Alright! I'm satisfied with my progress last week. I just have to keep it up, and I'll be living out my dreams in no time."
-        #i "Harder. Better. Faster. Stronger. You've got a lot working against you. That's why you have to push yourself on the path to success!"
+    $ unlocks_dialogue = ["It's all coming true like I planned", "It's nice to know that I'm capable of achieving happiness for myself", "I believe in myself"]
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+        m "Alright! I'm satisfied with my progress last week. I just have to keep it up, and I'll be living out my dreams in no time."
+        scene menmi-apartment-morning with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
+        i "Harder. Better. Faster. Stronger. You've got a lot working against you. That's why you have to push yourself on the path to success!"
+        scene menmi-apartment-morning
 
 label gym_auto:
     scene gym-inside with fade
@@ -32,7 +44,7 @@ label gym_auto:
     if gym_chosen == 'gym_1':
         m "Workouts are working out just fine."
     if gym_chosen == 'gym_2':
-        m "My morning gym routine is kicking me in the tighty whities (that’s my butt)!"
+        m "My morning gym routine is kicking me in the tighty whities (that's my butt)!"
     if gym_chosen == 'gym_3':
         m "With every push-up at the gym, I get closer to my final {b}form{/b}."
     if gym_chosen == 'gym_4':
@@ -40,9 +52,9 @@ label gym_auto:
     if gym_chosen == 'gym_5':
         m "Making gains or making eyes? I'm a multitasker."
     if gym_chosen == 'gym_6':
-        m "It’s always a pleasure to witness the fitness of the morning gym crowd."
+        m "It's always a pleasure to witness the fitness of the morning gym crowd."
     if gym_chosen == 'gym_7':
-        m "Joule’s head pats always reinvigorate me to work hard!"
+        m "Joule's head pats always reinvigorate me to work hard!"
     if gym_chosen == 'gym_8':
         m "My AM gym routine gets my heart rate {i}going!{/i}"
     if gym_chosen == 'gym_9':
@@ -59,9 +71,9 @@ label work_auto:
         Commiserated with my coworkers today.
 
         Yeah! Team bonding!
-         """
+        """
     if work_chosen == 'work_3':
-        m "I’ve got a ton going on at work, but I need money to get the honey. Do your best, MenME!"
+        m "I've got a ton going on at work, but I need money to get the honey. Do your best, MenME!"
     if work_chosen == 'work_4':
         m "Everyone at the office is so busy, but I appreciate that Devan always makes time to check in with me."
     if work_chosen == 'work_5':
@@ -210,19 +222,16 @@ label allie_response:
 
     m "“I'm lucky to have such an interesting friend!”"
 
-
-    #Ale: if Bathtime was selected jump week_2_4_bathtime (in weekend_1.rpy)
-    #Ale: if Go Out was selected jump naji_date_1/naji_date_2/naji_date_3 (make sure they occur in sequence)
-
-
-    if week = 5:
+    if week == 5:
         jump act_1_climax
+    elif weekend_event == "bathtime":
+        jump week_2_4_bathtime
+    elif weekend_event == "going_out":
+        if n1==False:
+            jump naji_date_1
 
-    elif n1==False:
-        jump naji_date_1
+        elif n2==True:
+            jump naji_date_3
 
-    elif n2==True:
-        jump naji_date_3
-
-    elif n1==True and n2==False:
-        jump naji_date_2
+        elif n1==True and n2==False:
+            jump naji_date_2

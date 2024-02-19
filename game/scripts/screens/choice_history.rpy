@@ -10,10 +10,8 @@ screen choice_history(history):
                 draggable True
                 mousewheel True
                 scrollbars "vertical"
-
                 vbox:
                     for choice in history:
                         text choice:
                             line_spacing 5
-                            xalign 0.5
-                        add "divider" xalign 0.5
+                        add "divider"

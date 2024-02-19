@@ -5,6 +5,7 @@ default work_pos_y = 684
 default morning_assigned = False
 default day_assigned = False
 default evening_assigned = False
+default weekend_event = ""
 
 init python:
     def item_dragged(dragged_items, dropped_on):
@@ -75,3 +76,30 @@ screen planner_drag():
             draggable False
             drag_name "evening"
             image Solid("#E4D3D2") xysize(150, 150)
+
+init python:
+    def weekend_activity(dragged_items, dropped_on):
+        global weekend_event
+        if dropped_on is not None:
+            weekend_event = dragged_items[0].drag_name
+            return True
+
+screen planner_weekend():
+    draggroup:
+        drag:
+            pos (icon_pos_x, 440)
+            drag_raise True
+            drag_name "going_out"
+            dragged weekend_activity
+            add "icons/lounge.png"
+        drag:
+            pos (icon_pos_x, 216)
+            drag_raise True
+            drag_name "bathtime"
+            dragged weekend_activity
+            add "icons/bath.png"
+        drag:
+            pos (1046, 343)
+            draggable False
+            drag_name "weekend"
+            image Solid("#F0D5E8") xysize(261, 263)
