@@ -1,5 +1,4 @@
 label week_2_4:
-    $ week += 1
     play sound "/audio/pencil-write.mp3"
     scene city-morning with fade:
         blur 10
@@ -203,7 +202,7 @@ label allie_response:
 
     m "Allie always has something interesting going on!"
 
-    if self_awareness <=70:
+    if self_awareness <=50:
         stop music
         play sound "/audio/impact-slam.mp3"
         scene city-night with vpunch:
@@ -220,7 +219,7 @@ label allie_response:
         show allie-neutral
         play music "<from 13>/audio/happily-ever-after.mp3"
 
-    m "“I'm lucky to have such an interesting friend!”"
+    m "I'm lucky to have such an interesting friend!"
 
     if week == 5:
         jump act_1_climax

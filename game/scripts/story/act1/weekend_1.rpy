@@ -110,7 +110,7 @@ label week_2_4_bathtime:
 
 label bathtime_1:
     default bathtime_1_choices = []
-    # Work around to clear list 
+    # Work around to clear list
     while bathtime_1_choices:
         $ bathtime_1_choices.pop()
     m "It's been an eventful week. Out of everything's that's happened though, there's one thing I can't get off my mind."
@@ -1014,6 +1014,7 @@ label menmi_after_bath:
     m "I'm settling into my weekday routine, but I should plan what I want to do on the weekends."
     m "Girl's gotta have goals."
 
+    m "I'll just drop the activity sticker I want in the 'Weekend' box!"
     call screen planner_weekend(_with_none=False) with dissolve
 
 
@@ -1094,4 +1095,5 @@ label after_reading:
 
     So long, reality. I hardly knew thee. """
 
+    $ week += 1
     jump week_2_4

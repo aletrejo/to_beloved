@@ -258,6 +258,7 @@ label choice_9bc:
         scene lounge-inside with vpunch:
             matrixcolor InvertMatrix(value=1.0)
         i "Way to be weird."
+        m "Time to change the subject"
         play music "<from 20>/audio/happily-ever-after.mp3"
         scene lounge-inside
         show naji-bar-surprise
@@ -266,6 +267,7 @@ label choice_9bc:
 label after_choice_9:
     hide naji-bar-laugh
     show naji-bar-neutral
+    m "“Smooth moves manuevering those guys out of a fight.”"
     n "“Oh, that? It wasn't a big deal.”"
     n "“You'd do the same.”"
     m """

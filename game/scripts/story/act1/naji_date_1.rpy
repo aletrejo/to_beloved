@@ -138,16 +138,20 @@ label after_choice_12:
     """
 
     if self_awareness<=40:
+        stop music
+        play sound "/audio/impact-slam.mp3"
+        scene lounge-inside with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
         $ unlocks_dialogue = ["I didn't know he was so popular...", "It makes me jealous to think that there are others who are closer to him now"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         i "They're definitely dating."
-        stop music
-        play sound "/audio/impact-slam.mp3"
-        scene lounge-inside with vpunch:
-            matrixcolor InvertMatrix(value=1.0)
+        play music "<from 7>/audio/najis-theme.mp3"
+        scene lounge-inside with hpunch
+        show naji-bar-smile with dissolve
+
 
     m "Naji clears his throat and becomes very interested in wiping down the counter."
 
@@ -294,6 +298,8 @@ label after_choice_12:
         scene lounge-inside with vpunch:
             matrixcolor InvertMatrix(value=1.0)
         i "{i}Scaaaatterbrains!{/i}"
+        scene lounge-inside with hpunch
+        show naji-bar-neutral with dissolve
 
     m "I take a sip of the drink."
 
@@ -741,9 +747,9 @@ label after_choice_13:
     m """
     Shaker in one hand, Naji passes a bottle over the nape of his neck around his shoulders.
 
-    The shaker rolls down his arm in a graceful swoop. With his extended hand, He catches the shaker-bottle with the other and gracefully pours the fizzy contents into the glass.
+    The shaker rolls down his arm in an elegant swoop. With his extended hand, He catches the shaker-bottle with the other and gracefully pours the fizzy contents into the glass.
 
-    Naji completes his trick, figure poised in a confident flourish, though his red cheeks and crooked grin belied his embarrassment.
+    Naji completes his trick, figure poised in a confident flourish, though his red cheeks and crooked grin belie his embarrassment.
     """
 
     hide naji-bar-smile
@@ -779,6 +785,11 @@ label after_choice_13:
     hide naji-bar-laugh
     show naji-bar-frown
 
+    $ unlocks_dialogue = ["We're the same age, but I kind of saw him as a little brother"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
     n "“To *you*”"
     m """ “Didn't you put popcorn butter in it too?”
 
@@ -851,10 +862,13 @@ label after_naji_date:
     m """
     Hanging out with Naji always feels new and familiar at the same time.
 
-    It's a shame that the weekend's over, but there's always next weekend! What should I do? """
+    It's a shame that the weekend's over, but there's always next weekend! What should I do?
+    """
 
     #Choose next weekend activity in planner
     scene planner-week-unfilled with dissolve
+    m "I'll just drop the activity sticker I want in the 'Weekend' box!"
     call screen planner_weekend(_with_none=False) with dissolve
+
 
     jump reading_time

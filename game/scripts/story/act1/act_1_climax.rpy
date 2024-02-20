@@ -7,14 +7,14 @@ label act_1_climax:
     pause
 
     scene menmi-apartment-morning with blinds
+    play music "/audio/reaching-the-sky.mp3" fadein 2.0
+
     m """
     *Yawn* Good mourning, everybody.
 
-    No, that's not a misspelling. We're grieving the loss of my ability to make good choices.
+    No, that's not a misspelling. I'm grieving the loss of my decision-making faculties.
     """
 
     #play audio barbling
-    play music "/audio/reaching-the-sky.mp3" fadein 2.0
-
 
     m "Ow...why'd I drink so much last night?"

@@ -4,7 +4,7 @@ screen insight(thoughts):
     vbox at insight_transform:
         for thought in thoughts:
             frame:
-                text ["Insight: " + thought]
+                text "{b}Insight{/b}: [thought]"
 
     timer 2 action Hide('insight')
 
@@ -23,6 +23,7 @@ style insight_frame:
     background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
     padding gui.notify_frame_borders.padding
 
+
 style insight_vbox:
     spacing 20
 
@@ -32,4 +33,5 @@ init python:
         for insight in insights:
             if insight in choices:
                 matches_found.append(insight)
+                renpy.play ("audio/insight-chime.mp3")
         return matches_found

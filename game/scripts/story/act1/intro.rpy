@@ -19,12 +19,14 @@ define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
 define al = Character("Allie", color="#66b704", image="allie")
 define i = Character("Intrusive Inner Voice", color='#023F59')
 
+
+
 # Global variables
 default self_awareness = 0
 default naji_relationship = 0
 default joule_relationship = 0
 default dev_relationship = 0
-default week = 0
+default week = 1
 default n1 = False
 default n2 = False
 default n3 = False
@@ -40,7 +42,6 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    $ week += 1
     play music "<from 5>/audio/cloud.wav"
     scene menmi-apartment-morning
     with vpunch
