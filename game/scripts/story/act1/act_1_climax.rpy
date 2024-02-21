@@ -11,7 +11,7 @@ label act_1_climax:
     m """
     *Yawn* Good mourning, everybody.
 
-    No, that's not a misspelling. The "U" is silent, but still an active participant.
+    No, that's not a misspelling. The "U" is silent, but still an active participant{w} ;)
 
     I'm grieving the loss of my decision-making faculties.
     """
@@ -38,6 +38,7 @@ label act_1_climax:
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m "Because I'm cool?"
+        i "That's so funny I forgot what I was even thinking about."
 
     play music "<from 5>/audio/siberian-express.mp3" fadein 5.0
 
@@ -65,7 +66,7 @@ label act_1_climax:
     Like a pit stain on that knock-off Louis Mutton blouse you paid way too much for at that thrift store in Cooklyn.
     """
 
-    m "Oh my gosh I was upcycling!"
+    m "At least it was sustainable!"
 
     $ unlocks_dialogue = ["It's deserved. How else will I learn?"]
     $ dialogue_matches = []
@@ -77,7 +78,7 @@ label act_1_climax:
     scene menmi-apartment-morning with dissolve:
         matrixcolor BrightnessMatrix (value=-0.7)
     m """
-    Alone...spiraling.
+    ...
 
     I just want to be good enough.
     """
@@ -112,6 +113,8 @@ label choice_16:
             stop music fadeout 3.0
             c "This train of thought is making you miserable. Let's do something else."
             m "Maybe listening to some music will help."
+            scene menmi-apartment-morning with dissolve:
+                matrixcolor BrightnessMatrix (value=-0.4)
             play music "<from 43>/audio/lonely-souls.mp3"
             m """
             Ah, the members of Double Black Velvet Jeans are so pretty.
@@ -157,7 +160,7 @@ label choice_16:
 label after_choice_16:
     m "I just wish something would *happen* for once."
 
-    scene menmi-apartment-afternoon with dissolve
+    scene menmi-apartment-afternoon with vpunch
     play sound "/audio/cell-vibrate.mp3"
     stop music fadeout 3.0
     m """
@@ -165,7 +168,7 @@ label after_choice_16:
 
     I glance at the screen to see who’s crashing my pity party."""
 
-    play music "/audio/najis-theme.mp3" 0.7 fadein 5.0
+    play music "/audio/najis-theme.mp3" volume 0.7 fadein 5.0
 
     m "!!!{w} Naji?"
 
@@ -217,7 +220,7 @@ label after_choice_16:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "“I'm not feeling great.”"
+        m "“It's been kind of rough lately.”"
         n "“I'm sorry to hear that, Men. I wish I could cheer you up!”"
 
     n "“If you’re feeling up to it by then, how about hitting up the Onion Circle Greenmarket tomorrow?”"
@@ -238,7 +241,7 @@ label after_choice_16:
 
         No...{w}it can't be.
         """
-    $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride", "Why not, though?."]
+    $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride", "Why not, though?"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
@@ -264,7 +267,189 @@ label after_choice_16:
         play sound "/audio/heartbeat-fast.mp3"
 
         m """
-        ...is what comes out of my mouth, but my heart is trembling up my throat.
+        ...is what comes out of my mouth, but my heart is throttling up through my throat.
 
-        Naji just laughs.
+        Naji just laughs before hanging up.
         """
+
+    stop music fadeout 2.0
+    play sound "/audio/heartbeat-fast.mp3" volume 2.0
+
+    scene menmi-apartment-morning with dissolve
+    m "When the urge to scream into the couch cushions overcomes me, I do not fight it."
+
+    scene menmi-apartment-morning with hpunch
+    m "{cps=*0.5}EEEEEEEEEEEEE{/cps}{w}!!!!! {w}????"
+    scene menmi-apartment-morning with hpunch
+    scene menmi-apartment-morning with hpunch
+
+    $ unlocks_dialogue = ["He was my best friend", "We're the same age, but I kind of saw him as a little brother"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    m """
+    Why is my heart beating so fast?
+
+    It's *just* Naji...
+    """
+
+    $ unlocks_dialogue = ["Do I feel like it's justified?", " Where did I get that idea from?", "Something about this feels familiar..."]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    c "Unzip that subconscious 'cause we're going to unpack these feels."
+
+    play music "/audio/siberian-express.mp3" volume 0.5
+    scene menmi-apartment-morning with dissolve:
+        matrixcolor BrightnessMatrix (value=-0.4)
+        matrixcolor SepiaMatrix (tint='#ffeec2', desat=(0.2126, 0.7152, 0.0722))
+
+    $ unlocks_dialogue = ["Naji and I grew up across the street from each other", "We're super comfortable with each other", "He was my best friend", "I have a lot of good memories with Naji."]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    m """
+    We go way back. Naji and I grew up together.
+
+    His mom used to drop him off at our place all the time. {w}She was always pawning him off somewhere so she could spend time with some new guy.
+    """
+
+    $ unlocks_dialogue = ["That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers", "I was protective of him", " I have to keep that in mind, no matter what happens going forward."]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    m "I'm grateful I got to spend so much time with him, but I always felt sorry for how quickly he had to learn to survive on his own."
+
+    $ unlocks_dialogue = ["He's always had a way with people. Got the rizz, as they say", "Naji prioritizes the needs of others before his own"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    m """
+    Not that his presence was ever a burden, though.
+
+    My parents *loved* him.
+
+    Naji made sure of that.
+    """
+
+    if self_awareness>=80:
+        $ unlocks_dialogue = ["My family..."]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "For whatever reason, my parents' approval of him endeared him to me too."
+
+    scene lounge-inside with dissolve
+    m "Meeting him again at the William Collins..."
+
+    scene lounge-inside with dissolve:
+        matrixcolor SepiaMatrix (tint='#ffeec2', desat=(0.2126, 0.7152, 0.0722))
+    show naji-bar-neutral at truecenter with flash:
+        matrixcolor SepiaMatrix (tint='#ffeec2', desat=(0.2126, 0.7152, 0.0722))
+
+    "Customer" "“The new guy’s charming, isn’t he? Easy on the eyes, too.”"
+    "Waitress" "“We all love him here!”"
+
+
+    hide naji-bar-neutral with dissolve
+    show naji-bar-neutral with dissolve
+
+
+    $ unlocks_dialogue = ["He's changed", "It makes me jealous to think that there are others who are closer to him now", "It makes me feel insecure that I don't know everything about him", "By the time we were in high school, I could see how he would be considered attractive...physically", " I thought I knew him better"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    m "I'm starting to see him differently."
+
+    scene menmi-apartment-afternoon with fade:
+        matrixcolor SepiaMatrix (tint='#ffeec2', desat=(0.2126, 0.7152, 0.0722))
+
+    $ unlocks_dialogue = ["I think I just have to learn to accept that I don't know everything, but..."," I'm going to have faith and enjoy the ride; I believe in myself", "What if they do?", "Things might not work out, but that's a natural part of life."]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    if self_awareness>=50:
+        m """
+        Our relationship is changing, and it's kind of scary...
+
+        Things might get worse between us.
+
+        But what if they don't?
+        """
+
+        $ unlocks_dialogue = ["I hope he doesn't think I'm silly for wanting to be in love", "Why is Naji's opinion of me such a big deal?"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+            m "Forgive me for this, Naji..."
+
+
+        $ unlocks_dialogue = ["There were times I wondered if we could be more than friends..."]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "Could I be cautiously optimistic? {w} Tentatively, yes."
+
+    elif self_awareness<50:
+        $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...", "I always worried that he was out of my league, though"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "I’ve been toying with the possibility in the back of mind, but I’ve been too afraid to seriously entertain it until now."
+
+        $ unlocks_dialogue = ["It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "There’s an irreplicable intimacy shared between childhood friends."
+
+        $ unlocks_dialogue = ["It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "As the years go by and maturity teaches our eyes to see by the light of desire, {w}the innocent bud of camaraderie we planted in childhood blooms into something more...{w}sophisticated."
+
+        $ unlocks_dialogue = ["I always worried that he was out of my league, though"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m """
+        But I can't let myself get carried away.
+
+        I mean, an *objectively* hot guy...interested in *me*?
+
+        Impossible.
+
+        And yet... here we are.
+        """
+
+    stop music
+    play music "<from 48>/audio/reaching-the-sky.mp3"
+    scene menmi-apartment-afternoon with flash
+    m """
+    Pain bursts through my head as the 2pm sun hits my eyes.
+
+    I’ve got to do something about this hangover...
+
+    Despite the pain in my head, my limbs lightly lift me off the couch.
+    """
+
+
+    scene city-morning with fade:
+        blur 10
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}End of Act 1{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=150}\n Self-Awareness Score: [self_awareness]{/size}{/font}{/color}" at truecenter with wiperight
+    pause

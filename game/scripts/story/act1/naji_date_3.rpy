@@ -111,7 +111,7 @@ label naji_date_3:
         show screen insight(dialogue_matches)
     m "He *is* right about being punctual, though. As hard as it is to admit, he *did* earn it by being here early."
 
-    if self_awareness>=100:
+    if self_awareness>=80:
         $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "He used to follow me around and do whatever I wanted", "It's nice to know that I'm capable of achieving happiness for myself.", "He's a good guy"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
