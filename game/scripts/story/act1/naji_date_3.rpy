@@ -302,7 +302,7 @@ label after_choice_15:
     m """
     “I ate them *every* day.”
 
-    “You were doing me a favor. Trust.”
+    “You were doing me a favor by taking them. Trust.”
     """
 
     $ unlocks_dialogue = ["We're the same age, but I kind of saw him as a little brother", "I was protective of him"]
@@ -340,8 +340,6 @@ label after_choice_15:
     n "“Absence makes the heart grow fonder, they say.”"
     m "“They do say that, actually”"
 
-    hide naji-neutral
-    show naji-lookaway
 
     $ unlocks_dialogue = ["It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?"]
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -355,17 +353,22 @@ label after_choice_15:
 
     """
 
-    hide naji-lookaway
-    show naji-neutral
+    hide naji-neutral
+    show naji-smile
 
     n "“We should revisit the Little Crebbie’s one day.”"
     m "“Mmmm...I think Joule would kill me if I picked up a sugar habit.”"
+
+    hide naji-smile
+    show naji-neutral
 
     $ unlocks_dialogue = ["I must have said something to make him uncomfortable", "Maybe I shouldn't have talked about my love life...", "He's hiding something"]
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m "I’d expected laughter, but Naji remains quiet, eyes toward the sky."
+
+    stop music fadeout 5.0
 
     $ unlocks_dialogue = [" I keep second-guessing myself and thinking about other possibilities..."]
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -380,7 +383,8 @@ label after_choice_15:
 
     m "I'm drawing a blank."
 
-    show naji-park-breeze:
+    play music "<from 107>/audio/reaching-the-sky.mp3" volume 0.5
+    show naji-park-breeze with dissolve:
         zoom 1.5
         ease 5.0 zoom 1.0
 
