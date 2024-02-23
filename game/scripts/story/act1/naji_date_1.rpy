@@ -859,16 +859,14 @@ label after_naji_date:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m """
-    Hanging out with Naji always feels new and familiar at the same time.
+    m "Hanging out with Naji always feels new and familiar at the same time."
 
-    It's a shame that the weekend's over, but there's always next weekend! What should I do?
-    """
-
-    #Choose next weekend activity in planner
-    scene planner-week-unfilled with dissolve
-    m "I'll just drop the activity sticker I want in the 'Weekend' box!"
-    call screen planner_weekend(_with_none=False) with dissolve
-
-
-    jump reading_time
+    if week == 4:
+        jump reading_time
+    elif week<4:
+        m "It's a shame that the weekend's over, but there's always next weekend! What should I do?"
+        #Choose next weekend activity in planner
+        scene planner-week-unfilled with dissolve
+        m "I'll just drop the activity sticker I want in the 'Weekend' box!"
+        call screen planner_weekend(_with_none=False) with dissolve
+        jump reading_time

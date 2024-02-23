@@ -431,8 +431,17 @@ label choosing_prince:
     scene applecore-city with dissolve
     m "Now that my story's been written, all that's left to do is live it!"
     window hide
-    scene image Solid("#ffc6ebff") with dissolve
-    show text "{font=fredoka}{size=288}To BeLoved{/size}{/font}" at truecenter
+
+
+    show image "title-screen.png" with dissolve
+    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#d33c59}To BeLoved{/size}{/font}" at truecenter
     with dissolve
+    pause
+
+    play sound "/audio/impact-slam.mp3"
+    show image "title-screen.png":
+        matrixcolor InvertMatrix(value=1.0)
+    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#1d0842}To BeLoved{/size}{/font}" at truecenter
+    with hpunch
     pause
     jump week_1_morning

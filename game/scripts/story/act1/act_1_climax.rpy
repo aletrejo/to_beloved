@@ -301,7 +301,8 @@ label after_choice_16:
         show screen insight(dialogue_matches)
     c "Unzip that subconscious 'cause we're going to unpack these feels."
 
-    play music "/audio/siberian-express.mp3" volume 0.5
+    play music "<from 5>/audio/siberian-express.mp3" volume 0.5
+    stop sound
     scene menmi-apartment-morning with dissolve:
         matrixcolor BrightnessMatrix (value=-0.4)
         matrixcolor SepiaMatrix (tint='#ffeec2', desat=(0.2126, 0.7152, 0.0722))
@@ -434,7 +435,7 @@ label after_choice_16:
 
         Impossible.
 
-        And yet... here we are.
+        And yet...{w} here we are.
         """
 
     stop music
@@ -446,6 +447,11 @@ label after_choice_16:
     I’ve got to do something about this hangover...
 
     Despite the pain in my head, my limbs lightly lift me off the couch.
+
+    I stretch, feeling my body vibrate from head to toe.
+
+    It may be the end of the week, but it feels like I'm standing at the start of something new.
+
     """
 
 

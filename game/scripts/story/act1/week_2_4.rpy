@@ -58,6 +58,7 @@ label gym_auto:
         m "My AM gym routine gets my heart rate {i}going!{/i}"
     if gym_chosen == 'gym_9':
         m "I'm more familiar with ripped bodices than ripped bodies, but I'm giving it my best at the gym!"
+    $ gym_options.remove(gym_chosen)
 
 label work_auto:
     scene office-inside with fade
@@ -91,9 +92,13 @@ label work_auto:
         m """
         Sometimes I entertain myself during work by thinking about the personalities of Office Apps.
 
-        Would Dev be more of a Powerpoint or a Word?
+        Would Dev be more of a Powerpoint or an Excel?
+
+        Personally, I identify as Calendar.
 
         Asking some seriously important questions here."""
+
+    $ work_options.remove(work_chosen)
 
 
 label lounge_auto:
@@ -107,7 +112,7 @@ label lounge_auto:
 
         Guess we'll have to make our own drama *wink*"""
     if lounge_chosen == 'lounge_3':
-        m "Naji sometimes gives me free drinks after work. It's nice to have friends in high places!"
+        m "Naji sometimes gives me free drinks after work. It's nice to have friends in high, um {w}drunk places!"
     if lounge_chosen == 'lounge_4':
         m """Either there are a disproportionately high number of hotties frequenting the William Collins
 
@@ -132,6 +137,7 @@ label lounge_auto:
         What's it mean?
 
         Why'd Naji throw them out?"""
+    $ lounge_options.remove(lounge_chosen)
 
 label after_week:
     scene city-night with fade
@@ -201,6 +207,7 @@ label allie_response:
         al "“I'm working at the wax museum. They're short on hands.”"
 
     m "Allie always has something interesting going on!"
+    $ allie_response_options.remove(allie_chosen)
 
     if self_awareness <=50:
         stop music
