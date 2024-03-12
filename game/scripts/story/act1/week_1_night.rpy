@@ -26,17 +26,25 @@ label naji_introduction:
     Although hanging out at an upscale establishment certainly improves my chances of meeting a dashing gentleman who'll sweep me off my feet...
     """
 
-    if self_awareness <=30:
-        stop music
-        play sound "/audio/impact-slam.mp3"
-        play music "<from 13>/audio/cave-streams.mp3"
-        scene lounge-outside with vpunch:
-            matrixcolor InvertMatrix(value=1.0)
-        i "If you don't trip over your tongue first."
-        m "I can pronounciate words just fine!"
-        play music "<from 20>/audio/happily-ever-after.mp3"
-        scene lounge-outside
-        show allie-neutral at right
+    stop music
+    play sound "/audio/impact-slam.mp3"
+    play music "<from 13>/audio/cave-streams.mp3"
+    scene lounge-outside with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+    i "If you don't trip over your tongue first."
+
+    if self_awareness >=25:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        m "I don't need words when I've got *rizz*."
+    elif self_awareness<25:
+        m """I can pronounciate words just fine! Aw, fruck.
+
+        Maybe I'll just never speak again.
+        """
+
+    play music "<from 20>/audio/happily-ever-after.mp3"
+    scene lounge-outside
+    show allie-neutral at right
 
     m """
     I hold out my hand to Allie and bow obsequiously.
@@ -114,7 +122,7 @@ label naji_introduction:
     n """
     “It's part of a bartender's job to listen to their customers.”
 
-    “And from what I observed about the incident at hand, it was an accident. This fellow was picking up your wallet and knocked your drink over on the way up.”
+    “And from what I observed about the incident at hand, it was an accident. This fellow was picking up your wallet that you dropped and knocked your drink over on the way up.”
 
     “You know what they say – ‘No good deed goes unpunished’. It must have been frustrating to be wrongly accused, but we can talk this out.”
     """
@@ -168,14 +176,26 @@ label naji_introduction:
     I'm no hype bee.
     """
     al "“Hey, Town Hero over there is your friend, right? Aren't you going to say ‘hi’?”"
-    m "But he's surrounded by all those people. What if he thinks I'm annoying?"
+    m "But he's surrounded by all those people."
+
+    stop music
+    play sound "/audio/impact-slam.mp3"
+    scene lounge-inside with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+        blur 24
+    i "What if he thinks you're annoying?"
+    if self_awareness >=30:
+        scene lounge-inside with hpunch
+        stop music fadeout 2.0
+        $ renpy.notify("Self-Awareness Check: Passed")
+        m "{i}You're{/i} annoying. Shut up so I can think properly."
+    elif self_awareness<30:
+        m "It's true. I'm annoyed at myself for even having this thought."
+
 label choice_9:
     menu:
         m "What should I do?"
-
         "Call out to Naji":
-            $ renpy.notify("+5 Self-Awareness")
-            $ self_awareness += 5
             c """
             Naji is expecting you. You came here to see him. Why wouldn't he want to see you, too?
 
@@ -251,7 +271,7 @@ label choice_9bc:
     m "Naji blinks at me. He seems surprised."
     n "“Why didn't you say ‘hi’?”"
     m "“Ah, I didn't want to disturb you while you were...busy”"
-    if self_awareness <=30:
+    if self_awareness <=20:
         stop music
         play sound "/audio/impact-slam.mp3"
         play music "<from 13>/audio/cave-streams.mp3"
@@ -434,19 +454,29 @@ label after_choice_10:
     """
 
 
-    if self_awareness <=30:
-        stop music
-        play sound "/audio/impact-slam.mp3"
-        scene lounge-inside with vpunch:
-            matrixcolor InvertMatrix(value=1.0)
-        i """
-        Maybe it's something you should keep in mind...just in case.
+    stop music fadeout 1.0
+    play sound "/audio/impact-slam.mp3"
+    play music "<from 13>/audio/cave-streams.mp3"
+    scene lounge-inside with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+    i "Maybe it's something you should keep in mind...just in case."
+    if self_awareness >=30:
+        scene lounge-inside with hpunch
+        stop music fadeout 2.0
+        $ renpy.notify("Self-Awareness Check: Passed")
+        show naji-bar-neutral with dissolve
+        m "What's other people's interest in Naji have to do with me? I can't control the way others feel about him."
+    elif self_awareness<30:
+        show naji-bar-neutral with dissolve
+        m """I have to be wary of the competition.
 
-        Don't want to make a fool of yourself...though that might not be avoidable even if you tried.
+        After all, I don't want to pursue someone who's out of my league and make a fool of myself...
         """
+
 
     scene lounge-inside
     play music "<from 22>/audio/happily-ever-after.mp3" fadein 1.0
+    hide naji-bar-neutral
     show naji-bar-smile
     m """
     We spend the rest of the evening chatting companionably over delicious cocktails Naji whips up like some sort of mixed drink magician.

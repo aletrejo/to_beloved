@@ -102,20 +102,27 @@ label naji_date_2:
         matrixcolor InvertMatrix(value=1.0)
     m "So why are my cheeks burning?"
 
-    if self_awareness<60:
-        $ unlocks_dialogue = ["Maybe I shouldn't have talked about my love life...Compared to him, I must look like a loser", "I hope he doesn't think I'm silly for wanting to be in love", "I always worried that he was out of my league, though"]
-        $ dialogue_matches = []
-        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-        if len(dialogue_matches) > 0:
-            show screen insight(dialogue_matches)
-        i "Naji? Like *you*? Cool dumb thought, Menmi."
-    elif self_awareness>=60:
+
+    $ unlocks_dialogue = ["Maybe I shouldn't have talked about my love life...Compared to him, I must look like a loser", "I hope he doesn't think I'm silly for wanting to be in love", "I always worried that he was out of my league, though"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    i "Naji? Like *you*? Cool dumb thought, Menmi."
+
+    if self_awareness>=60:
+        $ renpy.notify("Self-Awareness Check: Passed")
         $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...","I have a lot of good memories with Naji", "It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?", "I choose to believe in myself!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        c "I mean, he *did* get all defensive about it. You can be cautiously optimistic."
+        m "I mean, he *did* get all defensive about it. I can be cautiously optimistic."
+    elif self_awareness<60:
+        m """
+        Gosh, I must be delulu to believe a miracle like that could be trululu.
+
+        Either way, I need to be present and focus on the moment in front of me."""
 
     scene alleyway with vpunch
     play music "/audio/najis-theme.mp3"
@@ -127,7 +134,6 @@ label naji_date_2:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    I need to be present and focus on the moment in front of me.
 
     The cat, having finished her meal, purrs happily as she squeezes her round form around his legs.
 
@@ -273,7 +279,7 @@ label choice_14:
                 if len(dialogue_matches) > 0:
                     show screen insight(dialogue_matches)
                 c "There's a way to make sense of this."
-                scene alleyway:
+                scene alleyway with dissolve:
                     blur 50
                 show naji-lookaway at truecenter:
                     blur 50
@@ -344,7 +350,7 @@ label choice_14:
 
                 Mom was always relying on me or worse, whichever guy she was trying to impress that day.”
                 """
-                
+
 
 label after_choice_14:
     $ unlocks_dialogue = ["Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own", "Maybe it was his way of coping", "Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance."]
@@ -375,8 +381,18 @@ label after_choice_14:
         matrixcolor InvertMatrix(value=1.0)
     show naji-frown at truecenter:
         matrixcolor InvertMatrix(value=1.0)
-    i "I think he disagrees."
-    if self_awareness <60:
+    i "Clearly, he disagrees."
+
+    if self_awareness >=60:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        $ unlocks_dialogue = ["There are times when I admit I can be hard on myself.", "I choose to believe in myself!", "Everyone has to believe in something, and I choose to believe in love!"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        c "It's OK to disagree. You're different people, after all."
+        m "Yeah, and I'm not trying to convince him of my views, either. Still..."
+    elif self_awareness <60:
         $ unlocks_dialogue = ["I keep second-guessing myself and thinking about other possibilities...I can't go back now, though.", "Why's Naji's opinion of me such a big deal?", "Maybe I shouldn't have talked about my love life..."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -384,14 +400,6 @@ label after_choice_14:
             show screen insight(dialogue_matches)
         m "I've upset him."
         i "Nice going, scatterbrains!"
-    if self_awareness >=60:
-        $ unlocks_dialogue = ["There are times when I admit I can be hard on myself.", "I choose to believe in myself!", "Everyone has to believe in something, and I choose to believe in love!"]
-        $ dialogue_matches = []
-        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-        if len(dialogue_matches) > 0:
-            show screen insight(dialogue_matches)
-        c "It's OK to disagree. You're different people, after all."
-        m "Yeah, and I'm not trying to convince him, either. Still..."
 
     scene alleyway with vpunch
     play music "<from 15>/audio/najis-theme.mp3"

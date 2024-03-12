@@ -209,7 +209,7 @@ label allie_response:
     m "Allie always has something interesting going on!"
     $ allie_response_options.remove(allie_chosen)
 
-    if self_awareness <=50:
+    if self_awareness <=40:
         stop music
         play sound "/audio/impact-slam.mp3"
         scene city-night with vpunch:
@@ -218,7 +218,7 @@ label allie_response:
             matrixcolor InvertMatrix(value=1.0)
         i """ Wish you could be half as cool.
 
-        Why does she even hang out with you, Dullsy Duck?"""
+        Why do they even hang out with you, Dullsy Duck?"""
 
         m "*laughs nervously*"
 

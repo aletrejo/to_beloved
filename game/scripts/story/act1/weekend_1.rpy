@@ -1067,12 +1067,14 @@ label menmi_after_bath:
 
     if week == 4:
         m "Ah...I'm glad I took the time to unwind and cleanse. I wonder what next week will bring..."
-        jump week_2_4
+        jump reading_time
 
     elif week<4:
         m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"
         scene planner-week-unfilled with dissolve
-        m "I'm settling into my weekday routine, but I should plan what I want to do on the weekends."
+        m """I'm settling into my weekday routine, but I should plan what I want to do on the weekends.
+
+        It seems like I'll be able to decide what I want to do for the next three weekends! I have to plan ahead if I want to get to all the activities I want to do."""
         m "Girl's gotta have goals."
 
         m "I'll just drop the activity sticker I want in the 'Weekend' box!"
@@ -1088,7 +1090,7 @@ label reading_time:
 
     Where did I leave off? Oh right."""
 
-    default random_reading = ["reading_1", "reading_2", "reading_3", "reading_4"]
+    default random_reading = ["reading_1", "reading_2", "reading_3", "reading_4", "reading_5"]
     $ reading_chosen = renpy.random.choice(random_reading)
     jump expression reading_chosen
 
@@ -1143,11 +1145,23 @@ label reading_4:
 
     Little does she know...Gustavo has a secret...
 
-    It's {i}vampires{/i}.
+    It's {i}*vampires*{/i}.
 
-    Blood will spill. Bonds will be tested. Bodices *will* be ripped.
+    Bonds will be tested. Blood will spill. Bodices *will* be ripped.
     """
     jump after_reading
+
+label reading_5:
+    m """
+    Beleagured by her hectic job as a high-powered attorney for fashion tragedies, Slayleigh returns to her small, but picturesque hometown in search of some R&R.
+
+    Instead, she finds Liam, the new baker's apprentice whose hard outer crust as a knife dealer hides a soft and fluffy disposition.
+
+    But when a murder shakes her small town, Slayleigh finds herself amidst a decades-long feud between the bakers and those who oppose all baked goods, known only as "The Glutenless".
+
+    Will Slayleigh rise to the occassion? Or will her theories end up half-baked?
+
+    """
 
 label after_reading:
     m """
