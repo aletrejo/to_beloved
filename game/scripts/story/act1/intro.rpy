@@ -198,7 +198,7 @@ label no_self_awareness_tutorial:
             xmaximum 1000
             box_wrap True
             text """
-            {size=-5}Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.
+            {size=-5}Looks like Menmi just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.
 
             {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.
 
@@ -221,7 +221,7 @@ label self_awareness_tutorial:
             box_wrap True
             text """
             {size=-5}
-            Nice job — you just gained some {b}Self-Awareness{/b}.
+            Nice job — Menmi just gained some {b}Self-Awareness{/b}.
 
             {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.
 

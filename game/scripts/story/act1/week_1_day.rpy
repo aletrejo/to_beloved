@@ -45,7 +45,7 @@ label week_1_day:
     scene office-inside with vpunch:
         matrixcolor InvertMatrix(value=1.0)
     i "Don't say anything weird. You want them to like you.."
-    if self_awareness >=20:
+    if self_awareness >=10:
         $ renpy.notify("Self-Awareness Check: Passed")
         m "Hush! You're making me anxious. Socially."
         stop music fadeout 1.0
@@ -54,7 +54,7 @@ label week_1_day:
         show allie-neutral with dissolve
         m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring anything?”"
         m "To my relief, they reciprocate my smile."
-    elif self_awareness<20:
+    elif self_awareness<10:
         m "“Um, do you work here?”"
         i "What are you *asking*? They're here with you. In the office. Obviously they work here."
         m """
