@@ -198,7 +198,7 @@ label no_self_awareness_tutorial:
             xmaximum 1000
             box_wrap True
             text """
-            {size=-5}Looks like you just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.
+            {size=-5}Looks like Menmi just missed out on some {b}Self-Awareness{/b}, but no worries — we're all learning.
 
             {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.
 
@@ -221,7 +221,7 @@ label self_awareness_tutorial:
             box_wrap True
             text """
             {size=-5}
-            Nice job — you just gained some {b}Self-Awareness{/b}.
+            Nice job — Menmi just gained some {b}Self-Awareness{/b}.
 
             {b}Self-Awareness{/b} allows Menmi to distinguish between the voices that help and the ones that hinder. Having a more informed sense of self helps Menmi navigate the world with fewer distortions about herself and those around her.
 
@@ -372,7 +372,14 @@ label choosing_prince:
         "Effortlessly cool and competent":
             $ dev_relationship += 5
             m "A mature person who strides through life with unwavering confidence, admired by all. He's always in control...until {i}I{/i} make him lose it."
-    m "It's not like I'm expecting it to be all fun and games, of course! Give me more credit than that. I'm a realist at heart."
+    m """
+    Whew! Manifesting my dream man into existence is hard work.
+
+    Just kidding! I could literally do this all day. {p}And I will!
+
+    I’m not naive, though. I know the world isn’t all sunshine and six-packs.
+    """
+
     menu:
         m "I know *all* the red flags:"
 
@@ -394,9 +401,11 @@ label choosing_prince:
             """
         "Vengeful exes hellbent on sabotaging our happiness":
             m """
-            Naturally, he'll be a man in demand. You know, a skater boy? To whom she said  ‘see ya later boi’?
+            Naturally, he'll be a man in demand.
 
             I'll never forget how desirable he is because his ex(es) will constantly be coming after me like they don't have anything better to do!
+
+            Nobody wants to work anymore! And why would they when you can ride the highs of hopeless infatuation?
 
             """
 
@@ -416,13 +425,15 @@ label choosing_prince:
             """
     scene menmi-apartment-afternoon with dissolve
     m """
-    I'm not naive. I know the world isn't all sunshine and six packs.
+    We might struggle, but it’s OK, because at the end of the day, hardship happens to test our love!
 
-    But it's OK, because at the end of the day, as long as I have him, we will overcome the odds and make each other more perfect and whole people.
+    Love is the answer - to everything.
 
-    Love is the greatest thing that can happen to anyone. To feel, finally, in this cold, lonely world, the safe haven of love...it's the height of the human experience.
+    We'll overcome the odds and make each other more perfect and whole.
 
-    Love is the answer. If you don't believe in that, what's life even for?
+    To feel, finally, in this cold, lonely world, the safe haven of love...it’s the height of the human experience.
+
+    If you don’t believe in that, what’s life even for?
     """
     menu:
         m "So there's only one way my story can end:"
@@ -441,7 +452,10 @@ label choosing_prince:
     play sound "/audio/impact-slam.mp3"
     show image "title-screen.png":
         matrixcolor InvertMatrix(value=1.0)
-    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#1d0842}To BeLoved{/size}{/font}" at truecenter
+    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#FFFFFF}To BeLoved{/size}{/font}" at truecenter
     with hpunch
     pause
+    show image "title-screen.png" with dissolve:
+        matrixcolor InvertMatrix(value=0.0)
+    hide text with dissolve
     jump week_1_morning

@@ -20,35 +20,53 @@ label week_1_day:
 
     It doesn't help that I'm in this meeting instead of working on them...
     """
-    if self_awareness <=20:
-        stop music
-        play sound "/audio/impact-slam.mp3"
-        scene office-inside with vpunch:
-            matrixcolor InvertMatrix(value=1.0)
-
-        i "They're going to realize that hiring you was a mistake."
-        play music "<from 20>/audio/happily-ever-after.mp3"
+    stop music
+    play sound "/audio/impact-slam.mp3"
+    scene office-inside with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+    i "They're going to realize that hiring you was a mistake."
+    if self_awareness >=20:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        m "Shut it, brain. I just have to do the opposite of whatever my Imposter Complex tells me and keep it Real Simple."
+    elif self_awareness<20:
+        m "I do not know what I'm doing and would like to throw myself out the window."
 
     scene office-inside
-    m "I haven't even met my boss yet."
+    play music "<from 20>/audio/happily-ever-after.mp3"
+    m "I hope my boss doesn't judge me. {p}Wait, I haven't even met my boss yet."
     m "That reminds me, I should be proactive about introducing myself to people!"
 
     play sound "/audio/chair-sit.mp3"
     m "Ah! This person who just took the seat next to me looks like they might be friendly."
 
-    if self_awareness <=20:
-        stop music
-        play sound "/audio/impact-slam.mp3"
-        scene office-inside with vpunch:
-            matrixcolor InvertMatrix(value=1.0)
-        i "Don't say anything weird. You want them to like you.."
+    stop music
+    play sound "/audio/impact-slam.mp3"
+    play music "<from 13>/audio/cave-streams.mp3"
+    scene office-inside with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+    i "Don't say anything weird. You want them to like you.."
+    if self_awareness >=10:
+        $ renpy.notify("Self-Awareness Check: Passed")
         m "Hush! You're making me anxious. Socially."
+        stop music fadeout 1.0
         play music "<from 20>/audio/happily-ever-after.mp3"
         scene office-inside
+        show allie-neutral with dissolve
+        m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring anything?”"
+        m "To my relief, they reciprocate my smile."
+    elif self_awareness<10:
+        m "“Um, do you work here?”"
+        i "What are you *asking*? They're here with you. In the office. Obviously they work here."
+        m """
+        Their blank stare tells me I just flubbed it.
 
-    show allie-neutral with dissolve
-    m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring anything?”"
-    m "To my relief, they reciprocate my smile."
+        I take a deep breath and try again.
+        """
+        stop music fadeout 1.0
+        play music "<from 20>/audio/happily-ever-after.mp3"
+        scene office-inside
+        show allie-neutral with dissolve
+        m "“Um, I mean, were we supposed to bring anything to this meeting?”"
 
     hide allie-neutral
     show allie-smile

@@ -28,19 +28,26 @@ label naji_date_1:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
+
     i "Keep your on the prize, girl. Don't forget we're here to find love."
 
-    if self_awareness <=40:
+    if self_awareness>=40:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "That's true, but I've also got time on my side. No need to make myself sick stressing over it."
+    elif self_awareness<40:
         $ unlocks_dialogue = ["Everyone has to believe in something, and I choose to believe in love!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-
         m "I know. I won't rest until I'm wanted."
 
     play music "<from 13>/audio/happily-ever-after.mp3" fadein 0.5
-
     scene city-night with dissolve
     m "Usually, I'll bring Allie or some coworkers to hang out, but tonight, it's just me and Naji."
 
@@ -50,7 +57,9 @@ label naji_date_1:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    I haven't seen him much since high school ended. It'll be nice to catch up.
+    I haven’t seen him much since high school ended, besides at the lounge.
+
+    It’ll be nice to have a proper catch-up while he's off the clock.
 
     Since it's the weekend, I get the opportunity to wear something nice. I hope this floral minidress works for the occasion. """
 
@@ -96,7 +105,7 @@ label after_choice_12:
     play music "/audio/najis-theme.mp3"
     show naji-bar-smile with dissolve
 
-    n "“Welcome to the William Collins!"
+    n "“Welcome to the William Collins!”"
     hide naji-bar-smile
     show naji-bar-blush
 
@@ -291,15 +300,33 @@ label after_choice_12:
 
     What's Naji's favorite drink? When's the last time I've even *seen* him drink?
 
-    Maybe I just function with a low-grade concussion at all times."""
+    """
 
-    if self_awareness<=50:
-        play sound "/audio/impact-slam.mp3"
-        scene lounge-inside with vpunch:
-            matrixcolor InvertMatrix(value=1.0)
-        i "{i}Scaaaatterbrains!{/i}"
-        scene lounge-inside with hpunch
-        show naji-bar-neutral with dissolve
+    play sound "/audio/impact-slam.mp3"
+    stop music
+    scene lounge-inside with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+    i "{i}Scaaaatterbrains!{/i}"
+
+    if self_awareness>=50:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        $ unlocks_dialogue = ["There are times when I admit I can be hard on myself", "They may have shaped my past, but the future isn't set in stone", "I'll get more chances. Nothing's unfixable."]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "Oh well! It's an opportunity for me to learn more about him."
+    elif self_awareness<50:
+        $ unlocks_dialogue = ["It's deserved. How else will I learn?"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "Maybe I just function with a low-grade concussion at all times."
+
+    scene lounge-inside with hpunch
+    show naji-bar-neutral with dissolve
+    play music "/audio/najis-theme.mp3"
 
     m "I take a sip of the drink."
 
@@ -466,13 +493,29 @@ label after_choice_12:
             m "But that doesn't make sense...my worth isn't related to anyone else's."
 
     m "Naji hardly ever talks about his relationships... maybe he's feeling vulnerable?"
-
-
     play sound "/audio/impact-slam.mp3"
     scene lounge-inside with vpunch:
         matrixcolor InvertMatrix(value=1.0)
     i "Or maybe you're trying too hard to rationalize your curiosity."
-    m "*Everything* is a rationalization."
+    if self_awareness>=30:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        $ unlocks_dialogue = ["Have been rude!", "I choose to believe in myself!"]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m """
+        *Everything* is a rationalization.
+
+        It all depends on how you look at it, and I'm choosing to interpret it as Naji opening up to me.
+        """
+    elif self_awareness<30:
+        $ unlocks_dialogue = ["I need to be a better person.", "Trick question, still me."]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "I know I'm just being selfish...."
 
     scene lounge-inside with vpunch
     show naji-bar-lookaway

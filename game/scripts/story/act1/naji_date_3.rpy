@@ -50,20 +50,29 @@ label naji_date_3:
 
     m "NOOOOOOOOO!"
 
-    if self_awareness<=70:
-        play sound "/audio/impact-slam.mp3"
-        scene bakery with vpunch:
-            matrixcolor InvertMatrix(value=1.0)
+    play sound "/audio/impact-slam.mp3"
+    scene bakery with vpunch:
+        matrixcolor InvertMatrix(value=1.0)
+    i "If you were capable, you'd have gotten here earlier."
+
+    if self_awareness>=70:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        $ unlocks_dialogue = ["Things might not work out, but that's a natural part of life", "There are times when I admit I can be hard on myself."]
+        $ dialogue_matches = []
+        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+        if len(dialogue_matches) > 0:
+            show screen insight(dialogue_matches)
+        m "I got here as early as I could. How could I predict how much stock they'd have?"
+    elif self_awareness<70:
         $ unlocks_dialogue = ["I have to be better about that", "It's deserved, how else will I learn?", "I'll learn from my mistakes"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        i "If you were capable, you'd have gotten here earlier."
-        scene bakery with vpunch
+        m "I wonder if there's a treatment for being chronically {b}STUPID.{/b}"
 
-    m "As I marinate in regret, looking woefully through the unWackmarkable leftovers, a familiar golden head comes into view."
-
+    scene bakery with vpunch
+    m "As I woefully peruse the unWackmarkable leftovers, a familiar golden head comes into view."
     show naji-neutral with dissolve
     play music "/audio/najis-theme.mp3"
     n "“Looks like you just Menmissed out.”"
@@ -120,7 +129,7 @@ label naji_date_3:
         m """
         But this is Naji we're talking about.
 
-        "“Please, Naji? Just a tiny bite? A sliver!”"
+        “Please, Naji? Just a tiny bite? A sliver!”
         """
         hide naji-neutral
         show naji-smile
@@ -141,7 +150,7 @@ label naji_date_3:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "“No cap. Shall we eat these in the park?”"
+    m "“Read like a book. Shall we eat these in the park?”"
 
     scene park-day with pixellate
 
@@ -172,6 +181,7 @@ label naji_date_3:
     if self_awareness >=60:
         m "Why's he just staring at it like that?"
         c "Why'd the Behemoth want to drink from your bottle?"
+        m "Oh...{p}I chew faster on the wackaroon."
 
     define flash = Fade(0.1, 0.0, 0.5, color="#fff")
     play sound "/audio/sparkle.mp3" volume 0.7
@@ -179,7 +189,7 @@ label naji_date_3:
 
 
     m """
-    The macaroon is delicious!
+    It's delicious!
 
     The outer shell is a perfect balance between chewy and soft. The smooth, sweet filling creates a magical mouthfeel that contrasts with the bumpy waffle crust.
     """
@@ -406,7 +416,7 @@ label after_choice_15:
     m """
     I’m relieved to see Allie walking up to us on the path, picnic blanket and sunglasses in hand.
 
-    I stand up and wave to her, brushing pastel crumbs off my skirt. Naji turns to her and waves.
+    I stand up and wave to them, brushing pastel crumbs off my skirt. Naji turns to them and waves.
 
     The private moment between me and Naji has passed. I smile, sinking back into the comfort of our familiar, friendly dynamic.
 

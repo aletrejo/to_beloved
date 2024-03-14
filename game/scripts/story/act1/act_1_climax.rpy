@@ -24,21 +24,21 @@ label act_1_climax:
     i "Take a guess."
 
     if self_awareness>=60:
+        $ renpy.notify("Self-Awareness Check: Passed")
         $ unlocks_dialogue = ["I hope he doesn't think I'm silly for wanting to be in love"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m "I was...feeling lonely."
-
-    if self_awareness<60:
+    elif self_awareness<60:
         $ unlocks_dialogue = ["I don't know...or maybe I'm not ready to face it yet. I need more insight on this."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m "Because I'm cool?"
-        i "That's so funny I forgot what I was even thinking about."
+        i "That's so funny I forgot about what you were reflecting on. {p} Oh well, it probably wasn't important."
 
     play music "<from 5>/audio/siberian-express.mp3" fadein 5.0
 
@@ -377,7 +377,8 @@ label after_choice_16:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    if self_awareness>=50:
+    if self_awareness>=70:
+        $ renpy.notify("Self-Awareness Check: Passed")
         m """
         Our relationship is changing, and it's kind of scary...
 
@@ -401,7 +402,7 @@ label after_choice_16:
             show screen insight(dialogue_matches)
         m "Could I be cautiously optimistic? {w} Tentatively, yes."
 
-    elif self_awareness<50:
+    elif self_awareness<70:
         $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...", "I always worried that he was out of my league, though"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)

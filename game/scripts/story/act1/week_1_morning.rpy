@@ -341,13 +341,18 @@ label joule_response:
 
     He's kind of hot. Once you get over the patronizing remarks.
 
-    Although there *is* something romantic about a rescue in a high octane situation that makes my inner feminist want to crunch up and die.
+    There *is* something romantic about a high octane situation rescue situation from a lecherous troll.
 
     """
+    i "*Definitely* sounds like something your inner feminist would say."
 
-    c "Your inner feminist wants you to get swole and squat punch creeps."
+    if self_awareness >=10:
+        $ renpy.notify("Self-Awareness Check: Passed")
+        m "Maybe my inner feminist wants me to to get swole and squat punch creeps."
+    elif self_awareness<10:
+        m "Grrrr...stop it, Menmi! You're not supposed to *like* getting rescued. What's wrong with you?"
+
     m "Thanks. I'll think about it."
-
     j "“Girls should know how to protect themselves...especially the pretty ones.”"
     hide joule neutral with dissolve
     scene gym-inside with dissolve:
