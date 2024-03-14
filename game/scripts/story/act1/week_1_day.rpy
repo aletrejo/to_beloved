@@ -176,7 +176,7 @@ label after_team_meeting:
     d "“Of course, the suggestion applies to myself as well.”"
     m "“P-pardon?” He's even more intimidating up close."
     d "“My apologies. I haven't introduced myself properly. My name is Devan. I will be your senior touchpoint.”"
-    m "It takes me a moment to register what he means.”"
+    m "It takes me a moment to register what he means."
     m "“Y-you're my boss?”" with vpunch
 
     hide devan-smile
@@ -184,7 +184,7 @@ label after_team_meeting:
 
 
     d """
-    Not a big fan of that word, but yes, essentially.
+    “Not a big fan of that word, but yes, essentially.”
 
     “Please feel free to reach out to me if you have questions or need help completing any work.”
     """
@@ -241,6 +241,8 @@ label after_choice_8:
     stop music fadeout 1.0
     hide devan-neutral with dissolve
     hide devan-smile with dissolve
+    scene office-inside:
+        blur 20
     play music "<from 54>/audio/happily-ever-after.mp3" fadein 2.0 volume 0.7
 
     m """

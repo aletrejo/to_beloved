@@ -19,12 +19,14 @@ define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
 define al = Character("Allie", color="#66b704", image="allie")
 define i = Character("Intrusive Inner Voice", color='#023F59')
 
+
+
 # Global variables
 default self_awareness = 0
 default naji_relationship = 0
 default joule_relationship = 0
 default dev_relationship = 0
-default week = 0
+default week = 1
 default n1 = False
 default n2 = False
 default n3 = False
@@ -40,7 +42,6 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    $ week += 1
     play music "<from 5>/audio/cloud.wav"
     scene menmi-apartment-morning
     with vpunch
@@ -430,8 +431,17 @@ label choosing_prince:
     scene applecore-city with dissolve
     m "Now that my story's been written, all that's left to do is live it!"
     window hide
-    scene image Solid("#ffc6ebff") with dissolve
-    show text "{font=fredoka}{size=288}To BeLoved{/size}{/font}" at truecenter
+
+
+    show image "title-screen.png" with dissolve
+    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#d33c59}To BeLoved{/size}{/font}" at truecenter
     with dissolve
+    pause
+
+    play sound "/audio/impact-slam.mp3"
+    show image "title-screen.png":
+        matrixcolor InvertMatrix(value=1.0)
+    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#1d0842}To BeLoved{/size}{/font}" at truecenter
+    with hpunch
     pause
     jump week_1_morning

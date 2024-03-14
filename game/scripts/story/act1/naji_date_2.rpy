@@ -274,7 +274,7 @@ label choice_14:
                     show screen insight(dialogue_matches)
                 c "There's a way to make sense of this."
                 scene alleyway:
-                    blur 30
+                    blur 50
                 show naji-lookaway at truecenter:
                     blur 50
                 m """
@@ -301,6 +301,8 @@ label choice_14:
                 if self_awareness <=70:
                     scene alleyway with vpunch:
                         matrixcolor InvertMatrix(value=1.0)
+                    stop music
+                    play sound "/audio/impact-slam.mp3"
                     $ unlocks_dialogue = ["Where did I get that idea from?", "They may have shaped my past, but the future isn't set in stone.", "I need to move on."]
                     $ dialogue_matches = []
                     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -311,11 +313,13 @@ label choice_14:
                     I should've just taken him at face value. Feelings aren't meant to be examined!
                     """
                     scene alleyway
+                    play music "<from 14>/audio/najis-theme.mp3"
 
                 hide naji-lookaway
                 show naji-frown
                 n """
                 ...
+
                 “...I guess I never really thought of it that way, but you might have a point.”
 
                 *Sigh*
@@ -336,12 +340,11 @@ label choice_14:
                 if len(dialogue_matches) > 0:
                     show screen insight(dialogue_matches)
                 n """
-                “I really admire Mimi's independence.
+                “I really admire Mimi's independence.”
 
                 Mom was always relying on me or worse, whichever guy she was trying to impress that day.”
                 """
-                $ renpy.notify("Naji feels closer to you!")
-                $ naji_relationship += 10
+                
 
 label after_choice_14:
     $ unlocks_dialogue = ["Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own", "Maybe it was his way of coping", "Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance."]
@@ -462,6 +465,10 @@ label after_choice_14:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "Nothing to do but trust."
+
+    $ renpy.notify("Naji feels closer to you!")
+    $ naji_relationship += 10
+    m "Nothing to do but trust."
+
 
     jump after_naji_date

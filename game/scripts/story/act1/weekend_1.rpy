@@ -106,13 +106,25 @@ label week_2_4_bathtime:
     """
     stop music fadeout 1.0
     play music "/audio/bathtime-theme.mp3"
+    menu:
+        m "Now, what kind of bath am I in the mood for today?"
+
+        "Classic":
+            scene bathtime-classic with fade
+            m "There's nothing like a simple bath to clear your head and refocus on your body."
+        "Romantic":
+            scene bathtime-romantic with fade
+            m "The heady perfumes of lavender and cedar essential oils are so indulgent! Baths always make me feel like I'm being buoyed up into a higher plane of awareness..."
+        "Fruity":
+            scene bathtime-fruity with fade
+            m "The sweet and fresh scents of citrus fill me with playful bliss! I feel like I'm in a fresh jug of lemonade. Aahhh, baths are so refreshing."
     jump bathtime_1
 
 label bathtime_1:
     default bathtime_1_choices = []
-    # Work around to clear list 
-    while bathtime_1_choices:
-        $ bathtime_1_choices.pop()
+    # Work around to clear list
+    #while bathtime_1_choices:
+        #$ bathtime_1_choices.pop()
     m "It's been an eventful week. Out of everything's that's happened though, there's one thing I can't get off my mind."
     menu:
         m "What do I want to reflect on?"
@@ -124,28 +136,33 @@ label bathtime_1:
             $ bathtime_1_choices.append("Myself")
             jump myself_bathtime_1
 
-#Ale: Any way to make the "thoughts" menu options fade in more slowly? Give a more dream-like effect
 label naji_bathtime_1:
     menu we_were_close:
         with Dissolve(2.0)
         "I miss how close we used to be...":
             $ bathtime_1_choices.append("I miss how close we used to be...")
             menu:
+                with Dissolve(2.0)
                 "We were neighbors":
                     $ bathtime_1_choices.append("We were neighbors")
                     menu:
+                        with Dissolve(2.0)
                         "Naji and I grew up across the street from each other":
                             $ bathtime_1_choices.append("Naji and I grew up across the street from each other")
                             menu across_the_street:
+                                with Dissolve(2.0)
                                 "Naji's mom dropped him off at our house a lot, so we spent a lot of time together.":
                                     $ bathtime_1_choices.append("Naji's mom dropped him off at our house a lot, so we spent a lot of time together.")
                                     menu dropped_off:
+                                        with Dissolve(2.0)
                                         "Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own.":
                                             $ bathtime_1_choices.append("Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own.")
                                             menu on_his_own:
+                                                with Dissolve(2.0)
                                                 "That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers.":
                                                     $ bathtime_1_choices.append("That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers.")
                                                     menu second_to_hers:
+                                                        with Dissolve(2.0)
                                                         "I wonder if he keeps in touch with her.":
                                                             $ bathtime_1_choices.append("I wonder if he keeps in touch with her.")
                                                             $ renpy.notify("+20 Self-Awareness")
@@ -154,6 +171,7 @@ label naji_bathtime_1:
                                                 "Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance.":
                                                     $ bathtime_1_choices.append("Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance.")
                                                     menu new_guy:
+                                                        with Dissolve(2.0)
                                                         "I wonder if he keeps in touch with her.":
                                                             $ bathtime_1_choices.append("I wonder if he keeps in touch with her.")
                                                             $ renpy.notify("+20 Self-Awareness")
@@ -162,9 +180,11 @@ label naji_bathtime_1:
                                                         "I was protective of him":
                                                             $ bathtime_1_choices.append("I was protective of him")
                                                             menu protective:
+                                                                with Dissolve(2.0)
                                                                 "Naji would always listen to me vent about my feelings, but he never seemed as open with his own":
                                                                     $ bathtime_1_choices.append("Naji would always listen to me vent about my feelings, but he never seemed as open with his own")
                                                                     menu vent:
+                                                                        with Dissolve(2.0)
                                                                         "Bartending suits him":
                                                                             $ bathtime_1_choices.append("Bartending suits him")
                                                                             $ renpy.notify("+15 Self-Awareness")
@@ -181,6 +201,7 @@ label naji_bathtime_1:
                                                                         "Naji prioritizes the needs of others before his own":
                                                                             $ bathtime_1_choices.append("Naji prioritizes the needs of others before his own")
                                                                             menu prioritize_others:
+                                                                                with Dissolve(2.0)
                                                                                 "Bartending suits him":
                                                                                     $ bathtime_1_choices.append("Bartending suits him")
                                                                                     $ renpy.notify("+15 Self-Awareness")
@@ -189,6 +210,7 @@ label naji_bathtime_1:
                                                                                 "He's a good guy.":
                                                                                     $ bathtime_1_choices.append("He's a good guy.")
                                                                                     menu good_guy:
+                                                                                        with Dissolve(2.0)
                                                                                         "There were times I wondered if we could be more than friends...":
                                                                                             $ bathtime_1_choices.append("There were times I wondered if we could be more than friends...")
                                                                                             jump more_than_friends
@@ -209,6 +231,7 @@ label naji_bathtime_1:
                                                                                 "Maybe it was his way of coping":
                                                                                     $ bathtime_1_choices.append("Maybe it was his way of coping")
                                                                                     menu coping:
+                                                                                        with Dissolve(2.0)
                                                                                         "Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own.":
                                                                                             $ bathtime_1_choices.append("Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own.")
                                                                                             jump on_his_own
@@ -218,6 +241,7 @@ label naji_bathtime_1:
                                                         "By the time we were in high school, I could see how he would be considered attractive...physically":
                                                             $ bathtime_1_choices.append("By the time we were in high school, I could see how he would be considered attractive...physically")
                                                             menu attractive_in_hs:
+                                                                with Dissolve(2.0)
                                                                 "I always worried that he was out of my league, though":
                                                                     $ bathtime_1_choices.append("I always worried that he was out of my league, though")
                                                                     $ renpy.notify("+10 Self-Awareness")
@@ -231,9 +255,11 @@ label naji_bathtime_1:
                                         "We used to mix bath bubbles in the inflatable pool and pretend we were at a spa":
                                             $ bathtime_1_choices.append("We used to mix bath bubbles in the inflatable pool and pretend we were at a spa")
                                             menu bubbles:
+                                                with Dissolve(2.0)
                                                 "He used to follow me around and do whatever I wanted":
                                                     $ bathtime_1_choices.append("He used to follow me around and do whatever I wanted")
                                                     menu follow_me:
+                                                        with Dissolve(2.0)
                                                         "I was protective of him":
                                                             $ bathtime_1_choices.append("I was protective of him")
                                                             jump protective
@@ -252,6 +278,7 @@ label naji_bathtime_1:
                                                 "I have a lot of good memories with Naji.":
                                                     $ bathtime_1_choices.append("I have a lot of good memories with Naji.")
                                                     menu good_memories:
+                                                        with Dissolve(2.0)
                                                         "He's changed.":
                                                             $ bathtime_1_choices.append("He's changed.")
                                                             jump naji_changed
@@ -263,6 +290,7 @@ label naji_bathtime_1:
                                 "We're the same age, but I kind of saw him as a little brother":
                                     $ bathtime_1_choices.append("We're the same age, but I kind of saw him as a little brother")
                                     menu little_brother:
+                                        with Dissolve(2.0)
                                         "He used to follow me around and do whatever I wanted":
                                             $ bathtime_1_choices.append("He used to follow me around and do whatever I wanted")
                                             jump follow_me
@@ -272,12 +300,14 @@ label naji_bathtime_1:
                                 "We're super comfortable with each other":
                                         $ bathtime_1_choices.append("We're super comfortable with each other")
                                         menu comfortable:
+                                            with Dissolve(2.0)
                                             "We're the same age, but I kind of saw him as a little brother":
                                                 $ bathtime_1_choices.append("We're the same age, but I kind of saw him as a little brother")
                                                 jump little_brother
                                             "He's a good listener":
                                                 $ bathtime_1_choices.append("He's a good listener")
                                                 menu good_listener:
+                                                    with Dissolve(2.0)
                                                     "Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own.":
                                                         $ bathtime_1_choices.append("Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own.")
                                                         jump on_his_own
@@ -292,6 +322,7 @@ label naji_bathtime_1:
                                             "It makes me jealous to think that there are others who are closer to him now":
                                                 $ bathtime_1_choices.append("It makes me jealous to think that there are others who are closer to him now")
                                                 menu closer_to_him:
+                                                    with Dissolve(2.0)
                                                     "I hope he can be open with me someday...":
                                                         $ bathtime_1_choices.append("I hope he can be open with me someday...")
                                                         $ renpy.notify("+15 Self-Awareness")
@@ -305,12 +336,15 @@ label naji_bathtime_1:
                         "We were pretty close through high school, but lost touch after graduation.":
                             $ bathtime_1_choices.append("We were pretty close through high school, but lost touch after graduation.")
                             menu close_in_hs:
+                                with Dissolve(2.0)
                                 "He's changed":
                                     $ bathtime_1_choices.append("He's changed")
                                     menu naji_changed:
+                                        with Dissolve(2.0)
                                         "I thought I knew him better.":
                                             $ bathtime_1_choices.append("I thought I knew him better.")
                                             menu knew_him_better:
+                                                with Dissolve(2.0)
                                                 "It makes me jealous to think that there are others who are closer to him now":
                                                     $ bathtime_1_choices.append("It makes me jealous to think that there are others who are closer to him now")
                                                     jump closer_to_him
@@ -328,12 +362,14 @@ label naji_bathtime_1:
                                 "There were times I wondered if we could be more than friends...":
                                         $ bathtime_1_choices.append("There were times I wondered if we could be more than friends...")
                                         menu more_than_friends:
+                                            with Dissolve(2.0)
                                             "By the time we were in high school, I could see how he would be considered attractive...physically":
                                                 $ bathtime_1_choices.append("By the time we were in high school, I could see how he would be considered attractive...physically")
                                                 jump attractive_in_hs
                                             "It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?":
                                                 $ bathtime_1_choices.append("It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?")
                                                 menu fall_for_bf:
+                                                    with Dissolve(2.0)
                                                     "I always worried that he was out of my league, though":
                                                         $ bathtime_1_choices.append("I always worried that he was out of my league, though")
                                                         $ renpy.notify("+10 Self-Awareness")
@@ -350,6 +386,7 @@ label naji_bathtime_1:
                 "He was my best friend":
                     $ bathtime_1_choices.append("He was my best friend")
                     menu best_friend:
+                        with Dissolve(2.0)
                         "We used to mix bath bubbles in the inflatable pool and pretend we were at a spa":
                             $ bathtime_1_choices.append("We used to mix bath bubbles in the inflatable pool and pretend we were at a spa")
                             menu:
@@ -370,15 +407,19 @@ label naji_bathtime_1:
         "He seems to be doing well...":
             $ bathtime_1_choices.append("He seems to be doing well...")
             menu doing_well:
+                with Dissolve(2.0)
                 "I'm happy for him":
                     $ bathtime_1_choices.append("I'm happy for him")
                     menu happy_for_him:
+                        with Dissolve(2.0)
                         "I didn't know he was so popular...":
                             $ bathtime_1_choices.append("I didn't know he was so popular...")
                             menu popular:
+                                with Dissolve(2.0)
                                 "It makes sense.":
                                     $ bathtime_1_choices.append("It makes sense.")
                                     menu:
+                                        with Dissolve(2.0)
                                         "He's always had a way with people. Got the rizz, as they say.":
                                             $ bathtime_1_choices.append("He's always had a way with people. Got the rizz, as they say.")
                                             jump rizz
@@ -391,6 +432,7 @@ label naji_bathtime_1:
                                         "It makes me uncomfortable":
                                             $ bathtime_1_choices.append("It makes me uncomfortable")
                                             menu uncomfortable:
+                                                with Dissolve(2.0)
                                                 "I thought I knew him better.":
                                                     $ bathtime_1_choices.append("I thought I knew him better.")
                                                     jump knew_him_better
@@ -425,6 +467,7 @@ label naji_bathtime_1:
                         "He's always had a way with people. Got the rizz, as they say.":
                             $ bathtime_1_choices.append("He's always had a way with people. Got the rizz, as they say.")
                             menu rizz:
+                                with Dissolve(2.0)
                                 "Naji prioritizes the needs of others before his own":
                                     $ bathtime_1_choices.append("Naji prioritizes the needs of others before his own")
                                     jump prioritize_others
@@ -439,6 +482,7 @@ label naji_bathtime_1:
                 "I can't help but feel a bit jealous":
                     $ bathtime_1_choices.append("I can't help but feel a bit jealous")
                     menu bit_jealous:
+                        with Dissolve(2.0)
                         "He was my best friend":
                             $ bathtime_1_choices.append("He was my best friend")
                             jump best_friend
@@ -448,12 +492,15 @@ label naji_bathtime_1:
                         "Compared to him, I must look like a loser.":
                             $ bathtime_1_choices.append("Compared to him, I must look like a loser.")
                             menu loser:
+                                with Dissolve(2.0)
                                 "I hope he doesn't think I'm silly for wanting to be in love":
                                     $ bathtime_1_choices.append("I hope he doesn't think I'm silly for wanting to be in love")
                                     menu love_is_silly:
+                                        with Dissolve(2.0)
                                         "Why is Naji's opinion of me such a big deal?":
                                             $ bathtime_1_choices.append("Why is Naji's opinion of me such a big deal?")
                                             menu najis_opinion:
+                                                with Dissolve(2.0)
                                                 "I don't know...or maybe I'm not ready to face it yet. I need more insight on this.":
                                                     $ bathtime_1_choices.append("I don't know...or maybe I'm not ready to face it yet. I need more insight on this.")
                                                     $ renpy.notify("+20 Self-Awareness")
@@ -481,15 +528,19 @@ label naji_bathtime_1:
                                 "Maybe I shouldn't have talked about my love life...":
                                     $ bathtime_1_choices.append("Maybe I shouldn't have talked about my love life...")
                                     menu love_life:
+                                        with Dissolve(2.0)
                                         "Why not, though?":
                                             $ bathtime_1_choices.append("Why not, though?")
                                             menu:
+                                                with Dissolve(2.0)
                                                 "It was inappropriate":
                                                     $ bathtime_1_choices.append("It was inappropriate")
                                                     menu inappropriate:
+                                                        with Dissolve(2.0)
                                                         "Maybe I was coming on too strong for our first time seeing each other in so long, but it's not like we're total strangers.":
                                                             $ bathtime_1_choices.append("Maybe I was coming on too strong for our first time seeing each other in so long, but it's not like we're total strangers.")
                                                             menu coming_on_too_strong:
+                                                                with Dissolve(2.0)
                                                                 "Naji would always listen to me vent about my feelings, but he never seemed as open with his own":
                                                                     $ bathtime_1_choices.append("Naji would always listen to me vent about my feelings, but he never seemed as open with his own")
                                                                     jump vent
@@ -522,9 +573,11 @@ label naji_bathtime_1:
         "Why did he seem reluctant to talk about love?":
             $ bathtime_1_choices.append("Why did he seem reluctant to talk about love?")
             menu reluctant:
+                with Dissolve(2.0)
                 "I must have said something to make him uncomfortable":
                     $ bathtime_1_choices.append("I must have said something to make him uncomfortable")
                     menu made_him_uncomfortable:
+                        with Dissolve(2.0)
                         "I hope he doesn't think I'm silly for wanting to be in love":
                             $ bathtime_1_choices.append("I hope he doesn't think I'm silly for wanting to be in love")
                             jump love_is_silly
@@ -534,6 +587,7 @@ label naji_bathtime_1:
                         "He's not the type to share his feelings":
                             $ bathtime_1_choices.append("He's not the type to share his feelings")
                             menu share_his_feelings:
+                                with Dissolve(2.0)
                                 "Naji prioritizes the needs of others before his own":
                                     $ bathtime_1_choices.append("Naji prioritizes the needs of others before his own")
                                     jump prioritize_others
@@ -548,6 +602,7 @@ label naji_bathtime_1:
                 "He's hiding something":
                     $ bathtime_1_choices.append("He's hiding something")
                     menu hiding_something:
+                        with Dissolve(2.0)
                         "His past...":
                             $ bathtime_1_choices.append("His past...")
                             menu:
@@ -557,6 +612,7 @@ label naji_bathtime_1:
                         "His feelings...":
                             $ bathtime_1_choices.append("His feelings...")
                             menu najis_feelings:
+                                with Dissolve(2.0)
                                 "I hope he doesn't think I'm silly for wanting to be in love":
                                     $ bathtime_1_choices.append("I hope he doesn't think I'm silly for wanting to be in love")
                                     jump love_is_silly
@@ -1008,16 +1064,20 @@ label menmi_after_bath:
     stop music fadeout 1.0
     play music "<from 5>/audio/cloud.wav" fadein 1.0
     scene menmi-apartment-afternoon with dissolve
-    m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"
 
-    scene planner-week-unfilled with dissolve
-    m "I'm settling into my weekday routine, but I should plan what I want to do on the weekends."
-    m "Girl's gotta have goals."
+    if week == 4:
+        m "Ah...I'm glad I took the time to unwind and cleanse. I wonder what next week will bring..."
+        jump week_2_4
 
-    call screen planner_weekend(_with_none=False) with dissolve
+    elif week<4:
+        m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"
+        scene planner-week-unfilled with dissolve
+        m "I'm settling into my weekday routine, but I should plan what I want to do on the weekends."
+        m "Girl's gotta have goals."
 
+        m "I'll just drop the activity sticker I want in the 'Weekend' box!"
+        call screen planner_weekend(_with_none=False) with dissolve
 
-    #Ale: Allow player to drag and drop either Bathtime or Go Out with Naji for Weekend 2
 
 label reading_time:
     stop music fadeout 1.0
@@ -1031,6 +1091,7 @@ label reading_time:
     default random_reading = ["reading_1", "reading_2", "reading_3", "reading_4"]
     $ reading_chosen = renpy.random.choice(random_reading)
     jump expression reading_chosen
+
 
 label reading_1:
     m """
@@ -1094,4 +1155,7 @@ label after_reading:
 
     So long, reality. I hardly knew thee. """
 
+    $ random_reading.remove(reading_chosen)
+
+    $ week += 1
     jump week_2_4
