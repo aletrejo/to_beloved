@@ -103,3 +103,23 @@ screen planner_weekend():
             draggable False
             drag_name "weekend"
             image Solid("#F0D5E8") xysize(261, 263)
+
+
+screen open_planner:
+    imagebutton:
+        xpos 1780
+        ypos 140
+        anchor(0.5, 0.5)
+        idle "icons/Planner-icon idle.png"
+        hover "icons/Planner-icon hover.png"
+        action ShowMenu("opened_planner")
+
+screen opened_planner:
+    add "planner-week1-filled.png"
+    text "{font=PatuaOne-Regular.ttf}{size=100}{color=#B8556C}[week]{/size}{/font}{/color}":
+        xpos 630
+        ypos 168
+        yanchor renpy.BASELINE
+    text "Self Awareness: [self_awareness]" size 40:
+        xpos 875
+        ypos 677
