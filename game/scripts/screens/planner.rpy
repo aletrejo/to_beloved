@@ -114,11 +114,22 @@ screen open_planner:
         action ShowMenu("opened_planner")
 
 screen opened_planner:
-    add "planner-week1-filled.png"
+    add "planner-base-check.png"
     text "{font=PatuaOne-Regular.ttf}{size=100}{color=#B8556C}[week]{/size}{/font}{/color}":
-        xpos 630
-        ypos 168
+        xpos 778
+        ypos 154
         yanchor renpy.BASELINE
     text "Self Awareness: [self_awareness]" size 40:
-        xpos 875
-        ypos 677
+        xpos 1054
+        ypos 628
+    imagebutton:
+        xpos 1620
+        ypos 105
+        anchor(0.5, 0.5)
+        idle "icons/close idle.png"
+        hover "icons/close hover.png"
+        action Return()
+    showif weekend_event == "bathttime" or weekend_event == "":
+        add "icons/Bathtime.png" xpos 1260 ypos 370
+    showif weekend_event == "going_out":
+        add "icons/lounge.png" xpos 1260 ypos 370

@@ -7,6 +7,7 @@ label week_2_4:
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
     scene menmi-apartment-morning with dissolve
+    show screen open_insights
 
     m "Good morning MenME! I'm feeling refreshed and ready for the week ahead!"
     default unlocks_dialogue = ["I have to be better about that", "I need to be a better person", "I wish I could redo some decisions", "I keep second-guessing myself and thinking about other possibilities...", "I'll learn from my mistakes"]

@@ -35,3 +35,32 @@ init python:
                 matches_found.append(insight)
                 renpy.play ("audio/insight-chime.mp3")
         return matches_found
+
+screen open_insights:
+    imagebutton:
+        xpos 1570
+        ypos 140
+        anchor(0.5, 0.5)
+        idle "icons/insights idle.png"
+        hover "icons/insights hover.png"
+        action ShowMenu("opened_insights")
+
+screen opened_insights:
+    add "insights-page.png"
+    style_prefix "insight"
+    vbox:
+        for thought in bathtime_1_choices:
+            frame:
+                text "[thought]"
+        xpos 390
+        ypos 256
+    imagebutton:
+        xpos 1620
+        ypos 105
+        anchor(0.5, 0.5)
+        idle "icons/close idle.png"
+        hover "icons/close hover.png"
+        action Return()
+
+style oinsight_frame:
+    padding gui.notify_frame_borders.padding
