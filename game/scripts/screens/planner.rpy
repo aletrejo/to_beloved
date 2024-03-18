@@ -97,7 +97,7 @@ screen planner_weekend():
             drag_raise True
             drag_name "bathtime"
             dragged weekend_activity
-            add "icons/bath.png"
+            add "icons/bathtime.png"
         drag:
             pos (1046, 343)
             draggable False
