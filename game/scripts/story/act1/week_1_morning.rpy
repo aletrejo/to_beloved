@@ -7,6 +7,7 @@ label week_1_morning:
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
     scene menmi-apartment-morning with dissolve
+    show screen open_planner
     m """
     *Yaaaaawwwnnn* Good morning to the first day of the rest of my life!
 
