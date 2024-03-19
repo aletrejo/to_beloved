@@ -1,17 +1,19 @@
 screen choice_history(history):
     frame:
-        xpos 0.1
-        ypos 0.1
-        xmaximum 0.8
-        ymaximum 0.8
-        background Solid("#ffffffbf")
+        background Frame("insights-page.png")
+        xalign 0.5
+        yalign 0.5
         vbox:
+            xpos 0.2
+            ypos 0.2
             viewport id "vp":
                 draggable True
                 mousewheel True
                 scrollbars "vertical"
                 vbox:
+                    xmaximum 1000
+                    ymaximum 400
                     for choice in history:
-                        text choice:
+                        text "{font=JustAnotherHand-Regular.ttf}[choice]{/font}":
                             line_spacing 5
                         add "divider"

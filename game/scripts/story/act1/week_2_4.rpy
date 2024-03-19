@@ -43,22 +43,31 @@ label gym_auto:
     $ gym_chosen = renpy.random.choice(gym_options)
     if gym_chosen == 'gym_1':
         m "Workouts are working out just fine."
+        $ gym_text="Workouts are working out just fine."
     if gym_chosen == 'gym_2':
         m "My morning gym routine is kicking me in the tighty whities (that's my butt)!"
+        $ gym_text="My morning gym routine is kicking me in the tighty whities (that's my butt)!"
     if gym_chosen == 'gym_3':
         m "With every push-up at the gym, I get closer to my final {b}form{/b}."
+        $ gym_text="With every push-up at the gym, I get closer to my final {b}form{/b}."
     if gym_chosen == 'gym_4':
         m "These workouts are literal exercises in endurance. I just gotta keep my body on my mind and my mind on the man bodies."
+        $ gym_text="These workouts are literal exercises in endurance. I just gotta keep my body on my mind and my mind on the man bodies."
     if gym_chosen == 'gym_5':
         m "Making gains or making eyes? I'm a multitasker."
+        $ gym_text="Making gains or making eyes? I'm a multitasker."
     if gym_chosen == 'gym_6':
         m "It's always a pleasure to witness the fitness of the morning gym crowd."
+        $ gym_text="It's always a pleasure to witness the fitness of the morning gym crowd."
     if gym_chosen == 'gym_7':
         m "Joule's head pats always reinvigorate me to work hard!"
+        $ gym_text="Joule's head pats always reinvigorate me to work hard!"
     if gym_chosen == 'gym_8':
         m "My AM gym routine gets my heart rate {i}going!{/i}"
+        $ gym_text="My AM gym routine gets my heart rate {i}going!{/i}"
     if gym_chosen == 'gym_9':
         m "I'm more familiar with ripped bodices than ripped bodies, but I'm giving it my best at the gym!"
+        $ gym_text="I'm more familiar with ripped bodices than ripped bodies, but I'm giving it my best at the gym!"
     $ gym_options.remove(gym_chosen)
 
 label work_auto:
@@ -67,28 +76,36 @@ label work_auto:
     $ work_chosen = renpy.random.choice(work_options)
     if work_chosen == 'work_1':
         m "Work is hectic, but I make it work."
+        $ office_text="Work is hectic, but I make it work."
     if work_chosen == 'work_2':
         m """
         Commiserated with my coworkers today.
 
         Yeah! Team bonding!
         """
+        $ office_text="Commiserated with my coworkers today. Yeah! Team bonding!"
     if work_chosen == 'work_3':
         m "I've got a ton going on at work, but I need money to get the honey. Do your best, MenME!"
+        $ office_text="I've got a ton going on at work, but I need money to get the honey. Do your best, MenME!"
     if work_chosen == 'work_4':
         m "Everyone at the office is so busy, but I appreciate that Devan always makes time to check in with me."
+        $ office_text="Everyone at the office is so busy, but I appreciate that Devan always makes time to check in with me."
     if work_chosen == 'work_5':
         m """I bought a plant to decorate my desk.
         It's not real, but it's good practice for the future (probably)."""
+        $ office_text="I bought a plant to decorate my desk. It's not real, but it's good practice for the future (probably)."
     if work_chosen == 'work_6':
         m "Work is about as fun as you'd expect. Let's get that dread, baby."
+        $ office_text="Work is about as fun as you'd expect. Let's get that dread, baby."
     if work_chosen == 'work_7':
         m "I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the constant construction going on outside.
 
         Oh my gosh what are they even working on?"
+        $ office_text="I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the constant construction going on outside."
     if work_chosen == 'work_8':
         m """I'm really starting to feel at home at work!
         Because I'm there 10 hours a day!"""
+        $ office_text="I'm really starting to feel at home at work! Because I'm there 10 hours a day!"
     if work_chosen == 'work_9':
         m """
         Sometimes I entertain myself during work by thinking about the personalities of Office Apps.
@@ -99,6 +116,8 @@ label work_auto:
 
         Asking some seriously important questions here."""
 
+        $ office_text="Sometimes I entertain myself during work by thinking about the personalities of Office Apps. Personally, I identify as Calendar."
+
     $ work_options.remove(work_chosen)
 
 
@@ -108,36 +127,45 @@ label lounge_auto:
     $ lounge_chosen = renpy.random.choice(lounge_options)
     if lounge_chosen == 'lounge_1':
         m "It's nice to gather at the William Collins' at the end of the day. The staff almost feels like family!"
+        $ lounge_text= "It's nice to gather at the William Collins' at the end of the day. The staff almost feels like family!"
     if lounge_chosen == 'lounge_2':
         m """The lounge is usually quiet on weeknights, which makes it harder to get the goss from Naji.
 
         Guess we'll have to make our own drama *wink*"""
+        $ lounge_text= "The lounge is usually quiet on weeknights, which makes it harder to get the goss from Naji. Guess we'll have to make our own drama *wink*"
     if lounge_chosen == 'lounge_3':
         m "Naji sometimes gives me free drinks after work. It's nice to have friends in high, um {w}drunk places!"
+        $ lounge_text= "Naji sometimes gives me free drinks after work. It's nice to have friends in high, um {w}drunk places!"
     if lounge_chosen == 'lounge_4':
         m """Either there are a disproportionately high number of hotties frequenting the William Collins
 
         or I'm drunk.
 
-        Probably both."""
+        I'm drunk."""
+        $ lounge_text= "Either there are a disproportionately high number of hotties frequenting the William Collins. Or I'm drunk."
     if lounge_chosen == 'lounge_5':
         m """The buzz of the cocktail lounge at night makes me feel like *anything* can happen.
 
         Celebrity sighting? Designer drugs? The birth of a throuple? I'm there for it!"""
+        $ lounge_text= "The buzz of the cocktail lounge at night makes me feel like *anything* can happen. Celebrity sighting? Designer drugs? The birth of a throuple? I'm there for it!"
     if lounge_chosen == 'lounge_6':
         m "The days are long, but the drinks Naji makes at the lounge go down as easily as a weekend train. ZING!"
+        $ lounge_text= "The days are long, but the drinks Naji makes at the lounge go down as easily as a weekend train. ZING!"
     if lounge_chosen == 'lounge_7':
         m "I've made some new friends at the lounge! What's a whippet?"
+        $ lounge_text= "I've made some new friends at the lounge! What's a whippet?"
     if lounge_chosen == 'lounge_8':
         m """Sometimes I bring coworkers to the lounge, where the atmosphere is always *so* inappropriately romantic.
 
         I hope nobody gets the *wrong* idea...hehe."""
+        $ lounge_text= "Sometimes I bring coworkers to the lounge, where the atmosphere is always *so* inappropriately romantic. I hope nobody gets the *wrong* idea...hehe."
     if lounge_chosen == 'lounge_9':
         m """Somebody at the William Collins told me they want to see me gobble a glizzy.
 
         What's it mean?
 
         Why'd Naji throw them out?"""
+        $ lounge_text= "Somebody at the William Collins told me they want to see me gobble a glizzy. What's it mean? Why'd Naji throw them out?"
     $ lounge_options.remove(lounge_chosen)
 
 label after_week:

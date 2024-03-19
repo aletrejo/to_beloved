@@ -20,7 +20,7 @@ transform insight_transform:
 style insight_frame:
     ypos .1
     #Reuse from notify screen
-    background Frame("gui/notify-insight.png", gui.notify_frame_borders, tile=gui.frame_tile)
+    background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
     padding gui.notify_frame_borders.padding
 
 
@@ -51,7 +51,8 @@ screen opened_insights:
     vbox:
         for thought in bathtime_1_choices:
             frame:
-                text "[thought]"
+                xmaximum 1200
+                text "{font=JustAnotherHand-Regular.ttf}{size=50}[thought]{/size}{/font}"
         xpos 390
         ypos 256
     imagebutton:

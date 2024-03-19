@@ -6,6 +6,9 @@ default morning_assigned = False
 default day_assigned = False
 default evening_assigned = False
 default weekend_event = ""
+default gym_text = "Mornings are at the gym! Gotta start the day strong with my favorite workout — Spotting hot guys."
+default office_text = "Primetime is grind time. I managed to land my dream job at a PR firm. I’m so excited to make a difference in the world!"
+default lounge_text = "At the end of the day, I'll unwind with a drink. One of my friends from home is a bartender!"
 
 init python:
     def item_dragged(dragged_items, dropped_on):
@@ -119,9 +122,28 @@ screen opened_planner:
         xpos 778
         ypos 154
         yanchor renpy.BASELINE
-    text "Self Awareness: [self_awareness]" size 40:
+    text "Self-Awareness: [self_awareness]" size 40:
         xpos 1054
         ypos 628
+    vbox:
+        xpos 580
+        ypos 287
+        xmaximum 350
+        ymaximum 400
+        text "[gym_text]" font "JustAnotherHand-Regular.ttf"
+    vbox:
+        xpos 580
+        ypos 570
+        xmaximum 350
+        ymaximum 410
+        text "[office_text]" font "JustAnotherHand-Regular.ttf"
+    vbox:
+        xpos 580
+        ypos 850
+        xmaximum 350
+        ymaximum 410
+        text "[lounge_text]" font "JustAnotherHand-Regular.ttf"
+
     imagebutton:
         xpos 1620
         ypos 105
