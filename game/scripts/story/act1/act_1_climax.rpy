@@ -25,6 +25,7 @@ label act_1_climax:
 
     if self_awareness>=60:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         $ unlocks_dialogue = ["I hope he doesn't think I'm silly for wanting to be in love"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -379,6 +380,7 @@ label after_choice_16:
         show screen insight(dialogue_matches)
     if self_awareness>=70:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         m """
         Our relationship is changing, and it's kind of scary...
 

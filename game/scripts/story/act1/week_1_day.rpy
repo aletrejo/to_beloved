@@ -27,6 +27,7 @@ label week_1_day:
     i "They're going to realize that hiring you was a mistake."
     if self_awareness >=20:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         m "Shut it, brain. I just have to do the opposite of whatever my Imposter Complex tells me and keep it Real Simple."
     elif self_awareness<20:
         m "I do not know what I'm doing and would like to throw myself out the window."
@@ -47,6 +48,7 @@ label week_1_day:
     i "Don't say anything weird. You want them to like you.."
     if self_awareness >=10:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         m "Hush! You're making me anxious. Socially."
         stop music fadeout 1.0
         play music "<from 20>/audio/happily-ever-after.mp3"

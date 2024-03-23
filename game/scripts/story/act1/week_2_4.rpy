@@ -132,7 +132,7 @@ label lounge_auto:
         m """The lounge is usually quiet on weeknights, which makes it harder to get the goss from Naji.
 
         Guess we'll have to make our own drama *wink*"""
-        $ lounge_text= "The lounge is usually quiet on weeknights, which makes it harder to get the goss from Naji. Guess we'll have to make our own drama *wink*"
+        $ lounge_text= "The lounge is usually quiet on weeknights, which makes it harder to get the goss from Naji. Guess we'll have to make our own drama"
     if lounge_chosen == 'lounge_3':
         m "Naji sometimes gives me free drinks after work. It's nice to have friends in high, um {w}drunk places!"
         $ lounge_text= "Naji sometimes gives me free drinks after work. It's nice to have friends in high, um {w}drunk places!"
@@ -147,7 +147,7 @@ label lounge_auto:
         m """The buzz of the cocktail lounge at night makes me feel like *anything* can happen.
 
         Celebrity sighting? Designer drugs? The birth of a throuple? I'm there for it!"""
-        $ lounge_text= "The buzz of the cocktail lounge at night makes me feel like *anything* can happen. Celebrity sighting? Designer drugs? The birth of a throuple? I'm there for it!"
+        $ lounge_text= "The buzz of the cocktail lounge at night makes me feel like *anything* can happen."
     if lounge_chosen == 'lounge_6':
         m "The days are long, but the drinks Naji makes at the lounge go down as easily as a weekend train. ZING!"
         $ lounge_text= "The days are long, but the drinks Naji makes at the lounge go down as easily as a weekend train. ZING!"
@@ -158,7 +158,7 @@ label lounge_auto:
         m """Sometimes I bring coworkers to the lounge, where the atmosphere is always *so* inappropriately romantic.
 
         I hope nobody gets the *wrong* idea...hehe."""
-        $ lounge_text= "Sometimes I bring coworkers to the lounge, where the atmosphere is always *so* inappropriately romantic. I hope nobody gets the *wrong* idea...hehe."
+        $ lounge_text= "Sometimes I bring coworkers to the lounge, where the atmosphere is always *so* inappropriately romantic."
     if lounge_chosen == 'lounge_9':
         m """Somebody at the William Collins told me they want to see me gobble a glizzy.
 

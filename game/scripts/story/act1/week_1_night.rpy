@@ -35,6 +35,7 @@ label naji_introduction:
 
     if self_awareness >=25:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         m "I don't need words when I've got *rizz*."
     elif self_awareness<25:
         m """I can pronounciate words just fine! Aw, fruck.
@@ -188,6 +189,7 @@ label naji_introduction:
         scene lounge-inside with hpunch
         stop music fadeout 2.0
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         m "{i}You're{/i} annoying. Shut up so I can think properly."
     elif self_awareness<30:
         m "It's true. I'm annoyed at myself for even having this thought."
@@ -464,6 +466,7 @@ label after_choice_10:
         scene lounge-inside with hpunch
         stop music fadeout 2.0
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         show naji-bar-neutral with dissolve
         m "What's other people's interest in Naji have to do with me? I can't control the way others feel about him."
     elif self_awareness<30:

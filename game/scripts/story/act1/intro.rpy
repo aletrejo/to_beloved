@@ -30,6 +30,7 @@ default week = 1
 default n1 = False
 default n2 = False
 default n3 = False
+default passed_checks = 0
 
 # Images used in-game
 image tutorial box = "tutorial-box.png"

@@ -112,6 +112,7 @@ label naji_date_2:
 
     if self_awareness>=60:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...","I have a lot of good memories with Naji", "It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?", "I choose to believe in myself!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -385,6 +386,7 @@ label after_choice_14:
 
     if self_awareness >=60:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         $ unlocks_dialogue = ["There are times when I admit I can be hard on myself.", "I choose to believe in myself!", "Everyone has to believe in something, and I choose to believe in love!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)

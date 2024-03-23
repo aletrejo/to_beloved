@@ -57,6 +57,7 @@ label naji_date_3:
 
     if self_awareness>=70:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         $ unlocks_dialogue = ["Things might not work out, but that's a natural part of life", "There are times when I admit I can be hard on myself."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)

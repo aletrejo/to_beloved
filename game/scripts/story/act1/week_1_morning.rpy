@@ -349,6 +349,7 @@ label joule_response:
 
     if self_awareness >=10:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         m "Maybe my inner feminist wants me to to get swole and squat punch creeps."
     elif self_awareness<10:
         m "Grrrr...stop it, Menmi! You're not supposed to *like* getting rescued. What's wrong with you?"

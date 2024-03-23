@@ -33,6 +33,7 @@ label naji_date_1:
 
     if self_awareness>=40:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -309,7 +310,8 @@ label after_choice_12:
     i "{i}Scaaaatterbrains!{/i}"
 
     if self_awareness>=50:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        $ renpy.notify("Self-Awareness Check: {color=#4EC788}Passed{/color}")
+        $ passed_checks +=1
         $ unlocks_dialogue = ["There are times when I admit I can be hard on myself", "They may have shaped my past, but the future isn't set in stone", "I'll get more chances. Nothing's unfixable."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -499,6 +501,7 @@ label after_choice_12:
     i "Or maybe you're trying too hard to rationalize your curiosity."
     if self_awareness>=30:
         $ renpy.notify("Self-Awareness Check: Passed")
+        $ passed_checks +=1
         $ unlocks_dialogue = ["Have been rude!", "I choose to believe in myself!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)

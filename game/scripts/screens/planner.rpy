@@ -122,9 +122,12 @@ screen opened_planner:
         xpos 778
         ypos 154
         yanchor renpy.BASELINE
-    text "Self-Awareness: [self_awareness]" size 40:
+    text "Self-Awareness: [self_awareness]" size 40 font "Copse-Regular.ttf" color '#C74E6C':
         xpos 1054
         ypos 628
+    text "Passed Checks: [passed_checks]" size 40 font "Copse-Regular.ttf" color '#4EC788':
+        xpos 1054
+        ypos 700
     vbox:
         xpos 580
         ypos 287
