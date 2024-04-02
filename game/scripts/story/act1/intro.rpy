@@ -34,6 +34,7 @@ default passed_checks = 0
 
 # Images used in-game
 image tutorial box = "tutorial-box.png"
+image ol_text = Text("Self-Awareness Check: Passed", style='outlined_text')
 
 # The game starts here.
 
@@ -446,14 +447,14 @@ label choosing_prince:
 
 
     show image "title-screen.png" with dissolve
-    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#d33c59}To BeLoved{/size}{/font}" at truecenter
+    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#d33c59}To BeLoved{/size}{/font}" at truecenter
     with dissolve
     pause
 
     play sound "/audio/impact-slam.mp3"
     show image "title-screen.png":
         matrixcolor InvertMatrix(value=1.0)
-    show text "{font=Gabriela-Regular.ttf}{size=150}{color=#FFFFFF}To BeLoved{/size}{/font}" at truecenter
+    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#FFFFFF}To BeLoved{/size}{/font}" at truecenter
     with hpunch
     pause
     show image "title-screen.png" with dissolve:

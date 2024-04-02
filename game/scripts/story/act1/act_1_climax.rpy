@@ -24,7 +24,10 @@ label act_1_climax:
     i "Take a guess."
 
     if self_awareness>=60:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         $ unlocks_dialogue = ["I hope he doesn't think I'm silly for wanting to be in love"]
         $ dialogue_matches = []
@@ -379,7 +382,10 @@ label after_choice_16:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     if self_awareness>=70:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         m """
         Our relationship is changing, and it's kind of scary...

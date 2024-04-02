@@ -76,6 +76,12 @@ style frame:
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 
+style outlined_text:
+    outlines [ (absolute(3), "#FFFFFF", absolute(0), absolute(0)) ]
+    font "PatuaOne-Regular.ttf"
+    size 200
+    color '#26EB79'
+
 
 ################################################################################
 ## In-game screens

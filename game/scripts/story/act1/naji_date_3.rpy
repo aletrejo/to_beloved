@@ -56,7 +56,10 @@ label naji_date_3:
     i "If you were capable, you'd have gotten here earlier."
 
     if self_awareness>=70:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         $ unlocks_dialogue = ["Things might not work out, but that's a natural part of life", "There are times when I admit I can be hard on myself."]
         $ dialogue_matches = []

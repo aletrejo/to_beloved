@@ -348,7 +348,10 @@ label joule_response:
     i "*Definitely* sounds like something your inner feminist would say."
 
     if self_awareness >=10:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         m "Maybe my inner feminist wants me to to get swole and squat punch creeps."
     elif self_awareness<10:

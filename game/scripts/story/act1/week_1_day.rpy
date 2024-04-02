@@ -26,15 +26,18 @@ label week_1_day:
         matrixcolor InvertMatrix(value=1.0)
     i "They're going to realize that hiring you was a mistake."
     if self_awareness >=20:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        m "It's *only* my first day! I'm still learning the ropes."
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
-        m "Shut it, brain. I just have to do the opposite of whatever my Imposter Complex tells me and keep it Real Simple."
     elif self_awareness<20:
         m "I do not know what I'm doing and would like to throw myself out the window."
 
     scene office-inside
     play music "<from 20>/audio/happily-ever-after.mp3"
-    m "I hope my boss doesn't judge me. {p}Wait, I haven't even met my boss yet."
+    m "I just hope my boss doesn't judge me. {p}Wait, I haven't even met my boss yet."
     m "That reminds me, I should be proactive about introducing myself to people!"
 
     play sound "/audio/chair-sit.mp3"
@@ -47,7 +50,10 @@ label week_1_day:
         matrixcolor InvertMatrix(value=1.0)
     i "Don't say anything weird. You want them to like you.."
     if self_awareness >=10:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         m "Hush! You're making me anxious. Socially."
         stop music fadeout 1.0
