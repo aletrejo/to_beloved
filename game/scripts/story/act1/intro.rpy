@@ -377,7 +377,7 @@ label choosing_prince:
     m """
     Whew! Manifesting my dream man into existence is hard work.
 
-    Just kidding! I could literally do this all day. {p}And I will!
+    Just kidding! I could literally do this all day. {w}And I will!
 
     I’m not naive, though. I know the world isn’t all sunshine and six-packs.
     """
