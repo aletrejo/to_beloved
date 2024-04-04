@@ -32,7 +32,10 @@ label naji_date_1:
     i "Keep your on the prize, girl. Don't forget we're here to find love."
 
     if self_awareness>=40:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride"]
         $ dialogue_matches = []
@@ -500,7 +503,10 @@ label after_choice_12:
         matrixcolor InvertMatrix(value=1.0)
     i "Or maybe you're trying too hard to rationalize your curiosity."
     if self_awareness>=30:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         $ unlocks_dialogue = ["Have been rude!", "I choose to believe in myself!"]
         $ dialogue_matches = []

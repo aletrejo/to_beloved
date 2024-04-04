@@ -34,7 +34,10 @@ label naji_introduction:
     i "If you don't trip over your tongue first."
 
     if self_awareness >=25:
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         m "I don't need words when I've got *rizz*."
     elif self_awareness<25:
@@ -188,7 +191,10 @@ label naji_introduction:
     if self_awareness >=30:
         scene lounge-inside with hpunch
         stop music fadeout 2.0
-        $ renpy.notify("Self-Awareness Check: Passed")
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         m "{i}You're{/i} annoying. Shut up so I can think properly."
     elif self_awareness<30:
@@ -463,12 +469,15 @@ label after_choice_10:
         matrixcolor InvertMatrix(value=1.0)
     i "Maybe it's something you should keep in mind...just in case."
     if self_awareness >=30:
-        scene lounge-inside with hpunch
-        stop music fadeout 2.0
-        $ renpy.notify("Self-Awareness Check: Passed")
+        scene lounge-inside with dissolve
+        show naji-bar-neutral
+        m "What's other people's interest in Naji have to do with me? I can't control the way others feel about him."
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         show naji-bar-neutral with dissolve
-        m "What's other people's interest in Naji have to do with me? I can't control the way others feel about him."
     elif self_awareness<30:
         show naji-bar-neutral with dissolve
         m """I have to be wary of the competition.
