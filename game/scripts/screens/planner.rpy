@@ -112,8 +112,8 @@ screen open_planner:
         xpos 1780
         ypos 140
         anchor(0.5, 0.5)
-        idle "icons/Planner-icon idle.png"
-        hover "icons/Planner-icon hover.png"
+        idle "icons/planner-icon-[planner_cover] idle.png"
+        hover "icons/planner-icon-[planner_cover] hover.png"
         action ShowMenu("opened_planner")
 
 screen opened_planner:

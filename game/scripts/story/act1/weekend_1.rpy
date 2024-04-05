@@ -1071,6 +1071,7 @@ label menmi_after_bath:
 
     elif week<4:
         m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"
+        hide screen open_planner
         scene planner-week-unfilled with dissolve
         m """I'm settling into my weekday routine, but I should plan what I want to do on the weekends.
 
@@ -1085,6 +1086,7 @@ label reading_time:
     stop music fadeout 1.0
     scene menmi-apartment-night with dissolve
     play music "/audio/reaching-the-sky.mp3" fadein 1.0
+    show screen open_planner
     m """
     Now that my schedule's settled, I'm going to snuggle in with a hot mug of tea and an even steamier romance novel.
 

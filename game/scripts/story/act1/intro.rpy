@@ -31,7 +31,7 @@ default n1 = False
 default n2 = False
 default n3 = False
 default passed_checks = 0
-
+default planner_cover = 1
 # Images used in-game
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness Check: Passed", style='outlined_text')
@@ -282,24 +282,28 @@ label pick_planner_pattern:
     show screen patterns with dissolve
     pause
 label planner_with_pattern_1:
+    $ planner_cover = 1
     hide screen patterns
-    image bg tile_1 = Tile("pp-1.png")
-    show bg tile_1
+    image cover_1 = "planner-cover-1.png"
+    show cover_1 
     jump planner_tutorial
 label planner_with_pattern_2:
+    $ planner_cover = 2
     hide screen patterns
-    image bg tile_2 = Tile("pp-2.png")
-    show bg tile_2
+    image cover_2 = "planner-cover-2.png"
+    show cover_2 
     jump planner_tutorial
 label planner_with_pattern_3:
+    $ planner_cover = 3
     hide screen patterns
-    image bg tile_3 = Tile("pp-3.png")
-    show bg tile_3
+    image cover_3 = "planner-cover-3.png"
+    show cover_3 
     jump planner_tutorial
 label planner_with_pattern_4:
+    $ planner_cover = 4
     hide screen patterns
-    image bg tile_4 = Tile("pp-4.png")
-    show bg tile_4
+    image cover_4 = "planner-cover-4.png"
+    show cover_4 
     jump planner_tutorial
 label planner_tutorial:
     window hide
