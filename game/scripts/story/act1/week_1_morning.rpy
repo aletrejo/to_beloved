@@ -14,6 +14,11 @@ label week_1_morning:
     Gosh, I slept like a rock. I thought I'd be so nervous that I'd be up all night, but I guess I underestimated how draining the move would be.
 
     A morning workout should wake me right up!
+    """
+
+    show leggings at truecenter with easeinbottom
+
+    m """
 
     I pull on the cute crop top and shimmy into the patterned leggings I'd laid out the night before.
 
@@ -22,6 +27,9 @@ label week_1_morning:
     Hehe...just thinking about it gets my blood pumpin'.
 
     """
+
+    hide leggings
+
 label gym:
     scene gym-inside with dissolve
     m """
@@ -170,11 +178,24 @@ label behemoth_incident:
 
     “M-mine?” Excuse me? Is this total stranger really asking to put his mouth on *my* Stanlychee water bottle?
 
+    """
+
+    show water-bottle at truecenter with easeinbottom
+    show behemoth-smile with dissolve:
+        blur 45
+
+
+    m """
+
     The thought of his viscous saliva slobbering over the mouth of my bottle makes my stomach churn...
 
     Does he know that he’s basically asking for an indirect kiss?
 
     """
+
+    hide water-bottle
+    hide behemoth-smile with dissolve
+    show behemoth-smile with dissolve
 
     be "“Well? It’s just a drink...are you going to be a good girl or what?”"
 
