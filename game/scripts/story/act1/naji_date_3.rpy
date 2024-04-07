@@ -95,25 +95,29 @@ label naji_date_3:
     hide naji-smile
     show naji-neutral
     n "“I know. I was just picking up a treat.”"
+
+    show wackaroon at truecenter with easeinbottom
+
     m"""
     He holds out a white paper bag and-OH MY SQUASH.
 
     “Is that-?”
     """
-
-    hide naji-neutral
     show naji-laugh
 
     m "Naji cackles riotously, lording the bag over my head."
 
     n "“Sorry, Men. You know what they say -- 'the early bird whacks the worm.'”"
     hide naji-laugh
+    hide wackaroon
     show naji-surprised
 
     m "“Nobody says that, you macaroon.”"
+    hide naji-surprised
+    show naji-laugh
     n "“Is that any way to talk to someone who’s wacked his worm?”"
     m "“That sound better in your head?”"
-    hide naji-surprised
+    hide naji-laugh
     show naji-neutral
     n "“Yea.”"
 
@@ -147,6 +151,7 @@ label naji_date_3:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
+    show naji-laugh
     n "“You knew I was planning on sharing them with you all along, right?”"
 
     $ unlocks_dialogue = ["It's all coming true like I planned", "It's nice to know that I'm capable of achieving happiness for myself."]
@@ -176,6 +181,12 @@ label naji_date_3:
     m """
     "I'm filming for my Instayam story!"
 
+    """
+
+    show wackaroon at truecenter with easeinbottom
+
+    m"""
+
     I hold the macaroon to the camera, getting a good shot of the brightly colored waffle texture.
 
     As I take a bite out of the disc, I hand over the other half for Naji.
@@ -190,7 +201,7 @@ label naji_date_3:
     define flash = Fade(0.1, 0.0, 0.5, color="#fff")
     play sound "/audio/sparkle.mp3" volume 0.7
     scene park-day with flash
-
+    show wackaroon at truecenter with dissolve
 
     m """
     It's delicious!
@@ -210,6 +221,7 @@ label naji_date_3:
     He's staring straight ahead, throat bobbing slowly as he swallows.
     """
 
+    hide wackaroon with dissolve
     hide naji-neutral
     show naji-lookaway
 

@@ -16,6 +16,7 @@ label week_1_morning:
     A morning workout should wake me right up!
     """
 
+    play sound "/audio/whoosh.mp3"
     show leggings at truecenter with easeinbottom
 
     m """
@@ -179,7 +180,7 @@ label behemoth_incident:
     “M-mine?” Excuse me? Is this total stranger really asking to put his mouth on *my* Stanlychee water bottle?
 
     """
-
+    play sound "/audio/whoosh.mp3"
     show water-bottle at truecenter with easeinbottom
     show behemoth-smile with dissolve:
         blur 45
