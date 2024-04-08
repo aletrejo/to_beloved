@@ -123,18 +123,25 @@ label naji_introduction:
     hide naji-bar-frown
     show naji-bar-smile
 
-    n """
-    “It's part of a bartender's job to listen to their customers.”
+    n """“It's part of a bartender's job to listen to their customers.”
 
-    “And from what I observed about the incident at hand, it was an accident. This fellow was picking up your wallet that you dropped and knocked your drink over on the way up.”
+    “And from what I observed about the incident at hand, it was an accident.
+
+    """
+
+    show naji-bar-neutral
+    show wallet at truecenter with easeinbottom
+
+    n """
+    This fellow was picking up your wallet that you dropped and knocked your drink over on the way up.”
 
     “You know what they say – ‘No good deed goes unpunished’. It must have been frustrating to be wrongly accused, but we can talk this out.”
     """
-    hide naji-bar-smile
-    show naji-bar-neutral
-
     "Rowdy Patron" "“Yes! That's exactly what happened. Thank you. Here, your wallet.”"
     "Unruly Guest" "“!!! I hadn't even noticed I'd dropped it. I'm so embarrassed – I was blaming you when this whole thing was caused by my own carelessness...”"
+    
+    hide wallet with dissolve
+
     "Rowdy Patron" """
     “That's alright, man. I'm sorry I got heated. It's just that...everybody always assumes I'm up to no good just because of my face.
     I just get defensive, is all.”"""
