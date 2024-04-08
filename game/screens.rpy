@@ -301,8 +301,8 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign 0.54
+        yalign 0.85
 
         spacing gui.navigation_spacing
 
@@ -312,7 +312,7 @@ screen navigation():
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
 
@@ -328,14 +328,14 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
 
-        if renpy.variant("pc"):
+        #if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
@@ -343,7 +343,13 @@ screen navigation():
 
 
 style navigation_button is gui_button
-style navigation_button_text is gui_button_text
+style navigation_button_text:
+    color "#1e3986"
+    xalign 0.5
+    font "JustAnotherHand-Regular.ttf"
+    size 60
+    hover_color "#c64d6c"
+
 
 style navigation_button:
     size_group "navigation"
@@ -364,11 +370,17 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    add "images/city-night.png" at citynightappear
+    add "images/main-menu-naji.png" at najiappear
+    add "images/main-menu-joule.png" at jouleappear
+    add "images/main-menu-dev.png" at devappear
+    add "images/main-menu-menmi.png" at menmiappear
+    add "images/main-menu-title.png" at titleappear
+    add "images/main-menu-navbg.png" at navappear
 
     ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    #frame:
+        #style "main_menu_frame"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
@@ -386,7 +398,7 @@ screen main_menu():
                 style "main_menu_version"
 
 
-style main_menu_frame is empty
+#style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
 style main_menu_title is main_menu_text

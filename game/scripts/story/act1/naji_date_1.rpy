@@ -273,8 +273,11 @@ label after_choice_12:
 
     m "Finally, he pours the drink into a wide glass and garnishes it with a wedge of lime before skillfully sliding across the counter to me."
 
-    hide naji-bar-neutral
+
+
+
     show naji-bar-smile
+    show strawberry-daiquiri at truecenter with easeinbottom
     $ unlocks_dialogue = ["Bartending suits him"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -283,7 +286,7 @@ label after_choice_12:
     n "“You like strawberry daiquiris, right?”"
 
     hide naji-bar-smile
-    show naji-bar-neutral
+
 
     n "“I remember trying to make you one with those janky freeze-dried strawberries from the Malwart when we were underage-drinking in school.”"
 
@@ -293,6 +296,8 @@ label after_choice_12:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m "“You remember that,” I say, taking a sip."
+
+    hide strawberry-daiquiri with dissolve
 
     $ unlocks_dialogue = ["I always worried that he was out of my league, though, We were pretty close through high school, but lost touch after graduation", "Naji would always listen to me vent about my feelings, but he never seemed as open with his own", "It makes me feel insecure that I don't know everything about him, I miss how close we used to be…"]
     $ dialogue_matches = []
@@ -334,7 +339,7 @@ label after_choice_12:
     play music "/audio/najis-theme.mp3"
 
     m "I take a sip of the drink."
-
+    show strawberry-daiquiri at truecenter with dissolve
     play sound "/audio/sparkle.mp3" volume 0.7
 
     m """
@@ -345,7 +350,7 @@ label after_choice_12:
     It may be the best daiquiri I've ever tasted — the chilled, sweet flavor of the blended strawberries melts into the heady warmth of rum, sliding easily down my throat.
 
     """
-
+    hide strawberry-daiquiri with dissolve
     hide naji-bar-neutral
     show naji-bar-smile
 
