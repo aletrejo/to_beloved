@@ -130,6 +130,8 @@ default preferences.text_cps = 50
 
 default preferences.afm_time = 15
 
+## Show menu unavailable menu options ##############################################################
+define config.menu_include_disabled = True
 
 ## Save directory ##############################################################
 ##
@@ -153,6 +155,15 @@ define config.save_directory = "ToBeLoved-1694015379"
 ## The icon displayed on the taskbar or dock.
 
 define config.window_icon = "gui/window_icon.png"
+
+
+## Mouse ########################################################################
+##
+## Customized cursor
+
+define config.mouse = { }
+define config.mouse['default'] = [ ( "gui/keypointer.png", 0, 0) ]
+define config.mouse['pressed_default'] = [ ( "gui/keypointer-click.png", 0, 0) ]
 
 
 ## Build configuration #########################################################

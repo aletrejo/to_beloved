@@ -211,8 +211,8 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#803341"
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = "#b40547"
+define gui.choice_button_text_hover_color = "#02bd97"
 define gui.choice_button_text_insensitive_color = "#444444"
 
 
@@ -445,7 +445,7 @@ init python:
         gui.slider_size = 54
 
         gui.choice_button_width = 1860
-        gui.choice_button_text_size = 45
+        gui.choice_button_text_size = 50
 
         gui.navigation_spacing = 30
         gui.pref_button_spacing = 15
