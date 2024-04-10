@@ -183,7 +183,7 @@ label behemoth_incident:
     play sound "/audio/whoosh.mp3"
     show water-bottle at truecenter with easeinbottom
     show behemoth-smile with dissolve:
-        blur 45
+        blur 30
 
 
     m """

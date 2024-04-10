@@ -223,7 +223,12 @@ define config.narrator_menu = True
 
 
 style choice_vbox is vbox
-style choice_button is button
+style choice_button is button:
+    background Frame("choice_idle_background",0,0)
+    hover_background  Frame("ui/choice_hover_background.png",0,0)
+    selected_background Frame("ui/choice_selected_background.png",0,0)
+
+
 style choice_button_text is button_text
 
 style choice_vbox:

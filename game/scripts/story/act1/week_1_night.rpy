@@ -128,7 +128,7 @@ label naji_introduction:
     “And from what I observed about the incident at hand, it was an accident.
 
     """
-
+    hide naji-bar-smile
     show naji-bar-neutral
     show wallet at truecenter with easeinbottom
 
@@ -139,7 +139,7 @@ label naji_introduction:
     """
     "Rowdy Patron" "“Yes! That's exactly what happened. Thank you. Here, your wallet.”"
     "Unruly Guest" "“!!! I hadn't even noticed I'd dropped it. I'm so embarrassed – I was blaming you when this whole thing was caused by my own carelessness...”"
-    
+
     hide wallet with dissolve
 
     "Rowdy Patron" """
@@ -153,6 +153,7 @@ label naji_introduction:
     hide naji-bar-neutral with dissolve
 
     m "I can hardly believe it, but the two walk out smiling."
+    hide naji-bar-smile
     show allie-neutral with dissolve
     al "“Wow...that guy's got a way with people.”"
     m "Is that guy...really my friend?"
