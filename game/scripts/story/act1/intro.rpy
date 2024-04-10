@@ -35,6 +35,10 @@ default passed_checks = 0
 # Images used in-game
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness Check: Passed", style='outlined_text')
+image bubbless = SnowBlossom("bubble-3.png", count=30, yspeed=(-150, -90), start=3)
+image bubblesm = SnowBlossom("bubble-1.png", count=28, yspeed=(-130, -100))
+image bubblesl = SnowBlossom("bubble-2.png", count=46, yspeed=(-120, -50), start=5)
+
 
 # The game starts here.
 
