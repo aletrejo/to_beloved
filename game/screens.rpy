@@ -301,18 +301,21 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-screen navigation():
+screen navigation(center=False):
 
     vbox:
         style_prefix "navigation"
 
-        xalign 0.54
-        yalign 0.85
-
-        spacing gui.navigation_spacing
+        if center:
+            xalign 0.54
+            yalign 0.85
+            spacing gui.navigation_spacing
+        else:
+            xpos gui.navigation_xpos
+            yalign 0.5
+            spacing 33
 
         if main_menu:
-
             textbutton _("Start") action Start()
 
         else:
@@ -346,7 +349,6 @@ screen navigation():
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
 
-
 style navigation_button is gui_button
 style navigation_button_text:
     color "#1e3986"
@@ -375,13 +377,13 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add "images/city-night.png" at citynightappear
-    add "images/main-menu-naji.png" at najiappear
-    add "images/main-menu-joule.png" at jouleappear
-    add "images/main-menu-dev.png" at devappear
-    add "images/main-menu-menmi.png" at menmiappear
-    add "images/main-menu-title.png" at titleappear
-    add "images/main-menu-navbg.png" at navappear
+    add "images/city-night.png"
+    add "images/main-menu-naji.png"
+    add "images/main-menu-joule.png"
+    add "images/main-menu-dev.png"
+    add "images/main-menu-menmi.png"
+    add "images/main-menu-title.png"
+    add "images/main-menu-navbg.png"
 
     ## This empty frame darkens the main menu.
     #frame:
@@ -389,7 +391,7 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    use navigation(center=True)
 
     if gui.show_name:
 
@@ -441,7 +443,7 @@ style main_menu_version:
 ## this screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
-screen game_menu(title, scroll=None, yinitial=0.0):
+screen game_menu(title, scroll=None, yinitial=0.0, center_navigation=False):
 
     style_prefix "game_menu"
 

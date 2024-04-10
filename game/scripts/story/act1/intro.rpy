@@ -36,6 +36,21 @@ default planner_cover = 1
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness Check: Passed", style='outlined_text')
 
+# Splashscreen
+label splashscreen:
+    screen splash():
+        add "images/city-night.png" at citynightappear
+        add "images/main-menu-naji.png" at najiappear
+        add "images/main-menu-joule.png" at jouleappear
+        add "images/main-menu-dev.png" at devappear
+        add "images/main-menu-menmi.png" at menmiappear
+        add "images/main-menu-title.png" at titleappear
+        add "images/main-menu-navbg.png" at navappear
+    show screen splash
+    with Pause(10.5)
+    hide screen splash
+    return
+
 # The game starts here.
 
 label start:
