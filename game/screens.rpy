@@ -1484,7 +1484,7 @@ style nvl_window:
 
 style main_menu_frame:
     variant "small"
-    background "gui/phone/overlay/main_menu.png"
+    background "gui/phone/overlay/planner-page-bg.png"
 
 style game_menu_outer_frame:
     variant "small"

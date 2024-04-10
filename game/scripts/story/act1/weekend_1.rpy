@@ -121,6 +121,9 @@ label week_2_4_bathtime:
     jump bathtime_1
 
 label bathtime_1:
+    show bubblesm with dissolve
+    show bubblesl with dissolve
+    show bubbless with dissolve
     default bathtime_1_choices = []
     # Work around to clear list
     #while bathtime_1_choices:
