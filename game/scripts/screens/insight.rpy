@@ -46,15 +46,22 @@ screen open_insights:
         action ShowMenu("opened_insights")
 
 screen opened_insights:
-    add "insights-page.png"
-    style_prefix "insight"
+    add "insights-page.png" at truecenter
     vbox:
-        for thought in bathtime_1_choices:
-            frame:
-                xmaximum 1200
-                text "{font=JustAnotherHand-Regular.ttf}{size=50}[thought]{/size}{/font}"
         xpos 390
         ypos 256
+        viewport id "vp":
+            xmaximum 1280
+            ymaximum 770
+            draggable True
+            mousewheel True
+            scrollbars "vertical"
+            vbox:
+                for thought in bathtime_1_choices:
+                        text "{font=JustAnotherHand-Regular.ttf}{size=50}[thought]{/size}{/font}":
+                            line_spacing 5
+                        add "divider"
+
     imagebutton:
         xpos 1620
         ypos 105
