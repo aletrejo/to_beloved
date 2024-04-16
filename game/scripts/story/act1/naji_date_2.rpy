@@ -27,6 +27,7 @@ label naji_date_2:
     play music "/audio/najis-theme.mp3"
     show naji-neutral with dissolve
     play sound "/audio/kitty_mew.mp3"
+    show cat at truecenter with easeinbottom
 
     m """
     The cat is eating kibble out of what I recognize as one of the peanut bowls from the lounge.
@@ -35,6 +36,7 @@ label naji_date_2:
 
     hide naji-neutral
     show naji-surprised
+    hide cat
 
     $ unlocks_dialogue = ["We're super comfortable with each other", "I have a lot of good memories with Naji."]
     $ dialogue_matches = []
@@ -56,7 +58,7 @@ label naji_date_2:
     show naji-laugh
 
     m """
-    Naji's laughter sounds comfortingly intimate cocooned within the alleyway.
+    Naji's laughter sounds comfortingly intimate within the alleyway.
 
     “Does she have a name?”
     """
@@ -84,25 +86,25 @@ label naji_date_2:
     show naji-blush
 
     n "{cps=*2}“Any resemblances to any people real or fictional are purely coincidental.”{/cps}"
-    i "Thanks for the disclaimer...not sus in the slightest."
-
-    $ unlocks_dialogue = ["I always worried that he was out of my league, though", "Why is Naji's opinion of me such a big deal?", "Sometimes I feel insecure.", "I'll learn from my mistakes"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
-    m "It's not like Naji named the cat after *me* or anything..."
+    show cat at truecenter with easeinbottom
     play sound "/audio/kitty_mew.mp3"
     "Mimi" "“Mee! Mee!”"
     m "“Haha she just said her name. Like a Pokébowlmon!”"
+    m "(Although his disclaimer was definitely odd.)"
 
     stop music
     play sound "/audio/impact-slam.mp3"
     scene alleyway with vpunch:
         matrixcolor InvertMatrix(value=1.0)
+    show naji-blush at truecenter:
+        matrixcolor InvertMatrix(value=1.0)
+    $ unlocks_dialogue = ["I always worried that he was out of my league, though", "Why is Naji's opinion of me such a big deal?", "Sometimes I feel insecure.", "I'll learn from my mistakes"]
+    $ dialogue_matches = []
+    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
+    if len(dialogue_matches) > 0:
+        show screen insight(dialogue_matches)
+    m "But It's not like Naji named the cat after *me* or anything..."
     m "So why are my cheeks burning?"
-
-
     $ unlocks_dialogue = ["Maybe I shouldn't have talked about my love life...Compared to him, I must look like a loser", "I hope he doesn't think I'm silly for wanting to be in love", "I always worried that he was out of my league, though"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -116,6 +118,7 @@ label naji_date_2:
         pause
         hide text with dissolve
         $ passed_checks +=1
+        scene alleyway with vpunch
         $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...","I have a lot of good memories with Naji", "It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?", "I choose to believe in myself!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -131,6 +134,7 @@ label naji_date_2:
     scene alleyway with vpunch
     play music "/audio/najis-theme.mp3"
     show naji-neutral
+    show cat at truecenter with easeinbottom
 
     $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride", "I have to keep that in mind, no matter what happens going forward."]
     $ dialogue_matches = []
@@ -147,6 +151,7 @@ label naji_date_2:
     n "“Yeah, pregnant. I think she's due soon.”"
 
     hide naji-neutral
+    hide cat
     show naji-frown
     $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "He's a good guy."]
     $ dialogue_matches = []
@@ -368,7 +373,7 @@ label after_choice_14:
     hide naji-smile
     show naji-frown
 
-    m "“I can see where you're coming from.”"
+    m "“That makes sense.”"
 
     $ unlocks_dialogue = ["Everyone has to believe in something, and I choose to believe in love!"]
     $ dialogue_matches = []

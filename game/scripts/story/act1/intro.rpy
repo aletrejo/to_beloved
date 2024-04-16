@@ -123,13 +123,13 @@ label start:
     m """
     Standing in the doorway is a tall mystery man holding a small cardboard box.
 
-    He's kind of hot. I can't help but notice how big his hands look wrapped around that tiny box.
+    (He's kind of hot. I can't help but notice how big his hands look wrapped around that tiny box.)
 
-    I wonder how they'd look around my...
+    (I wonder how they'd look around my...
 
-    hand.
+    hand.)
 
-    Oooh, Menmi! Don't get “carried away” by the UPS Man!
+    (Oooh, Menmi! Don't get “carried away” by the UPS Man!)
     """
 
     u "“I've got a package for Ms. Menmi?”"
@@ -137,9 +137,9 @@ label start:
     m """
     “Yes, that's me!”
 
-    As he hands me the package, I feel electricity sparking at the brief synapse between our fingers.
+    (As he hands me the package, I feel electricity sparking at the brief synapse between our fingers.)
 
-    Is this...chemistry?
+    (Is this...chemistry?)
     """
 
     scene menmi-apartment-door:
@@ -149,15 +149,15 @@ label start:
         blur 24
 
     m """
-    What would it be like to date a delivery man? It'd be kinda wild to be with someone so in-demand in this post-pandemic,
-    pro-postal world.
+    (What would it be like to date a delivery man? It'd be kinda wild to be with someone so in-demand in this post-pandemic,
+    pro-postal world.)
 
-    Like, he'd find excuses to come visit me – “Oh I'm just in the neighborhood because of a delivery,”
-    but his roguish grin and the takeout for two will say otherwise.
+    (Like, he'd find excuses to come visit me – “Oh I'm just in the neighborhood because of a delivery,”
+    but his roguish grin and the takeout for two will say otherwise.)
 
-    You're doing some essential work to my heart, baby.
+    (You're doing some essential work to my heart, baby.)
 
-    It sounds so romantic!
+    (It sounds so romantic!)
 
     """
     stop music
@@ -173,9 +173,9 @@ label start:
     i "It sounds like a bad idea. What if you get murderobbed??  Or worse, what if he rejects you?"
 
     m """
-    Hush! I wish my brain settle down with these *second thoughts* or whatever. Where do these voices even come from?
+    (Hush! I wish my brain would settle down with these *second thoughts* or whatever. Where do these voices even come from?)
 
-    Of course I see the practical perils of pickup, but love is a risk worth taking!
+    (Of course I see the practical perils of pickup, but love is a risk worth taking!)
     """
     stop music
     play music "<from 5>/audio/cloud.wav"
@@ -191,7 +191,7 @@ label start:
         blur 0
     play sound "/audio/impact-slam.mp3"
 
-    m "Ignored. What's *that* supposed to mean?"
+    m "(Ignored. What's *that* supposed to mean?)"
 
 
     menu:
@@ -287,46 +287,56 @@ label pick_planner_pattern:
             yalign 0.5
             auto "planner-pattern-1 %s" action Jump("planner_with_pattern_1")
         imagebutton:
-            xalign 0.4
+            xalign 0.35
             yalign 0.5
             auto "planner-pattern-2 %s" action Jump("planner_with_pattern_2")
         imagebutton:
-            xalign 0.6
+            xalign 0.5
             yalign 0.5
             auto "planner-pattern-3 %s" action Jump("planner_with_pattern_3")
         imagebutton:
-            xalign 0.8
+            xalign 0.65
             yalign 0.5
             auto "planner-pattern-4 %s" action Jump("planner_with_pattern_4")
+        imagebutton:
+            xalign 0.8
+            yalign 0.5
+            auto "planner-pattern-5 %s" action Jump("planner_with_pattern_4")
     show screen patterns with dissolve
     pause
 label planner_with_pattern_1:
     $ planner_cover = 1
     hide screen patterns
     image cover_1 = "planner-cover-1.png"
-    show cover_1 
+    show cover_1
     jump planner_tutorial
 label planner_with_pattern_2:
     $ planner_cover = 2
     hide screen patterns
     image cover_2 = "planner-cover-2.png"
-    show cover_2 
+    show cover_2
     jump planner_tutorial
 label planner_with_pattern_3:
     $ planner_cover = 3
     hide screen patterns
     image cover_3 = "planner-cover-3.png"
-    show cover_3 
+    show cover_3
     jump planner_tutorial
 label planner_with_pattern_4:
     $ planner_cover = 4
     hide screen patterns
     image cover_4 = "planner-cover-4.png"
-    show cover_4 
+    show cover_4
+    jump planner_tutorial
+label planner_with_pattern_5:
+    $ planner_cover = 5
+    hide screen patterns
+    image cover_4 = "planner-cover-5.png"
+    show cover_5
     jump planner_tutorial
 label planner_tutorial:
     window hide
-    show tutorial box
+    show tutorial-box-planner
     screen planner():
         vbox:
             xalign 0.5
@@ -339,7 +349,7 @@ label planner_tutorial:
     show screen planner with dissolve
     pause
     hide screen planner
-    hide tutorial box
+    hide tutorial-box-planner
     window show
     m """
     *Gasp*...Oh my god?

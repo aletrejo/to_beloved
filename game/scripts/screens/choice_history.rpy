@@ -15,6 +15,6 @@ screen choice_history(history):
                 scrollbars "vertical"
                 vbox:
                     for choice in history:
-                        text "{font=JustAnotherHand-Regular.ttf}[choice]{/font}":
+                        text "{font=JustAnotherHand-Regular.ttf}{size=50}[choice]{/size}{/font}":
                             line_spacing 5
                         add "divider"

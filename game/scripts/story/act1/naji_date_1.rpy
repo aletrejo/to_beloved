@@ -318,14 +318,18 @@ label after_choice_12:
     i "{i}Scaaaatterbrains!{/i}"
 
     if self_awareness>=50:
-        $ renpy.notify("Self-Awareness Check: {color=#4EC788}Passed{/color}")
+        scene lounge-inside
+        play sound "/audio/awareness-ding.mp3"
+        show text "{image=ol_text}" with easeinbottom
+        pause
+        hide text with dissolve
         $ passed_checks +=1
         $ unlocks_dialogue = ["There are times when I admit I can be hard on myself", "They may have shaped my past, but the future isn't set in stone", "I'll get more chances. Nothing's unfixable."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "Oh well! It's an opportunity for me to learn more about him."
+        m "I'll take this as an opportunity to learn more about him."
     elif self_awareness<50:
         $ unlocks_dialogue = ["It's deserved. How else will I learn?"]
         $ dialogue_matches = []

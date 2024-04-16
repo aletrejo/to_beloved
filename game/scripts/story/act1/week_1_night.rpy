@@ -23,7 +23,7 @@ label naji_introduction:
 
     “He's the most unpretentious person you'll ever meet.”
 
-    Although hanging out at an upscale establishment certainly improves my chances of meeting a dashing gentleman who'll sweep me off my feet...
+    (Although hanging out at an upscale establishment certainly improves my chances of meeting a dashing gentleman who'll sweep me off my feet...)
     """
 
     stop music
@@ -39,11 +39,11 @@ label naji_introduction:
         pause
         hide text with dissolve
         $ passed_checks +=1
-        m "I don't need words when I've got *rizz*."
+        m "(I don't need words when I've got *rizz*.)"
     elif self_awareness<25:
-        m """I can pronounciate words just fine! Aw, fruck.
+        m """(I can pronounciate words just fine! Aw, fruck.)
 
-        Maybe I'll just never speak again.
+        (Maybe I'll just never speak again.)
         """
 
     play music "<from 20>/audio/happily-ever-after.mp3"
@@ -72,7 +72,7 @@ label naji_introduction:
 
     hide allie-neutral with dissolve
 
-    m "What's going on? A fight?"
+    m "(What's going on? A fight?)"
     "Unruly Guest" "“I saw you knock over my drink on purpose! I demand payment for the cleaning of my Louboutins!”"
     "Rowdy Patron" "“Looking down on me, eh? I'll have you know I own SEVEN Bouloutins.”"
     "Unruly Guest" "“I don't care how many Louboutins you own, just give me my money!”"
@@ -82,7 +82,7 @@ label naji_introduction:
     m """
     A crowd is gathering around the ruckus, servers and customers looking on in transfixed horror.
 
-    Someone's got to do something.
+    (Someone's got to do something.)
 
     Before I can even start to formulate a plan, a firm voice calls out.
     """
@@ -92,9 +92,9 @@ label naji_introduction:
     show naji-bar-neutral with dissolve
     n "“Good evening, gentlemen.”"
     m """
-    Naji!
+    (Naji!)
 
-    I want to call out to him, but this doesn't feel like the right moment.
+    (I want to call out to him, but this doesn't feel like the right moment.)
     """
     $ naji_name = "Naji"
     n """
@@ -152,11 +152,11 @@ label naji_introduction:
 
     hide naji-bar-neutral with dissolve
 
-    m "I can hardly believe it, but the two walk out smiling."
+    m "(I can hardly believe it, but the two walk out smiling.)"
     hide naji-bar-smile
     show allie-neutral with dissolve
     al "“Wow...that guy's got a way with people.”"
-    m "Is that guy...really my friend?"
+    m "(Is that guy...really my friend?)"
     hide allie-neutral with dissolve
     m """
     Allie's not the only one who's impressed. Several of the bar patrons and staff crowd around Naji, patting him on the back and showering him with praise.
@@ -171,24 +171,24 @@ label naji_introduction:
     stop music fadeout 2.0
 
     m """
-    It feels a little strange to hear about Naji from their perspective.
+    (It feels a little strange to hear about Naji from their perspective.)
 
-    I mean, this is the kid who ate leaves with me off of our neighbors' bushes because I told him that's where salad came from."""
+    (I mean, this is the kid who ate leaves with me off of our neighbors' bushes because I told him that's where salad came from.)"""
 
     play music "<from 69>audio/cave-streams.mp3" fadein 1.0
 
-    m "I've never thought about him like that before..."
+    m "(I've never thought about him like that before...)"
 
 
     scene lounge-inside:
         blur 24
     m """
-    I look down at myself, suddenly hyper-aware of the coffee stain on my Ham Taylor blouse.
+    (I look down at myself, suddenly hyper-aware of the coffee stain on my Ham Taylor blouse.)
 
-    I'm no hype bee.
+    (I'm no hype bee.)
     """
     al "“Hey, Town Hero over there is your friend, right? Aren't you going to say ‘hi’?”"
-    m "But he's surrounded by all those people."
+    m "(But he's surrounded by all those people.)"
 
     stop music
     play sound "/audio/impact-slam.mp3"
@@ -204,9 +204,9 @@ label naji_introduction:
         pause
         hide text with dissolve
         $ passed_checks +=1
-        m "{i}You're{/i} annoying. Shut up so I can think properly."
+        m "({i}You're{/i} annoying. Shut up so I can think properly.)"
     elif self_awareness<30:
-        m "It's true. I'm annoyed at myself for even having this thought."
+        m "(It's true. I'm annoyed at myself for even having this thought.)"
 
 label choice_9:
     menu:
@@ -219,7 +219,7 @@ label choice_9:
             """
             stop music fadeout 2.0
             play music "<from 16>/audio/najis-theme.mp3" fadein 1.0
-            m "I'm getting too into my own head over this. I need to snap out of it."
+            m "(I'm getting too into my own head over this. I need to snap out of it.)"
             $ renpy.notify("+5 Self-Awareness")
             $ self_awareness += 5
             $ naji_relationship += 5
@@ -229,17 +229,17 @@ label choice_9:
         "Wait for Naji to come over":
             c "Don't get in his way. He'll see you eventually. Wait for him."
             m """
-            And just...stare at him until he comes over? Very cool, very suave, Menmi.
+            (And just...stare at him until he comes over? Very cool, very suave, Menmi.)
 
-            Why do I feel so weird about calling out to him?
+            (Why do I feel so weird about calling out to him?)
 
-            Normal people wouldn't think twice about this. Why am I so *painfully* awkward?
+            (Normal people wouldn't think twice about this. Why am I so *painfully* awkward?)
             """
             call choice_9bc from _call_choice_9bc
             jump after_choice_9
         "Don't bother him":
             c "He's busy. What makes you think you're worthy of his attention right now?"
-            m "I'd better not bother him..."
+            m "(I'd better not bother him...)"
             call choice_9bc from _call_choice_9bc_1
             jump after_choice_9
 
@@ -273,7 +273,7 @@ label choice_9bc:
     m """
     I try to chat with Allie about work, but their eyes remain trained on Naji.
 
-    I don't know why I feel sad about that. Who wouldn't be in awe of him?
+    (I don't know why I feel sad about that. Who wouldn't be in awe of him?)
 
     Allie holds out their hand, enthusiastically waving over the bar.
     """
@@ -294,7 +294,7 @@ label choice_9bc:
         scene lounge-inside with vpunch:
             matrixcolor InvertMatrix(value=1.0)
         i "Way to be weird."
-        m "Time to change the subject"
+        m "(Time to change the subject)"
         play music "<from 20>/audio/happily-ever-after.mp3"
         scene lounge-inside
         show naji-bar-surprise
@@ -307,12 +307,12 @@ label after_choice_9:
     n "“Oh, that? It wasn't a big deal.”"
     n "“You'd do the same.”"
     m """
-    His smile is so warm.
+    (His smile is so warm.)
 
     “Naj. This is my friend, Allie. New friend, meet old friend. Old friend, new friend.”
     """
     al "“It's an honor to be served a cosmo by a local hero.”"
-    m "Smooth way to order a drink."
+    m "“Smooth way to order a drink.”"
 
     hide naji-bar-neutral
     show naji-bar-smile
@@ -334,9 +334,9 @@ label after_choice_9:
 
     n "“Is that so? Glad to hear it.”"
     m """
-    The smile's still plastered to his face, but there's a flatness to his tone that feels off.
+    (The smile's still plastered to his face, but there's a flatness to his tone that feels off.)
 
-    As Naji wipes down the already spotless counter in front of me, I debate whether to press him on it.
+    (As Naji wipes down the already spotless counter in front of me, I debate whether to press him on it.)
     """
 
 label choice_10:
@@ -347,7 +347,7 @@ label choice_10:
             label choice_10a:
             c "He won't tell you what's bothering him if you don't ask."
             m """
-            Naji's never been the most transparent about his feelings.
+            (Naji's never been the most transparent about his feelings.)
 
             “Did I say something to upset you, Naji?”
             """
@@ -362,24 +362,24 @@ label choice_10:
             label choice_10b:
             c "This doesn't seem like the right time to probe. You've just reunited after a long time apart, after all. Who knows what's going on with him?"
             m """
-            Naji's never been the most forthcoming about his feelings.
+            (Naji's never been the most forthcoming about his feelings.)
 
-            It might be too early to discuss something he doesn't want to talk about.
+            (It might be too early to discuss something he doesn't want to talk about.)
 
-            Besides, am *I* even sure I want to know?
+            (Besides, am *I* even sure I want to know?)
 
-            Better to keep things light...for now, at least. """
+            (Better to keep things light...for now, at least.) """
             $ renpy.notify("+5 Self-Awareness")
             $ self_awareness += 5
             jump after_choice_10
         "Feel him out":
             c "He's not saying how he really feels, but you don't want to harsh the vibe when you've only just reunited."
             m """
-            I watch Naji closely.
+            (I watch Naji closely.)
 
-            At a glance, his smile seems to come easily as he serves Allie their drink, but there's a stiffness to his motions that wasn't there before.
+            (At a glance, his smile seems to come easily as he serves Allie their drink, but there's a stiffness to his motions that wasn't there before.)
 
-            He seems focused on not looking my way. """
+            (He seems focused on not looking my way.) """
             menu:
                 "Probe Naji":
                     jump choice_10a
@@ -391,9 +391,9 @@ label choice_10:
         show naji-bar-neutral
         n "“Course not. If anything, I'm more offended you didn't bring your new friends to meet me.”"
         m """
-        He totally just dodged the question. With a joke.
+        (He totally just dodged the question. With a joke.)
 
-        Oh well, I'll have to meet him where he's comfortable. Back to baseline banter.
+        (Oh well, I'll have to meet him where he's comfortable. Back to baseline banter.)
 
         “You didn't give me enough backstage passes to the show.”"""
 
@@ -436,7 +436,7 @@ label choice_10:
 
         “Besides, better a lover than a hater.”
 
-        I stick my tongue out at him. I know it's immature, but Naji tends to bring out this side of me.
+        (I stick my tongue out at him. I know it's immature, but I can't help it if Naji tends to bring out this side of me.)
         """
 
 
@@ -464,9 +464,9 @@ label after_choice_10:
     stop music fadeout 5.0
 
     m """
-    What was I thinking? This was my old friend. The fact that he's popular in the dating pool shouldn't change anything...
+    (What was I thinking? This was my old friend. The fact that he's popular in the dating pool shouldn't change anything...)
 
-    I think.
+    (I think.)
     """
 
 
@@ -479,7 +479,7 @@ label after_choice_10:
     if self_awareness >=30:
         scene lounge-inside with dissolve
         show naji-bar-neutral
-        m "What's other people's interest in Naji have to do with me? I can't control the way others feel about him."
+        m "(What's other people's interest in Naji have to do with me? I can't control the way others feel about him.)"
         play sound "/audio/awareness-ding.mp3"
         show text "{image=ol_text}" with easeinbottom
         pause
@@ -488,9 +488,9 @@ label after_choice_10:
         show naji-bar-neutral with dissolve
     elif self_awareness<30:
         show naji-bar-neutral with dissolve
-        m """I have to be wary of the competition.
+        m """(I have to be wary of the competition.)
 
-        After all, I don't want to pursue someone who's out of my league and make a fool of myself...
+        (After all, I don't want to pursue someone who's out of my league and make a fool of myself...)
         """
 
 

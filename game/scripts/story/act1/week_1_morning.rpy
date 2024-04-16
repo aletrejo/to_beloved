@@ -40,13 +40,13 @@ label gym:
 
     There are already so many people here early in the morning!
 
-    It's so admirable! But...am I 'mirin *too* much?
+    (It's so admirable! But...am I 'mirin *too* much?)
 
     """
 
     play sound "/audio/squeaky-toy-sad.mp3"
 
-    m "Everyone here is built like raw chicken while I'm parading around with noodle arms."
+    m "(Everyone here is built like raw chicken while I'm parading around with noodle arms.)"
 
     stop music
     play music "<from 13>/audio/cave-streams.mp3"
@@ -57,15 +57,15 @@ label gym:
 
     i "I can’t believe you thought you looked good this morning."
 
-    m """I'm suddenly hyper aware of being *perceived*. Cool sweat coats my palms.
+    m """(I'm suddenly hyper aware of being *perceived*. Cool sweat coats my palms.)
 
-    Why am I doing this again? I don't belong here.
+    (Why am I doing this again? I don't belong here.)
 
-    I can't even stand correctly. Oh gosh, am I breathing weird?
+    (I can't even stand correctly. Oh gosh, am I breathing weird?)
 
-    I'm spiraling.
+    (I'm spiraling.)
 
-    Calm down, Menmi.
+    (Calm down, Menmi.)
 
     """
 
@@ -87,23 +87,23 @@ label choice_5:
 
         "I look...great?":
             c "You know what they say – fake it ‘til you make it, hot stuff!"
-            m "I don't *feel* hot. I feel exposed. Maybe that was too far a leap."
+            m "(I don't *feel* hot. I feel exposed. Maybe that was too far a leap.)"
 
         "Nobody's judging me":
             $ renpy.notify("+10 Self-Awareness")
             $ self_awareness += 10
             c "You're being overly self-conscious. Nobody thinks about you as much as you think about you."
             m """
-            They don't know what they're missing out on!
+            (They don't know what they're missing out on!)
 
-            But it's true...everybody's leading their own rich inner lives (is it privileged to assume everybody's inner lives are rich?) """
+            (But it's true...everybody's leading their own rich inner lives. {p}Is it privileged to assume everybody's inner lives are rich?) """
 
 
 
 label behemoth_incident:
     scene gym-inside with hpunch
 
-    m "All of a sudden, I’m jolted out of my thoughts by a harsh voice."
+    m "(All of a sudden, I’m jolted out of my thoughts by a harsh voice.)"
     be "“Hey, brat. Quit hogging the watering hole.”"
     m "!!! I spin around, coming face-to-chest with a massive dude with a jutting brow and barrel-big arms."
 
@@ -131,11 +131,11 @@ label behemoth_incident:
 
     m """He turns toward me, leveling me with a beastly glare.
 
-    He’s frightening, but I feel a little bad for emptying the cooler. It’s not his fault that the water ran out.
+    (He’s frightening, but I feel a little bad for emptying the cooler. It’s not his fault that the water ran out.)
 
     “If you want, I can pour you some of mine.”
 
-    I don’t mind sharing what I have with him if it helps.
+    (I don’t mind sharing what I have with him if it helps.)
 
     """
 
@@ -156,11 +156,11 @@ label behemoth_incident:
     hide behemoth
     show behemoth-smile
 
-    m "A wide grin creeps its way across his face. Predatory."
+    m "(A wide grin creeps its way across his face. Predatory.)"
 
     m """
 
-    I don’t like the way he’s looking at me.
+    (I don’t like the way he’s looking at me.)
 
     “What do you mean?” I'm trying to keep my voice level.
 
@@ -177,7 +177,9 @@ label behemoth_incident:
 
     A shudder runs through me.
 
-    “M-mine?” Excuse me? Is this total stranger really asking to put his mouth on *my* Stanlychee water bottle?
+    “M-mine?”
+
+    (Excuse me? Is this total stranger really asking to put his mouth on *my* Stanlychee water bottle?)
 
     """
     play sound "/audio/whoosh.mp3"
@@ -188,10 +190,9 @@ label behemoth_incident:
 
     m """
 
-    The thought of his viscous saliva slobbering over the mouth of my bottle makes my stomach churn...
+    (The thought of his viscous saliva slobbering over the mouth of my bottle makes my stomach churn...)
 
-    Does he know that he’s basically asking for an indirect kiss?
-
+    (Does he know that he’s basically asking for an indirect kiss?)
     """
 
     hide water-bottle
@@ -200,9 +201,9 @@ label behemoth_incident:
 
     be "“Well? It’s just a drink...are you going to be a good girl or what?”"
 
-    m """ What a nauseating man.
+    m """ (What a nauseating man.)
 
-    Take it easy, Menmi. Don’t want to barf at the gym on your first day.
+    (Take it easy, Menmi. Don’t want to barf at the gym on your first day.)
 
     """
 
@@ -212,11 +213,11 @@ label choice_6:
 
         "Comply and get it over with":
             c "Do you really think he'll leave you alone if you give him what he wants? You'd just be encouraging him."
-            m "The thought of allowing him to get away with harassment...it just makes me feel small and ashamed."
+            m "(The thought of allowing him to get away with harassment...it just makes me feel small and ashamed.)"
             c "Did you do something to deserve this?"
         "Politely, but firmly decline":
             c "Put him in his place with a polite, but firm “No.” There's no need to engage with this guy anymore than you already have."
-            m "I know that that's the right course of action, but why does it feel so scary? The way he’s staring me down...I don’t know, I feel like something bad’s going to happen if I make him mad..."
+            m "(I know that that's the right course of action, but why does it feel so scary? The way he’s staring me down...I don’t know, I feel like something bad’s going to happen if I make him mad...)"
         "If he wants a tongue-lashing, I'll give it to him":
             c "Don't let him talk to you like that! Who cares if he's humongous? You can take him!"
             m "“I don't know how you can be so thirsty when you're clearly drinking your own Kool-Aid.”"
@@ -228,7 +229,7 @@ label choice_6:
             """
         "Ignore him and walk away":
             c "Any further engagement with this loser will only provoke him. Let's go."
-            m "Easier said than done...it's not like I can just hop over this human wall."
+            m "(Easier said than done...it's not like I can just hop over this human wall.)"
 
 play sound "/audio/impact-slam.mp3"
 scene gym-inside with vpunch:
@@ -238,9 +239,9 @@ stop music fadeout 2.0
 label joule_introduction:
     play sound "/audio/heartbeat-fast.mp3"
     m """
-    It's like there's no right answer. This feeling of powerlessness is so frustrating...
+    (It's like there's no right answer. This feeling of powerlessness is so frustrating...)
 
-    What should I do? Fight? Run? Call the manager?
+    (What should I do? Fight? Run? Call the manager?)
 
     It's hard to think over the relentless thrumming of my heart."""
 
@@ -251,7 +252,7 @@ label joule_introduction:
 
 
     j "“Leave her alone.”"
-    m "Huh? Who said that?"
+    m "(Huh? Who said that?)"
     show joule-neutral with dissolve
     j "“Hey, Beast Mode. Can I help you with a Cool Down routine?”"
 
@@ -278,7 +279,7 @@ label joule_introduction:
 
     j "“Thanks for your patience, sir.”"
     m """
-    His tone is professionally polite, but his smirk says otherwise...
+    (His tone is professionally polite, but his smirk says otherwise...)
 
     The Behemoth audibly grumbles, but backs off. """
 
@@ -292,15 +293,15 @@ label joule_introduction:
     $ joule_name = "Joule"
     m "“Yeah, thanks for that.”"
     j "“No worries, but could I give you a piece of advice?”"
-    m "I tense up, bracing myself for the reprimand."
+    m "(I tense up, bracing myself for the reprimand.)"
     m "“Sure, what's up?”, hoping I sound as cool as he does."
 
     show joule-annoyed
     j "“You should be more careful. He put you in a really dangerous position. Judging by your build, there's no way you could have taken him if things got physical.”"
     m """
-    He's not *wrong*, but the way he's scolding me rubs me the wrong way.
+    (He's not *wrong*, but the way he's scolding me rubs me the wrong way.)
 
-    Sure, this guy just "saved" me, but he can't be blaming *me* for this, right?
+    (Sure, this guy just "saved" me, but he can't be blaming *me* for this, right?)
     """
 
     stop music fadeout 15.0
@@ -314,9 +315,9 @@ label choice_7:
             $ self_awareness += 10
             c "Stand up for yourself! That other dude was dangerous, but this guy seems like he'd be willing to hear you out."
             m """
-            A sudden wave of shame and fury washes over me as I remember the powerlessness of the moment.
+            (A sudden wave of shame and fury washes over me as I remember the powerlessness of the moment.)
 
-            I won't be able to live it down if I don't correct him now.
+            (I won't be able to live it down if I don't correct him now.)
 
             "It wasn't my fault! I was just minding my own business when he approached me."
 
@@ -325,26 +326,26 @@ label choice_7:
             hide joule-annoyed
             show joule-thinking
 
-            m "I can see him trying to lift this concept...mentally."
+            m "(I can see him trying to lift this concept...mentally.)"
 
             hide joule-thinking
             show joule-neutral
 
             j "...You're right. I'm sorry that I implied that it was on you to change. That's not fair to you."
 
-            m "It's not ideal, but his apology makes me feel slightly better about the situation."
+            m "(It's not ideal, but his apology makes me feel slightly better about the situation.)"
 
         "Apologize":
             c "This guy just did a nice thing for you. Don't ruin it by being ungrateful"
             m """
-            I feel bad about making a scene, but was this really even my fault?
+            (I feel bad about making a scene, but was this really even my fault?)
 
-            I push down my frustration. It's better to keep the peace.
+            (I push down my frustration. It's better to keep the peace.)
 
             "Sorry I caused you trouble."
             """
             j "It's OK — I'm glad you're alright"
-            m "A part of me throws up, then dies a little, then throws up AGAIN."
+            m "(A part of me throws up, then dies a little, then throws up AGAIN.)"
         "Walk away":
             c "Uncomfy feelings?! In *my* body? Disengage."
             m "I try to walk away, but he grabs my hand."
@@ -353,8 +354,8 @@ label joule_response:
     hide joule-annoyed
     show joule-sad
     j "“You were scared, weren't you? I'd be, too”"
-    m "The look in his eyes...it's kind of sad."
-    m "Something tells me this guy is just trying to help."
+    m "(The look in his eyes...it's kind of sad.)"
+    m "(Something tells me this guy is just trying to help.)"
 
     hide joule-sad
     show joule-neutral
@@ -362,9 +363,9 @@ label joule_response:
     m """
     He pulls out a business card and hands it to me. There's a black and white photo of him on it, the hard lighting capturing every line and contour of his chiseled build.
 
-    He's kind of hot. Once you get over the patronizing remarks.
+    (He's kind of hot. Once you get over the patronizing remarks.)
 
-    There *is* something romantic about a high octane situation rescue situation from a lecherous troll.
+    (There *is* something romantic about a high octane situation rescue situation from a lecherous troll.)
 
     """
     i "*Definitely* sounds like something your inner feminist would say."
@@ -375,9 +376,9 @@ label joule_response:
         pause
         hide text with dissolve
         $ passed_checks +=1
-        m "Maybe my inner feminist wants me to to get swole and squat punch creeps."
+        m "(Maybe my inner feminist wants me to to get swole and squat punch creeps.)"
     elif self_awareness<10:
-        m "Grrrr...stop it, Menmi! You're not supposed to *like* getting rescued. What's wrong with you?"
+        m "(Grrrr...stop it, Menmi! You're not supposed to *like* getting rescued. What's wrong with you?)"
 
     m "Thanks. I'll think about it."
     j "“Girls should know how to protect themselves...especially the pretty ones.”"
@@ -385,9 +386,9 @@ label joule_response:
     scene gym-inside with dissolve:
         blur 24
     m """
-    Against my better instincts, my heart is racing a mile a minute.
+    (Against my better instincts, my heart is racing a mile a minute.)
 
-    Looks like he's helping me with cardio already.
+    (Looks like he's helping me with cardio already.)
     """
 
     stop music fadeout 5.0

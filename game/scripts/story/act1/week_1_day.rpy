@@ -26,22 +26,23 @@ label week_1_day:
         matrixcolor InvertMatrix(value=1.0)
     i "They're going to realize that hiring you was a mistake."
     if self_awareness >=20:
-        m "It's *only* my first day! I'm still learning the ropes."
+        m "(It's *only* my first day! I'm still learning the ropes.)"
         play sound "/audio/awareness-ding.mp3"
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
         $ passed_checks +=1
     elif self_awareness<20:
-        m "I do not know what I'm doing and would like to throw myself out the window."
+        m "(I do not know what I'm doing and would like to throw myself out the window.)"
 
     scene office-inside
     play music "<from 20>/audio/happily-ever-after.mp3"
-    m "I just hope my boss doesn't judge me. {p}Wait, I haven't even met my boss yet."
-    m "That reminds me, I should be proactive about introducing myself to people!"
+    m "(I just hope my boss doesn't judge me. {p}Wait, I haven't even met my boss yet.)"
+    m "(That reminds me, I should be proactive about introducing myself to people!)"
 
     play sound "/audio/chair-sit.mp3"
-    m "Ah! This person who just took the seat next to me looks like they might be friendly."
+    show allie-neutral with dissolve
+    m "(Ah! This person who just took the seat next to me looks like they might be friendly.)"
 
     stop music
     play sound "/audio/impact-slam.mp3"
@@ -55,18 +56,18 @@ label week_1_day:
         pause
         hide text with dissolve
         $ passed_checks +=1
-        m "Hush! You're making me anxious. Socially."
+        m "(Hush! You're making me anxious. Socially.)"
         stop music fadeout 1.0
         play music "<from 20>/audio/happily-ever-after.mp3"
         scene office-inside
         show allie-neutral with dissolve
         m "“Hey, I'm Menmi. This is my first meeting. Were we supposed to bring anything?”"
-        m "To my relief, they reciprocate my smile."
+        m "(To my relief, they reciprocate my smile.)"
     elif self_awareness<10:
         m "“Um, do you work here?”"
         i "What are you *asking*? They're here with you. In the office. Obviously they work here."
         m """
-        Their blank stare tells me I just flubbed it.
+        (Their blank stare tells me I just flubbed it.)
 
         I take a deep breath and try again.
         """
@@ -105,7 +106,7 @@ label week_1_day:
     show allie-neutral
 
     m """
-    Nice, we're going to get along like two peas in pea salad.
+    (Nice, we're going to get along like two peas in pea salad.)
 
     Somebody hushes us as the lights dim.
     """
@@ -118,7 +119,7 @@ label devan_introduction:
     m "I try to look attentive as a slightly harried-looking human resources officer presents a slide on employee retention."
     "Presenter" "“So as you can see from this graph, although we're seeing a rise in new business, our current hiring rate isn't keeping pace with the work.”"
     "Presenter" "“Everyone is taking on more work, and people are burning out because of it. If we don't do something, we'll see a significant drop in retention.”"
-    m "Yikes! That explains the accelerated waterboarding, um, onboarding, they put me through."
+    m "(Yikes! That explains the accelerated waterboarding, um, onboarding, they put me through.)"
     "Presenter" "“Our proposed solution is to solicit more college graduates. They're fresh and tend to want to prove themselves. More eager, less ego.”"
 
     stop music fadeout 1.0
@@ -131,11 +132,11 @@ label devan_introduction:
     $ devan_name = "Devan"
     d "“Not long ago. Hours, in fact.”"
     m """
-    His voice is so entrancing, like a talk show host who swallowed crushed velvet. An expression of placid intensity sits on his finely chiseled features.
+    (His voice is so entrancing, like a talk show host who swallowed crushed velvet. An expression of placid intensity sits on his finely chiseled features.)
 
-    There's an untouchable quality to him.
+    (There's an untouchable quality to him.)
 
-    Neat.
+    (Neat.)
     """
 
     hide devan-neutral
@@ -145,16 +146,16 @@ label devan_introduction:
 
     hide devan-thinking
     show devan-neutral
-    m "A particularly bushy-tailed junior raises his hand. I catch Allie rolling their eyes beside me."
+    m "(A particularly bushy-tailed junior raises his hand. I catch Allie rolling their eyes beside me.)"
     "Junior" "“Actually, the research shows that workflows for younger employees are significantly more likely to be in lockstep with timelines, creating openings to circle back on ancillary requests.”"
-    m "Were those...words he was saying?"
+    m "“Were those...words he was saying?”"
     al "“Don't worry about it. There's always that one guy who needs to say something to feel like he's contributing.”"
 
     hide devan-neutral
     show devan-thinking
 
     d "“How nice. Thank you.”"
-    m "Woof. That guy should've plugged in his laptop because he just got Shut Down."
+    m "(Woof. That guy should've plugged in his laptop because he just got Shut Down.)"
 
     hide devan-thinking
     show devan-neutral
@@ -185,24 +186,24 @@ label after_team_meeting:
     scene office-inside with dissolve
     "Junior" "“Yeah circle back!”"
     m """
-    He looks so proud of himself.
+    (He looks so proud of himself.)
 
-    Good for him.
+    (Good for him.)
 
     Unable to protest, the presenter wraps up and people begin to file out. I move to exit with them, but feel a tap on my shoulder.
     """
 
     play music "/audio/devs-theme.mp3"
     show devan-neutral with dissolve
-    m "I forget to catch my breath as my eyes catch pure glacier blue."
+    m "(I forget to catch my breath as my eyes catch pure glacier blue.)"
 
     hide devan-neutral
     show devan-smile
 
     d "“Of course, the suggestion applies to myself as well.”"
-    m "“P-pardon?” He's even more intimidating up close."
+    m "“P-pardon?” (He's even more intimidating up close.)"
     d "“My apologies. I haven't introduced myself properly. My name is Devan. I will be your senior touchpoint.”"
-    m "It takes me a moment to register what he means."
+    m "(It takes me a moment to register what he means.)"
     m "“Y-you're my boss?”" with vpunch
 
     hide devan-smile
@@ -215,11 +216,11 @@ label after_team_meeting:
     “Please feel free to reach out to me if you have questions or need help completing any work.”
     """
     m """
-    I'm frozen in place. Aren't bosses supposed to be distant and stern? Is this a trick?
+    (I freeze up. Aren't bosses supposed to be distant and stern? Is this a trick?)
 
-    It seems too good to be true that he's offering to help. Maybe I should tell him about this project due tonight...
+    (It seems too good to be true that he's offering to help. Maybe I should tell him about this project due tonight...)
 
-    Then again, it's my first day. I don't want to make a bad impression. I want him to *like* me, after all.
+    (Then again, it's my first day. I don't want to make a bad impression. I want him to *like* me, after all.)
     """
 label choice_8:
     menu:
@@ -228,9 +229,9 @@ label choice_8:
         "Act confident":
             c "You can't let him know you're in over your head. Fake it 'til you make it."
             m """
-            Maybe Buzzwords McBushytail was onto something...
+            (Maybe Buzzwords McBushytail was onto something...)
 
-            Besides, if I get used to him jumping in whenever I need help, he'll never respect me.
+            (Besides, if I get used to him jumping in whenever I need help, he'll never respect me.)
 
             “Don't worry about me, sir. I can handle whatever you throw at me."
 
@@ -245,7 +246,7 @@ label choice_8:
             $ self_awareness += 10
             c "Listen to him. He's trying to tell you that he's got your back. Does this seem like the type of guy who'd try to test you?"
             m """
-            The truth is, I don't know *what* kind of guy he is, but he has made it clear that he's on my side.
+            (The truth is, I don't know *what* kind of guy he is, but he has made it clear that he's on my side.)
 
             “Thank you, sir. To be honest, I am worried about the deck due tonight...”"""
 
@@ -260,7 +261,7 @@ label choice_8:
             “I'll see what I can do to push the deadline.”
             """
             hide dev neutral
-            m "Whew! That worked out better than I thought."
+            m "(Whew! That worked out better than I thought.)"
             call after_choice_8 from _call_after_choice_8_1
             jump choice_8b
 label after_choice_8:
@@ -274,12 +275,12 @@ label after_choice_8:
     m """
     Devan leaves, taking my breath with him.
 
-    So that was my boss- uh, senior touchpoint?
+    (So that was my boss- uh, senior touchpoint?)
 
-    He's got that cool guy rizz for sure.
+    (He's got that cool guy rizz for sure.)
     """
     c "Back up, girl. Boss-subordinate romances are dicey territory. Are you sure you want to explore that?"
-    m "What *is* it about power imbalances that make people go ga-ga?"
+    m "(What *is* it about power imbalances that make people go ga-ga?)"
     return
 
 label choice_8a:
