@@ -21,13 +21,13 @@ label naji_date_3:
 
     play music "<from 9>audio/cloud.wav"
 
-    m """A celebrity chef downtown just dropped the latest pastry craze – a combination of a waffle and a macaroon.
+    m """(A celebrity chef downtown just dropped the latest pastry craze – a combination of a waffle and a macaroon.)
 
-    They call it...The Wackaroon.
+    (They call it...The Wackaroon.)
 
-    And I consider it my civic duty to stay on the cutting board's edge of pastry innovation.
+    (And I consider it my civic duty to stay on the cutting board's edge of pastry innovation.)
 
-    So here I am, outside Jujube Bakery, standing on a line that wraps almost entirely around the block.
+    (So here I am, outside Jujubakery, standing on a line that wraps almost entirely around the block.)
     """
 
     scene bakery with dissolve:
@@ -37,7 +37,7 @@ label naji_date_3:
     scene bakery with vpunch
 
     m """
-    Feeling both antsy and sleepy at the same time, I fight to stay on my feet as the front of the line comes into view.
+    (Feeling both antsy and sleepy at the same time, I fight to stay on my feet as the front of the line comes into view.)
 
     A worker comes out and hangs a “SOLD OUT” sign over the Wackaroons.
     """
@@ -66,14 +66,14 @@ label naji_date_3:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "I got here as early as I could. How could I predict how much stock they'd have?"
+        m "(I got here as early as I could. How could I predict how much stock they'd have?)"
     elif self_awareness<70:
         $ unlocks_dialogue = ["I have to be better about that", "It's deserved, how else will I learn?", "I'll learn from my mistakes"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "I wonder if there's a treatment for being chronically {b}STUPID.{/b}"
+        m "(Um, I have a medical condition? {w}I wonder if there's a treatment for being chronically {b}STUPID.{/b})"
 
     scene bakery with vpunch
     m "As I woefully peruse the unWackmarkable leftovers, a familiar golden head comes into view."
@@ -83,10 +83,10 @@ label naji_date_3:
 
     play sound "/audio/impact-slam.mp3"
     scene bakery with vpunch
-    show naji-smile
+    show naji-smile with vpunch
 
     m """
-    He's sending my overcaffeinated heart into overdrive.
+    (He's sending my overcaffeinated heart into overdrive.)
 
     “Don't sneak up on me like that!”
 
@@ -99,18 +99,20 @@ label naji_date_3:
     show wackaroon at truecenter with easeinbottom
 
     m"""
-    He holds out a white paper bag and-OH MY SQUASH.
+    (He holds out a white paper bag and-OH MY SQUASH.)
 
     “Is that-?”
     """
-    show naji-laugh
+
+    hide naji-neutral
+    show naji-laugh at laughter
 
     m "Naji cackles riotously, lording the bag over my head."
 
     n "“Sorry, Men. You know what they say -- 'the early bird whacks the worm.'”"
     hide naji-laugh
     hide wackaroon
-    show naji-surprised
+    show naji-surprised at pushback
 
     m "“Nobody says that, you macaroon.”"
     hide naji-surprised
@@ -126,7 +128,7 @@ label naji_date_3:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "He *is* right about being punctual, though. As hard as it is to admit, he *did* earn it by being here early."
+    m "(He *is* right about being punctual, though. As hard as it is to admit, he *did* earn it by being here early.)"
 
     if self_awareness>=80:
         $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "He used to follow me around and do whatever I wanted", "It's nice to know that I'm capable of achieving happiness for myself.", "He's a good guy"]
@@ -135,7 +137,7 @@ label naji_date_3:
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m """
-        But this is Naji we're talking about.
+        (But this is Naji we're talking about.)
 
         “Please, Naji? Just a tiny bite? A sliver!”
         """
@@ -159,7 +161,7 @@ label naji_date_3:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "“Read like a book. Shall we eat these in the park?”"
+    m "“Read and visualized like a novel. Shall we eat these in the park?”"
 
     scene park-day with pixellate
 
@@ -184,6 +186,7 @@ label naji_date_3:
     """
 
     show wackaroon at truecenter with easeinbottom
+    hide naji-frown with dissolve
 
     m"""
 
@@ -204,26 +207,26 @@ label naji_date_3:
     show wackaroon at truecenter with dissolve
 
     m """
-    It's delicious!
+    (It's delicious!)
 
-    The outer shell is a perfect balance between chewy and soft. The smooth, sweet filling creates a magical mouthfeel that contrasts with the bumpy waffle crust.
+    (The outer shell is a perfect balance between chewy and soft. The smooth, sweet filling creates a magical mouthfeel that contrasts with the bumpy waffle crust.)
     """
 
     show naji-neutral with dissolve
+    hide wackaroon
     $ unlocks_dialogue = ["Why is Naji's opinion of me such a big deal?"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    I take a peek next to me, trying to assess Naji's reaction.
+    (I take a peek next to me, trying to assess Naji's reaction.)
 
-    He's staring straight ahead, throat bobbing slowly as he swallows.
+    (He's staring straight ahead, throat bobbing slowly as he swallows.)
     """
 
-    hide wackaroon with dissolve
     hide naji-neutral
-    show naji-lookaway
+    show naji-lookaway at squirm
 
     n "“Good! {w}So yummy. {w}Wow.”"
     $ unlocks_dialogue = ["I thought I knew him better", "Naji prioritizes the needs of others before his own", "He's not the type to share his feelings", "He's hiding something", "His feelings..."]
@@ -231,7 +234,7 @@ label naji_date_3:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "I can tell he doesn't like it. He's putting up a front for me out of consideration for my feelings."
+    m "(I can tell he doesn't like it. He's putting up a front for me out of consideration for my feelings.)"
 
 label choice_15:
     menu:
@@ -251,7 +254,7 @@ label choice_15:
 
             """
             hide naji-lookaway
-            show naji-smile
+            show naji-smile with laughter
             $ unlocks_dialogue = ["I hope he can be open with me someday"]
             $ dialogue_matches = []
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -276,16 +279,17 @@ label choice_15:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             c "He's being polite for your sake. He'd be embarrassed if you grilled him about his real feelings."
-            hide naji-smile
-            show naji-surprised
+            hide naji-lookaway
+            show naji-surprised at hop
             m """
             "Right?" I put on my most convincing PR smile.
 
-            Naji's reaction definitely dampened my mood, but I have to keep the vibes up.
+            (Naji's reaction definitely dampened the mood, but I have to keep the vibes up.)"""
 
-            "Thanks again for wacking the worm, Naji."
-            """
+            hide naji-surprised
+            show naji-neutral
 
+            m "“Thanks again for wacking the worm, Naji.”"
             n "“Don't mention it.”"
             hide naji-surprised
             show naji-smile
@@ -301,7 +305,7 @@ label choice_15:
             m """
             "You mean that right? You're not just saying that?"
 
-            I hope the edge in my voice is cutting into him as deeply as it does to me.
+            (I hope the edge in my voice is cutting into him as deeply as it does to me.)
             """
             n "“Woah, woah, Menmi. Fists down. Yes, they're good! I'm having a good time.”"
             m """
@@ -335,7 +339,7 @@ label after_choice_15:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "What I don't say is how I'd noticed Naji's mom never *quite* packed him enough to eat."
+    m "(What I don't say is how I'd noticed Naji's mom never *quite* packed him enough to eat.)"
 
     hide naji-smile
     show naji-neutral
@@ -346,12 +350,12 @@ label after_choice_15:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "As silence settles over us, I watch a cool breeze shift the dappled light in Naji’s locks."
+    m "(As silence settles over us, I watch a cool breeze shift across the dappled light in Naji’s locks.)"
 
     show naji-lookaway
 
     n "“Do you still feel that way?”"
-    m """ It takes me a second to understand that he’s talking about the cupcakes.
+    m """ (It takes me a second to understand that he’s talking about the cupcakes.)
 
     “I don’t know. It’s been a while since I’ve had them.” """
 
@@ -364,7 +368,7 @@ label after_choice_15:
     show naji-neutral
 
     n "“Absence makes the heart grow fonder, they say.”"
-    m "“They do say that, actually”"
+    m "“They do say that, actually. {w}Unlike the worm-whacking thing.”"
 
 
     $ unlocks_dialogue = ["It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?"]
@@ -373,9 +377,9 @@ label after_choice_15:
         show screen insight(dialogue_matches)
     m """
 
-    The morning air around shimmers, cool and bright.
+    (The morning air around shimmers, cool and bright.)
 
-    Shadows cast by faraway branches pepper Naji's face and shoulders like freckles on a pear.
+    (Shadows cast by faraway branches pepper Naji's face and shoulders like freckles on a pear.)
 
     """
 
@@ -392,7 +396,7 @@ label after_choice_15:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "I’d expected laughter, but Naji remains quiet, eyes toward the sky."
+    m "(I’d expected laughter, but Naji remains quiet, eyes toward the sky.)"
 
     stop music fadeout 5.0
 
@@ -400,7 +404,7 @@ label after_choice_15:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Did I misread the vibe? Quick, say something cool and unawkward."
+    m "(Did I misread the vibe? Quick, say something cool and unawkward.)"
 
 
     m "What should I say?"

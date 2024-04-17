@@ -50,7 +50,7 @@ label naji_date_2:
 
     n "“Menmi, you are in the presence of one of our most esteemed patrons.”"
     m """
-    His grin is wide, like a proud father's.
+    (His grin is wide, like a proud father's.)
 
     I gasp. “And here I've been caught without my clutching pearls!”"""
 
@@ -58,7 +58,7 @@ label naji_date_2:
     show naji-laugh
 
     m """
-    Naji's laughter sounds comfortingly intimate within the alleyway.
+    (Naji's laughter sounds comfortingly intimate within the alleyway.)
 
     “Does she have a name?”
     """
@@ -76,7 +76,7 @@ label naji_date_2:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    Why's he being shy all of a sudden? He practically whispered that last part.
+    (Why's he being shy all of a sudden? He practically whispered that last part.)
 
     Naji clears his throat.
     """
@@ -103,8 +103,8 @@ label naji_date_2:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "But It's not like Naji named the cat after *me* or anything..."
-    m "So why are my cheeks burning?"
+    m "(But It's not like Naji named the cat after *me* or anything...)"
+    m "(So why are my cheeks burning?)"
     $ unlocks_dialogue = ["Maybe I shouldn't have talked about my love life...Compared to him, I must look like a loser", "I hope he doesn't think I'm silly for wanting to be in love", "I always worried that he was out of my league, though"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -124,12 +124,12 @@ label naji_date_2:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "I mean, he *did* get all defensive about it. I can be cautiously optimistic."
+        m "(I mean, he *did* get all defensive about it. I can be cautiously optimistic.)"
     elif self_awareness<60:
         m """
-        Gosh, I must be delulu to believe a miracle like that could be trululu.
+        (Gosh, I must be delulu to believe a miracle like that could be trululu.)
 
-        Either way, I need to be present and focus on the moment in front of me."""
+        (Either way, I need to be present and focus on the moment in front of me.)"""
 
     scene alleyway with vpunch
     play music "/audio/najis-theme.mp3"
@@ -203,9 +203,9 @@ label naji_date_2:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    Naji's getting so passionate about this.
+    (Naji's getting so passionate about this.)
 
-    I can't read the subtext from this distance. We might have to get personal.
+    (I can't read the subtext from this distance. We might have to get personal.)
     """
 
 label choice_14:
@@ -217,7 +217,7 @@ label choice_14:
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
-                m "It must be difficult for him to share how he really feels."
+                m "(It must be difficult for him to share how he really feels.)"
 
             $ unlocks_dialogue = ["I was protective of him", "I think I just have to learn to accept that I don't know everything, but..."]
             $ dialogue_matches = []
@@ -293,11 +293,11 @@ label choice_14:
                 show naji-lookaway at truecenter:
                     blur 50
                 m """
-                I reach into the past, recalling the details of Naji's upbringing.
+                (I reach into the past, recalling the details of Naji's upbringing.)
 
-                Naji's single mother was often absent, and whenever she was around, it seemed like she always had something for Naji to do.
+                (Naji's single mother was often absent, and whenever she was around, it seemed like she always had something for Naji to do.)
 
-                I'd remember times when we'd play "laundry" while she nursed a hangover in her bedroom.
+                (I'd remember times when we'd play "laundry" while she nursed a hangover in her bedroom.)
                 """
 
                 scene alleyway
@@ -325,7 +325,7 @@ label choice_14:
                         show screen insight(dialogue_matches)
                     m """Did I say something wrong?"
 
-                    I should've just taken him at face value. Feelings aren't meant to be examined!
+                    (I should've just taken him at face value. Feelings aren't meant to be examined!)
                     """
                     scene alleyway
                     play music "<from 14>/audio/najis-theme.mp3"
@@ -404,14 +404,14 @@ label after_choice_14:
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         c "It's OK to disagree. You're different people, after all."
-        m "Yeah, and I'm not trying to convince him of my views, either. Still..."
+        m "(Yeah, and I'm not trying to convince him of my views, either. Still...)"
     elif self_awareness <60:
         $ unlocks_dialogue = ["I keep second-guessing myself and thinking about other possibilities...I can't go back now, though.", "Why's Naji's opinion of me such a big deal?", "Maybe I shouldn't have talked about my love life..."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "I've upset him."
+        m "(I've upset him.)"
         i "Nice going, scatterbrains!"
 
     scene alleyway with vpunch
@@ -424,7 +424,7 @@ label after_choice_14:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    The vibes are off. I need to fix them.
+    (The vibes are off. I need to fix them.)
 
     “It's admirable that you empathize with Mimi so much, Naj. She clearly adores you.”
     """
@@ -438,14 +438,14 @@ label after_choice_14:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Phew! He took the olive branch."
+    m "(Phew! He took the olive branch.)"
 
     $ unlocks_dialogue = ["He's not the type to share his feelings", "It's deserved. How else will I learn?", "Trick question, still me.", "They taught me well."]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "That was uncomfy for both of us!"
+        m "(That was uncomfy for both of us!)"
 
     m "“I'll have to remember to save my sardines from pizza for Mimi!”"
 
@@ -464,7 +464,7 @@ label after_choice_14:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Naji laughs, tension disappearing like frost in the sun."
+    m "Naji laughs, tension disappearing like a cat in the night."
     n """
     “Speaking of eating, should we get going?”
 
@@ -474,9 +474,9 @@ label after_choice_14:
 
     hide naji-laugh with dissolve
     m """
-    As we head out, I take one last look at Mimi in the alley. Would she be there next time? With kittens? Or a new person? Or maybe...
+    (As we head out, I take one last look at Mimi in the alley. Would she be there next time? With kittens? Or a new person? Or maybe...)
 
-    Who can say for sure what the future holds?
+    (Who can say for sure what the future holds?)
     """
 
     $ n2=True

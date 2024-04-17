@@ -631,6 +631,7 @@ label naji_bathtime_1:
 
 label naji_bathtime_1_mid_result:
     menu:
+        with Dissolve(2.0)
         "I probably wouldn't have a chance, but there is something romantic about falling in love with your best friend...":
             call after_bathtime_1 from _call_after_bathtime_1
             scene menmi-apartment-afternoon with dissolve
@@ -638,6 +639,7 @@ label naji_bathtime_1_mid_result:
             jump menmi_after_bath
 label naji_bathtime_1_good_result:
     menu:
+        with Dissolve(2.0)
         "Naji's grown with time. I'm curious about what else about him has changed...":
             call after_bathtime_1 from _call_after_bathtime_1_1
             scene menmi-apartment-afternoon with dissolve
@@ -645,6 +647,7 @@ label naji_bathtime_1_good_result:
             jump menmi_after_bath
 label naji_bathtime_1_best_result:
     menu:
+        with Dissolve(2.0)
         "Why do I feel so self-conscious around Naji now that he's different from how I remember? Maybe if I talk to him more, I can sort out my feelings.":
             call after_bathtime_1 from _call_after_bathtime_1_2
             scene menmi-apartment-afternoon with dissolve
@@ -653,56 +656,65 @@ label naji_bathtime_1_best_result:
 
 label myself_bathtime_1:
     menu how_i_feel:
+        with Dissolve(2.0)
         "How I feel...":
             $ bathtime_1_choices.append("How I feel...")
             menu:
+                with Dissolve(2.0)
                 "I'm excited...":
                     $ bathtime_1_choices.append("I'm excited...")
                     menu excited:
+                        with Dissolve(2.0)
                         "Meeting new people, experiencing new things, chasing down a whirlwind romance...":
                             $ bathtime_1_choices.append("Meeting new people, experiencing new things, chasing down a whirlwind romance...")
                             menu whirlwind_romance:
-                                    "It's all coming true like I planned":
-                                        $ bathtime_1_choices.append("It's all coming true like I planned")
-                                        menu like_I_planned:
-                                            "It's nice to know that I'm capable of achieving happiness for myself.":
-                                                $ bathtime_1_choices.append("It's nice to know that I'm capable of achieving happiness for myself.")
-                                                menu achieve_happiness:
-                                                    "I choose to believe in myself!":
-                                                        $ bathtime_1_choices.append("I choose to believe in myself!")
-                                                        $ renpy.notify("+20 Self-Awareness")
-                                                        $ self_awareness += 20
-                                                        jump me_bathtime_1_positive_result
-                                                    "I'll learn from my mistakes":
-                                                        $ bathtime_1_choices.append("I'll learn from my mistakes")
-                                                        jump my_mistakes
-                                            "What if things don't go as planned?":
-                                                $ bathtime_1_choices.append("What if things don't go as planned?")
-                                                jump not_as_planned
-                                    "It's nice to know that I'm capable of achieving happiness for myself.":
-                                        $ bathtime_1_choices.append("It's nice to know that I'm capable of achieving happiness for myself.")
-                                        jump achieve_happiness
-                                    "Things might not work out, but that's a natural part of life.":
-                                        $ bathtime_1_choices.append("Things might not work out, but that's a natural part of life.")
-                                        jump part_of_life
-                                    "There are times when I admit I can be hard on myself.":
-                                        $ bathtime_1_choices.append("There are times when I admit I can be hard on myself.")
-                                        jump hard_on_myself
+                                with Dissolve(2.0)
+                                "It's all coming true like I planned":
+                                    $ bathtime_1_choices.append("It's all coming true like I planned")
+                                    menu like_I_planned:
+                                        with Dissolve(2.0)
+                                        "It's nice to know that I'm capable of achieving happiness for myself.":
+                                            $ bathtime_1_choices.append("It's nice to know that I'm capable of achieving happiness for myself.")
+                                            menu achieve_happiness:
+                                                with Dissolve(2.0)
+                                                "I choose to believe in myself!":
+                                                    $ bathtime_1_choices.append("I choose to believe in myself!")
+                                                    $ renpy.notify("+20 Self-Awareness")
+                                                    $ self_awareness += 20
+                                                    jump me_bathtime_1_positive_result
+                                                "I'll learn from my mistakes":
+                                                    $ bathtime_1_choices.append("I'll learn from my mistakes")
+                                                    jump my_mistakes
+                                        "What if things don't go as planned?":
+                                            $ bathtime_1_choices.append("What if things don't go as planned?")
+                                            jump not_as_planned
+                                "It's nice to know that I'm capable of achieving happiness for myself.":
+                                    $ bathtime_1_choices.append("It's nice to know that I'm capable of achieving happiness for myself.")
+                                    jump achieve_happiness
+                                "Things might not work out, but that's a natural part of life.":
+                                    $ bathtime_1_choices.append("Things might not work out, but that's a natural part of life.")
+                                    jump part_of_life
+                                "There are times when I admit I can be hard on myself.":
+                                    $ bathtime_1_choices.append("There are times when I admit I can be hard on myself.")
+                                    jump hard_on_myself
                         "It's nice to know that I'm capable of achieving happiness for myself.":
                             $ bathtime_1_choices.append("It's nice to know that I'm capable of achieving happiness for myself.")
                             jump achieve_happiness
                 "I'm uncertain...":
                     $ bathtime_1_choices.append("I'm uncertain...")
                     menu:
+                        with Dissolve(2.0)
                         "I keep second-guessing myself and thinking about other possibilities...":
                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
                             menu second_guessing:
+                                with Dissolve(2.0)
                                 "Do I feel like it's justified?":
                                     $ bathtime_1_choices.append("Do I feel like it's justified?")
                                     jump justified
                                 "I wish I could redo some decisions":
                                     $ bathtime_1_choices.append("I wish I could redo some decisions")
                                     menu redo:
+                                        with Dissolve(2.0)
                                         "I'll get more chances. Nothing's unfixable.":
                                             $ bathtime_1_choices.append("I'll get more chances. Nothing's unfixable.")
                                             $ renpy.notify("+20 Self-Awareness")
@@ -717,6 +729,7 @@ label myself_bathtime_1:
                                 "I can't go back now, though.":
                                     $ bathtime_1_choices.append("I can't go back now, though.")
                                     menu cant_go_back:
+                                        with Dissolve(2.0)
                                         "I need to move on.":
                                             $ bathtime_1_choices.append("I need to move on.")
                                             $ renpy.notify("+20 Self-Awareness")
@@ -739,24 +752,30 @@ label myself_bathtime_1:
                         "What if things don't go as planned?":
                             $ bathtime_1_choices.append("What if things don't go as planned?")
                             menu not_as_planned:
+                                with Dissolve(2.0)
                                 "Things might not work out, but that's a natural part of life.":
                                     $ bathtime_1_choices.append("Things might not work out, but that's a natural part of life.")
                                     menu part_of_life:
+                                        with Dissolve(2.0)
                                         "I think I just have to learn to accept that I don't know everything, but...":
                                             $ bathtime_1_choices.append("I think I just have to learn to accept that I don't know everything, but...")
                                             jump dont_know_everything
                                 "I don't think I'm being dramatic when I say Disaster will befall me.":
                                     $ bathtime_1_choices.append("I don't think I'm being dramatic when I say Disaster will befall me.")
                                     menu disaster_befalls:
+                                        with Dissolve(2.0)
                                         "Something about this feels familiar...":
                                             $ bathtime_1_choices.append("Something about this feels familiar...")
                                             menu feels_familiar:
+                                                with Dissolve(2.0)
                                                 "Where did I get that idea from?":
                                                     $ bathtime_1_choices.append("Where did I get that idea from?")
                                                     menu that_idea:
+                                                        with Dissolve(2.0)
                                                         "My family":
                                                             $ bathtime_1_choices.append("My family")
                                                             menu family_tree:
+                                                                with Dissolve(2.0)
                                                                 "They taught me well.":
                                                                     $ bathtime_1_choices.append("They taught me well.")
                                                                     $ renpy.notify("+20 Self-Awareness")
@@ -778,21 +797,25 @@ label myself_bathtime_1:
                                                         "Trick question, still me.":
                                                             $ bathtime_1_choices.append("Trick question, still me.")
                                                             menu still_me:
+                                                                with Dissolve(2.0)
                                                                 "I need to be a better person.":
                                                                     $ bathtime_1_choices.append("I need to be a better person.")
                                                                     jump better_person
                                                                 "Sometimes I feel insecure.":
                                                                     $ bathtime_1_choices.append("Sometimes I feel insecure.")
                                                                     menu insecure:
+                                                                        with Dissolve(2.0)
                                                                         "I keep second-guessing myself and thinking about other possibilities...":
                                                                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
                                                                             jump second_guessing
                                                                         "I have to be better about that.":
                                                                             $ bathtime_1_choices.append("I have to be better about that.")
                                                                             menu better_about_that:
+                                                                                with Dissolve(2.0)
                                                                                 "I'll learn from my mistakes":
                                                                                     $ bathtime_1_choices.append("I'll learn from my mistakes")
                                                                                     menu my_mistakes:
+                                                                                        with Dissolve(2.0)
                                                                                         "They may have shaped my past, but the future isn't set in stone.":
                                                                                             $ bathtime_1_choices.append("They may have shaped my past, but the future isn't set in stone.")
                                                                                             $ renpy.notify("+20 Self-Awareness")
@@ -819,18 +842,22 @@ label myself_bathtime_1:
                                                                         "Do I feel like it's justified?":
                                                                             $ bathtime_1_choices.append("Do I feel like it's justified?")
                                                                             menu justified:
+                                                                                with Dissolve(2.0)
                                                                                 "There are times when I admit I can be hard on myself.":
                                                                                     $ bathtime_1_choices.append("There are times when I admit I can be hard on myself.")
                                                                                     menu hard_on_myself:
+                                                                                        with Dissolve(2.0)
                                                                                         "I think I just have to learn to accept that I don't know everything, but...":
                                                                                             $ bathtime_1_choices.append("I think I just have to learn to accept that I don't know everything, but...")
                                                                                             jump dont_know_everything
                                                                                         "It's deserved. How else will I learn?":
                                                                                             $ bathtime_1_choices.append("It's deserved. How else will I learn?")
                                                                                             menu deserved:
+                                                                                                with Dissolve(2.0)
                                                                                                 "I need to be a better person.":
                                                                                                     $ bathtime_1_choices.append("I need to be a better person.")
                                                                                                     menu better_person:
+                                                                                                        with Dissolve(2.0)
                                                                                                         "I think I just have to learn to accept that I don't know everything, but...":
                                                                                                             $ bathtime_1_choices.append("I think I just have to learn to accept that I don't know everything, but...")
                                                                                                             jump dont_know_everything
@@ -866,6 +893,7 @@ label myself_bathtime_1:
                                                                 "I think I just have to learn to accept that I don't know everything, but...":
                                                                     $ bathtime_1_choices.append("I think I just have to learn to accept that I don't know everything, but...")
                                                                     menu dont_know_everything:
+                                                                        with Dissolve(2.0)
                                                                         "I choose to believe in myself":
                                                                             $ bathtime_1_choices.append("I choose to believe in myself")
                                                                             $ renpy.notify("+20 Self-Awareness")
@@ -889,6 +917,7 @@ label myself_bathtime_1:
                                         "On second thought, no...":
                                             $ bathtime_1_choices.append("On second thought, no...")
                                             menu second_thought:
+                                                with Dissolve(2.0)
                                                 "How I feel...":
                                                     $ bathtime_1_choices.append("How I feel...")
                                                     jump how_i_feel
@@ -919,6 +948,7 @@ label myself_bathtime_1:
                                 "What if they do?":
                                     $ bathtime_1_choices.append("What if they do?")
                                     menu things_work_out:
+                                        with Dissolve(2.0)
                                         "I'm going to have faith and enjoy the ride":
                                             $ bathtime_1_choices.append("I'm going to have faith and enjoy the ride")
                                             $ renpy.notify("+20 Self-Awareness")
@@ -943,6 +973,7 @@ label myself_bathtime_1:
                 "I'm doubtful...":
                     $ bathtime_1_choices.append("I'm doubtful...")
                     menu doubtful:
+                        with Dissolve(2.0)
                         "I keep second-guessing myself and thinking about other possibilities...":
                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
                             jump second_guessing
@@ -958,6 +989,7 @@ label myself_bathtime_1:
                 "Have been rude!":
                     $ bathtime_1_choices.append("Have been rude!")
                     menu rude:
+                        with Dissolve(2.0)
                         "Do I feel like it's justified?":
                             $ bathtime_1_choices.append("Do I feel like it's justified?")
                             jump justified
@@ -970,6 +1002,7 @@ label myself_bathtime_1:
                 "Have been mostly positive":
                     $ bathtime_1_choices.append("Have been mostly positive")
                     menu mostly_positive:
+                        with Dissolve(2.0)
                         "Meeting new people, experiencing new things, chasing down a whirlwind romance...":
                             $ bathtime_1_choices.append("Meeting new people, experiencing new things, chasing down a whirlwind romance...")
                             jump whirlwind_romance
@@ -979,6 +1012,7 @@ label myself_bathtime_1:
                 "Have been a bit negative":
                     $ bathtime_1_choices.append("Have been a bit negative")
                     menu bit_negative:
+                        with Dissolve(2.0)
                         "Sometimes I feel insecure.":
                             $ bathtime_1_choices.append("Sometimes I feel insecure.")
                             jump insecure
@@ -991,9 +1025,11 @@ label myself_bathtime_1:
         "My choices...":
             $ bathtime_1_choices.append("My choices...")
             menu:
+                with Dissolve(2.0)
                 "I'm satisfied with them.":
                     $ bathtime_1_choices.append("I'm satisfied with them.")
                     menu:
+                        with Dissolve(2.0)
                         "It's nice to know that I'm capable of achieving happiness for myself.":
                             $ bathtime_1_choices.append("It's nice to know that I'm capable of achieving happiness for myself.")
                             jump achieve_happiness
@@ -1006,6 +1042,7 @@ label myself_bathtime_1:
                 "I have regrets.":
                     $ bathtime_1_choices.append("I have regrets.")
                     menu:
+                        with Dissolve(2.0)
                         "I keep second-guessing myself and thinking about other possibilities...":
                             $ bathtime_1_choices.append("I keep second-guessing myself and thinking about other possibilities...")
                             jump second_guessing
@@ -1018,6 +1055,7 @@ label myself_bathtime_1:
 
 label me_bathtime_1_positive_result:
     menu:
+        with Dissolve(2.0)
         "It can be tough, but the only productive choice I have is to stay positive, believe in myself, and trust that everything will work out!":
             call after_bathtime_1 from _call_after_bathtime_1_3
             scene menmi-apartment-afternoon with dissolve
@@ -1026,6 +1064,7 @@ label me_bathtime_1_positive_result:
 
 label me_bathtime_1_practical_result:
     menu:
+        with Dissolve(2.0)
         "I might have some stuff to work out, but I can proceed with caution. What other choice do I have?":
             call after_bathtime_1 from _call_after_bathtime_1_4
             scene menmi-apartment-afternoon with dissolve
@@ -1034,6 +1073,7 @@ label me_bathtime_1_practical_result:
 
 label me_bathtime_1_change_result:
     menu:
+        with Dissolve(2.0)
         "I need to give myself time to see how things play out, and check in with myself regularly. Change is the only constant, and I have to be ready for it.":
             call after_bathtime_1 from _call_after_bathtime_1_5
             scene menmi-apartment-afternoon with dissolve

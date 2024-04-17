@@ -114,16 +114,16 @@ label after_choice_12:
     show naji-bar-blush
 
     n "“Oh! Hey Menmi.”"
-    m """I try not to be unmoored by the deer-in-headlights look he gives me.
+    m """(I try not to be unmoored by the deer-in-headlights look he gives me.)
 
-    The bare air conditioning of the lounge feels especially chilly today against my exposed shoulders."""
+    (The bare air conditioning of the lounge feels especially chilly today against my exposed shoulders.)"""
 
     $ unlocks_dialogue = ["It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?", "There were times I wondered if we could be more than friends...","By the time we were in high school, I could see how he would be considered attractive...physically"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Why is he staring? Is it...a *good* stare?"
+    m "(Why is he staring? Is it...a *good* stare?)"
 
     hide naji-bar-blush
     show naji-bar-lookaway
@@ -190,15 +190,15 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    i "His shoulders are as broad as the shelves."
+        i "His shoulders are as broad as the shelves."
 
-    scene lounge-inside
-    show naji-bar-lookaway
+        scene lounge-inside
+        show naji-bar-lookaway
 
-    m "Wow good thing I always have such useful thoughts."
+        m "Wow good thing I always have such useful thoughts."
 
-    hide naji-bar-lookaway
-    show naji-bar-neutral
+        hide naji-bar-lookaway
+        show naji-bar-neutral
 
     n "“You look nice today.”"
 
@@ -209,7 +209,7 @@ label after_choice_12:
     m """
     “Thanks.”
 
-    I hope he means my dress and not my cheeks. """
+    (I hope he means my dress and not my cheeks.) """
 
     hide naji-bar-smile
     show naji-bar-neutral
@@ -219,14 +219,14 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "Sometimes, I wonder...what Naji *really* thinks of me."
+        m "(Sometimes, I wonder...what Naji *really* thinks of me.)"
 
     $ unlocks_dialogue = ["I always worried that he was out of my league, though"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "Maybe I'm not *that* curious, though."
+        m "(Maybe I'm not *that* curious, though.)"
 
     m "“Enough about me. We haven't really talked about where {i}you've{/i} been since we lost touch.”"
 
@@ -243,7 +243,7 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "I do, badly. For some reason."
+        m "(I do, badly. For some reason.)"
 
     m "“Please, Naji?”"
 
@@ -272,8 +272,6 @@ label after_choice_12:
     play sound "/audio/bottle-clink.mp3"
 
     m "Finally, he pours the drink into a wide glass and garnishes it with a wedge of lime before skillfully sliding across the counter to me."
-
-
 
 
     show naji-bar-smile
@@ -305,9 +303,11 @@ label after_choice_12:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    I'm acutely aware that I can't say the same for myself.
+    (I'm acutely aware that I can't say the same for myself.)
 
-    What's Naji's favorite drink? When's the last time I've even *seen* him drink?
+    (What's Naji's favorite drink? When's the last time I've even *seen* him drink?)
+
+    (Oh gosh, am I a bad friend?)
 
     """
 
@@ -329,14 +329,14 @@ label after_choice_12:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "I'll take this as an opportunity to learn more about him."
+        m "(I'll take this as an opportunity to learn more about him.)"
     elif self_awareness<50:
         $ unlocks_dialogue = ["It's deserved. How else will I learn?"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "Maybe I just function with a low-grade concussion at all times."
+        m "(Maybe I just function with a low-grade concussion at all times.)"
 
     scene lounge-inside with hpunch
     show naji-bar-neutral with dissolve
@@ -351,7 +351,7 @@ label after_choice_12:
 
     “Oh my god, Naji — it's delicious!”
 
-    It may be the best daiquiri I've ever tasted — the chilled, sweet flavor of the blended strawberries melts into the heady warmth of rum, sliding easily down my throat.
+    (It may be the best daiquiri I've ever tasted — the chilled, sweet flavor of the blended strawberries melts into the heady warmth of rum, sliding easily down my throat.)
 
     """
     hide strawberry-daiquiri with dissolve
@@ -388,7 +388,7 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "I can't personally relate to what Naji is saying – I'd never felt trapped or unsure about my future, but I can imagine how he feels."
+        m "(I can't personally relate to what Naji is saying – I'd never felt trapped or unsure about my future, but I can imagine how he feels.)"
 
     hide naji-bar-neutral
     show naji-bar-lookaway
@@ -404,7 +404,7 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "That's a surprise...I always thought things came so easily to Naji."
+        m "(That's a surprise...I always thought things came so easily to Naji.)"
 
     hide naji-bar-neutral
     show naji-bar-lookaway
@@ -417,7 +417,7 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Something about it feels off. I wait for him to elaborate, but Naji just looks away and moves on."
+    m "(Something about it feels off. I wait for him to elaborate, but Naji just looks away and moves on.)"
 
     hide naji-bar-lookaway
     show naji-bar-neutral
@@ -435,7 +435,7 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "I bite down on the bitter bile that rises through my throat."
+        m "(I bite down on the bitter bile that rises through my throat.)"
 
     hide naji-bar-neutral
     show naji-bar-lookaway
@@ -445,14 +445,14 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "He didn't say it outright, but I can tell from the way he skirts around the topic that their relationship wasn't *just* platonic."
+    m "(He didn't say it outright, but I can tell from the way he skirts around the topic that their relationship wasn't *just* platonic.)"
 
     $ unlocks_dialogue = ["I was protective of him"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "I get the feeling that I don't like this woman."
+    m "(I get the feeling that I don't like this woman.)"
 
     if self_awareness <=60:
         play sound "/audio/impact-slam.mp3"
@@ -463,13 +463,13 @@ label after_choice_12:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m """The only way to get away from this feeling is to get as many sordid details about it as possible.
+        m """(The only way to get away from this feeling is to get as many sordid details about it as possible.)
 
-        Maybe if I could understand it, it wouldn't bother me so much."""
+        (Maybe if I could understand it, it wouldn't bother me so much.)"""
 
         i "That's right, lean into those masochistic tendencies, you little freak. "
 
-        m "The surge of acrid heat in my chest feels almost...invigorating."
+        m "(The surge of acrid heat in my chest feels almost...invigorating.)"
 
         scene lounge-inside with vpunch
 
@@ -482,21 +482,21 @@ label after_choice_12:
     “And...here we are!”
     """
 
-    m "He seems reluctant to elaborate about the woman he mentioned."
+    m "(He seems reluctant to elaborate about the woman he mentioned.)"
 
     $ unlocks_dialogue = ["It makes me feel insecure that I don't know everything about him", "I hope he can be open with me someday", "He's hiding something"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "But I'm *so* curious!"
+    m "(But I'm *so* curious!)"
 
     $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...I always worried that he was out of my league, though", "Why is Naji's opinion of me such a big deal?", "Compared to him, I must look like a loser"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Almost morbidly so. Like I want to know everything about his love life so that I know how *I* stack up."
+    m "(Almost morbidly so. Like I want to know everything about his love life so that I know how *I* stack up.)"
 
     if self_awareness>=70:
         $ unlocks_dialogue = ["There are times when I admit I can be hard on myself", "I choose to believe in myself!"]
@@ -504,7 +504,7 @@ label after_choice_12:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-            m "But that doesn't make sense...my worth isn't related to anyone else's."
+            m "(But that doesn't make sense...my worth isn't related to anyone else's.)"
 
     m "Naji hardly ever talks about his relationships... maybe he's feeling vulnerable?"
     play sound "/audio/impact-slam.mp3"
@@ -523,9 +523,9 @@ label after_choice_12:
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m """
-        *Everything* is a rationalization.
+        (*Everything* is a rationalization.)
 
-        It all depends on how you look at it, and I'm choosing to interpret it as Naji opening up to me.
+        (It all depends on how you look at it, and I choose to interpret this as Naji opening up to me.)
         """
     elif self_awareness<30:
         $ unlocks_dialogue = ["I need to be a better person.", "Trick question, still me."]
@@ -533,7 +533,7 @@ label after_choice_12:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "I know I'm just being selfish...."
+        m "(I know I'm just being selfish....)"
 
     scene lounge-inside with vpunch
     show naji-bar-lookaway
@@ -565,7 +565,7 @@ label choice_13:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            This conversation...I don't want to continue it. It feels like I'm wading into dangerous territory.
+            (This conversation...I don't want to continue with it. It feels like I'm wading into dangerous territory.)
 
             “Uh...so, you know any cool bartending tricks?”
 
@@ -590,9 +590,9 @@ label choice_13:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            From drama at school, to getting in trouble with parents, to our anxieties about the future,
+            (From drama at school, to getting in trouble with parents, to our anxieties about the future,
 
-            we trusted each other with our feelings, assured in the fact that we wouldn't say or do anything to hurt each other without good reason.
+            we trusted each other with our feelings, assured in the fact that we wouldn't say or do anything to hurt each other without good reason.)
 
             """
 
@@ -602,9 +602,9 @@ label choice_13:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            What changed? I want us to trust each other.
+            (What changed? I want us to trust each other.)
 
-            This is about him, not me. The best response I can give him is my attention without judgment.
+            (This is about him, not me. The best response I can give him is my attention without judgment.)
 
             ...
             """
@@ -622,11 +622,11 @@ label choice_13:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            ...OK. A little anticlimactic, but I shouldn't be surprised.
+            (...OK. A little anticlimactic, but I shouldn't be surprised.)
 
-            Seems like he's done with this topic. I can respect that.
+            (Seems like he's done with this topic. I can respect that.)
 
-            I *have* to respect that.
+            (I *have* to respect that.)
 
             "Sure."
             """
@@ -638,7 +638,7 @@ label choice_13:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            That's right. I'm asking for *his* benefit, not mine.
+            (That's right. I'm asking for *his* benefit, not mine.)
 
             “You mentioned a woman. What exactly was your relationship with her?”
             """
@@ -653,7 +653,7 @@ label choice_13:
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
-                m "What's *that* supposed to mean?"
+                m "(What's *that* supposed to mean?)"
             hide naji-bar-smile
             show naji-bar-lookaway
             n "“Sigh. I wouldn't call it ‘dating', but we had a...thing. She was a little older than me and wasn't looking for anything beyond casual.”"
@@ -671,16 +671,16 @@ label choice_13:
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
-            m "Even though I expected it, a part of me recoils hearing about Naji doing things like that."
+            m "(Even though I expected it, a part of me recoils hearing about Naji doing things like that.)"
 
             if self_awareness >=50:
-                m "Am I...jealous?"
+                m "(Am I...jealous?)"
                 $ unlocks_dialogue = ["We're the same age, but I kind of saw him as a little brother", "I was protective of him"]
                 $ dialogue_matches = []
                 $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
                 if len(dialogue_matches) > 0:
                     show screen insight(dialogue_matches)
-                    m "Or is it because I see him like a brother?"
+                    m "(Or is it because I see him like a brother?)"
 
             scene lounge-inside
             show naji-bar-lookaway
@@ -697,9 +697,9 @@ label choice_13:
             show naji-bar-neutral
             n "“Anyway, that's what happened. Hey, wanna see something cool?”"
             m """
-            Surprise, surprise. He changed the topic.
+            (Surprise, surprise. He changed the topic.)
 
-            At least he seems more excited now. He sounds like he's about to show me a new Pokébowlmon card or something.
+            (At least he seems more excited now. He sounds like he's about to show me a new Pokébowlmon card or something.)
 
             "Yeah, OK."
             """
@@ -714,7 +714,7 @@ label choice_13:
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
-            m "Naji's voice tightened when he was talking about leaving home."
+            m "(Naji's voice tightened when he was talking about leaving home.)"
 
             scene lounge-inside
             show naji-bar-lookaway
@@ -725,9 +725,9 @@ label choice_13:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            I know more about Naji's childhood than the average person. Could it be that he *wants* me to ask?
+            (I know more about Naji's childhood than the average person. Could it be that he *wants* me to ask?)
 
-            Even if it's subliminal?
+            (It could be that *he* isn't aware of either)
 
             “What did you mean when you said you ‘couldn't stay'? Did you mean about home?”
             """
@@ -746,13 +746,13 @@ label choice_13:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            I do remember.
+            (I do remember.)
 
-            Naji's mother struggled to raise him on her own and was always latched onto one guy or another like a barnacle.
+            (Naji's mother struggled to raise him on her own and was always latched onto one guy or another like a barnacle.)
 
-            She said she'd was looking for a father figure for Naji, but I think she was lonely and wanted to feel special to someone.
+            (She said she'd was looking for a father figure for Naji, but I think she was lonely and wanted to feel special to someone.)
 
-            Just not her child.
+            (Just not her child.)
             """
 
             if self_awareness <=50:
@@ -762,7 +762,7 @@ label choice_13:
                 $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
                 if len(dialogue_matches) > 0:
                     show screen insight(dialogue_matches)
-                m "That's what my parents used to say, anyway"
+                m "(That's what my parents used to say, anyway)"
 
 
             hide naji-bar-lookaway
@@ -874,21 +874,21 @@ label after_choice_13:
     hide naji-bar-smile
     show naji-bar-neutral
 
-    m "The look in Naji's eyes is wistful as he carefully wipes clean the bar area around me."
+    m "(The look in Naji's eyes is wistful as he carefully wipes clean the bar area around me.)"
 
     $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers", "Maybe it was his way of coping"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "He's so considerate."
+    m "(He's so considerate.)"
 
     $ unlocks_dialogue = ["We were best friends", "We're the same age, but I kind of saw him as a little brother", "I miss how close we used to be"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "I can't help but be amazed that I've known this person since he was a soda-stained kid with curly hair and clammy hands."
+    m "(I can't help but be amazed that I've known this person since he was a soda-stained kid with curly hair and clammy hands.)"
     n "“I don't do it for everyone, you know. Little tricks every now and then are cool, but any more than that is showing off, you know?”"
     m """“Right, and you're no show-off.”
 
@@ -909,7 +909,7 @@ label after_choice_13:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Why does that make me feel kind of happy?"
+    m "(Why does that make me feel kind of happy?)"
 
     $ n1=True
 

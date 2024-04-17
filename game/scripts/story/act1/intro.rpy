@@ -480,17 +480,22 @@ label choosing_prince:
 
 
     show image "title-screen.png" with dissolve
-    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#d33c59}To BeLoved{/size}{/font}" at truecenter
+    show image "main-menu-title.png":
+        xpos 5
+        ypos 55
     with dissolve
     pause
 
     play sound "/audio/impact-slam.mp3"
     show image "title-screen.png":
         matrixcolor InvertMatrix(value=1.0)
-    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#FFFFFF}To BeLoved{/size}{/font}" at truecenter
+    show image "main-menu-title.png":
+        matrixcolor InvertMatrix(value=1.0)
+        xpos 5
+        ypos 55
     with hpunch
     pause
+    hide image "main-menu-title.png"
     show image "title-screen.png" with dissolve:
         matrixcolor InvertMatrix(value=0.0)
-    hide text with dissolve
     jump week_1_morning

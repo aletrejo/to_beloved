@@ -20,7 +20,7 @@ label act_1_climax:
     scene menmi-apartment-morning with flash
     scene menmi-apartment-morning with hpunch
 
-    m "Ow...why'd I drink so much last night?"
+    m "(Ow...why'd I drink so much last night?)"
     i "Take a guess."
 
     if self_awareness>=60:
@@ -34,15 +34,15 @@ label act_1_climax:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "I was...feeling lonely."
+        m "(I was...feeling lonely.)"
     elif self_awareness<60:
         $ unlocks_dialogue = ["I don't know...or maybe I'm not ready to face it yet. I need more insight on this."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "Because I'm cool?"
-        i "That's so funny I forgot about what you were reflecting on. {p} Oh well, it probably wasn't important."
+        m "(Because I'm cool?)"
+        i "That's so funny I forgot about what you were reflecting on. {p} Hope it wasn't important."
 
     play music "<from 5>/audio/siberian-express.mp3" fadein 5.0
 
@@ -52,9 +52,9 @@ label act_1_climax:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    *Sigh* I've been in the city for more than a month now, so why haven't I found love?
+    (*Sigh* I've been in the city for more than a month now, so why haven't I found love?)
 
-    It defies explanation.
+    (It defies explanation.)
     """
 
     i "I've got one: {w}Nobody wants you."
@@ -70,21 +70,21 @@ label act_1_climax:
     Like a pit stain on that knock-off Louis Mutton blouse you paid way too much for at that thrift store in Cooklyn.
     """
 
-    m "At least it was sustainable!"
+    m "(At least it was sustainable!)"
 
     $ unlocks_dialogue = ["It's deserved. How else will I learn?"]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "I know I need to be better, but still..."
+        m "(I know I need to be better, but still...)"
 
     scene menmi-apartment-morning with dissolve:
         matrixcolor BrightnessMatrix (value=-0.7)
     m """
-    ...
+    (...)
 
-    I just want to be good enough.
+    (I just want to be good enough.)
     """
 
     $ unlocks_dialogue = ["What if things don't go as planned?", "I can't go back now, though."]
@@ -92,8 +92,8 @@ label act_1_climax:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Why can't reality just *be* the way I want it to be?"
-    m "*Sigh* Is it always going to be this way?"
+    m "(Why can't reality just *be* the way I want it to be?)"
+    m "(*Sigh* Is it always going to be this way?)"
 
 label choice_16:
     menu:
@@ -107,11 +107,11 @@ label choice_16:
                 show screen insight(dialogue_matches)
             c "There's no use running away from your feelings."
             m """
-            Nobody would ever fall in love with someone as worthless as me.
+            (Nobody would ever fall in love with someone as worthless as me.)
 
-            It's a little sick but...{w}a part of me revels in blaming it all on myself. {w}At least that would mean I'm in control.
+            (It's a little sick but...{w}a part of me revels in blaming it all on myself. {w}At least that would mean I'm in control.)
 
-            How could it be an accident, after all? A stroke of bad luck? Senselessness like that is way too cruel.
+            (How could it be an accident, after all? A stroke of bad luck? Senselessness like that is way too cruel.)
             """
         "Distract yourself":
             stop music fadeout 3.0
@@ -121,9 +121,9 @@ label choice_16:
                 matrixcolor BrightnessMatrix (value=-0.4)
             play music "<from 43>/audio/lonely-souls.mp3"
             m """
-            Ah, the members of Double Black Velvet Jeans are so pretty.
+            (Ah, the members of Double Black Velvet Jeans are so pretty.)
 
-            *Sigh* Why couldn’t I have been born poreless too?
+            (*Sigh* Why couldn’t I have been born poreless too?)
             """
             $ unlocks_dialogue = ["It's nice to know that I'm capable of achieving happiness for myself.", "I need to move on.", "I think I just have to learn to accept that I don't know everything, but..."]
             $ dialogue_matches = []
@@ -131,9 +131,9 @@ label choice_16:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            I'm still in a funk, but I do feel a little lighter.
+            (I'm still in a funk, but I do feel a little lighter.)
 
-            My mouth tastes like mud. I should hydrate. Where'd I put that Stanlychee bottle...?
+            (My mouth tastes like mud. I should hydrate. Where'd I put that Stanlychee bottle...?)
             """
             $ renpy.notify("+5 Self-Awareness")
             $ self_awareness += 5
@@ -152,23 +152,23 @@ label choice_16:
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
             m """
-            I'm feeling really low right now, but need to choose to think positively. What other productive choice is there?
+            (I'm feeling really low right now, but need to choose to think positively. What other productive choice is there?)
 
-            It's hard to think of myself as a great catch. {w} I can't do a full 180 on my feelings, but maybe I can accept that an opportunity for love just hasn't happened yet.
+            (It's hard to think of myself as a great catch. {w} I can't do a full 180 on my feelings, but maybe I can accept that an opportunity for love just hasn't happened yet.)
 
-            I need to stay positive. It doesn't do me any good to wallow in self-defeat.
+            (I need to stay positive. It doesn't do me any good to wallow in self-defeat.)
             """
             $ renpy.notify("+10 Self-Awareness")
             $ self_awareness += 10
 
 label after_choice_16:
-    m "I just wish something would *happen* for once."
+    m "(I just wish something would *happen* for once.)"
 
     scene menmi-apartment-afternoon with vpunch
     play sound "/audio/cell-vibrate.mp3"
     stop music fadeout 3.0
     m """
-    Huh?{w} Is someone calling me?
+    (Huh?{w} Is someone calling me?)
 
     I glance at the screen to see who’s crashing my pity party."""
 
@@ -181,7 +181,7 @@ label after_choice_16:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "He *has* been on my mind lately..."
+    m "(He *has* been on my mind lately...)"
     stop sound
     m "“Hello?”"
     n "“Hey, Men. {w}You busy?”"
@@ -196,18 +196,18 @@ label after_choice_16:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Tch. He knows me too well."
+    m "(Tch. He knows me too well.)"
     n "“Have you been to Onion Circle?”"
     m "“The park by my place? Yeah, I take the train from there every day.”"
     n "“Right, of course. Sorry, I'm mansplaning...”"
-    m "He sounds nervous."
+    m "(He sounds nervous.)"
 
     $ unlocks_dialogue = ["He's always had a way with people. Got the rizz, as they say", "He's changed."]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m "That's not like him."
+        m "(That's not like him.)"
 
     m """
     “No. Sorry, Naji. I didn’t mean it that way.”
@@ -216,7 +216,7 @@ label after_choice_16:
     """
 
     if naji_relationship<=20:
-        m "And feeling like crap about myself, {w}but I don’t burden him with that."
+        m "(And feeling like crap about myself, {w}but I don’t burden him with that.)"
 
     elif naji_relationship>20:
         $ unlocks_dialogue = ["He was my best friend", "He’s a good listener", "We're super comfortable with each other"]
@@ -234,16 +234,16 @@ label after_choice_16:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-    m "Am I hearing this right? Naji...asking *me* to hang out? Usually, *I'm* the one who makes the plans."
+    m "(Am I hearing this right? Naji...asking *me* to hang out? Usually, *I'm* the one who makes the plans.)"
 
     $ unlocks_dialogue = ["There were times I wondered if we could be more than friends..."]
     $ dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        m """Maybe I'm just sensitive right now, but this kind of sounds like
+        m """(Maybe I'm just sensitive right now, but this kind of sounds like
 
-        No...{w}it can't be.
+        No...{w}it can't be.)
         """
     $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride", "Why not, though?"]
     $ dialogue_matches = []
@@ -251,7 +251,7 @@ label after_choice_16:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    Then again, is it so strange? We *are* friends after all.
+    (Then again, is it so strange? We *are* friends after all.)
 
     “Sure! It sounds like fun.”
     """
@@ -271,7 +271,7 @@ label after_choice_16:
         play sound "/audio/heartbeat-fast.mp3"
 
         m """
-        ...is what comes out of my mouth, but my heart is throttling up through my throat.
+        (...is what comes out of my mouth, but my heart is throttling up through my throat.)
 
         Naji just laughs before hanging up.
         """
@@ -293,9 +293,9 @@ label after_choice_16:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     m """
-    Why is my heart beating so fast?
+    (Why is my heart beating so fast?)
 
-    It's *just* Naji...
+    (It's *just* Naji...)
     """
 
     $ unlocks_dialogue = ["Do I feel like it's justified?", " Where did I get that idea from?", "Something about this feels familiar..."]
