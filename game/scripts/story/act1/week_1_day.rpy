@@ -78,7 +78,7 @@ label week_1_day:
         m "“Um, I mean, were we supposed to bring anything to this meeting?”"
 
     hide allie-neutral
-    show allie-smile
+    show allie-smile at laughter
 
     al """
     “Yeah, I'm giving a crap just by showing up.”
@@ -94,7 +94,7 @@ label week_1_day:
     m "“Tell me about it — I feel like I spend more time thinking about what to say than listening to other people's responses.”"
 
     hide allie-neutral
-    show allie-smile
+    show allie-smile at laughter
 
     al "“Ha! And by the end of it, you haven't gotten to know anyone, but it's *great* that you made up a name for your first car.”"
     m """

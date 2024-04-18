@@ -121,7 +121,7 @@ label naji_introduction:
     "Unruly Guest" "“I'm surprised that you remember that, Naji. I told you that a while ago.”"
 
     hide naji-bar-frown
-    show naji-bar-smile
+    show naji-bar-smile at hop
 
     n """“It's part of a bartender's job to listen to their customers.”
 
@@ -248,7 +248,7 @@ label choice_9a:
     show naji-bar-neutral with dissolve
     m "Naji turns around, expression transforming as he registers my voice."
     hide naji-bar-neutral
-    show naji-bar-smile
+    show naji-bar-smile at hop
     n "“Menmi! You're here!”"
     hide naji-bar-smile
     show naji-bar-neutral
@@ -259,7 +259,7 @@ label choice_9a:
     """
 
     hide naji-bar-neutral
-    show naji-bar-laugh
+    show naji-bar-laugh at laughter
 
     n "“In our defense, it had arms”"
     m "“So did those hooligans who were just here. I thought I was about to witness my first city bar brawl.”"
@@ -282,7 +282,7 @@ label choice_9bc:
     show naji-bar-smile with dissolve
     n "“Of course! Thanks for waiting–”"
     hide naji-bar-smile
-    show naji-bar-surprise
+    show naji-bar-surprise at hop
     n "“Menmi? How long have you been here?”"
     m "Naji blinks at me. He seems surprised."
     n "“Why didn't you say ‘hi’?”"
@@ -315,7 +315,8 @@ label after_choice_9:
     m "“Smooth way to order a drink.”"
 
     hide naji-bar-neutral
-    show naji-bar-smile
+    hide naji-bar-surprise
+    show naji-bar-smile at laughter
 
     n "“Ha - copy that.”"
     m "Naji's cheeks dimple as he smiles to himself and makes Allie their drink."
@@ -323,14 +324,14 @@ label after_choice_9:
     m "“It's been eventful!”"
 
     hide naji-bar-smile
-    show naji-bar-surprise
+    show naji-bar-surprise at hop
 
     m "“A personal trainer gave me his card, and my mysterious boss might moonlight as a model.”"
     al "“It's true — we've seen him lunch with Heidi Plum.”"
     m "I pretend not to notice Naji fumble the tumbler he's pouring out of."
 
     hide naji-bar-surprise
-    show naji-bar-smile
+    show naji-bar-smile at squirm
 
     n "“Is that so? Glad to hear it.”"
     m """
@@ -352,7 +353,7 @@ label choice_10:
             “Did I say something to upset you, Naji?”
             """
             hide naji-bar-smile
-            show naji-bar-surprise
+            show naji-bar-surprise at hop
             m "His boyish curls seem to stiffen."
             if naji_relationship <=0:
                 jump choice_10a_deflect
@@ -409,7 +410,7 @@ label choice_10:
         m "“More like a comedian.”"
 
         hide naji-bar-smile
-        show naji-bar-surprise
+        show naji-bar-surprise at hop
 
         m "Naji's eyes widen in mock shock as he clutches at his “broken” heart."
 
@@ -418,7 +419,7 @@ label choice_10:
 
     label choice_10a_honest:
         hide naji-bar-surprise
-        show naji-bar-lookaway
+        show naji-bar-lookaway at squirm
         n "“Nothing...it's just...”"
 
         hide naji-bar-lookaway
@@ -445,13 +446,13 @@ label after_choice_10:
     show naji-bar-neutral
     m "“Remember when you used to make me watch all your *hilarious* stand-up comedy specials?”"
     hide naji-bar-neutral
-    show naji-bar-surprise
+    show naji-bar-surprise at hop
     n "“Hey, they were funny!”"
     m "“Nobody who's actually funny has to actually try that hard.”"
     hide naji-bar-surprise
     show naji-bar-neutral
     n "“Oh yeah? Explain this then.”"
-    hide naji-bar-neutral with easeoutbottom
+    show naji-bar-neutral at crouch
     m "Naji slowly lowers himself behind the bar into a crouch."
     n "“Menmi, you set the bar too damn high.”"
     m "An involuntary chortle forces its way out of my throat."
@@ -460,7 +461,8 @@ label after_choice_10:
 
     The familiar comfort I feel around Naji me forget all about the awkwardness from before."""
 
-    show naji-bar-laugh with dissolve
+    hide naji-bar-neutral
+    show naji-bar-laugh at hop
     stop music fadeout 5.0
 
     m """
@@ -487,7 +489,8 @@ label after_choice_10:
         $ passed_checks +=1
         show naji-bar-neutral with dissolve
     elif self_awareness<30:
-        show naji-bar-neutral with dissolve
+        show naji-bar-neutral at truecenter with vpunch:
+            matrixcolor InvertMatrix(value=1.0)
         m """(I have to be wary of the competition.)
 
         (After all, I don't want to pursue someone who's out of my league and make a fool of myself...)

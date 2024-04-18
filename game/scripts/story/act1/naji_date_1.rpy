@@ -111,7 +111,7 @@ label after_choice_12:
 
     n "“Welcome to the William Collins!”"
     hide naji-bar-smile
-    show naji-bar-blush
+    show naji-bar-blush at hop
 
     n "“Oh! Hey Menmi.”"
     m """(I try not to be unmoored by the deer-in-headlights look he gives me.)
@@ -142,7 +142,7 @@ label after_choice_12:
     n "“Naya is covering for me. I told her we were hanging out.”"
 
     hide naji-bar-neutral
-    show naji-bar-smile
+    show naji-bar-smile at hop
 
     m """
     He waves to another waistcoated employee at the other end of the bar.
@@ -190,15 +190,15 @@ label after_choice_12:
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
-        i "His shoulders are as broad as the shelves."
+    i "His shoulders are as broad as the shelves."
 
-        scene lounge-inside
-        show naji-bar-lookaway
+    scene lounge-inside
+    show naji-bar-lookaway
 
-        m "Wow good thing I always have such useful thoughts."
+    m "Wow good thing I always have such useful thoughts."
 
-        hide naji-bar-lookaway
-        show naji-bar-neutral
+    hide naji-bar-lookaway
+    show naji-bar-neutral
 
     n "“You look nice today.”"
 
@@ -571,7 +571,7 @@ label choice_13:
 
             To my relief, Naji's expression brightens a bit.
             """
-            show naji-bar-smile
+            show naji-bar-smile at hop
 
             n "“Yeah! Watch this.”"
         "Keep listening":
@@ -686,7 +686,7 @@ label choice_13:
             show naji-bar-lookaway
             m "“And you? What did you want?”"
             hide naji-bar-lookaway
-            show naji-bar-frown
+            show naji-bar-frown at squirm
             $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance", "Maybe it was his way of coping"]
             $ dialogue_matches = []
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -694,7 +694,7 @@ label choice_13:
                 show screen insight(dialogue_matches)
             n "“...I'm not sure, honestly. I was just going with the flow.”"
             hide naji-bar-frown
-            show naji-bar-neutral
+            show naji-bar-neutral at hop
             n "“Anyway, that's what happened. Hey, wanna see something cool?”"
             m """
             (Surprise, surprise. He changed the topic.)
@@ -833,7 +833,7 @@ label after_choice_13:
     m "“That was pretty impressive. You've come a long way from those disgusting movie theater soft drink experiments.”"
 
     hide naji-bar-neutral
-    show naji-bar-laugh
+    show naji-bar-laugh at laughter
 
     m "A smirk inches its way across his face."
     n "“The world just isn't ready for Maximum Energy Wildberry Cool Blue Diet Mountain Brew.”"
@@ -857,7 +857,9 @@ label after_choice_13:
     Naji shrugs."""
 
     hide naji-bar-frown
-    show naji-bar-smile
+    hide naji-bar-laugh
+    hide naji-bar-neutral
+    show naji-bar-smile at hop
 
     n "“It was *there*. What else were we going to do with it?”"
 

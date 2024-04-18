@@ -35,7 +35,7 @@ label naji_date_2:
     “Who's this little darling?” """
 
     hide naji-neutral
-    show naji-surprised
+    show naji-surprised at hop
     hide cat
 
     $ unlocks_dialogue = ["We're super comfortable with each other", "I have a lot of good memories with Naji."]
@@ -55,7 +55,7 @@ label naji_date_2:
     I gasp. “And here I've been caught without my clutching pearls!”"""
 
     hide naji-smile
-    show naji-laugh
+    show naji-laugh at laughter
 
     m """
     (Naji's laughter sounds comfortingly intimate within the alleyway.)
@@ -83,7 +83,7 @@ label naji_date_2:
     n "“Mimi...it's Mimi.”"
 
     hide naji-lookaway
-    show naji-blush
+    show naji-blush at squirm
 
     n "{cps=*2}“Any resemblances to any people real or fictional are purely coincidental.”{/cps}"
     show cat at truecenter with easeinbottom
@@ -450,7 +450,7 @@ label after_choice_14:
     m "“I'll have to remember to save my sardines from pizza for Mimi!”"
 
     hide naji-neutral
-    show naji-laugh
+    show naji-laugh at laughter
 
     n "“Haha, since when did you eat pizza with sardines?”"
     m """

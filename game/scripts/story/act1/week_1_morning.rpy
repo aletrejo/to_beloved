@@ -154,7 +154,7 @@ label behemoth_incident:
     play sound "/audio/monster-growl.mp3"
 
     hide behemoth
-    show behemoth-smile
+    show behemoth-smile at squirm
 
     m "(A wide grin creeps its way across his face. Predatory.)"
 
@@ -263,7 +263,8 @@ label joule_introduction:
 
     He's smaller than the Behemoth, but there's no fear at all in his defiant posture.
     """
-    show joule-annoyed
+    hide joule-neutral
+    show joule-annoyed at hop
 
     j "“She's clearly uncomfortable. Is that any way for a real man to act?”"
     m """
@@ -296,7 +297,8 @@ label joule_introduction:
     m "(I tense up, bracing myself for the reprimand.)"
     m "“Sure, what's up?”, hoping I sound as cool as he does."
 
-    show joule-annoyed
+    hide joule-neutral
+    show joule-annoyed at squirm
     j "“You should be more careful. He put you in a really dangerous position. Judging by your build, there's no way you could have taken him if things got physical.”"
     m """
     (He's not *wrong*, but the way he's scolding me rubs me the wrong way.)

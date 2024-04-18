@@ -226,7 +226,7 @@ label naji_date_3:
     """
 
     hide naji-neutral
-    show naji-lookaway at squirm
+    show naji-lookaway at shake
 
     n "“Good! {w}So yummy. {w}Wow.”"
     $ unlocks_dialogue = ["I thought I knew him better", "Naji prioritizes the needs of others before his own", "He's not the type to share his feelings", "He's hiding something", "His feelings..."]
