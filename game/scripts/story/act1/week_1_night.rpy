@@ -1,12 +1,17 @@
 label week_1_night:
     play sound "/audio/pencil-write.mp3"
+    hide screen open_planner
     scene city-night with dissolve:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Night{/size}{/font}{/color}" at truecenter with wiperight
+    show screen planner_with_stickers with easeinbottom
+    pause
+    hide screen planner_with_stickers
+    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Night{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 1.0
     scene city-night with dissolve
+    show screen open_planner
     m "“Aahhh, it's finally over! Work is finally over!”"
     show allie-smile with dissolve
     al "“Time to drink booze, let loose.”"

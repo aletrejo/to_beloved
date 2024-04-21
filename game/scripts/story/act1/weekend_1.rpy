@@ -1,11 +1,16 @@
 label weekend_1:
     play sound "/audio/pencil-write.mp3"
+    hide screen open_planner
     scene city-morning with dissolve:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show screen planner_with_stickers with easeinbottom
+    pause
+    hide screen planner_with_stickers
+    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     scene menmi-apartment-morning with dissolve
+    show screen open_planner
     m """
     Mmmmmm... Ah, did I sleep in? It's so late!
 
@@ -93,10 +98,15 @@ label week_2_4_bathtime:
     play sound "/audio/pencil-write.mp3"
     scene city-morning with dissolve:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show screen planner_with_stickers with easeinbottom
+    pause
+    hide screen planner_with_stickers
+    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     scene menmi-apartment-morning
+    show screen open_insights
+    show screen open_planner
     play music "<from 13>/audio/happily-ever-after.mp3" fadein 1.0
     m """
     Ah, the weekend's here! Which means it's time for me to soak in life one memory at a time.
@@ -1115,6 +1125,7 @@ label menmi_after_bath:
     elif week<4:
         m "Now that I'm refreshed, I can start thinking about my plans for the week ahead!"
         hide screen open_planner
+        hide screen open_insights
         scene planner-week-unfilled with dissolve
         m """I'm settling into my weekday routine, but I should plan what I want to do on the weekends.
 
@@ -1129,7 +1140,18 @@ label reading_time:
     stop music fadeout 1.0
     scene menmi-apartment-night with dissolve
     play music "/audio/reaching-the-sky.mp3" fadein 1.0
+    m """
+    And to finish it off, let's add a sticker!
+    """
+    $ chosen_sticker = renpy.random.choice(available_stickers)
+    show screen place_sticker(chosen_sticker)
+    m "Yes! A [chosen_sticker] is just what this planner needs"
+    $ available_stickers.remove(chosen_sticker)
+    window hide
+    pause
+    hide screen place_sticker
     show screen open_planner
+    show screen open_insights
     m """
     Now that my schedule's settled, I'm going to snuggle in with a hot mug of tea and an even steamier romance novel.
 
@@ -1207,6 +1229,7 @@ label reading_5:
     Will Slayleigh rise to the occassion? Or will her theories end up half-baked?
 
     """
+    jump after_reading
 
 label after_reading:
     m """

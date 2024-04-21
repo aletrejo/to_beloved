@@ -326,6 +326,8 @@ screen navigation(center=False):
 
         textbutton _("Load") action ShowMenu("load")
 
+        # textbutton "Gallery" action ShowMenu("gallery")
+
         textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:

@@ -1,12 +1,15 @@
 label week_2_4:
     play sound "/audio/pencil-write.mp3"
+    hide screen open_planner
+    hide screen open_insights
     scene city-morning with fade:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}" at truecenter with wiperight
+    show screen planner_with_stickers with easeinbottom
     pause
-
+    hide screen planner_with_stickers
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
     scene menmi-apartment-morning with dissolve
+    show screen open_planner
     show screen open_insights
 
     m "Good morning MenME! I'm feeling refreshed and ready for the week ahead!"
@@ -256,6 +259,8 @@ label allie_response:
         play music "<from 13>/audio/happily-ever-after.mp3"
 
     m "I'm lucky to have such an interesting friend!"
+    hide screen open_insights
+    hide screen open_planner
 
     if week == 5:
         jump act_1_climax

@@ -4,13 +4,12 @@ screen insight(thoughts):
     vbox at insight_transform:
         for thought in thoughts:
             frame:
-                text "{b}Insight{/b}: [thought]"
+                text "{b}Insight{/b}: [thought]":
+                    xmaximum 400
 
-    timer 2 action Hide('insight')
+    timer 2.5 action Hide('insight')
 
 transform insight_transform:
-    xalign 0 yalign .1
-
     on show:
         alpha 0
         linear .25 alpha 1.0
@@ -18,13 +17,12 @@ transform insight_transform:
         linear .5 alpha 0.0
 
 style insight_frame:
-    ypos .1
-    #Reuse from notify screen
-    background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
-    padding gui.notify_frame_borders.padding
+    background Frame("gui/insight_bg.png", gui.notify_frame_borders, tile=False)
+    padding (50, 50)
 
 
 style insight_vbox:
+    align(0.15, 0.25)
     spacing 20
 
 init python:

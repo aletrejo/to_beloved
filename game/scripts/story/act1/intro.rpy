@@ -32,6 +32,7 @@ default n2 = False
 default n3 = False
 default passed_checks = 0
 default planner_cover = 1
+default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfish", "fox", "goldfish", "koala", "mantaray", "redpanda", "seahorse"]
 # Images used in-game
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness \n Check: Passed", style='outlined_text')
@@ -301,38 +302,38 @@ label pick_planner_pattern:
         imagebutton:
             xalign 0.8
             yalign 0.5
-            auto "planner-pattern-5 %s" action Jump("planner_with_pattern_4")
+            auto "planner-pattern-5 %s" action Jump("planner_with_pattern_5")
     show screen patterns with dissolve
     pause
 label planner_with_pattern_1:
     $ planner_cover = 1
     hide screen patterns
     image cover_1 = "planner-cover-1.png"
-    show cover_1
+    show cover_1 at truecenter
     jump planner_tutorial
 label planner_with_pattern_2:
     $ planner_cover = 2
     hide screen patterns
     image cover_2 = "planner-cover-2.png"
-    show cover_2
+    show cover_2 at truecenter
     jump planner_tutorial
 label planner_with_pattern_3:
     $ planner_cover = 3
     hide screen patterns
     image cover_3 = "planner-cover-3.png"
-    show cover_3
+    show cover_3 at truecenter
     jump planner_tutorial
 label planner_with_pattern_4:
     $ planner_cover = 4
     hide screen patterns
     image cover_4 = "planner-cover-4.png"
-    show cover_4
+    show cover_4 at truecenter
     jump planner_tutorial
 label planner_with_pattern_5:
     $ planner_cover = 5
     hide screen patterns
-    image cover_4 = "planner-cover-5.png"
-    show cover_5
+    image cover_5 = "planner-cover-5.png"
+    show cover_5 at truecenter
     jump planner_tutorial
 label planner_tutorial:
     window hide
@@ -357,7 +358,19 @@ label planner_tutorial:
     It's *perfect*? Did I really do this? Great job, Menmi. Take that, expectations!
 
     Whose expectations? I'm not sure!
+
+    Oh, I almost forgot! I have some cute stickers I can put on my planner. Let me add one.
+
+    Hmm...which one should I choose?
     """
+    $ chosen_sticker = renpy.random.choice(available_stickers)
+    show screen place_sticker(chosen_sticker)
+    m "How about this cute [chosen_sticker]?"
+    $ available_stickers.remove(chosen_sticker)
+    window hide
+    pause
+    hide screen place_sticker
+
     scene planner with dissolve
     m """
     OK. Time to fill it out. Blank pages sure are intimidating.

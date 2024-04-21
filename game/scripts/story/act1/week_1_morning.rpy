@@ -2,7 +2,10 @@ label week_1_morning:
     play sound "/audio/pencil-write.mp3"
     scene city-morning with fade:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Morning{/size}{/font}{/color}" at truecenter with wiperight
+    show screen planner_with_stickers with easeinbottom
+    pause
+    hide screen planner_with_stickers
+    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Morning{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5

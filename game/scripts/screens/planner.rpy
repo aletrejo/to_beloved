@@ -7,7 +7,7 @@ default day_assigned = False
 default evening_assigned = False
 default weekend_event = ""
 default gym_text = "Mornings are at the gym! Gotta start the day strong with my favorite workout — Spotting hot guys."
-default office_text = "Primetime is grind time. I managed to land my dream job at a PR firm. I’m so excited to make a difference in the world!"
+default office_text = "Primetime is grind time. I managed to land my dream job at a PR firm. I'm so excited to make a difference in the world!"
 default lounge_text = "At the end of the day, I'll unwind with a drink. One of my friends from home is a bartender!"
 
 init python:
@@ -106,6 +106,9 @@ screen planner_weekend():
             draggable False
             drag_name "weekend"
             image Solid("#F0D5E8") xysize(261, 263)
+    $ weekend = week + 1
+    text "{font=PatuaOne-Regular.ttf}{size=60}{color=#C64D6B}Week [weekend]{/size}{/font}{/color}":
+        align (0.11, 0.1)
 
 screen open_planner:
     imagebutton:

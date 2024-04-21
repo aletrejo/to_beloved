@@ -1,12 +1,19 @@
 label naji_date_1:
     play sound "/audio/pencil-write.mp3"
+    hide screen open_planner
+    hide screen open_insights
     scene city-morning with fade:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show screen planner_with_stickers with easeinbottom
+    pause
+    hide screen planner_with_stickers
+    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
     scene menmi-apartment-morning with dissolve
+    show screen open_planner
+    show screen open_insights
 
     $ unlocks_dialogue = ["Meeting new people, experiencing new things, chasing down a whirlwind romance...", "I'm going to have faith and enjoy the ride"]
     $ dialogue_matches = []
@@ -928,6 +935,8 @@ label after_naji_date:
         jump reading_time
     elif week<4:
         m "It's a shame that the weekend's over, but there's always next weekend! What should I do?"
+        hide screen open_planner
+        hide screen open_insights
         #Choose next weekend activity in planner
         scene planner-week-unfilled with dissolve
         m "I'll just drop the activity sticker I want in the 'Weekend' box!"

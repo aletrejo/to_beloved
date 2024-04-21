@@ -1,10 +1,15 @@
 label week_1_day:
     play sound "/audio/pencil-write.mp3"
+    hide screen open_planner
     scene city-day with dissolve:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Day{/size}{/font}{/color}" at truecenter with wiperight
+    show screen planner_with_stickers with easeinbottom
+    pause
+    hide screen planner_with_stickers
+    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Day{/size}{/font}{/color}" at truecenter with wiperight
     pause
     scene office-inside with dissolve
+    show screen open_planner
     play sound "/audio/office-sounds.mp3"
     play music "<from 54>/audio/happily-ever-after.mp3" fadein 1.0 volume 0.7
     m """
