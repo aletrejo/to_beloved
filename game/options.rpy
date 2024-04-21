@@ -161,10 +161,11 @@ define config.window_icon = "gui/window_icon.png"
 ##
 ## Customized cursor
 
-#Ale: Could we make it so this only becomes the cursor when you scroll over the planner icon? And main screen?
 define config.mouse = { }
-define config.mouse['default'] = [ ( "gui/keypointer.png", 0, 0) ]
-define config.mouse['pressed_default'] = [ ( "gui/keypointer-click.png", 0, 0) ]
+define config.mouse['mainmenu'] = [ ( "gui/keypointer.png", 0, 0) ]
+define config.mouse['pressed_mainmenu'] = [ ( "gui/keypointer-click.png", 0, 0) ]
+define config.mouse['button'] = [ ( "gui/keypointer.png", 0, 0) ]
+define config.mouse['pressed_button'] = [ ( "gui/keypointer-click.png", 0, 0) ]
 
 
 ## Build configuration #########################################################
