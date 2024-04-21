@@ -51,8 +51,9 @@ label splashscreen:
         add "images/main-menu-menmi.png" at menmiappear
         add "images/main-menu-title.png" at titleappear
         add "images/main-menu-navbg.png" at navappear
+    play music "/audio/pick-one.mp3"
     show screen splash
-    with Pause(10.5)
+    with Pause(12.0)
     hide screen splash
     return
 
