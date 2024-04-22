@@ -3,10 +3,7 @@ label week_1_night:
     hide screen open_planner
     scene city-night with dissolve:
         blur 10
-    show screen planner_with_stickers with easeinbottom
-    pause
-    hide screen planner_with_stickers
-    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Night{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Night{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 1.0
@@ -43,6 +40,16 @@ label naji_introduction:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         $ passed_checks +=1
         m "(I don't need words when I've got *rizz*.)"
     elif self_awareness<25:
@@ -208,6 +215,16 @@ label naji_introduction:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         $ passed_checks +=1
         m "({i}You're{/i} annoying. Shut up so I can think properly.)"
     elif self_awareness<30:
@@ -492,6 +509,16 @@ label after_choice_10:
         pause
         hide text with dissolve
         $ passed_checks +=1
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         show naji-bar-neutral with dissolve
     elif self_awareness<30:
         show naji-bar-neutral at truecenter with vpunch:

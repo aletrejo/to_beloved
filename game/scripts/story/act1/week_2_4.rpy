@@ -4,9 +4,7 @@ label week_2_4:
     hide screen open_insights
     scene city-morning with fade:
         blur 10
-    show screen planner_with_stickers with easeinbottom
-    pause
-    hide screen planner_with_stickers
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}" at truecenter with wiperight
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
     scene menmi-apartment-morning with dissolve
     show screen open_planner

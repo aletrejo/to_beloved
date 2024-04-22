@@ -117,6 +117,20 @@ screen open_planner:
         anchor(0.5, 0.5)
         idle "icons/planner-icon-[planner_cover] idle.png"
         hover "icons/planner-icon-[planner_cover] hover.png"
+        action ShowMenu("locked_planner")
+
+screen locked_planner:
+    add "planner-cover-[planner_cover].png":
+        align (0.5, 0.5)
+    for sticker in stickers:
+        add sticker.img:
+            xpos sticker.xpos
+            ypos sticker.ypos
+    imagebutton:
+        xpos 0.44
+        ypos 0.67
+        idle "heartlock-closed-sm"
+        hover "heartlock-open-sm"
         action ShowMenu("opened_planner")
 
 screen opened_planner:

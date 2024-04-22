@@ -4,10 +4,7 @@ label naji_date_1:
     hide screen open_insights
     scene city-morning with fade:
         blur 10
-    show screen planner_with_stickers with easeinbottom
-    pause
-    hide screen planner_with_stickers
-    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
@@ -43,6 +40,16 @@ label naji_date_1:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         $ passed_checks +=1
         $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride"]
         $ dialogue_matches = []
@@ -330,6 +337,16 @@ label after_choice_12:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         $ passed_checks +=1
         $ unlocks_dialogue = ["There are times when I admit I can be hard on myself", "They may have shaped my past, but the future isn't set in stone", "I'll get more chances. Nothing's unfixable."]
         $ dialogue_matches = []
@@ -523,6 +540,16 @@ label after_choice_12:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         $ passed_checks +=1
         $ unlocks_dialogue = ["Have been rude!", "I choose to believe in myself!"]
         $ dialogue_matches = []

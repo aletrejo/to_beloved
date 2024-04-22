@@ -3,10 +3,7 @@ label weekend_1:
     hide screen open_planner
     scene city-morning with dissolve:
         blur 10
-    show screen planner_with_stickers with easeinbottom
-    pause
-    hide screen planner_with_stickers
-    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     scene menmi-apartment-morning with dissolve
@@ -98,10 +95,7 @@ label week_2_4_bathtime:
     play sound "/audio/pencil-write.mp3"
     scene city-morning with dissolve:
         blur 10
-    show screen planner_with_stickers with easeinbottom
-    pause
-    hide screen planner_with_stickers
-    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     scene menmi-apartment-morning
@@ -1140,16 +1134,6 @@ label reading_time:
     stop music fadeout 1.0
     scene menmi-apartment-night with dissolve
     play music "/audio/reaching-the-sky.mp3" fadein 1.0
-    m """
-    And to finish it off, let's add a sticker!
-    """
-    $ chosen_sticker = renpy.random.choice(available_stickers)
-    show screen place_sticker(chosen_sticker)
-    m "Yes! A [chosen_sticker] is just what this planner needs"
-    $ available_stickers.remove(chosen_sticker)
-    window hide
-    pause
-    hide screen place_sticker
     show screen open_planner
     show screen open_insights
     m """

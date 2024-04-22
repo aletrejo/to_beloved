@@ -7,21 +7,6 @@ init python:
             self.xpos = xpos
             self.ypos = ypos
 
-        def set_xpos(self, value):
-            self.xpos = value
-
-        def get_xpos(self):
-            return self.xpos
-
-        def set_ypos(self, value):
-            self.ypos = value
-
-        def get_ypos(self):
-            return self.ypos
-
-        def get_img(self):
-            return self.img
-
     def sticker_dropped(dropped_on, dragged_items):
         global stickers
         if len(dragged_items) > 0:
@@ -48,14 +33,3 @@ screen place_sticker(sticker):
         add s.img:
             xpos s.xpos
             ypos s.ypos
-
-
-screen planner_with_stickers():
-    add "planner-cover-[planner_cover].png":
-        align (0.5, 0.5)
-    for sticker in stickers:
-        add sticker.img:
-            xpos sticker.xpos
-            ypos sticker.ypos
-    text "{font=PatuaOne-Regular.ttf}{size=60}{color=#EB266A}Week [week]{/size}{/font}{/color}":
-        align (0.4, 0.37)

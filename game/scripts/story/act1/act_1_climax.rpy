@@ -5,10 +5,7 @@ label act_1_climax:
     hide screen open_insights
     scene city-morning with fade:
         blur 10
-    show screen planner_with_stickers with easeinbottom
-    pause
-    hide screen planner_with_stickers
-    show text "{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
 
     scene menmi-apartment-morning with blinds
@@ -35,6 +32,16 @@ label act_1_climax:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         $ passed_checks +=1
         $ unlocks_dialogue = ["I hope he doesn't think I'm silly for wanting to be in love"]
         $ dialogue_matches = []
@@ -393,6 +400,16 @@ label after_choice_16:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at truecenter with easeintop
+        pause
+        hide sticker_won
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
         $ passed_checks +=1
         m """
         Our relationship is changing, and it's kind of scary...
