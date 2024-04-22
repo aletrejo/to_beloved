@@ -14,7 +14,6 @@ init python:
             stickers.append(sticker)
             dragged_items[0].draggable = False
 
-
 screen place_sticker(sticker):
     draggroup:
         drag:
@@ -36,3 +35,7 @@ screen place_sticker(sticker):
     text "{size=30}{image=placestickertext}{/size}":
         xpos 0.35
         ypos 0.7
+    textbutton "Skip":
+        xpos 0.5
+        ypos 0.8
+        action Return()
