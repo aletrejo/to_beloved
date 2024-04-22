@@ -32,7 +32,7 @@ default n2 = False
 default n3 = False
 default passed_checks = 0
 default planner_cover = 1
-default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfish", "fox", "goldfish", "koala", "mantaray", "redpanda", "seahorse"]
+default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfish", "fox", "goldfish", "koala", "mantaray", "redpanda", "seahorse", "leggings", "daiquiri", "wackaroon", "waterbottle"]
 # Images used in-game
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness \n Check: Passed", style='outlined_text')

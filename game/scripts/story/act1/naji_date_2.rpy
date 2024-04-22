@@ -121,7 +121,7 @@ label naji_date_2:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ chosen_sticker = renpy.random.choice(available_stickers)
+        $ chosen_sticker = "mimi"
         "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
         show sticker_won at truecenter with easeintop
