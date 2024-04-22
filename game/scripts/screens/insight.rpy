@@ -4,8 +4,9 @@ screen insight(thoughts):
     vbox at insight_transform:
         for thought in thoughts:
             frame:
-                text "{b}Insight{/b}: [thought]":
+                text "{font=JustAnotherHand-Regular.ttf}{size=46}{color=#FFFFFF}{u}Insight{/u}: [thought]{/font}{/size}{/color}":
                     xmaximum 400
+                    # xalign 0.5
 
     timer 2.5 action Hide('insight')
 
