@@ -36,29 +36,32 @@ init python:
 
 screen gallery:
     tag menu
-
     add "planner-page-bg"
 
-    grid 4 4:
+    frame:
+        background None
+        xysize(0.9, 0.9)
+        xpos 100
+        ypos 20
+        grid 4 4:
+            xfill True
+            yfill True
 
-        xfill True
-        yfill True
+            add g.make_button(name="alt_title", unlocked="images/gallery/tobeloved-title-screen-alt thumbnail.jpeg", xalign=0.5, yalign=0.5)
+            add g.make_button(name="alleyway", unlocked="images/gallery/alleyway thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="applecore", unlocked="images/gallery/applecore-city thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="bakery", unlocked="images/gallery/bakery thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="bathtime-classic", unlocked="images/gallery/bathtime-classic thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="bathtime-fruity", unlocked="images/gallery/bathtime-fruity thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="bathtime-romantic", unlocked="images/gallery/Bathtime-romantic thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="gym", unlocked="images/gallery/gym-inside thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="lounge", unlocked="images/gallery/lounge-inside thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="office", unlocked="images/gallery/office-inside thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="park", unlocked="images/gallery/park-day thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="naji-park", unlocked="images/gallery/naji-park-breeze thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="devan", unlocked="images/gallery/devan-neutral thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="joule", unlocked="images/gallery/joule-neutral thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="naji-bar", unlocked="images/gallery/naji-bar-neutral thumbnail.png", xalign=0.5, yalign=0.5)
+            add g.make_button(name="naji-neutral", unlocked="images/gallery/naji-neutral thumbnail.png", xalign=0.5, yalign=0.5)
 
-        add g.make_button(name="alt_title", unlocked="images/gallery/tobeloved-title-screen-alt copy.jpeg", xalign=0.5, yalign=0.5)
-        add g.make_button(name="alleyway", unlocked="images/gallery/alleyway copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="applecore", unlocked="images/gallery/applecore-city copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="bakery", unlocked="images/gallery/bakery copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="bathtime-classic", unlocked="images/gallery/bathtime-classic copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="bathtime-fruity", unlocked="images/gallery/bathtime-fruity copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="bathtime-romantic", unlocked="images/gallery/Bathtime-romantic copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="gym", unlocked="images/gallery/gym-inside copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="lounge", unlocked="images/gallery/lounge-inside copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="office", unlocked="images/gallery/office-inside copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="park", unlocked="images/gallery/park-day copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="naji-park", unlocked="images/gallery/naji-park-breeze copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="devan", unlocked="images/gallery/devan-neutral copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="joule", unlocked="images/gallery/joule-neutral copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="naji-bar", unlocked="images/gallery/naji-bar-neutral copy.png", xalign=0.5, yalign=0.5)
-        add g.make_button(name="naji-neutral", unlocked="images/gallery/naji-neutral copy.png", xalign=0.5, yalign=0.5)
-
-    textbutton "Return" action Return() xalign 0.95 yalign 0.95
+    textbutton "Return" action Return() xalign 0.95 yalign 0.97
