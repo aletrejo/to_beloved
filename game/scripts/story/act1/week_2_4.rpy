@@ -12,6 +12,9 @@ label week_2_4:
 
     m "Good morning MenME! I'm feeling refreshed and ready for the week ahead!"
 
+    while dialogue_matches:
+        $ dialogue_matches.pop()
+
     default unlocks_dialogue = ["I have to be better about that", "I need to be a better person", "I wish I could redo some decisions", "I keep second-guessing myself and thinking about other possibilities...", "I'll learn from my mistakes"]
     default dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)

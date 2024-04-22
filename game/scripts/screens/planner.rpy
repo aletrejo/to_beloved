@@ -10,6 +10,7 @@ default gym_text = "Mornings are at the gym! Gotta start the day strong with my 
 default office_text = "Primetime is grind time. I managed to land my dream job at a PR firm. I'm so excited to make a difference in the world!"
 default lounge_text = "At the end of the day, I'll unwind with a drink. One of my friends from home is a bartender!"
 
+
 init python:
     def item_dragged(dragged_items, dropped_on):
         global morning_assigned, day_assigned, evening_assigned
@@ -126,11 +127,15 @@ screen locked_planner:
         add sticker.img:
             xpos sticker.xpos
             ypos sticker.ypos
+    $ tip = GetTooltip()
+    if tip:
+        text tip xpos 1785 ypos 580  color "#ffff" size 35
     imagebutton:
         xpos 0.8
         ypos 0.4
         idle "heartlock-closed-sm"
         hover "heartlock-open-sm"
+        tooltip "Open"
         action ShowMenu("opened_planner")
 
 screen opened_planner:
