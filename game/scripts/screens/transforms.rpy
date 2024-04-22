@@ -62,7 +62,7 @@ transform rotation:
     around (.5, .5) alignaround (.5, .5) xalign .5 yalign .5
     rotate 0
     zoom 2.0
-    linear 2 rotate 360
+    linear 1.5 rotate 360
 
 transform citynightappear:
     alpha 0.0
