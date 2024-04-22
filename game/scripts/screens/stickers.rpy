@@ -3,19 +3,19 @@ default stickers = []
 init python:
     class Sticker:
         def __init__(self, img, xpos=0, ypos=0):
-            self.img = "sticker-" + img + ".png"
+            self.img = "stickers/sticker-" + img + ".png"
             self.xpos = xpos
             self.ypos = ypos
 
         def set_xpos(self, value):
             self.xpos = value
-        
+
         def get_xpos(self):
             return self.xpos
-            
+
         def set_ypos(self, value):
             self.ypos = value
-        
+
         def get_ypos(self):
             return self.ypos
 
@@ -38,12 +38,12 @@ screen place_sticker(sticker):
             droppable True
             dropped sticker_dropped
             add "planner-cover-[planner_cover].png"
-        
+
         drag:
             align(0.5, 0.5)
             drag_raise True
             drag_name sticker
-            add "sticker-[sticker].png"
+            add "stickers/sticker-[sticker].png"
     for s in stickers:
         add s.img:
             xpos s.xpos
