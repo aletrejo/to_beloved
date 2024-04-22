@@ -265,7 +265,7 @@ label after_tutorial:
 
     Oh, it's from Mom!
 
-    Ripping open the package reveals a cute planner with some sticker sheets.
+    Ripping open the package reveals a cute planner!
 
     There's a note on it:
 
@@ -281,9 +281,9 @@ label after_tutorial:
     """
 label pick_planner_pattern:
     screen patterns():
-        text "{size=+20}{b}Which cover should I use?{/b}":
+        text "{size=+20}{font=Fredoka.ttf}Which cover should I use?{/font}":
                 xalign 0.5
-                yalign 0.2
+                yalign 0.3
         imagebutton:
             xalign 0.2
             yalign 0.5
@@ -360,13 +360,13 @@ label planner_tutorial:
 
     Whose expectations? I'm not sure!
 
-    Oh, I almost forgot! I have some cute stickers I can put on my planner. Let me add one.
+    What's this? {w}It looks like Mom sent a sticker too!
 
-    Hmm...which one should I choose?
+    Geez, and she wonders why everybody called me a Velcro kid.
     """
     $ chosen_sticker = renpy.random.choice(available_stickers)
     show screen place_sticker(chosen_sticker)
-    m "How about this cute [chosen_sticker]?"
+    m "This [chosen_sticker] sure is cute, though. Where should I put it?"
     $ available_stickers.remove(chosen_sticker)
     window hide
     pause

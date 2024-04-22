@@ -356,7 +356,7 @@ style navigation_button_text:
     color "#1e3986"
     xalign 0.5
     font "JustAnotherHand-Regular.ttf"
-    size 60
+    size 50
     hover_color "#c64d6c"
 
 
