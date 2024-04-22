@@ -33,3 +33,6 @@ screen place_sticker(sticker):
         add s.img:
             xpos s.xpos
             ypos s.ypos
+    text "{size=30}{image=placestickertext}{/size}":
+        xpos 0.35
+        ypos 0.7

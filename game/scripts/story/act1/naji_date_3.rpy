@@ -64,12 +64,18 @@ label naji_date_3:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        m "(I got here as early as I could. How could I predict how much stock they'd have?)"
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause
@@ -80,7 +86,7 @@ label naji_date_3:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "(I got here as early as I could. How could I predict how much stock they'd have?)"
+
     elif self_awareness<70:
         $ unlocks_dialogue = ["I have to be better about that", "It's deserved, how else will I learn?", "I'll learn from my mistakes"]
         $ dialogue_matches = []
@@ -268,7 +274,7 @@ label choice_15:
 
             """
             hide naji-lookaway
-            show naji-smile with laughter
+            show naji-smile at laughter
             $ unlocks_dialogue = ["I hope he can be open with me someday"]
             $ dialogue_matches = []
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)

@@ -32,12 +32,18 @@ label act_1_climax:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        m "(I was...feeling lonely.)"
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause
@@ -48,7 +54,7 @@ label act_1_climax:
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
-        m "(I was...feeling lonely.)"
+
     elif self_awareness<60:
         $ unlocks_dialogue = ["I don't know...or maybe I'm not ready to face it yet. I need more insight on this."]
         $ dialogue_matches = []
@@ -401,11 +407,16 @@ label after_choice_16:
         pause
         hide text with dissolve
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause

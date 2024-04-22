@@ -36,6 +36,8 @@ default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfis
 # Images used in-game
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness \n Check: Passed", style='outlined_text')
+image stickertext= Text ("You got a sticker!", style='outlined_text')
+image placestickertext = Text ("Place the sticker", style='instruction_text')
 image bubbless = SnowBlossom("bubble-3.png", count=30, yspeed=(-150, -90), start=3)
 image bubblesm = SnowBlossom("bubble-1.png", count=28, yspeed=(-130, -100))
 image bubblesl = SnowBlossom("bubble-2.png", count=46, yspeed=(-120, -50), start=5)
@@ -53,7 +55,7 @@ label splashscreen:
         add "images/main-menu-navbg.png" at navappear
     play music "/audio/pick-one.mp3"
     show screen splash
-    with Pause(12.0)
+    with Pause(15.0)
     hide screen splash
     return
 

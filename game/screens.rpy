@@ -82,6 +82,12 @@ style outlined_text:
     size 200
     color '#26EB79'
 
+style instruction_text:
+    outlines [ (absolute(3), "#FFFFFF", absolute(0), absolute(0)) ]
+    font "PatuaOne-Regular.ttf"
+    size 80
+    color '#EA146E'
+
 
 ################################################################################
 ## In-game screens

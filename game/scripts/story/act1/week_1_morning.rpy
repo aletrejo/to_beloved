@@ -377,18 +377,24 @@ label joule_response:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        m "(Maybe my inner feminist wants me to to get swole and squat punch creeps.)"
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause
         hide screen place_sticker
         $ passed_checks +=1
-        m "(Maybe my inner feminist wants me to to get swole and squat punch creeps.)"
+
     elif self_awareness<10:
         m "(Grrrr...stop it, Menmi! You're not supposed to *like* getting rescued. What's wrong with you?)"
 

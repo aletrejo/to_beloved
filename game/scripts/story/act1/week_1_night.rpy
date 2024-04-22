@@ -41,11 +41,16 @@ label naji_introduction:
         pause
         hide text with dissolve
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause
@@ -215,18 +220,24 @@ label naji_introduction:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        m "({i}You're{/i} annoying. Shut up so I can think properly.)"
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause
         hide screen place_sticker
         $ passed_checks +=1
-        m "({i}You're{/i} annoying. Shut up so I can think properly.)"
+
     elif self_awareness<30:
         m "(It's true. I'm annoyed at myself for even having this thought.)"
 
@@ -510,11 +521,16 @@ label after_choice_10:
         hide text with dissolve
         $ passed_checks +=1
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause

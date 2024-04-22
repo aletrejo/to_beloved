@@ -28,17 +28,22 @@ label week_1_day:
         matrixcolor InvertMatrix(value=1.0)
     i "They're going to realize that hiring you was a mistake."
     if self_awareness >=20:
-        m "(It's *only* my first day! I'm still learning the ropes.)"
         play sound "/audio/awareness-ding.mp3"
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        m "(It's *only* my first day! I'm still learning the ropes.)"
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause
@@ -68,11 +73,16 @@ label week_1_day:
         pause
         hide text with dissolve
         $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
         pause
         hide sticker_won
+        hide text
         show screen place_sticker(chosen_sticker)
         $ available_stickers.remove(chosen_sticker)
         pause

@@ -121,24 +121,29 @@ label naji_date_2:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ chosen_sticker = "mimi"
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
-        image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
-        pause
-        hide sticker_won
-        show screen place_sticker(chosen_sticker)
-        $ available_stickers.remove(chosen_sticker)
-        pause
-        hide screen place_sticker
-        $ passed_checks +=1
-        scene alleyway with vpunch
         $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...","I have a lot of good memories with Naji", "It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?", "I choose to believe in myself!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m "(I mean, he *did* get all defensive about it. I can be cautiously optimistic.)"
+        $ chosen_sticker = "mimi"
+        image sticker_won = "stickers/sticker-mimi.png"
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
+        pause
+        hide sticker_won
+        hide text
+        show screen place_sticker(chosen_sticker)
+        pause
+        hide screen place_sticker
+        $ passed_checks +=1
+        scene alleyway with vpunch
+
     elif self_awareness<60:
         m """
         (Gosh, I must be delulu to believe a miracle like that could be trululu.)
@@ -411,17 +416,6 @@ label after_choice_14:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
-        image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
-        pause
-        hide sticker_won
-        show screen place_sticker(chosen_sticker)
-        $ available_stickers.remove(chosen_sticker)
-        pause
-        hide screen place_sticker
-        $ passed_checks +=1
         $ unlocks_dialogue = ["There are times when I admit I can be hard on myself.", "I choose to believe in myself!", "Everyone has to believe in something, and I choose to believe in love!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -429,6 +423,23 @@ label after_choice_14:
             show screen insight(dialogue_matches)
         c "It's OK to disagree. You're different people, after all."
         m "(Yeah, and I'm not trying to convince him of my views, either. Still...)"
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
+        pause
+        hide sticker_won
+        hide text
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
+        $ passed_checks +=1
+
     elif self_awareness <60:
         $ unlocks_dialogue = ["I keep second-guessing myself and thinking about other possibilities...I can't go back now, though.", "Why's Naji's opinion of me such a big deal?", "Maybe I shouldn't have talked about my love life..."]
         $ dialogue_matches = []

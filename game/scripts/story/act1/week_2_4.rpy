@@ -11,6 +11,7 @@ label week_2_4:
     show screen open_insights
 
     m "Good morning MenME! I'm feeling refreshed and ready for the week ahead!"
+
     default unlocks_dialogue = ["I have to be better about that", "I need to be a better person", "I wish I could redo some decisions", "I keep second-guessing myself and thinking about other possibilities...", "I'll learn from my mistakes"]
     default dialogue_matches = []
     $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -37,6 +38,7 @@ label week_2_4:
             matrixcolor InvertMatrix(value=1.0)
         i "Harder. Better. Faster. Stronger. You've got a lot working against you. That's why you have to push yourself on the path to success!"
         scene menmi-apartment-morning
+
 
 label gym_auto:
     scene gym-inside with fade
@@ -102,7 +104,7 @@ label work_auto:
         m "I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the constant construction going on outside.
 
         Oh my gosh what are they even working on?"
-        $ office_text="I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the constant construction going on outside."
+        $ office_text="I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the construction going on outside."
     if work_chosen == 'work_8':
         m """I'm really starting to feel at home at work!
         Because I'm there 10 hours a day!"""

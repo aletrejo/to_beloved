@@ -127,8 +127,8 @@ screen locked_planner:
             xpos sticker.xpos
             ypos sticker.ypos
     imagebutton:
-        xpos 0.44
-        ypos 0.67
+        xpos 0.8
+        ypos 0.4
         idle "heartlock-closed-sm"
         hover "heartlock-open-sm"
         action ShowMenu("opened_planner")

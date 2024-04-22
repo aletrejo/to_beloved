@@ -40,23 +40,29 @@ label naji_date_1:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
-        image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
-        pause
-        hide sticker_won
-        show screen place_sticker(chosen_sticker)
-        $ available_stickers.remove(chosen_sticker)
-        pause
-        hide screen place_sticker
-        $ passed_checks +=1
         $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m "That's true, but I've also got time on my side. No need to make myself sick stressing over it."
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
+        pause
+        hide sticker_won
+        hide text
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
+        $ passed_checks +=1
+
     elif self_awareness<40:
         $ unlocks_dialogue = ["Everyone has to believe in something, and I choose to believe in love!"]
         $ dialogue_matches = []
@@ -337,23 +343,29 @@ label after_choice_12:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
-        image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
-        pause
-        hide sticker_won
-        show screen place_sticker(chosen_sticker)
-        $ available_stickers.remove(chosen_sticker)
-        pause
-        hide screen place_sticker
-        $ passed_checks +=1
         $ unlocks_dialogue = ["There are times when I admit I can be hard on myself", "They may have shaped my past, but the future isn't set in stone", "I'll get more chances. Nothing's unfixable."]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
         if len(dialogue_matches) > 0:
             show screen insight(dialogue_matches)
         m "(I'll take this as an opportunity to learn more about him.)"
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
+        pause
+        hide sticker_won
+        hide text
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
+        $ passed_checks +=1
+
     elif self_awareness<50:
         $ unlocks_dialogue = ["It's deserved. How else will I learn?"]
         $ dialogue_matches = []
@@ -540,17 +552,6 @@ label after_choice_12:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ chosen_sticker = renpy.random.choice(available_stickers)
-        "Great job passing that check! You earned a [chosen_sticker] sticker for your planner"
-        image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at truecenter with easeintop
-        pause
-        hide sticker_won
-        show screen place_sticker(chosen_sticker)
-        $ available_stickers.remove(chosen_sticker)
-        pause
-        hide screen place_sticker
-        $ passed_checks +=1
         $ unlocks_dialogue = ["Have been rude!", "I choose to believe in myself!"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
@@ -561,6 +562,23 @@ label after_choice_12:
 
         (It all depends on how you look at it, and I choose to interpret this as Naji opening up to me.)
         """
+        $ chosen_sticker = renpy.random.choice(available_stickers)
+        image sticker_won = "stickers/sticker-[chosen_sticker].png"
+        show sticker_won at rotation:
+            xpos 0.5
+            ypos 0.5
+        show text "{image=stickertext}" with dissolve:
+            xpos 0.5
+            ypos 0.5
+        pause
+        hide sticker_won
+        hide text
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
+        $ passed_checks +=1
+
     elif self_awareness<30:
         $ unlocks_dialogue = ["I need to be a better person.", "Trick question, still me."]
         $ dialogue_matches = []
