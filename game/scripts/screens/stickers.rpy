@@ -6,6 +6,7 @@ init python:
             self.img = "stickers/sticker-" + img + ".png"
             self.xpos = xpos
             self.ypos = ypos
+            self.name = img
 
     def sticker_dropped(dropped_on, dragged_items):
         global stickers
@@ -13,6 +14,11 @@ init python:
             sticker = Sticker(dragged_items[0].drag_name, dragged_items[0].x, dragged_items[0].y)
             stickers.append(sticker)
             dragged_items[0].draggable = False
+    def remove_sticker(sticker):
+        global stickers
+        for i, item in enumerate(stickers):
+            if item.name == sticker:
+                stickers.pop(i)
 
 screen place_sticker(sticker):
     draggroup:
@@ -38,4 +44,4 @@ screen place_sticker(sticker):
     textbutton "Skip":
         xpos 0.5
         ypos 0.8
-        action Return()
+        action [Function(remove_sticker, sticker), Return()]

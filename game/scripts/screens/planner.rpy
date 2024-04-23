@@ -132,7 +132,7 @@ screen locked_planner:
         yalign 0.5
         idle "heartlock-closed"
         hover "heartlock-open"
-        action ShowMenu("opened_planner")
+        action [Hide("locked_planner"), ShowMenu("opened_planner")]
 
 screen opened_planner:
     add "planner-base-check.png"
