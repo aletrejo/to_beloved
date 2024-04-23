@@ -127,15 +127,11 @@ screen locked_planner:
         add sticker.img:
             xpos sticker.xpos
             ypos sticker.ypos
-    $ tip = GetTooltip()
-    if tip:
-        text tip xpos 1785 ypos 580  color "#ffff" size 35
     imagebutton:
-        xpos 0.8
-        ypos 0.4
-        idle "heartlock-closed-sm"
-        hover "heartlock-open-sm"
-        tooltip "Open"
+        xalign 0.5
+        yalign 0.5
+        idle "heartlock-closed"
+        hover "heartlock-open"
         action [Hide("locked_planner"), ShowMenu("opened_planner")]
 
 screen opened_planner:

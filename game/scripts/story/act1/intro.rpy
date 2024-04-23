@@ -356,12 +356,6 @@ label planner_tutorial:
     hide tutorial-box-planner
     window show
     m """
-    *Gasp*...Oh my god?
-
-    It's *perfect*? Did I really do this? Great job, Menmi. Take that, expectations!
-
-    Whose expectations? I'm not sure!
-
     What's this? {w}It looks like Mom sent a sticker too!
 
     Geez, and she wonders why everybody called me a Velcro kid.
@@ -376,6 +370,10 @@ label planner_tutorial:
 
     scene planner with dissolve
     m """
+    *Gasp*...Oh my god?
+
+    It's *perfect*? Did I really do this? Great job, Menmi. Take that, expectations!
+
     OK. Time to fill it out. Blank pages sure are intimidating.
 
     It's a good thing I know what my weekday schedule already looks like.

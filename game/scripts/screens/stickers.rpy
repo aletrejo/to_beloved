@@ -39,7 +39,7 @@ screen place_sticker(sticker):
             xpos s.xpos
             ypos s.ypos
     text "{size=30}{image=placestickertext}{/size}":
-        xpos 0.35
+        xpos 0.37
         ypos 0.7
     textbutton "Skip":
         xpos 0.5
