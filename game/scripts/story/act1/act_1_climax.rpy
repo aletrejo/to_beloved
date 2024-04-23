@@ -402,6 +402,7 @@ label after_choice_16:
     if len(dialogue_matches) > 0:
         show screen insight(dialogue_matches)
     if self_awareness>=70:
+        i "You're in over your head. Don't make more of this than it actually is. {w}You're just going to get hurt."
         play sound "/audio/awareness-ding.mp3"
         show text "{image=ol_text}" with easeinbottom
         pause
@@ -446,6 +447,7 @@ label after_choice_16:
         m "Could I be cautiously optimistic? {w} Tentatively, yes."
 
     elif self_awareness<70:
+        i "You're down bad, huh?"
         $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...", "I always worried that he was out of my league, though"]
         $ dialogue_matches = []
         $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
