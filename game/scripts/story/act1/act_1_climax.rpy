@@ -500,8 +500,26 @@ label after_choice_16:
 
     """
 
-
+label end_credits:
     scene city-morning with fade:
         blur 10
-    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}End of Act 1{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=150}\n Self-Awareness Score: [self_awareness]{/size}{/font}{/color}" at truecenter with wiperight
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}End of Act 1{/size}{/font}{/color}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=150}\n Self-Awareness Score: [self_awareness]{/size}{/font}{/color}" at truecenter with wiperight
     pause
+    show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Credits{/size}{/font}" at truecenter with dissolve
+    pause
+    hide text with dissolve
+    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#EB266A}Written, Illustrated, and Produced{/size}{/font} {font=JustAnotherHand-Regular.ttf}{size=200}{color=#000000} \n by Diana Poon{/font}" at truecenter with dissolve
+    pause (2.0)
+    hide text with dissolve
+    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#EB266A}Programming \n {font=JustAnotherHand-Regular.ttf}{color=#000000} by Alejandra Trejo{/size}{/font}" at truecenter with dissolve
+    pause (2.0)
+    hide text with dissolve
+    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#EB266A}Title Music \n {font=JustAnotherHand-Regular.ttf}{color=#000000} by Jorge Del Pino{/size}{/font}" at truecenter with dissolve
+    pause (2.0)
+    hide text with dissolve
+    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#EB266A}Special Thanks to \n{/size}{size=100}{font=JustAnotherHand-Regular.ttf}{color=#000000} Jenny Goldstick \n Katelyn Clark \n and the MFAVN community{/size}{/font}" at truecenter with dissolve
+    pause (2.0)
+    hide text with dissolve
+    show text "{font=PatuaOne-Regular.ttf}{size=150}{color=#EB266A}Thanks for playing!{font=JustAnotherHand-Regular.ttf}{size=200}{color=#000000}\n Stay tuned for the full release.{/size}{/font}" at truecenter with dissolve
+    pause (4.0)
+    hide text with dissolve
