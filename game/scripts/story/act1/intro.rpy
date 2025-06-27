@@ -1,4 +1,4 @@
-﻿
+
 # Dynamic characters
 default behemoth_name = "???"
 define be = Character("[behemoth_name]", color="#A9A9A9")
@@ -30,6 +30,7 @@ default week = 1
 default n1 = False
 default n2 = False
 default n3 = False
+default j1 = False
 default passed_checks = 0
 default planner_cover = 1
 default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfish", "fox", "goldfish", "koala", "mantaray", "redpanda", "seahorse", "leggings", "daiquiri", "wackaroon", "waterbottle"]
@@ -41,6 +42,14 @@ image placestickertext = Text ("Place the sticker", style='instruction_text')
 image bubbless = SnowBlossom("bubble-3.png", count=30, yspeed=(-150, -90), start=3)
 image bubblesm = SnowBlossom("bubble-1.png", count=28, yspeed=(-130, -100))
 image bubblesl = SnowBlossom("bubble-2.png", count=46, yspeed=(-120, -50), start=5)
+#image joule-neutral:
+#   "joule-neutral"
+#    pause 5.0
+#   "joule-neutral-blink" with Dissolve(0.3)
+#   pause 0.3
+#   "joule-neutral" with Dissolve (0.3)
+#   pause 0.3
+#
 
 
 # Splashscreen
@@ -75,8 +84,10 @@ label start:
     # These display lines of dialogue.
 
     m """
-    Oof. That's the last one!
+    Test
 
+    Oof. That's the last one!
+s
     I didn't expect to be carrying so much stuff from my parents' place up to my new apartment
 
     So {i}this{/i} is what they mean by 'walk-up.' Ooooooooohhh...

@@ -93,9 +93,15 @@ screen planner_weekend():
         drag:
             pos (icon_pos_x, 440)
             drag_raise True
-            drag_name "going_out"
+            drag_name "going_out_naji"
             dragged weekend_activity
             add "icons/lounge.png"
+        drag:
+            pos (icon_pos_x, 640)
+            drag_raise True
+            drag_name "going_out_joule"
+            dragged weekend_activity
+            add "icons/gym.png"
         drag:
             pos (icon_pos_x, 216)
             drag_raise True

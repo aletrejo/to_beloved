@@ -266,7 +266,7 @@ label joule_introduction:
     hide joule-neutral
     show joule-annoyed at hop
 
-    j "“She's clearly uncomfortable. Is that any way for a real man to act?”"
+    j "“She's clearly uncomfortable.{w}Or are you as bad at reading people as you are about reading our anti-harassment policies?”"
     m """
     The Behemoth growls, veins rising in his biceps like a mountain range.
 
@@ -361,9 +361,13 @@ label joule_response:
 
     hide joule-sad
     show joule-neutral
-    j "“I'm not trying to shill my services or anything, honestly, but if you ever want to do something about your strength, just give me a ring.”"
+    j "“I'm not trying to shill my services or anything, honestly, but if you ever want to do something about your strength...”"
     m """
-    He pulls out a business card and hands it to me. There's a black and white photo of him on it, the hard lighting capturing every line and contour of his chiseled build.
+    He shows me his phone, where his social media profile is pulled up along with details for setting up an appointment with him. 
+
+    (That is a *lot* of followers.)
+
+    A grid of photos show Joule in black and white, the hard lighting capturing every line and contour of his chiseled build.
 
     (He's kind of hot. Once you get over the patronizing remarks.)
 
@@ -399,7 +403,10 @@ label joule_response:
         m "(Grrrr...stop it, Menmi! You're not supposed to *like* getting rescued. What's wrong with you?)"
 
     m "Thanks. I'll think about it."
-    j "“Girls should know how to protect themselves...especially the pretty ones.”"
+    j """
+    “Good. Take care of yourself, Menmi. With your looks, it must be hard to avoid unwanted attention.”
+
+    """
     hide joule neutral with dissolve
     scene gym-inside with dissolve:
         blur 24

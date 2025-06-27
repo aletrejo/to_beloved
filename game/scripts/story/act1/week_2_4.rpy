@@ -104,10 +104,9 @@ label work_auto:
         m "Work is about as fun as you'd expect. Let's get that dread, baby."
         $ office_text="Work is about as fun as you'd expect. Let's get that dread, baby."
     if work_chosen == 'work_7':
-        m "I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the constant construction going on outside.
+        m "I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the constant construction going on outside."
 
-        Oh my gosh what are they even working on?"
-        $ office_text="I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the construction going on outside."
+        $ office_text="I hardly see Devan at the office, but his brief appearances always makes my heart hammer like the construction going on outside. Oh my gosh what are they even working on?"
     if work_chosen == 'work_8':
         m """I'm really starting to feel at home at work!
         Because I'm there 10 hours a day!"""
@@ -269,7 +268,7 @@ label allie_response:
         jump act_1_climax
     elif weekend_event == "bathtime":
         jump week_2_4_bathtime
-    elif weekend_event == "going_out":
+    elif weekend_event == "going_out_naji":
         if n1==False:
             jump naji_date_1
 
@@ -278,3 +277,6 @@ label allie_response:
 
         elif n1==True and n2==False:
             jump naji_date_2
+    elif weekend_event == "going_out_joule":
+            if j1==False:
+                jump joule_date_1

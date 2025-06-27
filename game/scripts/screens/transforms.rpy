@@ -35,6 +35,13 @@ transform shake:
         ease .01 yoffset -4
         ease .01 yoffset 0
 
+transform hardcore:
+    xcenter 0.5
+    ycenter 0.5
+    linear 0.1 xalign 0.6 
+    linear 0.1 xalign 0.5 yalign 0.5
+
+
 transform squirm:
     xcenter 0.5
     ycenter 0.5
