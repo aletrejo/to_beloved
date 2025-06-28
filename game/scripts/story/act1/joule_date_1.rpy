@@ -463,7 +463,7 @@ label joule_date_1:
 
     “But there's no need to go so hard just yet.”
 
-    “These are just baseline readings to measure your progress against.”"""
+    “We're just taking some baseline readings to measure your progress against.”"""
 
     m """“I just wanted to show you my very best self!”
 
