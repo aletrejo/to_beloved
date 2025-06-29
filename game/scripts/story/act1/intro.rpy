@@ -140,10 +140,6 @@ s
 
     (He's kind of hot. I can't help but notice how big his hands look wrapped around that tiny box.)
 
-    (I wonder how they'd look around my...
-
-    hand.)
-
     (Oooh, Menmi! Don't get “carried away” by the UPS Man!)
     """
 
