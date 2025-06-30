@@ -13,7 +13,7 @@ label joule_date_2:
 #Menmi being perfectionistic about working out; wanting immediate results; not taking rests  
 #Joule central problem: He loses his way and tries to optimize optics. Comparing yourself to others is pointless because there’s no way of knowing a person’s eating habits, sleep schedule, genetic makeup, and all the other things that affect body composition and performance. 
 #He lets other people affect his hard core == shattering his sense of self in favor of min maxing and comparing himself to others
-#Menmi feels similarly pressured to conform to other peoples' expectations of "what Joules gf should look liek"
+#Menmi feels similarly pressured to conform to other peoples' expectations of "what Joules gf should look liek" -- joules ex (client) shading menmi for weightlifting bc "arent you afraid of getting buff?"
 #Control your body, control your life -- lack of control from feeling weak; always on the defensive; on high alert to appear strong in order to avoid judgment
 
     play music "/audio/joules-theme.mp3" fadein 0.5
@@ -26,9 +26,11 @@ label joule_date_2:
     j "“This kind of strength training has full body benefits.”"
     m """(Full body, huh?)
 
-    I glance at the sewer-cover-sized weight plates that flank the steel bar.
+    I glance at the sewer cover-sized weight plates that flank the steel bar.
 
-    (I'll definitely need every fiber of my strength to lift {i}that...)
+    (You're telling me the Fruit Ninja Turtles lift {i}those{/i} every time they leave the sewer???)
+
+    (I'll definitely need every fiber of my strength for this...)
     """
 
     hide joule-smile
@@ -108,6 +110,14 @@ label joule_date_2:
 
                 “YEEEEAAAHHH!”
                 """
+                hide joule-smile
+                show joule-hardcore
+                j "I just want to say, Menmi. {w}Your determination is HARD. CORE."
+                hide joule-hardcore
+                show joule-smile
+                m "(Joule's energy is really infectious!)"
+                hide joule-smile with dissolve
+
             "Yeah...":
                 c "Your answer reflects what you're feeling -- a realistic mix of excitement and apprehension."
                 m "It's fun to try new things, but people who dive in headfirst usually suffer concussions."
@@ -124,74 +134,150 @@ label joule_date_2:
                 m "“I can't do this!!!”"
                 hide joule-pumped
                 show joule-sad
-                j "Aw hey, I get it. Trying new things can be scary."
+                j "“Aw hey, I get it. Trying new things can be intimidating.”"
                 hide joule-sad
                 show joule-smile
-                j "I think I know what'll pump you up, though!"
+                j "“I think I know what'll pump you up, though!”"
             jump to joule_pep_talk
 
     label joule_pep_talk:
         stop music fadeout 1.0
         hide joule-smile with dissolve
-        m "Joule disappears into a back room for staff only."
+        m "Joule disappears into a back room tucked into the corner of the gym."
         show joule-pep at hop
         play music "<from 22>/audio/joules-theme.mp3" volume 0.7
-        m """!!! {w}Joule?
+        m """!!! “{w}Joule?”
 
-        What are you doing? WHAT are you wearing??"""
-        j "Menmi, as your #1 cheerleader, I'm here to tell you--"
+        “What are you doing? {w}WHAT are you wearing??”"""
+        j "“Menmi, as your #1 cheerleader, I'm here to tell you--”"
 
         hide joule-pep
         show joule-pep at hardcore
 
-        j "YOU. ARE HARD.{w} CORE."
-        m "Hahaha. But what's with the fuel nozzles?"
+        j "“YOU. ARE HARD.{w} CORE.”"
+        m "“Hahaha. But what's with the fuel nozzles?”"
 
         hide joule-pep
         show joule-pep at hop
 
-        j "I'm GASSING you up."
-        m """Hahahahaha.
+        j "“I'm GASSING you up.”"
+        m """“Hahahahaha.”
 
         (I know that Joule's being a total cheeseball, but I can feel the pressure of performance *lift* off of me.)
 
         """
-        j """Hey, Menmi.{w} I think it's really cool that you want to improve yourself and are taking steps to achieve it.
+        j """“Hey, Menmi.{w} I think it's really cool that you want to improve yourself and are taking steps to achieve it.”
 
-        I knew from our first meeting that you're a strong person{w}--inside and out.
+        “I knew from our first meeting that you're a strong person{w}--inside and out.”
 
-        That's why I have no doubt that you can do this!
+        “That's why I have no doubt that you can do this!”
 
         """
 
         hide joule-pep
         show joule-pep at hardcore
 
-        j "Say it with me - YOU. ARE HARD.{w} CORE."
-        m "Haha I don't know...(it feels silly)"
-        j """It's OK if you don't believe it just yet--
+        j "“Say it with me - YOU. ARE HARD.{w} CORE.”"
+        m "“Haha I don't know...(it feels silly)”"
+        j """“It's OK if you don't believe it just yet--”
 
-        That just means you have to shout it until you do!
+        “That just means you have to shout it until you do!”
 
-        Let your body lead your mind in this.{w} Trust. """
+        “Let your body lead your mind in this.{w} Trust.”"""
 
-        if self_awareness>=50:
-            m "He's right. There are times when I shouldn't overthink things."
+        if self_awareness>=60:
+            m "(He's right. There are times when I shouldn't overthink things.)"
+        elif self_awareness<60:
+            m "(I don't get how shouting will change my lack of physical ability,{w} but I guess I should try for Joule...)"
 
-        m "OK...{w}I am hardcore."
-        j "Nice! {w}Again!"
-        m "I am hardcore!"
-        j "Now you're talking! AGAIN!"
-        m "I. AM HARD. CORE."
+        m "“OK...{w}I am hardcore.”"
+        j “"Nice! {w}Again!”"
+        m "“I am hardcore!”"
+        hide joule-pep
+        show joule-pep at squirm
+        j "“Now you're talking! AGAIN!”"
+        m "“I. AM HARD. CORE.”"
         show gym-inside with vpunch
-        j "That's the spirit! LET'S GOOOOOOO!!"
+        hide joule-pep
+        show joule-pep at hop
+        j "That's the spirit! LET'S GOOOOOOO!!”"
         show gym-inside with vpunch
-        m """LET'S GOOOOOO!!
+        m """“LET'S GOOOOOO!!”
+        (I can't quite believe it myself, but I really do feel more ready!)"""
+        j """“As you wish, my lady.”
 
-        I can't quite believe it myself, but I really do feel more ready!"""
-        j """As you wish, my lady.
+        “Let's get down to business!”"""
+        hide joule-pep with dissolve
+        m "Joule disappears into the backroom again and reemerges without his accessories."
 
-        Let's get down to business!"""
 
     label after_choice_13j:
-        j "I just want to say, Menmi. {w}Your determination is HARD. CORE."
+        m """He walks over to the power rack and affixes the lightest set of weights to the steel bar.
+
+        (They might be the lightest set, but they still look kind of heavy...)
+
+        He gestures for me to stand behind the bar.
+
+        After adjusting the bar above the center of my feet, Joule mimes for me the proper technique.
+
+        """
+        show joule-neutral
+
+        j """When you go down, keep your shoulder blades over the barbell and your feet apart.
+
+        And when you come up, push with your legs while keeping your chest lifted.
+
+        """
+
+        hide joule-neutral with dissolve
+        stop music with fadeout 0.5
+        play audio "/audio/heartbeat-fast.mp3" volume 1.5
+
+        m "Joule is behind me, making gentle adjustments to my form."
+        j "Don't squeeze your shoulder blades and keep your back erect with a slight arch."
+        m """A thrill chases through me as I feel his hand against the small of my back.
+
+        Joule's arms suddenly encircle me, gripping the barbell in front of me.
+
+        """
+        j "Remember to keep the barbell close to your body, rolling it over your thighs until your hips and knees lock."
+        m """I feel Joule's closeness as the warmth of his chest spreads its way across my back.
+
+        He speaks, {w} breath hot and soft, {w}into the shell of my ear.
+
+        """
+        j "And remember, Menmi{w}. Keep your spine firm and neutral.{w} I don't want you to get hurt."
+
+
+        play music "/audio/joules-theme.mp3" fadein 0.5
+        show joule-smile with dissolve
+
+        j "And that's all there is to it! Any questions?"
+        x "Yeah I gotta question, Joule{w}!"
+        hide joule-smile
+        show joule-surprised
+        extend "Where do we get the filtered water to refill the drinking station?{w} From the fridge?"
+        hide joule-surprised
+        show joule-blush
+        j "Sorry, Menmi. That's the new guy.{w} I didn't know he was going to be here this morning."
+        x "Don't tell me we have to get bottles from the vending machines...I'm not carrying any change."
+        hide joule-blush
+        show joule-annoyed
+        j "The machine filters the water, Stu!{w} And the vending machines don't take cash!"
+        hide joule-annoyed
+        show joule-shocked
+        x "Oh, in that case, I'll just use water from the bathroom..."
+
+        j "J-just hold on, OK?{w} I'll be there in a sec!"
+
+        hide joule-annoyed
+        show joule-sad
+        j "I'm {i}really{/i} sorry about this Menmi, but he needs my help."
+        hide joule-sad
+        show joule-smile
+        j "Just hang tight for a moment, OK? I'll be back soon."
+        m "Don't worry about me! {w}Go to Stu before he poisons the water supply with toilet water!"
+        hide joule-smile with dissolve
+
+
+

@@ -18,6 +18,7 @@ define c = Character("Conscience", color='#DB694F')
 define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
 define al = Character("Allie", color="#66b704", image="allie")
 define i = Character("Intrusive Inner Voice", color='#023F59')
+define x = Character ("???", color="#A9A9A9")
 
 
 
