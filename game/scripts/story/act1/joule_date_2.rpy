@@ -237,16 +237,16 @@ label joule_date_2:
         j "Don't squeeze your shoulder blades and keep your back erect with a slight arch."
         m """A thrill chases through me as I feel his hand against the small of my back.
 
-        Joule's arms suddenly encircle me, gripping the barbell in front of me.
+        Joule's arms suddenly encircle my waist, gripping the barbell in front of me.
 
         """
         j "Remember to keep the barbell close to your body, rolling it over your thighs until your hips and knees lock."
-        m """I feel Joule's closeness as the warmth of his chest spreads its way across my back.
+        m """I feel Joule's closeness as the warmth spreads its way across my back.
 
-        He speaks, {w} breath hot and soft, {w}into the shell of my ear.
+        When he speaks, his voice rumbles softly in my ear.
 
         """
-        j "And remember, Menmi{w}. Keep your spine firm and neutral.{w} I don't want you to get hurt."
+        j "And remember, Menmi{w}. Keep your spine firm.{w} I don't want you to get hurt."
 
 
         play music "/audio/joules-theme.mp3" fadein 0.5
@@ -262,10 +262,10 @@ label joule_date_2:
         j "Sorry, Menmi. That's the new guy.{w} I didn't know he was going to be here this morning."
         x "Don't tell me we have to get bottles from the vending machines...I'm not carrying any change."
         hide joule-blush
-        show joule-annoyed
+        show joule-annoyed with vpunch
         j "The machine filters the water, Stu!{w} And the vending machines don't take cash!"
         hide joule-annoyed
-        show joule-shocked
+        show joule-shocked with vpunch
         x "Oh, in that case, I'll just use water from the bathroom..."
 
         j "J-just hold on, OK?{w} I'll be there in a sec!"
@@ -276,8 +276,176 @@ label joule_date_2:
         hide joule-sad
         show joule-smile
         j "Just hang tight for a moment, OK? I'll be back soon."
-        m "Don't worry about me! {w}Go to Stu before he poisons the water supply with toilet water!"
+        m "Don't worry about me! {w}Go get Stu before he contaminates the water supply!"
+        stop music fadeout 1.0
         hide joule-smile with dissolve
+        m """As Joule instructs Stu on a different kind of training, I marvel at his breadth of knowledge.
+
+        (Not only does he remember all the details about the technique and biological benefits, {w}he knew how to make me feel comfortable about trying something new!)
+
+        (...)
+
+        (He really is a good teacher. {w}A true pro.)
+
+        (...)
+
+        (I hope I don't disappoint him.)
+
+        (Maybe if I just try it a little bit myself...{w}I'll have a better grasp of this when Joule gets back.)
+
+        (What better way to show him that his instruction is working?)
+
+        I imagine Joule's response upon seeing me lift the weight all by myself.
+
+        """
+
+        scene gym-inside with dissolve:
+            blur 50
+        show joule-surprised with dissolve
+
+        j "Woah, Menmi!{w} You're SO. {w}HARD. {w}CORE."
+
+        hide joule-surprised
+        show joule-smile
+
+        j "I {i}love{/i} a woman who takes initiative! It's SO {w}HARD. {w}CORE."
+
+        hide joule-smile
+        show joule-wink
+
+        j "You really know how to get me going. {w}HARD. {w}CORE."
+
+        hide joule-wink
+        scene gym-inside with dissolve
+
+        m """(!!!)
+
+        (OK -- I'm nervous, but I'm gonna try!)
+
+        (Nothing wagered, nothing gain(s)ed!)
+
+        Remembering Joule's advice, {w}I keep my back firm and lower myself to pick up the weight.
+
+        The bar is cold and a little bumpy against my palm. 
+
+        As I pull up, I dig my toes into the ground, just as Joule instructed.
+
+        (Oh my gosh!)
+
+        """
+
+        scene gym-inside with vpunch
+
+        extend "(I'm doing it! I'm really doing it!)"
+
+        show joule-shocked with vpunch
+        j "Menmi!"
+        m "AAAaaaahhh!!!"
+
+        hide joule-shocked
+        scene gym-inside with vpunch
+        scene gym-inside with flash
+        play sound "/audio/crash.mp3"
+        scene gym-inside with vpunch
+
+        m "(He startled me and I dropped the dumbbell!)"
+        
+        show joule-pain with dissolve
+        play music "audio/secret.mp3" fadein 0.5
+        j "Menmi...{w} Are you hurt?"
+        m """{i}I'm{/i} not hurt!
+
+        Thanks to Joule, {w}who swooped in to catch the falling dumbbell.
+
+        Unfortunately, it landed Joule's foot...{w}in a bad way, it seems.
+
+        He's stooped low to the ground, clutching his ankle.
+
+        Aaaahhh...{w}I feel {i}terrible. 
+
+        Joule...I'm so, {i}so{/i} sorry!
+
+        """
+        j "No, no it's OK--{w} it was my own fault for surprising you."
+        hide joule-pain
+        show joule-sad
+        j "I was just so scared of you getting hurt."
+
+        hide joule-sad
+        show joule-annoyed with vpunch
+
+        j "Please don't do anything unsupervised like that again!"
+        hide joule-annoyed
+        show joule-pain
+        m "I'm sorry, Joule. I really won't. {w}I promise."
+
+        if self_awareness >=70:
+            c "You live and you learn."
+            m """(I wasn't wrong for wanting to try something for myself, {w}but this wasn't the time and place for it.)
+
+            (I'll carry this lesson with me into the future. {w}This feels so bad that I don't ever want it to happen again!)
+
+            """
+
+        elif self_awareness<70:
+            m """
+            (How could I have been so {i}stupid?{/i})
+
+            (Because of me, Joule got hurt.)
+
+            (It's all my fault.{w}I can't trust myself to make good decisions.)
+
+            """
+
+        j "Good."
+        
+        hide joule-pain
+        show joule-pain with hpunch
+        
+        j "Ah!"
+        m """Joule! 
+
+        (His ankle looks red and swollen.)
+
+        Let me get you an ice pack.
+
+        """
+        
+        hide joule-pain
+        show joule-surprised
+        j "No!{w} You're a client. You're not supposed to take care of me."
+        hide joule-surprised
+        show joule-annoyed
+        j "I can take care of myself--"
+        hide joule-annoyed
+        show joule-pain with hpunch
+        j "Ah!"
+        m """You shouldn't try to walk right now.
+
+        I know where the ice is. {w}I saw you show Stu."""
+
+        hide joule-pain with dissolve
+        scene gym-inside:
+            blur 50
+            matrixcolor BrightnessMatrix (value=-0.4)
+
+        m """
+        Before he can protest again, I run to the kitchen, locating the freezer.
+
+        I fill a paper towel with ice cubes and bring them back to Joule.
+        """
+
+        play sound "/audio/ice-pour.mp3"
+
+        scene gym-inside
+        show joule-pain with dissolve
+        
+
+
+
+
+
+
 
 
 
