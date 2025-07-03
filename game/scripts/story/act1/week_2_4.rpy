@@ -280,3 +280,5 @@ label allie_response:
     elif weekend_event == "going_out_joule":
             if j1==False:
                 jump joule_date_1
+            elif j1==True and j2==False:
+                jump joule_date_2

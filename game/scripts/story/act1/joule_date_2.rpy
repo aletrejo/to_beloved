@@ -127,7 +127,7 @@ label joule_date_2:
                 hide joule-thinking
                 show joule-smile
                 j "“But I wouldn't be doing my job if I couldn't fix that!”"
-            jump to joule_pep_talk
+                jump joule_pep_talk
 
             "No.":
                 c "Girl, you're not ready."
@@ -138,7 +138,7 @@ label joule_date_2:
                 hide joule-sad
                 show joule-smile
                 j "“I think I know what'll pump you up, though!”"
-            jump to joule_pep_talk
+                jump joule_pep_talk
 
     label joule_pep_talk:
         stop music fadeout 1.0
@@ -230,7 +230,7 @@ label joule_date_2:
         """
 
         hide joule-neutral with dissolve
-        stop music with fadeout 0.5
+        stop music fadeout 0.5
         play audio "/audio/heartbeat-fast.mp3" volume 1.5
 
         m "Joule is behind me, making gentle adjustments to my form."

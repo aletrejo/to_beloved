@@ -32,6 +32,7 @@ default n1 = False
 default n2 = False
 default n3 = False
 default j1 = False
+default j2 = False
 default passed_checks = 0
 default planner_cover = 1
 default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfish", "fox", "goldfish", "koala", "mantaray", "redpanda", "seahorse", "leggings", "daiquiri", "wackaroon", "waterbottle"]
@@ -85,11 +86,10 @@ label start:
     # These display lines of dialogue.
 
     m """
-    Test
 
     Oof. That's the last one!
-s
-    I didn't expect to be carrying so much stuff from my parents' place up to my new apartment
+
+    I didn't expect to be carrying so much stuff from my parents' place up to my new apartment.
 
     So {i}this{/i} is what they mean by 'walk-up.' Ooooooooohhh...
 

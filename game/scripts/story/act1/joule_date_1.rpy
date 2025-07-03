@@ -213,7 +213,7 @@ label joule_date_1:
 
                 j "“Cool! Exercise *is* really fun!”"
 
-                hide show-smile
+                hide joule-smile
                 show joule-neutral
 
                 j "“There is a significant body of evidence that shows how regular exercise can have a host of benefits to mental health, including reduced stress and improved mood, sleep and even self-esteem.”"
@@ -313,14 +313,12 @@ label joule_date_1:
 
                 “I like that you're so driven, Menmi. {w}It's important to have a sense of direction in life.”
 
-                “It's like having a strong core.{w} Having a goal to work towards will help support you in almost every other aspect of your workout - and life.”
-
-                “And that's HARD.{w}CORE.”
-
-                """
+                “It's like having a strong core.{w} Having a goal to work towards will help support you in almost every other aspect of your workout - and life.”"""
 
                 hide joule-wink
                 show joule-hardcore
+
+                j "“And that's HARD.{w}CORE.”"
 
                 j """
 

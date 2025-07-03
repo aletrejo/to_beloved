@@ -35,13 +35,6 @@ transform shake:
         ease .01 yoffset -4
         ease .01 yoffset 0
 
-transform hardcore:
-    xcenter 0.5
-    ycenter 0.5
-    linear 0.1 xalign 0.6 
-    linear 0.1 xalign 0.5 yalign 0.5
-
-
 transform squirm:
     xcenter 0.5
     ycenter 0.5
@@ -70,6 +63,28 @@ transform rotation:
     rotate 0
     zoom 2.0
     linear 1.5 rotate 360
+
+
+image joule-hardcore:
+    "joule-hardcore-1.png"
+    pause 0.5
+    "joule-hardcore-2.png"
+    ease .06 xoffset -24 yoffset 20
+    ease .06 xoffset 0 yoffset 0
+    ease .06 xoffset -14 yoffset 10
+    ease .06 xoffset 0 yoffset 0
+    pause 0.5
+    "joule-hardcore-1.png"
+    pause 0.5
+    "joule-hardcore-2.png"
+    ease .06 xoffset -24 yoffset 20
+    ease .06 xoffset 0 yoffset 0
+    ease .06 xoffset -14 yoffset 10
+    ease .06 xoffset 0 yoffset 0
+    pause 0.5
+    repeat
+
+    
 
 transform citynightappear:
     alpha 0.0
