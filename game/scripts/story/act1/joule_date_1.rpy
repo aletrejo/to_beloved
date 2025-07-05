@@ -255,9 +255,9 @@ label joule_date_1:
                                 """
                                 hide joule-neutral
                                 show joule-sad
-                                m """(Great...{w}Joule's looking at me like I'm some sad baby with a dirty diaper.)"""
+                                m """(Great...{w}Joule's looking at me like I'm some sad baby.)"""
                                 hide joule-sad
-                                show joule-smile
+                                show joule-softsmile
                                 m "But then his face lifts into a soft smile."
                                 j "“Yeah...{w}I know what you mean.”"
                                 $ joule_relationship +=10
@@ -344,11 +344,11 @@ label joule_date_1:
                 show joule-laugh
                 j "“Hahaha. I appreciate the honesty. A lot of people don't have the guts to admit to that, even if it is the case.”"
 
-                hide joule-laugh
+                hide joule-smile
                 show joule-neutral
 
                 j """“Many deny it out of an idealized sense of fairness...{w}but the harsh truth is that the world we live in is shallow.”
-
+S
                 “People make snap judgments about each other all the time. {w} And usually, the first thing they learn about you is the way you look.”
 
                 “My motto? You can't spell "first impression" without "impress".
@@ -523,7 +523,7 @@ label joule_date_1:
         pause
         hide screen place_sticker
         $ passed_checks +=1
-    elif self_awareness<30:
+    elif self_awareness<40:
         m "(I don't really get it, but it seemed like the right thing to say.)"
 
     hide joule-neutral

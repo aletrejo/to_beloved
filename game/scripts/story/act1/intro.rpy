@@ -44,14 +44,8 @@ image placestickertext = Text ("Place the sticker", style='instruction_text')
 image bubbless = SnowBlossom("bubble-3.png", count=30, yspeed=(-150, -90), start=3)
 image bubblesm = SnowBlossom("bubble-1.png", count=28, yspeed=(-130, -100))
 image bubblesl = SnowBlossom("bubble-2.png", count=46, yspeed=(-120, -50), start=5)
-#image joule-neutral:
-#   "joule-neutral"
-#    pause 5.0
-#   "joule-neutral-blink" with Dissolve(0.3)
-#   pause 0.3
-#   "joule-neutral" with Dissolve (0.3)
-#   pause 0.3
-#
+
+
 
 
 # Splashscreen
