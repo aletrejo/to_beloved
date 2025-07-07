@@ -57,7 +57,7 @@ label joule_date_1:
 
     """
 
-    hide behemoth with dissolve
+    hide behemoth with vpunch
 
     i "Something bad is going to happen to you."
 
@@ -124,10 +124,14 @@ label joule_date_1:
     show joule-hardcore
 
     j "That is literally. So.{w} HARD. {w}CORE."
-    m """
-    As if to emphasize his point, Joule raps his knuckles against his abs in sincere conviction.
+    m "As if to emphasize his point, Joule raps his knuckles against his abs with stalwart conviction."
 
-    (I wonder if he does that every time he says it.)
+    hide joule-hardcore
+    show joule-neutral
+
+    m """
+
+    (I wonder if he does that every time.)
 
     (But more importantly, he complimented me! {w}How do I get him to do it again?)
 
@@ -135,7 +139,7 @@ label joule_date_1:
 
     """
 
-    hide joule-hardcore
+    hide joule-neutral
     show joule-smile
 
     j "“That's great. Strong people know what they want in life and go for it.”"
@@ -269,6 +273,7 @@ label joule_date_1:
                                 hide joule-smile
                                 show joule-neutral
                                 j "“Thanks for putting your faith in me, Menmi.{w} I won't let you down.”"
+                                hide joule-neutral
                             "No, just drop it.":
                                 c "He knows what he's talking about...better than you, anyway."
                                 m """(It was silly of me to give such a flippant answer.)
@@ -285,6 +290,7 @@ label joule_date_1:
                                 show joule-neutral
                                 j"“Let's say for now...you just want to get stronger.{w}That sound fair enough?”"
                                 m "(Why do I feel like he means something more by that...?)"
+                                hide joule-neutral
             "“I want to be the most jacked ever.”":
                 c "Why shoot for a goal if you aren't going to shoot for the top?"
                 m """(That's right - I've gotta prove to Joule that Menmi's not the type of girl to do anything halfway.)
@@ -320,6 +326,9 @@ label joule_date_1:
 
                 j "“And that's HARD.{w}CORE.”"
 
+                hide joule-hardcore with dissolve
+                show joule-neutral
+
                 j """
 
                 “But you'll need guidance. Physical strength might not be your usual domain, but we can help you get there.”
@@ -333,22 +342,22 @@ label joule_date_1:
 
                 $ joule_relationship +=10
                 $ renpy.notify("Joule feels closer to you!")
+                hide joule-neutral
 
-                hide joule-hardcore with dissolve
 
             "“I want to look hot so that everyone will love me.”":
                 c "Hotness starts from within. {w}If you can't answer this question with complete, transparent confidence, how are you ever going to be a baddie?"
                 m "(Why would I even lie about this? It's true. {w}How am I going to attract the man of my dreams looking like *myself*?)"
 
                 hide joule-neutral
-                show joule-laugh
+                show joule-smile at laughter
                 j "“Hahaha. I appreciate the honesty. A lot of people don't have the guts to admit to that, even if it is the case.”"
 
                 hide joule-smile
                 show joule-neutral
 
                 j """“Many deny it out of an idealized sense of fairness...{w}but the harsh truth is that the world we live in is shallow.”
-S
+
                 “People make snap judgments about each other all the time. {w} And usually, the first thing they learn about you is the way you look.”
 
                 “My motto? You can't spell "first impression" without "impress".
@@ -369,7 +378,7 @@ S
 
                 j "“Geez. That stuff's embarrassing. {w}I wouldn't do it if I didn't have to promote myself, to be honest.”"
                 m "“Oh, please. I bet you have *so* many hotties sliding into your DMs.”"
-                j "Nah, I can't read all that...{w}You know, being a dumb jock and all."
+                j "“Nah, I can't read all that...{w}You know, being a dumb jock and all.”"
 
                 if self_awareness>=30:
                     m """(Huh. I didn't take Joule to be the self-deprecating type.)
@@ -385,6 +394,8 @@ S
 
                 j "“Although...I wouldn't mind sounding out some letters if *you* were the one sending them.”"
                 m "{i}!!!{w}Ironically, I'm at a loss for words."
+
+                hide joule-wink
             
     label after_choice_12j:
             show joule-neutral

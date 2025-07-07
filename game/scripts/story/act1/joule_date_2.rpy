@@ -15,6 +15,7 @@ label joule_date_2:
 #Menmi feels similarly pressured to conform to other peoples' expectations of "what Joules gf should look liek" -- joules ex (client) shading menmi for weightlifting bc "arent you afraid of getting buff?"
 #Control your body, control your life -- lack of control from feeling weak; always on the defensive; on high alert to appear strong in order to avoid judgment
 
+    
     play music "/audio/joules-theme.mp3" fadein 0.5
     scene gym-inside with dissolve
 
@@ -468,12 +469,16 @@ label joule_date_2:
         (Now that I think of it, this could be a good opportunity to get to know Joule better.)
 
         """
+
+    $ family = False
+
     label choice_14j:
         menu:
             m "What should I ask Joule about?"
 
             "His muscles":
-                m "So Joule...you're pretty swole."
+                c "He obviously spends a lot of time on them."
+                m "Joule...you're pretty swole."
                 hide joule-sad
                 show joule-wink
                 j "So you've noticed?"
@@ -497,73 +502,179 @@ label joule_date_2:
                 j "Yeah! That's a good way of putting it too."
 
                 label joule_motivation:
-                hide joule-smile
-                show joule-thinking
-                j """It's kind of like, a way to control your fate, right?
+                    hide joule-smile
+                    show joule-thinking
+                    j """It's kind of like, a way to control your fate, right?
 
-                There's so many things in this world that we can't control,{w} but at the very least, we're in charge of our own bodies.
+                    There's so many things in this world that we can't control,{w} but at the very least, we're in charge of our own bodies.
 
-                """
-                hide joule-thinking
-                show joule-sad
-                j """Truth be told, I was a pretty short and scrawny kid growwing up.
+                    """
+                    hide joule-thinking
+                    show joule-sad
+                    j """Truth be told, I was a pretty short and scrawny kid growwing up.
 
-                Despite that, I had a big attitude,{w} and I guess that rubbed people the wrong way sometimes.
+                    Despite that, I had a big attitude,{w} and I guess that rubbed people the wrong way sometimes.
 
-                I was always getting into fights at school, {w}and losing them, to be honest. It really worried my family.
+                    I was always getting into fights at school, {w}and losing them, to be honest. It really worried my family.
 
-                """
+                    """
 
-                hide joule-sad
-                show joule-annoyed
+                    hide joule-sad
+                    show joule-annoyed
 
-                j """I just got so fed up one day. I decided that I wasn't going to be weak anymore. 
+                    j """I just got so fed up one day. I decided that I wasn't going to be weak anymore. 
 
-                I wanted to be strong --{w}so that I could not only defend myself, but the people I care about.
+                    I wanted to be strong --{w}so that I could not only defend myself, but the people I care about.
 
-                """
+                    """
 
-                hide joule-annoyed
-                show joule-smile
+                    hide joule-annoyed
+                    show joule-smile
 
-                j """I started running, lifting weights, and training in mixed martial arts.
+                    j """I started running, lifting weights, and training in mixed martial arts.
 
-                And I got bigger and stronger.{w} I felt more confident in myself too.
+                    And I got bigger and stronger.{w} I felt more confident in myself too.
 
-                I didn't start winning all my fights per se, {w}but I got good enough that my bullies thought twice about messing with me.
+                    I didn't start winning all my fights per se, {w}but I got good enough that my bullies thought twice about messing with me.
 
-                """
+                    """
 
-                hide joule-smile
-                show joule-neutral
+                    hide joule-smile
+                    show joule-neutral
 
-                m "So you wanted to be strong so that you could defend yourself?"
-                j """Exactly. I felt powerless, and training was my way of gaining power.
+                    m "So you wanted to be strong so that you could defend yourself?"
+                    j """Exactly. I felt powerless, and training was my way of gaining power.
 
-                Power over my bullies. My body. The trajectory of my life.
+                    Power over my bullies. {w}My body. {w} The trajectory of my life.
 
-                """
-                hide joule-neutral
-                show joule-smile
+                    """
+                    hide joule-neutral
+                    show joule-smile
 
-                 $ joule_relationship +=10
-                 $ renpy.notify("Joule feels closer to you!")
+                    $ joule_relationship +=10
+                    $ renpy.notify("Joule feels closer to you!")
 
-                m """That's so inspiring!
+                    m """That's so inspiring!
 
-                (I'm really glad Joule felt comfortable enough with me to share that).
+                    (I'm really glad Joule felt comfortable enough with me to share that).
 
-                """
+                    """
 
             "His hobbies":
-                m ""
-            "His family":
-                m ""
+                c "He's gotta have {i}something{/i} going on besides hanging around this stinky old gym all the time, right?"
+                m "Do you have any hobbies, Joule?"
+                hide joule-sad
+                show joule-smile
+                j "Yeah! I work out!"
+                hide joule-smile
+                show joule-sad
+                m "I mean, besides training. Reading? Gaming? Maybe cooking, even?"
+                hide joule-sad
+                show joule-annoyed with hpunch
+                play sound "/audio/impact-slam.mp3"
+                j "Do I seem like the type to do those things?"
+                m """No, no.{w} They were just random examples.
+
+                (Why'd he get so defensive?{w} Maybe I should rephrase the question.)
+
+                What do you do in your free time?
+
+                """
+                hide joule-annoyed
+                show joule-thinking
+                j "Hmmm...party, mostly{w}. I guess I do some modeling on the side, too"
+                hide joule-thinking
+                show joule-neutral
+                m "Wow, you're a model?"
+                hide joule-neutral
+                show joule-smile
+                j "Nothing major -- just amateur stuff for the gym, protein powder, stuff like that."
+                hide joule-smile
+                show joule-neutral
+                j "Mostly brand endorsements for InstaHam and other socials.{w} It's not like I'm in magazines or anything."
+                m "That's amazing! Are you an influencer?"
+                j "Nah...I just make short fitness videos of me working out sometimes.{w}Y'know, teach people proper technique and whatnot."
+                hide joule-neutral
+                show joule-awkward
+                j "I got a bunch of followers after doing some kind of dance challenge."
+                hide joule-awkward
+                show joule-thinking
+                j "It was for song called {i}'Thirst Trap'{/i}."
+                hide joule-thinking
+                show joule-wink at hop
+                j "During the chorus, I flex my traps."
+                m """(I think I might have seen that video...)
+
+                That's really cool! Do you do a lot of videos like that?
+
+                """
+                hide joule-wink
+                show joule-awkward
+                j "Nah, not really. I have a friend who's always bugging me to lock in and post more to boost my account in the algorithm or whatever."
+                hide joule-awkward
+                show joule-smile
+                j "Truth be told, that kind of stuff doesn't really speak to me. {w}I have other reasons for working out."
+                m "Such as...?"
+                jump joule_motivation
+
+            "His family" if family==False:
+                c "If you want to get to know someone, start with the people who shaped them."
+                m "Are you from around here, Joule? Where does your family live?"
+                hide joule-sad
+                show joule-neutral
+                j "Yeah, I grew up in Applecore City. {w}My parents still live here -- in an outer bough of the city."
+                hide joule-neutral
+                show joule-hardcore
+                j "My mom is a seamstress, and my dad works in law enforcement. We didn't have much growing up, but they worked. HARD. CORE. to make our lives better."
+                hide joule-hardcore
+                show joule-neutral
+                m "Do you have siblings, Joule?"
+                hide joule-neutral
+                show joule-surprised
+                j "Why would you ask that?"
+                m """(Strange. {w}That question made him tense up.)
+
+                No reason, really. You seem so protective that I thought you might have younger siblings.
+
+                """
+                hide joule-surprised
+                show joule-thinking
+                j "Oh.{w} No, I don't have any younger siblings.{w} One older sister though."
+                hide joule-thinking
+                show joule-awkward
+                j "I'd rather not talk about this any more, if that's OK."
+                m """(Interesting. I wonder what happened with this sister?)
+
+                Best not to push it, though.
+
+                I didn't mean to make you uncomfortable. We can talk about something else.
+
+                """
+                $ family = True
+                jump choice_14j
             "His dreams":
-                m ""
+                c "Everyone's got hopes and aspirations. What fuels Joule's fire?"
+                m "You seem like a hard worker, Joule. Is there anything that you're working towards in particular?"
+                hide joule-sad
+                show joule-smile at hop
+                j "You mean besides getting super duper {w}HARD. {w}CORE. swole?"
+                hide joule-smile
+                show joule-neutral
+                m "Haha. I mean, goals for yourself. {w}You have a lot of InstaHam followers. Are you working out so that you can become a fitness influencer?"
+                hide joule-neutral
+                show joule-awkward
+                j "Nah, I don't really care about stuff like that. {w}Although I definitely know people who want me to take my self-promotions more seriously."
+                hide joule-awkward
+                show joule-smile
+                j "Personally, I just want to be strong enough to protect myself and the people I care about."
+                m "That's so cool! {w}So your goal is to get stronger?"
+                j "Yeah, exactly."
+                jump joule_motivation
             
 
-        
+        label after_choice_14j:
+
+        m "It looks like the swelling's gone down."
 
 
 
