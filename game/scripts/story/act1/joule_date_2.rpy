@@ -13,7 +13,7 @@ label joule_date_2:
 #Joule central problem: He loses his way and tries to optimize optics. Comparing yourself to others is pointless because there’s no way of knowing a person’s eating habits, sleep schedule, genetic makeup, and all the other things that affect body composition and performance. 
 #He lets other people affect his hard core == shattering his sense of self in favor of min maxing and comparing himself to others
 #Menmi feels similarly pressured to conform to other peoples' expectations of "what Joules gf should look liek" -- joules ex (client) shading menmi for weightlifting bc "arent you afraid of getting buff?"
-#Control your body, control your life -- lack of control from feeling weak; always on the defensive; on high alert to appear strong in order to avoid judgment
+#Control your body, control your life -- lack of control from feeling weak; always on the defensive; on high alert to appear strong in order to avoid judgment - Joule realizes he can't control Menmi's eating habits and gives up on her until she can help herself
 
     
     play music "/audio/joules-theme.mp3" fadein 0.5
@@ -440,29 +440,29 @@ label joule_date_2:
         show joule-pain with dissolve
 
         m "Begrudgingly, he allows me to press the ice pack to his ankle."
-        m "Does it hurt?"
+        m "“Does it hurt?”"
 
         hide joule-pain 
-        show joule-pain at squirm
+        show joule-awkward at squirm
 
-        j "No."
+        j "“No.”"
         m "(He's a such a bad liar.)"
 
-        hide joule-pain
+        hide joule-awkward
         show joule-smile
         j """
-        Thanks for that, Menmi! 
+        “Thanks for that, Menmi!” 
 
-        We should get back to training now, though. We're on the clock, after all.
+        “We should get back to training now, though. We're on the clock, after all.
         """
 
-        m "In a moment. Let's just wait for the swelling to go down."
+        m "“In a moment. Let's just wait for the swelling to go down.”"
         
         hide joule-smile
         show joule-sad
 
-        j "But-!"
-        m """No 'buts'!{w} It's my time that I paid for, and I want to help you recover!
+        j "“But-!"
+        m """“No 'buts'!{w} It's my time that I paid for, and I want to help you recover!”
 
         (That gets him to stop.{w} Huh, he's so easy to chastise.)
 
@@ -478,74 +478,74 @@ label joule_date_2:
 
             "His muscles":
                 c "He obviously spends a lot of time on them."
-                m "Joule...you're pretty swole."
+                m "“Joule...you're pretty swole.”"
                 hide joule-sad
                 show joule-wink
-                j "So you've noticed?"
+                j "“So you've noticed?”"
                 hide joule-wink
                 show joule-surprised
-                m "I was wondering, since we talked about my motivation for working out, why do {i}you{/i} do it?"
+                m "“I was wondering, since we talked about my motivation for working out, why do {i}you{/i} do it?”"
                 hide joule-surprised
                 show joule-softsmile
-                j "No client's ever asked me that before."
+                j "“No client's ever asked me that before.”"
                 hide joule-softsmile
                 show joule-neutral
-                j "I guess the short answer is that I love what I do --{w}the satisfying burn after each workout, the gains I can see in the mirror, knowing that my choices and dedication led to them."
+                j "“I guess the short answer is that I love what I do --{w}the satisfying burn after each workout, the gains I can see in the mirror, knowing that my choices and dedication led to them.”"
                 hide joule-neutral
                 show joule-smile
-                j "And helping other people reach their goals is really rewarding!"
+                j "“And helping other people reach their goals is really rewarding!”"
                 hide joule-smile
                 show joule-neutral
-                m "I see. It's kind of like, planning for your future and making moves to manifest your dreams each day."
+                m "“I see. It's kind of like planning for your future and making moves to manifest your dreams each day.”"
                 hide joule-neutral
                 show joule-smile
-                j "Yeah! That's a good way of putting it too."
+                j "“Yeah! That's a good way of putting it too.”"
 
                 label joule_motivation:
                     hide joule-smile
                     show joule-thinking
-                    j """It's kind of like, a way to control your fate, right?
+                    j """“It's a way to control your fate, right?”
 
-                    There's so many things in this world that we can't control,{w} but at the very least, we're in charge of our own bodies.
+                    “There's so many things in this world that we can't control,{w} but at the very least, we're in charge of our own bodies.”
 
                     """
                     hide joule-thinking
                     show joule-sad
-                    j """Truth be told, I was a pretty short and scrawny kid growwing up.
+                    j """“Truth be told, I was a pretty short and scrawny kid growwing up.”
 
-                    Despite that, I had a big attitude,{w} and I guess that rubbed people the wrong way sometimes.
+                    “Despite that, I had a big attitude,{w} and I guess that rubbed people the wrong way sometimes.”
 
-                    I was always getting into fights at school, {w}and losing them, to be honest. It really worried my family.
+                    “I was always getting into fights at school, {w}and losing them, to be honest. It really worried my family.”
 
                     """
 
                     hide joule-sad
                     show joule-annoyed
 
-                    j """I just got so fed up one day. I decided that I wasn't going to be weak anymore. 
+                    j """“I just got so fed up one day. I decided that I wasn't going to be weak anymore.” 
 
-                    I wanted to be strong --{w}so that I could not only defend myself, but the people I care about.
+                    “I wanted to be strong --{w}so that I could not only defend myself, but the people I care about.”
 
                     """
 
                     hide joule-annoyed
                     show joule-smile
 
-                    j """I started running, lifting weights, and training in mixed martial arts.
+                    j """“I started running, lifting weights, and training in mixed martial arts.”
 
-                    And I got bigger and stronger.{w} I felt more confident in myself too.
+                    “And I got bigger and stronger.{w} I felt more confident in myself too.”
 
-                    I didn't start winning all my fights per se, {w}but I got good enough that my bullies thought twice about messing with me.
+                    “I didn't start winning all my fights per se, {w}but I got good enough that my bullies thought twice about messing with me.”
 
                     """
 
                     hide joule-smile
                     show joule-neutral
 
-                    m "So you wanted to be strong so that you could defend yourself?"
-                    j """Exactly. I felt powerless, and training was my way of gaining power.
+                    m "“So you wanted to be strong so that you could defend yourself?”"
+                    j """“Exactly. I felt powerless, and training was my way of gaining power.”
 
-                    Power over my bullies. {w}My body. {w} The trajectory of my life.
+                    “Power over my bullies. {w}My body. {w} The trajectory of my life.”
 
                     """
                     hide joule-neutral
@@ -554,7 +554,7 @@ label joule_date_2:
                     $ joule_relationship +=10
                     $ renpy.notify("Joule feels closer to you!")
 
-                    m """That's so inspiring!
+                    m """“That's so inspiring!”
 
                     (I'm really glad Joule felt comfortable enough with me to share that).
 
@@ -562,123 +562,187 @@ label joule_date_2:
 
             "His hobbies":
                 c "He's gotta have {i}something{/i} going on besides hanging around this stinky old gym all the time, right?"
-                m "Do you have any hobbies, Joule?"
+                m "“Do you have any hobbies, Joule?”"
                 hide joule-sad
                 show joule-smile
-                j "Yeah! I work out!"
+                j "“Yeah! I work out!”"
                 hide joule-smile
                 show joule-sad
-                m "I mean, besides training. Reading? Gaming? Maybe cooking, even?"
+                m "“I mean, besides training. Reading? Gaming? Maybe cooking, even?”"
                 hide joule-sad
                 show joule-annoyed with hpunch
                 play sound "/audio/impact-slam.mp3"
-                j "Do I seem like the type to do those things?"
-                m """No, no.{w} They were just random examples.
+                j "“Do I seem like the type to do those things?”"
+                m """“No, no.{w} They were just random examples.”
 
                 (Why'd he get so defensive?{w} Maybe I should rephrase the question.)
 
-                What do you do in your free time?
+                “What do you do in your free time?”
 
                 """
                 hide joule-annoyed
                 show joule-thinking
-                j "Hmmm...party, mostly{w}. I guess I do some modeling on the side, too"
+                j "“Hmmm...party, mostly{w}. I guess I do some modeling on the side, too”"
                 hide joule-thinking
                 show joule-neutral
-                m "Wow, you're a model?"
+                m "“Wow, you're a model?”"
                 hide joule-neutral
                 show joule-smile
-                j "Nothing major -- just amateur stuff for the gym, protein powder, stuff like that."
+                j "“Nothing major -- just amateur stuff for the gym, protein powder, stuff like that.”"
                 hide joule-smile
                 show joule-neutral
-                j "Mostly brand endorsements for InstaHam and other socials.{w} It's not like I'm in magazines or anything."
-                m "That's amazing! Are you an influencer?"
-                j "Nah...I just make short fitness videos of me working out sometimes.{w}Y'know, teach people proper technique and whatnot."
+                j "“Mostly brand endorsements for InstaHam and other socials.{w} It's not like I'm in magazines or anything.”"
+                m "“That's amazing! Are you an influencer?”"
+                j "“Nah...I just make short fitness videos of me working out sometimes.{w}Y'know, teach people proper technique and whatnot.”"
                 hide joule-neutral
                 show joule-awkward
-                j "I got a bunch of followers after doing some kind of dance challenge."
+                j "“I got a bunch of followers after doing some kind of dance challenge.”"
                 hide joule-awkward
                 show joule-thinking
-                j "It was for song called {i}'Thirst Trap'{/i}."
+                j "“It was for song called {i}'Thirst Trap'{/i}.”"
                 hide joule-thinking
-                show joule-wink at hop
-                j "During the chorus, I flex my traps."
-                m """(I think I might have seen that video...)
+                show joule-wink
+                j "“During the chorus, I flex my traps.”"
+                m """“(I think I might have seen that video...)
 
-                That's really cool! Do you do a lot of videos like that?
+                “That's really cool! Do you do a lot of videos like that?”
 
                 """
                 hide joule-wink
                 show joule-awkward
-                j "Nah, not really. I have a friend who's always bugging me to lock in and post more to boost my account in the algorithm or whatever."
+                j "“Nah, not really. I have a friend who's always bugging me to lock in and post more to boost my account in the algorithm or whatever.”"
                 hide joule-awkward
                 show joule-smile
-                j "Truth be told, that kind of stuff doesn't really speak to me. {w}I have other reasons for working out."
-                m "Such as...?"
+                j "“Truth be told, that kind of stuff doesn't really speak to me. {w}I have other reasons for working out.”"
+                m "“Such as...?”"
                 jump joule_motivation
 
             "His family" if family==False:
-                c "If you want to get to know someone, start with the people who shaped them."
-                m "Are you from around here, Joule? Where does your family live?"
+                c "If you want to get to know someone, start with the people who shaped them.”"
+                m "“Are you from around here, Joule? Where does your family live?”"
                 hide joule-sad
                 show joule-neutral
-                j "Yeah, I grew up in Applecore City. {w}My parents still live here -- in an outer bough of the city."
+                j "“Yeah, I grew up in Applecore City. {w}My parents still live here -- in an outer bough of the city.”"
                 hide joule-neutral
                 show joule-hardcore
-                j "My mom is a seamstress, and my dad works in law enforcement. We didn't have much growing up, but they worked. HARD. CORE. to make our lives better."
+                j "“My mom is a seamstress, and my dad works in law enforcement. We didn't have much growing up, but they worked. HARD. CORE. to make our lives better.”"
                 hide joule-hardcore
                 show joule-neutral
-                m "Do you have siblings, Joule?"
+                m "“Do you have siblings, Joule?”"
                 hide joule-neutral
                 show joule-surprised
-                j "Why would you ask that?"
+                j "“Why would you ask that?”"
                 m """(Strange. {w}That question made him tense up.)
 
-                No reason, really. You seem so protective that I thought you might have younger siblings.
+                “No reason, really. You seem so protective that I thought you might have younger siblings.”
 
                 """
                 hide joule-surprised
                 show joule-thinking
-                j "Oh.{w} No, I don't have any younger siblings.{w} One older sister though."
+                j "“Oh.{w} No, I don't have any younger siblings.{w} One older sister though.”"
                 hide joule-thinking
                 show joule-awkward
-                j "I'd rather not talk about this any more, if that's OK."
+                j "“I'd rather not talk about this any more, if that's OK.”"
                 m """(Interesting. I wonder what happened with this sister?)
 
-                Best not to push it, though.
+                (Best not to push it, though.)
 
-                I didn't mean to make you uncomfortable. We can talk about something else.
+                “I didn't mean to make you uncomfortable. We can talk about something else.”
 
                 """
                 $ family = True
                 jump choice_14j
             "His dreams":
-                c "Everyone's got hopes and aspirations. What fuels Joule's fire?"
-                m "You seem like a hard worker, Joule. Is there anything that you're working towards in particular?"
+                c "Everyone's got hopes and aspirations. What fuels Joule's fire?”"
+                m "“You seem like a hard worker, Joule. Is there anything that you're working towards in particular?”"
                 hide joule-sad
                 show joule-smile at hop
-                j "You mean besides getting super duper {w}HARD. {w}CORE. swole?"
+                j "“You mean besides getting super duper {w}HARD. {w}CORE. swole?”"
                 hide joule-smile
                 show joule-neutral
-                m "Haha. I mean, goals for yourself. {w}You have a lot of InstaHam followers. Are you working out so that you can become a fitness influencer?"
+                m "“Haha. I mean, goals for yourself. {w}You have a lot of InstaHam followers. Are you working out so that you can become a fitness influencer?”"
                 hide joule-neutral
                 show joule-awkward
-                j "Nah, I don't really care about stuff like that. {w}Although I definitely know people who want me to take my self-promotions more seriously."
+                j "“Nah, I don't really care about stuff like that. {w}Although I definitely know people who want me to take my self-promotions more seriously.”"
                 hide joule-awkward
                 show joule-smile
-                j "Personally, I just want to be strong enough to protect myself and the people I care about."
-                m "That's so cool! {w}So your goal is to get stronger?"
-                j "Yeah, exactly."
+                j "“Personally, I just want to be strong enough to protect myself and the people I care about.”"
+                m "“So your goal is to defend those in need? That's so cool!”"
+                j "“Yeah, exactly.”"
                 jump joule_motivation
             
 
         label after_choice_14j:
 
-        m "It looks like the swelling's gone down."
+        hide joule-smile
+        show joule-neutral
+        m """“It looks like the swelling's gone down.”
+
+        (And just in time, too. My session with Joule is up.)
+
+        """
+        hide joule-neutral
+        show joule-softsmile
+        j "Thanks for staying with me through that, Menmi.{w} You're a really kind person."
+
+        m """No biggie!
+
+        Brushing off my leggings, I stand up and extend a hand to Joule to help him do the same.
+
+        """
+        hide joule-softsmile
+        show joule-sad
+
+        m "He stares at it for a moment before shaking his head and pushing himself off the ground and on his feet in one smooth motion."
+
+        hide joule-sad with dissolve
+        show joule-neutral with dissolve
+
+        m "(Ah, right. {w}Of course he can do that.)"
+
+        hide joule-neutral
+        show joule-sad
+
+        j "I'm sorry about today.{w} I'm supposed to be helping you get in better physical condition."
+
+        hide joule-sad
+        show joule-softsmile
+
+        j "Instead, {i}I'm{/i} worse off."
+        m """No no! Don't apologize. {w}You got hurt because of {i}me.
+
+        (I have to push the admittance out of me, but I have to take accountability for my actions. {w}How else will I do better in the future?)
+
+        """
+        hide joule-softsmile
+        show joule-sad
+        j "Still, we lost time that should have been spent on you.{w} I promise to make up for it."
+        m "Don't worry about it, Joule.{w} Really. {w}Just take care of yourself and feel better!"
+        hide joule-sad
+        show joule-wink
+
+        j "I'll try.{w} When you're always on the move, though, taking care of yourself can be kind of hard."
+
+        hide joule-wink
+        show joule-surprised
+
+        m "Core. {w}Taking care of yourself is HARD. CORE."
+
+        hide joule-surprised
+        show joule-smile at laughter
+
+        j "Hahahaha that's right!{w} Man, you always know what to say, Menmi."
+
+        $ joule_relationship += 10
+
+        m "(He might just be being nice, but it's a good feeling knowing that I made a difference for Joule.)"
+
+        $ j2=True
+
+        jump after_joule_date
 
 
-
-    $ j2=True
+    
 
 
 
