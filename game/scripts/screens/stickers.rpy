@@ -45,3 +45,29 @@ screen place_sticker(sticker):
         xpos 0.5
         ypos 0.8
         action [Function(remove_sticker, sticker), Return()]
+
+screen relationship_up:
+    add "pinkgradient.png" at backgroundappear
+    add "images/doily-1.png" at rotation_repeat:
+        zoom 0.9
+        alpha 0.7
+        xalign 0.2
+        yalign 1.2
+    add "images/doily-2.png" at rotation_repeat:
+        zoom 1.0
+        alpha 0.8
+        xalign 0.7
+        yalign 0.2
+    add "images/doily-3.png" at rotation_repeat:
+        zoom 0.7
+        alpha 0.5
+        xalign 0.2
+        yalign 0.1
+    add "images/[lovers_name]-smile.png":
+        xalign 0.5
+        yalign 0.85
+    add "closertext" at disappear_up
+        
+    
+
+

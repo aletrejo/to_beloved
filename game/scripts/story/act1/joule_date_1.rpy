@@ -1,4 +1,5 @@
 label joule_date_1:
+    define lovers_name = "Joule"
     play sound "/audio/pencil-write.mp3"
     hide screen open_planner
     hide screen open_insights
@@ -27,8 +28,9 @@ label joule_date_1:
 
     play sound "/audio/impact-slam.mp3"
     show joule-neutral with vpunch
+
     j "“Nice to see you again, Menmi.”"
-   
+
     m """
     (AAaaaa!!! He surprised me. {w}Oh no, I'm still on the floor. {w}What do I do?)
 
@@ -326,7 +328,7 @@ label joule_date_1:
 
                 j "“And that's HARD.{w}CORE.”"
 
-                hide joule-hardcore with dissolve
+                hide joule-hardcore 
                 show joule-neutral
 
                 j """
@@ -341,9 +343,10 @@ label joule_date_1:
                 j "Of course. I've got your back.{w} And your core. {w}And your arms.{w} Oh, and can't forget legs..."
 
                 $ joule_relationship +=10
-                $ renpy.notify("Joule feels closer to you!")
+                show screen relationship_up onlayer overlay
+                play sound "/audio/awareness-ding.mp3"
+                hide screen relationship_up
                 hide joule-neutral
-
 
             "“I want to look hot so that everyone will love me.”":
                 c "Hotness starts from within. {w}If you can't answer this question with complete, transparent confidence, how are you ever going to be a baddie?"

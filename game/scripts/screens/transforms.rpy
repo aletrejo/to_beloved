@@ -64,6 +64,17 @@ transform rotation:
     zoom 2.0
     linear 1.5 rotate 360
 
+transform rotation_repeat:
+    rotate 0
+    linear 2.0 rotate 360
+    repeat
+
+transform disappear_up:
+    xalign 0.5
+    yalign 0.5
+    pause 1.0
+    linear 1.5 yalign 0.2 alpha 0.0
+
 
 image joule-hardcore:
     "joule-hardcore-1.png"
@@ -84,7 +95,10 @@ image joule-hardcore:
     pause 0.5
     repeat
 
-    
+transform backgroundappear:
+    alpha 0.0
+    pause 0.2
+    linear 0.4 alpha 1.0
 
 transform citynightappear:
     alpha 0.0

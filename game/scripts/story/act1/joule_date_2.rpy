@@ -552,7 +552,9 @@ label joule_date_2:
                     show joule-smile
 
                     $ joule_relationship +=10
-                    $ renpy.notify("Joule feels closer to you!")
+                    show screen relationship_up onlayer overlay
+                    play sound "/audio/awareness-ding.mp3"
+                    hide screen relationship_up
 
                     m """“That's so inspiring!”
 
@@ -734,6 +736,9 @@ label joule_date_2:
         j "Hahahaha that's right!{w} Man, you always know what to say, Menmi."
 
         $ joule_relationship += 10
+        show screen relationship_up onlayer overlay
+        play sound "/audio/awareness-ding.mp3"
+        hide screen relationship_up
 
         m "(He might just be being nice, but it's a good feeling knowing that I made a difference for Joule.)"
 
