@@ -1,4 +1,5 @@
 label joule_date_2:
+    $ lover = "Joule"
     play sound "/audio/pencil-write.mp3"
     hide screen open_planner
     hide screen open_insights
@@ -738,6 +739,7 @@ label joule_date_2:
         $ joule_relationship += 10
         show screen relationship_up onlayer overlay
         play sound "/audio/awareness-ding.mp3"
+        pause
         hide screen relationship_up
 
         m "(He might just be being nice, but it's a good feeling knowing that I made a difference for Joule.)"

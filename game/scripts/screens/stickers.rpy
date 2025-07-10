@@ -63,11 +63,12 @@ screen relationship_up:
         alpha 0.5
         xalign 0.2
         yalign 0.1
-    add "images/[lovers_name]-smile.png":
+    add "images/[lover]-smile.png":
         xalign 0.5
         yalign 0.85
-    add "closertext" at disappear_up
+    text "[lover] feel closer to you!" at disappear_up:
+        style "closer_text"
         
-    
+     
 
 

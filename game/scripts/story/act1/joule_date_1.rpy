@@ -1,5 +1,5 @@
 label joule_date_1:
-    define lovers_name = "Joule"
+    $ lover = "Joule"
     play sound "/audio/pencil-write.mp3"
     hide screen open_planner
     hide screen open_insights
@@ -65,9 +65,8 @@ label joule_date_1:
 
     if self_awareness>=30:
         scene gym-inside
-        stop music
+        stop music fadeout 0.5
         c "It's OK. You're safe. That was then. Stay in the here and now."
-        m "(It's easy to stay grounded when you're on the ground!)"
         play sound "/audio/awareness-ding.mp3"
         show text "{image=ol_text}" with easeinbottom
         pause
@@ -88,6 +87,8 @@ label joule_date_1:
         pause
         hide screen place_sticker
         $ passed_checks +=1
+        m "(It's easy to stay grounded when you're on the ground!)"
+       
 
     elif self_awareness<30:
         m "If only I hadn't come here...it's all my fault."
@@ -267,7 +268,10 @@ label joule_date_1:
                                 m "But then his face lifts into a soft smile."
                                 j "“Yeah...{w}I know what you mean.”"
                                 $ joule_relationship +=10
-                                $ renpy.notify("Joule feels closer to you!")
+                                show screen relationship_up onlayer overlay
+                                play sound "/audio/awareness-ding.mp3"
+                                pause
+                                hide screen relationship_up
                                 j """“I've been there myself...{w}Like you feel disconnected from your body. Like you'd rather run or hide than exist and be seen as you are.”
 
                                 “Don't worry. I can help you feel more confident about yourself. {w}Confidence comes from within, but that doesn't mean it always starts there.”
@@ -340,11 +344,12 @@ label joule_date_1:
 
                 m "“Wow, Joule. You'd really do all that for me?”"
 
-                j "Of course. I've got your back.{w} And your core. {w}And your arms.{w} Oh, and can't forget legs..."
+                j "“Of course. I've got your back.{w} And your core. {w}And your arms.{w} Oh, and can't forget legs...”"
 
                 $ joule_relationship +=10
                 show screen relationship_up onlayer overlay
                 play sound "/audio/awareness-ding.mp3"
+                pause
                 hide screen relationship_up
                 hide joule-neutral
 

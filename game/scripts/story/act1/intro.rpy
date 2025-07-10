@@ -35,13 +35,13 @@ default j1 = False
 default j2 = False
 default passed_checks = 0
 default planner_cover = 1
+default lover = ""
 default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfish", "fox", "goldfish", "koala", "mantaray", "redpanda", "seahorse", "leggings", "daiquiri", "wackaroon", "waterbottle"]
 # Images used in-game
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness \n Check: Passed", style='outlined_text')
 image stickertext= Text ("You got a sticker!", style='outlined_text')
 image placestickertext = Text ("Place the sticker", style='instruction_text')
-image closertext= Text ("[lovers_name] feels closer to you!", style='closer_text')
 image bubbless = SnowBlossom("bubble-3.png", count=30, yspeed=(-150, -90), start=3)
 image bubblesm = SnowBlossom("bubble-1.png", count=28, yspeed=(-130, -100))
 image bubblesl = SnowBlossom("bubble-2.png", count=46, yspeed=(-120, -50), start=5)
@@ -74,13 +74,14 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-
     play music "<from 5>/audio/cloud.wav"
     scene menmi-apartment-morning
     with vpunch
 
 
     # These display lines of dialogue.
+
+    $ lover = "Menmi"
 
     m """
 

@@ -1,5 +1,6 @@
 
 label joule_date_3:
+    $ lover = "Joule"
     play sound "/audio/pencil-write.mp3"
     hide screen open_planner
     hide screen open_insights
@@ -8,9 +9,9 @@ label joule_date_3:
     show text "{font=PatuaOne-Regular.ttf}{size=230}{color=#EB266A}Week [week]{/size}{/font}{/color}{color=#000000}{color=#000000}{font=JustAnotherHand-Regular.ttf}{size=200}\n Weekend!{/size}{/font}{/color}" at truecenter with wiperight
     pause
  ##Date 3: outdoors in the park near the gym. Joule prepares a lunch to thank Menmi for tending to him; becomes more vulnerable around her.
-    
+ #Menmi wears a new jacket because it's a little brisk out and accidentally rips it while they're training. Joule whips out a sewing kit and fixes it for her.
 
-    play music "<from 9>/audio/happily-ever-after.mp3" fadein 0.5
+    
     scene gym-inside with dissolve
 
     play sound "/audio/stomach-growl.mp3"
@@ -30,8 +31,6 @@ label joule_date_3:
     m """
 
     “I know! I know! It's just that I was so busy and all...”
-
-   {i} Shame on me for disappointing him already...
 
     """
 
