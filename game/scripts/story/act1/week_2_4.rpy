@@ -282,3 +282,5 @@ label allie_response:
                 jump joule_date_1
             elif j1==True and j2==False:
                 jump joule_date_2
+            elif j2==True:
+                jump joule_date_3

@@ -12,7 +12,134 @@ label joule_date_3:
  #Menmi wears a new jacket because it's a little brisk out and accidentally rips it while they're training. Joule whips out a sewing kit and fixes it for her.
 
     
-    scene gym-inside with dissolve
+    scene menmi-apartment-morning with squares
+
+    m """For today's weekend workout, Joule asked me to meet him in the park by the gym.
+
+    (I wonder what he has in store!{w} I'm so excited! It's almost like a date.)
+
+    (And if I want to impress Joule, I've got to look and feel my best!)
+
+    """
+
+    scene menmi-apartment-morning with vpunch
+
+    m """
+    (That's why I warmed up by doing high kicks and shadowboxing in the kitchen!)
+
+    (Who am I shadowboxing?)
+
+    """
+
+    i "Your form is all wrong, and you're embarrassing yourself."
+
+    if self_awareness>=50:
+        c "Practice makes perfect! Besides, nobody can see you."
+        play sound "/audio/awareness-ding.mp3"
+        show screen sticker_get
+        pause
+        hide screen sticker_get
+        show screen place_sticker(chosen_sticker)
+        $ available_stickers.remove(chosen_sticker)
+        pause
+        hide screen place_sticker
+        $ passed_checks +=1
+        m "(Yeah! Shut up, Intrusive Inner Voice! I'm going to high kick you out of here...)"
+    elif self_awareness<50:
+        m "(I'm a klutz as usual!)"
+
+    m """
+    (OK -- now that I've warmed up, I just have to get dressed.)
+
+    (It's kind of chilly out today.{w}I know! This is the perfect opportunity to break out my new windbreaker!)
+
+    """
+
+    play sound "/audio/whoosh.mp3"
+    show windbreaker at truecenter with easeinbottom
+
+    m "(Fashion {i}and{/i} function! Talk about cute! Let's go!)"
+
+    scene park-day with slideleft
+
+    m "When I arrive at the park, Joule is already there waiting for me."
+
+    show joule-smile with dissolve
+    play music "<from 22>/audio/joules-theme.mp3" volume 0.7
+
+    j "Morning, Menmi!"
+
+    hide joule-smile
+    show joule-surprised
+
+    j "Woah! Cool jacket!"
+    m """Thanks!{w} Aren't you cold, though?
+
+    Joule's in his usual {i}Planet Figness{/i} sleeveless shirt.
+
+    """
+
+    hide joule-surprised
+    show joule-neutral
+
+    j "Nah, I tend to overheat easily.{w} Especially when I work out."
+
+    hide joule-neutral
+    show joule-thinking
+
+    j "I don't wear a top at all when I'm training by myself.{w} I'm kind of Anti-Shirt like that."
+    m "(He said that so casually, but my face is overheating just imagining it.)"
+
+    hide joule-thinking
+    show joule-neutral
+
+    j "Anyway, I thought it'd be fun to change things up a bit today and do some cardio in the park."
+    m "I'm wearing my running sneakers and ready to run-ble."
+
+    hide joule-neutral
+    show joule-wink
+
+    j "You have a great attitude, as usual!{w} Let's get going -- follow me!"
+
+    hide joule-wink with dissolve
+
+    scene park-day:
+        blur 50
+
+    m """Joule and I set off on a lap around the park at a steady pace. 
+
+    Every so often, Joule checks in on me behind him, adjusting his pace to match mine.
+
+    The scenery and people rush by, {w}but I focus on chasing Joule, his navy blue tank billowing as the wind blows its way across his back. 
+
+    He doesn't seem to tire, which makes me push myself even harder to keep up.
+
+    (It's getting harder to breathe, though...)
+    """
+
+    scene park-day with flash:
+        matrixcolor BrightnessMatrix (value=0.4)
+    show joule-sad with dissolve
+
+    j "Woah. Hey, Menmi -- you good? {w}Let's take a break here."
+
+    #picnic basket tucked into the bushes
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
 
     play sound "/audio/stomach-growl.mp3"
     m """{i}Ummm....did I just say that out loud?
