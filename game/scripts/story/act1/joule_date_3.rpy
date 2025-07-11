@@ -58,7 +58,7 @@ label joule_date_3:
     play sound "/audio/whoosh.mp3"
     show windbreaker at truecenter with easeinbottom
 
-    m "(Fashion {i}and{/i} function! Talk about cute! Let's go!)"
+    m "(Fashion {i}and{/i} function! Who says I'm scatterbrained? Let's go!)"
 
     scene park-day with slideleft
 
@@ -67,13 +67,13 @@ label joule_date_3:
     show joule-smile with dissolve
     play music "<from 22>/audio/joules-theme.mp3" volume 0.7
 
-    j "Morning, Menmi!"
+    j "“Morning, Menmi!"
 
     hide joule-smile
     show joule-surprised
 
-    j "Woah! Cool jacket!"
-    m """Thanks!{w} Aren't you cold, though?
+    j "“Woah! Cool jacket!"
+    m """“Thanks!{w} Aren't you cold, though?”
 
     Joule's in his usual {i}Planet Figness{/i} sleeveless shirt.
 
@@ -82,24 +82,24 @@ label joule_date_3:
     hide joule-surprised
     show joule-neutral
 
-    j "Nah, I tend to overheat easily.{w} Especially when I work out."
+    j "“Nah, I tend to overheat easily.{w} Especially when I'm physically exerting myself.”"
 
     hide joule-neutral
     show joule-thinking
 
-    j "I don't wear a top at all when I'm training by myself.{w} I'm kind of Anti-Shirt like that."
+    j "“Truth be told, {w}I don't wear a top at all when I'm working out by myself.{w} I'm kind of Anti-Shirt like that.”"
     m "(He said that so casually, but my face is overheating just imagining it.)"
 
     hide joule-thinking
     show joule-neutral
 
-    j "Anyway, I thought it'd be fun to change things up a bit today and do some cardio in the park."
-    m "I'm wearing my running sneakers and ready to run-ble."
+    j "“Anyway, I thought it'd be fun to change things up a bit today and do some cardio in the park.”"
+    m "“I'm wearing my running sneakers and ready to run-ble.”"
 
     hide joule-neutral
     show joule-wink
 
-    j "You have a great attitude, as usual!{w} Let's get going -- follow me!"
+    j "“Great attitude, as usual!{w} Let's get going -- follow me!”"
 
     hide joule-wink with dissolve
 
@@ -108,23 +108,197 @@ label joule_date_3:
 
     m """Joule and I set off on a lap around the park at a steady pace. 
 
-    Every so often, Joule checks in on me behind him, adjusting his pace to match mine.
-
     The scenery and people rush by, {w}but I focus on chasing Joule, his navy blue tank billowing as the wind blows its way across his back. 
+
+    Every so often, Joule checks in on me behind him, adjusting his pace to match mine.
 
     He doesn't seem to tire, which makes me push myself even harder to keep up.
 
     (It's getting harder to breathe, though...)
     """
 
+    play sound "audio/huff.mp3"
     scene park-day with flash:
         matrixcolor BrightnessMatrix (value=0.4)
+    scene park-day with flash
     show joule-sad with dissolve
 
-    j "Woah. Hey, Menmi -- you good? {w}Let's take a break here."
+    j "“Woah. Hey, Menmi -- you good? {w}Let's take a break here.”"
+    m """“No, no. I'm fine. {w}I can keep going.”
 
-    #picnic basket tucked into the bushes
+    (I say, desperately gasping for breath like a fish out of water.)
+    """
 
+    hide joule-sad
+    show joule-neutral
+
+    j "“It's great to push through to progress sometimes,{w} but I've worked with you long enough to know when you need a break.”"
+    
+    hide joule-neutral
+    show joule-sad
+
+    m "“I...I just want to do well for you!”"
+    j "“Hey, hey listen...you're already doing well.”"
+
+    hide joule-sad
+    show joule-softsmile
+
+    j """“Your tenacity and commitment to self-improvement is impressive enough.”
+
+    “Besides, you should always consider yourself before me.{w} And you're at your aerobic limit.”
+
+    “Let's take a break. {w}This is a good spot, anyway.”
+
+    """
+
+    hide joule-softsmile with dissolve
+
+    m """“Joule takes me by the hand gently and leads me to a green clearing beneath the shade. 
+
+    His palm is cool and surprisingly soft.
+
+    It's early on the weekend so there aren't many people around.
+
+    Joule pulls a {i}Planet Figness{/i} duffle bag out of the bushes.
+
+    ??? “{w}Where did that come from???”
+    """
+
+    show joule-smile at dissolve
+
+    j "“Haha -- don't worry. {w}I dropped it off earlier before you got here.”"
+
+    hide joule-smile
+    show joule-neutral
+
+    j "“It's not a random shady duffle filled with drugs or anything, {w}if that's what you're thinking.”"
+    m """(I was not thinking that.)
+
+    Joule unpacks a blanket from the bag and flicks it up, letting it float flat onto the grass. He gestures for me to sit on it.
+
+    (How convenient!)
+
+    As I settle myself on the blanket, {w}Joule reaches into the bag and withdraws a thermos, which he offers to me.
+    """
+
+    hide joule-neutral
+    show joule-softsmile
+    show protein-shake with easeinbottom
+
+    j "“Drink this. {w}Your body needs to replenish its nutrients.”"
+    m """
+
+    I take a peek at the sticky-thick beige-adjacent slush in the bottle.
+
+    “What is it?”
+
+    """
+
+    hide joule-softsmile
+    show joule-smile with vpunch
+    j "“This is my GO! Morning protein shake. It's got a heavy duty amino acid profile that'll fortify your muscles.”"
+
+    hide joule-smile
+    show joule-hardcore
+
+    j "“After a workout, it goes {w}HARD. {w} CORE.”"
+
+    hide joule-hardcore
+    show joule-neutral
+
+    m """I'm a little hesitant about the concoction, but my mouth is so dry that it could compete with my boss' sense of humor.
+
+    The bottle is pleasantly cool in my hand.
+
+    (Nothing ventured, nothing gained!)
+
+    """
+
+    play sound "/audio/gulp.mp3"    
+
+    m """
+    (I swallow the concoction, surprised by how easily it goes down.)
+
+    (Despite its consistency, the taste is pretty inoffensive...{w}pleasant, even.)
+
+    (It's no Starfruitbucks latte, but it isn't putrid mystery glue either.)
+
+    """
+
+    m """!!! Not bad, Joule. What's in it?
+
+    (I'm hoping the answer isn't something like "5 pounds of raw chicken")
+
+    """
+
+    hide joule-neutral
+    show joule-smile at hop
+
+    j "“It's cooked chicken breast!”"
+    m "(Feels so wrong to be right.)"
+    j "“...also broccoli, egg whites, potato, oats and maple syrup.”"
+    m """“...All such delicious ingredients!” {p}(Individually!)
+
+    (Still, it's not as bad as I thought it'd be.) I take another gulp.
+
+    """
+
+    hide joule-smile
+    show joule-thinking
+
+    j "Menmi...I want you to be honest with me."
+    m "“OK,”{w} I agree dishonestly."
+    c "Menmi!"
+    m "(It depends on what he asks!)"
+
+    hide joule-thinking
+    show joule-annoyed
+
+    j "You didn't have breakfast, did you?"
+    m """!!! {w}(Now that I think about it, I suppose I didn't.)
+
+    “Um...do iced coffee and a breath mint count as breakfast?”
+
+    """
+
+    j "No."
+    m """
+
+    “Ehehehe....sorry, Joule. I forgot this morning.{w}” (I was busy getting ready for our park date!)
+
+    (Joule just sighs, making my heart drop.)
+
+    """
+
+    hide joule-annoyed
+    show joule-neutral
+
+    j "It's OK.{w} It's actually pretty common for clients to miss breakfast."
+
+    hide joule-neutral
+    show joule-hardcore
+
+    j "Even though breakfast gives you energy and jump starts your metabolism{w}HARD. {w}CORE. "
+
+    hide joule-hardcore
+    shouw joule-smile
+
+    j "I thought this might happen, so I came prepared."
+    hide joule-smile
+    show joule-neutral
+
+    m """Joule reaches into the bag again, pulling out a few white triangular packets that fit into my palm.
+
+    Are these...rice balls?
+
+    """
+    hide joule-neutral
+    show joule-smile
+    j """Yeah! Onigiri!{w} There's chicken, tuna mayo, and pickled plum.
+
+    I made plenty, so eat up!
+
+     """
 
 
 
@@ -141,60 +315,7 @@ label joule_date_3:
 
 
 
-    play sound "/audio/stomach-growl.mp3"
-    m """{i}Ummm....did I just say that out loud?
 
-    Stupid, traitorous body!
-
-    I was panicking so much this morning that I totally forgot to eat breakfast.
-
-    Although my usual iced coffee and a breath mint hardly counts as breakfast, I guess...
-
-    """   
-
-    show joule-smile with dissolve
-    j "“Tsk tsk, Menmi. Don't tell me you were planning on working out on an empty stomach!”"
-
-    m """
-
-    “I know! I know! It's just that I was so busy and all...”
-
-    """
-
-    hide joule-smile
-    show joule-neutral
-
-    j """
-
-    “Hey, no worries.{p} I was just kidding around.”
-
-    “Lots of my clients forget breakfast.{p} That's why I come prepared.”
-
-    """
-
-    show joule-thinking at squirm
-
-    m "Joule reaches into his bag and hands over a clear bottle filled with some kind of beige slush."
-
-    hide joule-thinking
-    show joule-smile
-
-    j "“This is my GO! Morning protein shake. It's got a heavy duty amino acid profile that'll fortify your muscles."
-
-    hide joule-smile
-    show joule-neutral at hardcore
-
-    j "For a HARD. {p} CORE. {p} workout.”"
-
-    m """
-
-    I wonder if it ever hurts him to hit his abs every time he says that.
-
-    I take the drink from him. {p} While I'm flattered that he put so much thought into our session, the sticky-thick concoction is anything but a bacon of gustatory delight.
-
-    Gosh, I would *kill* for some bacon right now.
-
-    """
 
     j """
 
@@ -228,44 +349,8 @@ label joule_date_3:
 
     m "{i}He makes some good points...{p}Is Joule actually...really smart?"
 
-    show protein-shake with easeinbottom
+    
 
-    m """
 
-    The protein shake feels pleasantly cool in my hand.
 
-    {i} Nothing ventured, nothing gained.
-
-    """
-
-    hide joule-smile with dissolve
-
-    play sound "/audio/gulp.mp3"    
-
-    m """
-    I swallow the concoction, surprised by how easily it goes down.
-
-    Despite its consistency, the taste is pretty inoffensive. 
-
-    It's no Starfruitbucks latte, but it isn't putrid mystery glue either.
-
-    """
-
-    show joule-neutral
-
-    m """
-    “Not bad. {p}What's in it?”
-
-    Keeping my fingers crossed that the answer isn't something like "3 lbs of chicken breast"
-    """
-
-    j "“Ah, you're asking the right questions.”"
-
-    show joule-smile
-
-    j "“It's cooked chicken breast!”"
-    i "{i}Feels so wrong to be right."
-    j "“...also broccoli, egg whites, potato, oats and strawberry jam for flavor.”"
-    m """“...All such delicious ingredients!” {p} Individually!
-
-    """
+  
