@@ -273,7 +273,7 @@ label joule_date_3:
     hide joule-annoyed
     show joule-neutral
 
-    j "It's OK.{w} It's actually pretty common for clients to miss breakfast."
+    j "It's OK.{w} It's actually pretty common for my clients to miss breakfast."
 
     hide joule-neutral
     show joule-hardcore
@@ -283,22 +283,121 @@ label joule_date_3:
     hide joule-hardcore
     shouw joule-smile
 
-    j "I thought this might happen, so I came prepared."
+    j "I understand that people get busy, though, so I came prepared."
     hide joule-smile
     show joule-neutral
 
-    m """Joule reaches into the bag again, pulling out a few white triangular packets that fit into my palm.
+    m """Joule reaches into the bag again, pulling out a surprisingly cute lunch box. Neatly packed inside are triangular white packets wrapped in glossy seaweed. 
 
     Are these...rice balls?
 
     """
     hide joule-neutral
     show joule-smile
-    j """Yeah! Onigiri!{w} There's chicken, tuna mayo, and pickled plum.
+    j """Yeah! Onigiri!{w} There's grilled salmon, tuna mayo, and pickled plum.
 
     I made plenty, so eat up!
 
-     """
+    """
+
+    hide joule-smile
+    show joule-wink
+
+    j "Think of this as a thank-you for tending to my ankle last time."
+
+    hide joule-wink with dissolve
+
+    m "He hands me a rice ball from the top of the pile, and I take it gladly, feeling its warmth in my palm. My stomach rumbles in anticipation."
+
+    show pinkgradient with dissolve
+    hide pinkgradient with dissolve
+    play sound "sparkle.mp3"
+
+    m """It's...{w}really good!
+
+    Each pebble of rice is chewy and perfectly seasoned, bringing out the creaminess of the tuna mayo.
+
+    It's soooo yummy!{w} Did you make these this morning?
+
+    """
+
+    show joule-neutral with softsmile
+
+    j "Mm-hmm."
+    m """It's all he says for a bit, as I'm savoring bite after bite. I can't stop!
+
+    Joule?
+
+    """
+    j "Ah, sorry. {w}I was just thinking how nice it was to watch you enjoying the food."
+
+    hide joule-softsmile
+    show joule-smile
+
+    j "You eat with such passion!{w} Like you're really getting lost in the moment.{w}It's cute."
+    m """A wave of warmth flushes through me as I avert his gaze.
+
+    (It's a little embarrassing...{w}but also kind of nice.)
+
+    """
+
+    hide joule-smile
+    show joule-surprised
+
+    j "Sorry! I didn't mean to make you feel self-conscious."
+
+    hide joule-surprised
+    show joule-neutral
+
+    m "No, it's OK. {w}I was just so surprised by how tasty it is! {w}The shake, too. YOu're a talented chef, Joule!"
+
+    hide joule-neutral
+    show joule-awkward
+
+    j "Yeah, but just so you know...I cook because nutrition is a part of my job. {w}It's not like I like it or anything."
+
+    m "(That seemed to have struck a nerve with him, but why?)"
+
+    if hobbies ==True:
+        m "Thinking about it, he got kind of weird when I asked him about his hobbies before too."
+
+    m "(Maybe I should ask him about it...)"
+
+    hide joule-awkward
+    show joule-surprised
+
+    j "Hold up...{w}Menmi."
+
+    hide joule-surprised with dissolve
+
+    
+    m """Joule suddenly leans in close to me,{w} the heat of his body meeting mine as he brushes his hand up towards my shoulder.
+
+    His face is so intense, a slighty furrow in his brow mirrored by the curve of his lips.
+
+    """
+
+    show joule-sad
+    j "When did this happen?"
+    m "I snap out of it, looking to where Joule's hand is placed."
+
+    scene park-day with vpunch
+    m """(Ahh!! There's a tear in my windbreaker!)
+
+    Nooooo this is brand new...
+
+    I shrug the jacket off and stare woefully at the loose threads surrounding the hole. It's right at the shoulder seam.
+
+    I must have snagged it on a branch or something...{w}(OOOoooh Menmi you scatterbrains!!)
+
+    """
+
+    j ""
+
+
+
+
+
 
 
 

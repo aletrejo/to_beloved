@@ -471,7 +471,8 @@ label joule_date_2:
 
         """
 
-    $ family = False
+    default family = False
+    default hobbies = False
 
     label choice_14j:
         menu:
@@ -564,6 +565,7 @@ label joule_date_2:
                     """
 
             "His hobbies":
+                $ hobbies = True
                 c "He's gotta have {i}something{/i} going on besides hanging around this stinky old gym all the time, right?"
                 m "“Do you have any hobbies, Joule?”"
                 hide joule-sad
