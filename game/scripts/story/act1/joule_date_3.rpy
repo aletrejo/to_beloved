@@ -153,7 +153,7 @@ label joule_date_3:
 
     hide joule-softsmile with dissolve
 
-    m """“Joule takes me by the hand gently and leads me to a green clearing beneath the shade. 
+    m """Joule takes me by the hand gently and leads me to a green clearing beneath the shade. 
 
     His palm is cool and surprisingly soft.
 
@@ -273,69 +273,69 @@ label joule_date_3:
     hide joule-annoyed
     show joule-neutral
 
-    j "It's OK.{w} It's actually pretty common for my clients to miss breakfast."
+    j "“It's OK.{w} It's actually not unusual for my clients to miss breakfast.”"
 
     hide joule-neutral
     show joule-hardcore
 
-    j "Even though breakfast gives you energy and jump starts your metabolism{w}HARD. {w}CORE. "
+    j "“Even though breakfast gives you energy and jump starts your metabolism{w}HARD. {w}CORE.”"
 
     hide joule-hardcore
     shouw joule-smile
 
-    j "I understand that people get busy, though, so I came prepared."
+    j "“I understand that people get busy, though, so I came prepared.”"
     hide joule-smile
     show joule-neutral
 
     m """Joule reaches into the bag again, pulling out a surprisingly cute lunch box. Neatly packed inside are triangular white packets wrapped in glossy seaweed. 
 
-    Are these...rice balls?
+    “Are these...rice balls?”
 
     """
     hide joule-neutral
     show joule-smile
-    j """Yeah! Onigiri!{w} There's grilled salmon, tuna mayo, and pickled plum.
+    j """“Yeah! Onigiri!{w} There's grilled salmon, tuna mayo, and pickled plum.”
 
-    I made plenty, so eat up!
+    “I made plenty, so eat up!”
 
     """
 
     hide joule-smile
     show joule-wink
 
-    j "Think of this as a thank-you for tending to my ankle last time."
+    j "“Think of this as a thank-you for tending to my ankle last time.”"
 
     hide joule-wink with dissolve
 
-    m "He hands me a rice ball from the top of the pile, and I take it gladly, feeling its warmth in my palm. My stomach rumbles in anticipation."
+    m "He hands me a rice ball from the top of the pile, and I take it gladly, feeling its warmth radiate in my palm. My stomach rumbles in anticipation."
 
     show pinkgradient with dissolve
     hide pinkgradient with dissolve
     play sound "sparkle.mp3"
 
-    m """It's...{w}really good!
+    m """“It's...{w}really good!”
 
     Each pebble of rice is chewy and perfectly seasoned, bringing out the creaminess of the tuna mayo.
 
-    It's soooo yummy!{w} Did you make these this morning?
+    “It's soooo yummy!{w} You made these???”
 
     """
 
     show joule-neutral with softsmile
 
-    j "Mm-hmm."
+    j "“Mm-hmm.”"
     m """It's all he says for a bit, as I'm savoring bite after bite. I can't stop!
 
-    Joule?
+    “Joule?”
 
     """
-    j "Ah, sorry. {w}I was just thinking how nice it was to watch you enjoying the food."
+    j "“Ah, sorry. {w}I was just thinking how nice it was to watch you enjoying the food.”"
 
     hide joule-softsmile
     show joule-smile
 
-    j "You eat with such passion!{w} Like you're really getting lost in the moment.{w}It's cute."
-    m """A wave of warmth flushes through me as I avert his gaze.
+    j "“You eat with such passion!{w} Like you're really getting lost in the moment.{w}It's cute.”"
+    m """A wave of warmth flushes through me as I look away.
 
     (It's a little embarrassing...{w}but also kind of nice.)
 
@@ -344,81 +344,248 @@ label joule_date_3:
     hide joule-smile
     show joule-surprised
 
-    j "Sorry! I didn't mean to make you feel self-conscious."
+    j "“Sorry! I didn't mean to make you feel self-conscious.”"
 
     hide joule-surprised
     show joule-neutral
 
-    m "No, it's OK. {w}I was just so surprised by how tasty it is! {w}The shake, too. YOu're a talented chef, Joule!"
+    m """“No, it's OK. {w}I was just so surprised by how tasty it is. {w}The shake, too. I can tell they were made with love and care.
+
+    You're a talented chef, Joule!”
+
+    """
 
     hide joule-neutral
     show joule-awkward
 
-    j "Yeah, but just so you know...I cook because nutrition is a part of my job. {w}It's not like I like it or anything."
+    j "“Yeah, but just so you know...I cook because nutrition is a part of my job. {w}It's not like I like it or anything.”"
 
     m "(That seemed to have struck a nerve with him, but why?)"
 
-    if hobbies ==True:
-        m "Thinking about it, he got kind of weird when I asked him about his hobbies before too."
+    if hobbies == True:
+        m "(Now that I think about it, he got kind of weird when I asked him about his hobbies before too.)"
 
     m "(Maybe I should ask him about it...)"
 
     hide joule-awkward
     show joule-surprised
 
-    j "Hold up...{w}Menmi."
+    j "“Hold up...{w}Menmi.”"
 
     hide joule-surprised with dissolve
 
     
     m """Joule suddenly leans in close to me,{w} the heat of his body meeting mine as he brushes his hand up towards my shoulder.
 
-    His face is so intense, a slighty furrow in his brow mirrored by the curve of his lips.
+    His face is so intense, a slight furrow in his brow mirrored by the curve of his lips.
 
     """
 
     show joule-sad
-    j "When did this happen?"
+    j "“When did this happen?”"
     m "I snap out of it, looking to where Joule's hand is placed."
 
     scene park-day with vpunch
     m """(Ahh!! There's a tear in my windbreaker!)
 
-    Nooooo this is brand new...
+    “Nooooo I just got this...”
 
-    I shrug the jacket off and stare woefully at the loose threads surrounding the hole. It's right at the shoulder seam.
+    (I shrug the jacket off and stare woefully at the loose threads surrounding the hole. It's right at the shoulder seam.)
 
-    I must have snagged it on a branch or something...{w}(OOOoooh Menmi you scatterbrains!!)
+    “I must have snagged it on a branch...”
+
+    (OOOooohhh Menmi you scatterbrains!!)
 
     """
 
-    j ""
+    j "Can I see for a sec?"
+    m "“Yeah...it looks real bad. I can't believe it's ruined.”" 
+
+    hide joule-sad
+    show joule-thinking
+    j "Not necessarily. {w}It looks like it's mendable. {w}Do you have a sewing kit?"
+
+    hide joule-thinking
+    show joule-surprised
+    m "Even if I did, I don't know the first thing about sewing."
+    j "Huh...I kind of thought all girls knew how to sew."
+    m "I mean, maybe 200 years ago...(I barely know how to button my blouses.)"
+    hide joule-surprised
+    show joule-thinking
+
+    j "I think I might be able to help..."
+
+    hide joule-thinking with dissolve
+
+    m """Joule goes back into the bag again, rummaging around the pockets.{w} He pulls out a small pouch with sewing needles and thread.
+
+    To my surprise, he threads the needle easily and begins dipping it in and out of the fabric with expert precision.
+
+    """
+
+    show joule-neutral with dissolve
+
+    m "Wow -- you carry that around with you?"
+
+    hide joule-neutral
+    show joule-thinking at squirm
+
+    j """No! It probably dropped into my bag...{w} from somebody else's bag. 
+
+    I mean, somebody must have put it in there!
+
+    ...
+    """
+
+    show joule-annoyed with vpunch
+
+    j "I-it's useful to have sometimes!"
+
+    hide joule-annoyed
+    show joule-awkward
+
+    m """(He got defensive again...{w}something is definitely up).
+
+    (Joule seems to be good at lots of things that don't have to do with exercise,{w} so why does he seem so ashamed of it?)
+
+    (I want to understand, but I have to approach this carefully.)
+
+    """ 
 
 
+    label choice_15j:
+        menu:
+            m "How should I discuss Joule's nervousness about his hobbies?" 
 
+            "Be direct.":
+                c "You just have to be honest and say what's on your mind!"
+                m "Hey Joule...why are you getting defensive about your hobbies?"
+                j "I'm not defensive!{W} YOU'RE defensive!"
+                jump joule_defense
+            "Make an observation.":
+                c "If you frame it as a neutral observation, maybe he won't get defensive."
+                m "Hey Joule, I notice that you seem a little self-conscious when we talk about your hobbies. "
+                j "I'm {i}not{/i} self-conscious about {i}anything{/i}.{w} My heart rate is perfectly within resting range."
+                m "(I don't know how I'd confirm that or how it relates to anything, but OK.)"
+            "Ask about his feelings.":
+                c "Address the core of the issue -- his feelings."
+                m "Joule...{w} do you feel ashamed of your hobbies?"
+                j "WHAT! Of course not!"
+                label joule_defense:
+                    hide joule-awkward
+                    show joule-annoyed with vpunch
+                    j """
+                    And they're {i}not{/i} hobbies.
 
+                    Secondly, I do them out of necessity{w}. That's it.
 
+                    I'm a young guy living by himself.{w} Why shouldn't I know how to cook and sew?
 
+                    It's not like I have anybody else to do it for me.
 
+                    """
 
+                    m "(Gosh, that *really* struck the wrong chord.{w}I'd better change the subject)"
+                    jump after_choice_15j
 
+            "Lead with curiosity.":
+                c "If he's getting defensive, it's because he feels threatened. Show him you don't mean any harm."
+                m """(I have to make it clear that I'm coming from a place of understanding, not judgment.)
 
+                You don't have to tell me if you don't feel like it, Joule...but I'm curious about how you came to be so good at cooking and sewing. 
 
+                It's cool that you're so skilled with your hands!
 
+                """
 
+                hide joule-thinking
+                show joule-surprised
 
+                j "Really? You don't think it's weird for a guy to do this stuff?"
+                m "Why would I think it's weird? {w}Don't guys wear clothes and eat too?"
+                hide joule-surprised
+                show joule-awkward
+                j "Yeah...I guess that's true."
 
+                hide joule-awkward
+                show joule-neutral
 
+                j """I learned how to sew from my mom. She's a seamstress. 
 
-    
+                I used to get into a lot of fights when I was younger,{w} and my clothes were always getting ripped.
 
+                """
 
+                m "So you started getting ripped too?"
 
+                hide joule-neutral
+                show joule-wink
+
+                j "Look at you! {i}Ripped{/i} the words right out of my mouth, that's for sure."
+                m "Haha (he seems to be feeling more comfortable)."
+
+                hide joule-wink
+                show joule-awkward
+                j "Anyway, yeah. It was a hassle for my mom to always be repairing clothes for me, and we didn't have the money to replace them--"
+
+                hide joule-awkward
+                show joule-neutral
+
+                extend "So it was just easier for me to learn how to fix them myself."
+
+                hide joule-neutral
+                show joule-softsmile
+
+                j "To be honest, I...actually kind of enjoy it.{w} I like working with my hands and making things better."
+
+                hide joule-softsmile
+                show joule-blush
+
+                j "It's just -- it's not very manly, you know? {w}I didn't want you to think I was soft and weak."
+                
+                m """
+
+                (Poor Joule, it feels like he really thought I'd judge him for that.)
+
+                Being able to sew doesn't mean you're weak! {w}It's resourceful and practical. There's nothing weak about it.
+
+                You're repeatedly stabbing at something with a pointy needle and pulling the material back together!{w}That's HARD.{w}CORE.
+
+                """
+
+                hide joule-blush
+                show joule-surprised
+
+                j "Hmmm...I've never thought about it that way before...{w}Thanks, Menmi...for accepting me."
+
+                $ joule_relationship +=10
+                show screen relationship_up onlayer overlay
+                play sound "/audio/awareness-ding.mp3"
+                hide screen relationship_up
+
+                m """
+
+                Of course!
+
+                (I didn't know Joule was so conscious about how people perceive him. {w}I thought it was just me...)
+
+                (I feel like I understand him a little better now.)
+
+                """
+
+                $ renpy.notify("+5 Self-Awareness")
+                $ self_awareness += 5
+
+            "Drop it.":
+                m "The"
+
+    label after_choice_15j:
+        m "You mentioned before that cooking is part of your job. What did you mean by that?"
+        j "Yep. Nutrition is an integral component of your physical...and mental health."
+ 
 
 
     j """
-
-    “Most people underestimate how important breakfast is to a healthy body...and a healthy mind.”
 
     “Did you know, Menmi? {p}The connection between belly and brain are well documented.
 
