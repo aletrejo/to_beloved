@@ -201,7 +201,7 @@ label joule_date_3:
     hide joule-smile
     show joule-hardcore
 
-    j "“After a workout, it goes {w}HARD. {w} CORE.”"
+    j "“After a workout, it goes {w}HARD. {w}CORE.”"
 
     hide joule-hardcore
     show joule-neutral
@@ -463,12 +463,12 @@ label joule_date_3:
                 j "I'm not defensive!{W} YOU'RE defensive!"
                 jump joule_defense
             "Make an observation.":
-                c "If you frame it as a neutral observation, maybe he won't get defensive."
+                c "If you frame it as a neutral observation, maybe he won't see it as a threat."
                 m "Hey Joule, I notice that you seem a little self-conscious when we talk about your hobbies. "
                 j "I'm {i}not{/i} self-conscious about {i}anything{/i}.{w} My heart rate is perfectly within resting range."
                 m "(I don't know how I'd confirm that or how it relates to anything, but OK.)"
             "Ask about his feelings.":
-                c "Address the core of the issue -- his feelings."
+                c "Hone in on the heart of the issue -- his {i}emotions."
                 m "Joule...{w} do you feel ashamed of your hobbies?"
                 j "WHAT! Of course not!"
                 label joule_defense:
@@ -486,6 +486,7 @@ label joule_date_3:
                     """
 
                     m "(Gosh, that *really* struck the wrong chord.{w}I'd better change the subject)"
+                    hide joule-annoyed
                     jump after_choice_15j
 
             "Lead with curiosity.":
@@ -541,7 +542,7 @@ label joule_date_3:
                 hide joule-softsmile
                 show joule-blush
 
-                j "It's just -- it's not very manly, you know? {w}I didn't want you to think I was soft and weak."
+                j "It's just -- {w}I didn't want you to think I was soft and weak."
                 
                 m """
 
@@ -576,46 +577,127 @@ label joule_date_3:
                 $ renpy.notify("+5 Self-Awareness")
                 $ self_awareness += 5
 
+                hide joule-surprised
+
             "Drop it.":
-                m "The"
+                c "If he's bristling, he doesn't want you to know. It's none of your business."
+                m "(I don't want to make Joule any more uncomfortable than he already is. {w}I'll just change the topic.)"
 
     label after_choice_15j:
+        show joule-neutral
         m "You mentioned before that cooking is part of your job. What did you mean by that?"
-        j "Yep. Nutrition is an integral component of your physical...and mental health."
+        hide joule-neutral
+        show joule-smile
+        j """That's right. Nutrition is an integral component of your health. {w}It's important to optimize your macronutrient profile to optimize your workouts.
+
+        The right balance of proteins, carbohydrates, and fats at the right time determines how much muscle you build over time.
+        """
+        hide joule-smile
+        show joule-wink
+        j "Ha...sorry...didn't mean to start nerding out on you like that."
+        m "Don't be! It's interesting to listen to you talk about a topic you care about."
+        hide joule-wink
+        show joule-neutral
+        j "Thanks. Let me know if I'm getting carried away, though. {w}There's nothing worse than being an uptight vibe killer."
+        m "(Hm...)"
+
+        j """
+
+        “Anyway -- the impacts of nutrition are more than physical.”
+
+        “Did you know, Menmi? {w}The connection between belly and brain are well documented.”
+
+        “Most people think that of the body and brain as separate entities, but they're really interconnected. {w}Inextricable, even.”
+
+        “I mean just think about it --{w} when you're hungry, you feel crummy. {w}And when you exercise, you feel great!”
+
+        """
+
+        hide joule-neutral
+        show joule-surprised
+
+        m "“And when I feel nervous, my tummy hurts -- like it's twisting itself into knots.”"
+
+        hide joule-surprised
+        show joule-smile
+
+        j """
+
+        “Exactly! Psychosocial factors can influence the movement of the GI tract. That's the gut-brain connection.”
+
+        “Even the conscious act of eating breakfast - {w}thinking about what you're putting in your body vs consuming nutrients on autopilot--
+
+        it can help you feel more in control of your life, {w}and that's empowering.”
+
+        """
+
+        m "I've never thought about it that way!"
+        hide joule-smile
+        show joule-hardcore
+        j "Yeah! Pretty HARD{w}. CORE."
+        hide joule hard-core with dissolve
+
+        m """We sit in silence for a bit, listening to the sounds of bird chirping against the soft rumble of traffic in the distance.
+
+        Beside me, Joule gracefully dips his needle in and out of my jacket sleeve."""
+
+        
+        play music "<from 107>/audio/reaching-the-sky.mp3" volume 0.5
+        show joule-park-sewing with dissolve:
+        zoom 1.5
+        ease 5.0 zoom 1.0
+
+        m """
+
+        (My time with Joule has taught me to view my body more conscientously.)
+
+        (Not in a bad way, but with more awareness that the choices that I make mentally affects who I am physically.)
  
+        (Joule's kinda like that, too --{w}contradictory, yet cohesive.)
+
+        (He's always projecting the aura of a HARD. CORE. party boy jock, but he has a thoughtful and sensitive side, too.)
+
+        (I hope I can get to know the real Joule someday...)
+
+        """
+
+        pause
+
+        scene park-day with dissolve
+        show joule-neutral with dissolve
+
+        j "Alright, it's done."
+        m """
+
+        I take the windbreaker from him, admiring the tidy new row of blue stitches at the seam.
 
 
-    j """
+        Thanks, Joule! It looks even better than before.
 
-    “Did you know, Menmi? {p}The connection between belly and brain are well documented.
+        """
 
-    Most people think that of the body and brain as separate entities, but they're really interconnected. {p} Inextricable, even.
+        hide joule-neutral
+        show joule-smile
 
-    I mean just think about it -{p} when you're hungry, you feel crummy. {p} And when you exercise, you feel great!
+        j "I don't know about 'better', but--"
 
-    """
+        hide joule-smile
+        show joule-softsmile
 
-    hide joule-neutral
-    show joule-shocked
-
-    m "“And when I feel nervous, my tummy hurts -- like it's twisting itself into knots.”"
-
-    hide joule-shocked
-    show joule-smile
-
-    j """
-
-    “Exactly! Psychosocial factors can influence the movement of the GI tract. That's the gut-brain connection.”
-
-    “Even the conscious act of eating breakfast - {p}thinking about what you're putting in your body vs consuming nutrients on autopilot -
-
-    it can help you feel more in control of your life, {p}and that's empowering.”
-
-    """
-
-    m "{i}He makes some good points...{p}Is Joule actually...really smart?"
-
+        extend "I'm glad that I could fix it for you."
+        m "Yeah. {w}Thanks for taking care of me today, Joule."
     
+        $ joule_relationship +=10
+        show screen relationship_up onlayer overlay
+        play sound "/audio/awareness-ding.mp3"
+        hide screen relationship_up
+
+        hide park-day with dissolve
+
+
+    $ j3=True
+    $ week += 1
+    jump week_2_4
 
 
 
