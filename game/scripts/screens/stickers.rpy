@@ -20,20 +20,6 @@ init python:
             if item.name == sticker:
                 stickers.pop(i)
 
-screen sticker_get:
-        text "{image=ol_text}" at easeinbottom:
-            alpha 1.0
-            alpha 0.0 linear 2.0
-        $ chosen_sticker = renpy.random.choice(available_stickers)
-        image sticker_won = "stickers/sticker-[chosen_sticker].png"
-        show sticker_won at rotation:
-            xpos 0.5
-            ypos 0.5
-        show text "{image=stickertext}" at dissolve:
-            xpos 0.5
-            ypos 0.5
-        pause
-
 screen place_sticker(sticker):
     draggroup:
         drag:

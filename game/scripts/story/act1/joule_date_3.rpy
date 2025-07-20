@@ -281,7 +281,7 @@ label joule_date_3:
     j "“Even though breakfast gives you energy and jump starts your metabolism{w}HARD. {w}CORE.”"
 
     hide joule-hardcore
-    shouw joule-smile
+    show joule-smile
 
     j "“I understand that people get busy, though, so I came prepared.”"
     hide joule-smile
@@ -644,8 +644,8 @@ label joule_date_3:
         
         play music "<from 107>/audio/reaching-the-sky.mp3" volume 0.5
         show joule-park-sewing with dissolve:
-        zoom 1.5
-        ease 5.0 zoom 1.0
+            zoom 1.5
+            ease 5.0 zoom 1.0
 
         m """
 

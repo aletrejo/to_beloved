@@ -1,24 +1,24 @@
 
 # Dynamic characters
 default behemoth_name = "???"
-define be = Character("[behemoth_name]", color="#A9A9A9")
+define be = Character("[behemoth_name]", color="#efebfc")
 default joule_name = "???"
-define j = Character("[joule_name]", color="#0064C2", image="joule")
+define j = Character("[joule_name]", color="#d4faff", image="joule")
 default devan_name = "???"
-define d = Character("[devan_name]", color='#800DCD', image="dev")
+define d = Character("[devan_name]", color='#f2ebfc', image="dev")
 default naji_name = "???"
-define n = Character("[naji_name]", color='#E59A34',  image="naji")
+define n = Character("[naji_name]", color='#fffeeb',  image="naji")
 
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character("Menmi", color='#F52088')
-define c = Character("Conscience", color='#DB694F')
-define u = Character("Delivery Guy", color="#6c431a", image="delivery-guy.png")
-define al = Character("Allie", color="#66b704", image="allie")
-define i = Character("Intrusive Inner Voice", color='#023F59')
-define x = Character ("???", color="#A9A9A9")
+define m = Character("Menmi", color='#ffdee8')
+define c = Character("Conscience", color='#fdebff')
+define u = Character("Delivery Guy", color="#ededed", image="delivery-guy.png")
+define al = Character("Allie", color="#e8ffe6", image="allie")
+define i = Character("Intrusive Inner Voice", color='#bababa')
+define x = Character ("???", color="#f5e9e9")
 
 
 
