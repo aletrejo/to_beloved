@@ -81,7 +81,11 @@ label choice_5:
         "I should’ve covered up more...":
             c "Why didn't you wear your teenage regretshirt? You're not ready for this yet..."
         "Time to start pumping iron":
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
             c "Everyone starts somewhere! Put in the work, rip out some reps, and get that bodyodyodyodody."
 
@@ -90,7 +94,11 @@ label choice_5:
             m "(I don't *feel* hot. I feel exposed. Maybe that was too far a leap.)"
 
         "Nobody's judging me":
-            $ renpy.notify("+10 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 10
             c "You're being overly self-conscious. Nobody thinks about you as much as you think about you."
             m """
@@ -313,7 +321,11 @@ label choice_7:
         m "How should I respond?"
 
         "Speak up":
-            $ renpy.notify("+10 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 10
             c "Stand up for yourself! That other dude was dangerous, but this guy seems like he'd be willing to hear you out."
             m """
@@ -380,6 +392,7 @@ label joule_response:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
+        window hide
         $ chosen_sticker = renpy.random.choice(available_stickers)
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
         show sticker_won at rotation:

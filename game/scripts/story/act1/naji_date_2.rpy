@@ -269,7 +269,11 @@ label choice_14:
 
             “Yeah, you've got a point.”
             """
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
 
             $ unlocks_dialogue = ["His past...", "His feelings..., Maybe it was his way of coping", "Naji's dad left when he was a baby, and his mom didn't make time for him.  He had to go through a lot on his own."]
@@ -365,7 +369,11 @@ label choice_14:
                     hide naji-blush
                     show naji-frown
 
-                $ renpy.notify("+5 Self-Awareness")
+                show screen selfawareup 
+                window hide
+                play sound "/audio/awareness-ding.mp3"
+                pause
+                hide screen selfawareup 
                 $ self_awareness += 5
 
                 $ unlocks_dialogue = ["Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own", "He had to go through a lot on his own.", "Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance"]

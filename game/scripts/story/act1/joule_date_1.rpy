@@ -203,7 +203,11 @@ label joule_date_1:
 
             "“I just want to feel good and have fun.”":
                 c "Physical health aside, moving your body is a nice way to distance and distract yourself from the constant roil of anxious thoughts bouncing around in here."
-                $ renpy.notify("+5 Self-Awareness")
+                show screen selfawareup 
+                window hide
+                play sound "/audio/awareness-ding.mp3"
+                pause
+                hide screen selfawareup 
                 $ self_awareness += 5
                 m """
                 (What anxious thoughts?{w} Should I be worried that I'm having anxious thoughts?)
@@ -306,7 +310,11 @@ label joule_date_1:
                 “I want to be strong!”
 
                 """
-                $ renpy.notify("+5 Self-Awareness")
+                show screen selfawareup 
+                window hide
+                play sound "/audio/awareness-ding.mp3"
+                pause
+                hide screen selfawareup 
                 $ self_awareness += 5
                 
                 hide joule-neutral

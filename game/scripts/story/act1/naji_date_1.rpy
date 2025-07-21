@@ -97,7 +97,11 @@ label choice_12:
             $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
             if len(dialogue_matches) > 0:
                 show screen insight(dialogue_matches)
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
             c "Cute and chic — perfect for a night out. This is *precisely* why you bought this dress!"
             m """That's right. I have to remind myself of how confident and pretty it made me feel when I first tried it on.
@@ -665,7 +669,11 @@ label choice_13:
 
             “Let's move on from the past. You wanna see a trick?”
             """
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
 
             $ unlocks_dialogue = ["He's not the type to share his feelings", "Naji prioritizes the needs of others before his own", "Maybe it was his way of coping"]
@@ -783,7 +791,11 @@ label choice_13:
 
             “What did you mean when you said you ‘couldn't stay'? Did you mean about home?”
             """
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
 
             hide naji-bar-lookaway

@@ -274,7 +274,11 @@ label choice_8:
             call after_choice_8 from _call_after_choice_8
             jump choice_8a
         "Accept his help":
-            $ renpy.notify("+10 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 10
             c "Listen to him. He's trying to tell you that he's got your back. Does this seem like the type of guy who'd try to test you?"
             m """

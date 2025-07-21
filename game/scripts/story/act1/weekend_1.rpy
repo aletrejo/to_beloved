@@ -38,7 +38,12 @@ label choice_11:
             I can't believe I let myself laze about today.  Lesson learned for the future!
             """
         "Take it easy":
-            $ renpy.notify("+10 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
+            window show
             $ self_awareness += 10
             c "You gave it your all this week. You're allowed to relax. Not every second of your life has to be dedicated to productivity. Listen to your body. Listen to *me*."
             m "It isn't good for me to constantly put pressure on myself to do things. There has to be balance. I have to remind myself of that."

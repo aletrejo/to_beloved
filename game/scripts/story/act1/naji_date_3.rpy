@@ -288,7 +288,11 @@ label choice_15:
             “But...{w}that doesn't mean I'm not having fun.”
 
             """
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
             $ renpy.notify("Naji feels closer to you!")
             $ naji_relationship += 10

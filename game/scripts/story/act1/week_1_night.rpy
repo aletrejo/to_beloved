@@ -253,7 +253,11 @@ label choice_9:
             stop music fadeout 2.0
             play music "<from 16>/audio/najis-theme.mp3" fadein 1.0
             m "(I'm getting too into my own head over this. I need to snap out of it.)"
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
             $ naji_relationship += 5
             m "“Hey, Naj! Over here!”"
@@ -403,7 +407,11 @@ label choice_10:
             (Besides, am *I* even sure I want to know?)
 
             (Better to keep things light...for now, at least.) """
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
             jump after_choice_10
         "Feel him out":

@@ -155,7 +155,11 @@ label choice_16:
 
             (My mouth tastes like mud. I should hydrate. Where'd I put that Stanlychee bottle...?)
             """
-            $ renpy.notify("+5 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 5
 
         "Practice Positivity" if self_awareness>=70:
@@ -178,7 +182,11 @@ label choice_16:
 
             (I need to stay positive. It doesn't do me any good to wallow in self-defeat.)
             """
-            $ renpy.notify("+10 Self-Awareness")
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
             $ self_awareness += 10
 
 label after_choice_16:
