@@ -26,14 +26,14 @@ init python:
 define gui.accent_color = u'#cc0066'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = u'#800540'
+define gui.idle_color = u'#e02b46'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
 define gui.idle_small_color = u'#665959'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = u'#cc0066'
+define gui.hover_color = u'#41a389'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -126,6 +126,8 @@ define gui.namebox_borders = Borders(30, 10, 30, 10)
 ## background of the namebox will be scaled.
 define gui.namebox_tile = False
 
+## Default name color
+define gui.namebox_colour = '#ffffff'
 
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to

@@ -75,6 +75,18 @@ transform disappear_up:
     pause 1.0
     linear 1.5 yalign 0.2 alpha 0.0
 
+transform rotate_disappear:
+    xalign 0.5 yalign 1.0
+    linear 0.5 yalign 0.5 alpha 1.0
+    pause 1.5
+    linear 0.5 yalign 0.0 alpha 0.0
+
+transform fadeinandout:
+    alpha 0.0
+    linear 0.5 alpha 1.0
+    pause 1.5
+    linear 0.5 alpha 0.0
+
 
 image joule-hardcore:
     "joule-hardcore-1.png"
@@ -94,6 +106,7 @@ image joule-hardcore:
     ease .06 xoffset 0 yoffset 0
     pause 0.5
     repeat
+    
 
 transform backgroundappear:
     alpha 0.0

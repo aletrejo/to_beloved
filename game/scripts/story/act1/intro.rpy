@@ -1,23 +1,23 @@
 
 # Dynamic characters
 default behemoth_name = "???"
-define be = Character("[behemoth_name]", color="#efebfc")
+define be = Character("[behemoth_name]", color="#0f0f33")
 default joule_name = "???"
 define j = Character("[joule_name]", color="#d4faff", image="joule")
 default devan_name = "???"
-define d = Character("[devan_name]", color='#f2ebfc', image="dev")
+define d = Character("[devan_name]", color='#dfb3fc', image="dev")
 default naji_name = "???"
-define n = Character("[naji_name]", color='#fffeeb',  image="naji")
+define n = Character("[naji_name]", color='#fffdb8',  image="naji")
 
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character("Menmi", color='#ffdee8')
-define c = Character("Conscience", color='#fdebff')
+define m = Character("Menmi", color='#fad4db')
+define c = Character("Conscience", color='#fcebc2')
 define u = Character("Delivery Guy", color="#ededed", image="delivery-guy.png")
 define al = Character("Allie", color="#e8ffe6", image="allie")
-define i = Character("Intrusive Inner Voice", color='#bababa')
+define i = Character("Intrusive Inner Voice", color='#393c47')
 define x = Character ("???", color="#f5e9e9")
 
 
@@ -41,13 +41,11 @@ default available_stickers = ["axolotl", "bear", "bunny", "cat", "cow", "crayfis
 image tutorial box = "tutorial-box.png"
 image ol_text = Text("Self-Awareness \n Check: Passed", style='outlined_text')
 image stickertext= Text ("You got a sticker!", style='outlined_text')
-image placestickertext = Text ("Place the sticker", style='instruction_text')
+image placestickertext = "placesticker.png"
 image bubbless = SnowBlossom("bubble-3.png", count=30, yspeed=(-150, -90), start=3)
 image bubblesm = SnowBlossom("bubble-1.png", count=28, yspeed=(-130, -100))
 image bubblesl = SnowBlossom("bubble-2.png", count=46, yspeed=(-120, -50), start=5)
-
-
-
+image fastbubbles = SnowBlossom("bubble-2.png", count=50, yspeed=(100, 100), start=0, fast=True)
 
 
 
@@ -80,8 +78,6 @@ label start:
 
 
     # These display lines of dialogue.
-
-    $ lover = "Menmi"
 
     m """
 
@@ -214,9 +210,14 @@ label start:
             jump no_self_awareness_tutorial
 
         "He's probably in a rush":
-            $ renpy.notify("+5 Self-Awareness")
-            c "We're in Applecore City, girl. People are busy! You shot your shot and got what ya got. Onward!"
+            show screen selfawareup 
+            window hide
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen selfawareup 
+            window show
             $ self_awareness += 5
+            c "We're in Applecore City, girl. People are busy! You shot your shot and got what ya got. Onward!"
             jump self_awareness_tutorial
 
 label no_self_awareness_tutorial:
@@ -376,9 +377,6 @@ label planner_tutorial:
 
     scene planner with dissolve
     m """
-    *Gasp*...Oh my god?
-
-    It's *perfect*? Did I really do this? Great job, Menmi. Take that, expectations!
 
     OK. Time to fill it out. Blank pages sure are intimidating.
 

@@ -180,5 +180,9 @@ screen opened_planner:
         action Return()
     showif weekend_event == "bathttime" or weekend_event == "":
         add "icons/Bathtime.png" xpos 1260 ypos 370
-    showif weekend_event == "going_out":
+    showif weekend_event == "going_out_naji":
         add "icons/lounge.png" xpos 1260 ypos 370
+    showif weekend_event == "going_out_joule":
+        add "icons/gym.png" xpos 1260 ypos 370
+
+

@@ -68,6 +68,7 @@ label week_1_day:
         matrixcolor InvertMatrix(value=1.0)
     i "Don't say anything weird. You want them to like you.."
     if self_awareness >=10:
+        m "(Hush! You're making me anxious. Socially.)"
         play sound "/audio/awareness-ding.mp3"
         show text "{image=ol_text}" with easeinbottom
         pause
@@ -88,7 +89,6 @@ label week_1_day:
         pause
         hide screen place_sticker
         $ passed_checks +=1
-        m "(Hush! You're making me anxious. Socially.)"
         stop music fadeout 1.0
         play music "<from 20>/audio/happily-ever-after.mp3"
         scene office-inside

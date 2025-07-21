@@ -266,7 +266,7 @@ label joule_introduction:
     hide joule-neutral
     show joule-annoyed at hop
 
-    j "“She's clearly uncomfortable.{w}Or are you as bad at reading people as you are about reading our anti-harassment policies?”"
+    j "“She's clearly uncomfortable.{w} Or are you as bad at reading people as you are at reading our anti-harassment policies?”"
     m """
     The Behemoth growls, veins rising in his biceps like a mountain range.
 
@@ -369,19 +369,17 @@ label joule_response:
 
     A grid of photos show Joule in black and white, the hard lighting capturing every line and contour of his chiseled build.
 
-    (He's kind of hot. Once you get over the patronizing remarks.)
-
     (There *is* something romantic about a high octane situation rescue situation from a lecherous troll.)
 
     """
     i "*Definitely* sounds like something your inner feminist would say."
 
     if self_awareness >=10:
+        m "(Maybe my inner feminist wants me to to get swole and squat punch creeps.)"
         play sound "/audio/awareness-ding.mp3"
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        m "(Maybe my inner feminist wants me to to get swole and squat punch creeps.)"
         $ chosen_sticker = renpy.random.choice(available_stickers)
         image sticker_won = "stickers/sticker-[chosen_sticker].png"
         show sticker_won at rotation:

@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -94,6 +94,11 @@ style instruction_text:
     size 80
     color '#EA146E'
 
+style self_awareness_text:
+    font "JustAnotherHand-Regular.ttf"
+    color '#c7ffe5'
+    size 90
+
 
 ################################################################################
 ## In-game screens
@@ -170,10 +175,10 @@ style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     yalign 0.5
+    color gui.namebox_colour
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos

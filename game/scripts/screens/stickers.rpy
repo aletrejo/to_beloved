@@ -38,9 +38,12 @@ screen place_sticker(sticker):
         add s.img:
             xpos s.xpos
             ypos s.ypos
-    text "{size=30}{image=placestickertext}{/size}":
-        xpos 0.37
+    imagebutton:
+        idle "placesticker_idle.png"  
+        hover "placesticker_hover.png" 
+        xpos 0.42
         ypos 0.7
+        action Return()
     textbutton "Skip":
         xpos 0.5
         ypos 0.8
@@ -68,7 +71,15 @@ screen relationship_up:
         yalign 0.85
     text "[lover] feel closer to you!" at disappear_up:
         style "closer_text"
-        
+
+screen selfawareup:
+    add "spotlightgradient.png" at fadeinandout
+    add "self-awareness-up.png" at rotation_repeat, rotate_disappear:
+        zoom 0.5
+    text "+ Self-Awareness " at fadeinandout:
+        style "self_awareness_text"
+        xalign 0.5 yalign 0.5
+
      
 
 
