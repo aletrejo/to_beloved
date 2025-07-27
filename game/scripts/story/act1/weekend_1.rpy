@@ -665,6 +665,9 @@ label naji_bathtime_1_best_result:
             m "What a rejuvenating bath! I feel completely cleansed and ready to take on whatever's ahead."
             jump menmi_after_bath
 
+
+            
+
 label joule_bathtime_1:
     menu about_joule:
         with Dissolve(2.0)
@@ -684,7 +687,7 @@ label joule_bathtime_1:
                             $ bathtime_1_choices.append("He seems protective of people")
                             menu joules_protective:
                                 with Dissolve(2.0)
-                            "He's a real professional!"
+                            "He's a real professional!":
                                 $ bathtime_1_choices.append("He's a real professional!")
                                 menu real_professional:
                                     with Dissolve(2.0)
@@ -703,15 +706,20 @@ label joule_bathtime_1:
                                                         "He projects an aura of strength":
                                                             $ bathtime_1_choices.append("He projects an aura of strength")
                                                             jump strong_aura
-                                                "He seems to appreciate being in control of his life"
+                                                "He seems to appreciate being in control of his life":
                                                     $ bathtime_1_choices.append("He seems to appreciate being in control of his life")
                                                     menu incontrol_life:
                                                         with Dissolve(2.0)
+                                                        "That's how he got so hot":
+                                                            $ bathtime_1_choices.append("That's how he got so hot")
+                                                            $ renpy.notify("+10 Self-Awareness")
+                                                            $ self_awareness += 10
+                                                            jump joule_bathtime_1_mid_result
                                                         "I can relate to that":
                                                             $ bathtime_1_choices.append("I can relate to that")
                                                             menu relate_to_that:
                                                                 with Dissolve (2.0)
-                                                                "It's hard when the person you feel like on the inside doesn't match what's on the outside"
+                                                                "It's hard when the person you feel like on the inside doesn't match what's on the outside":
                                                                     $ bathtime_1_choices.append("It's hard when the person you feel like on the inside doesn't match what's on the outside")
                                                                     $ renpy.notify("+20 Self-Awareness")
                                                                     $ self_awareness += 20
@@ -742,13 +750,41 @@ label joule_bathtime_1:
                                                                                         "He knows a lot about fitness!":
                                                                                             $ bathtime_1_choices.append("He knows a lot about fitness!")
                                                                                             jump about_fitness
-                                                                                        "I wonder if he cares about what other people think of him"
-                                                    "He seems like the type who sets goals and does everything he can to achieve them. But why is he so driven?"
-                                                        $ bathtime_1_choices.append("He seems like the type who sets goals and does everything he can to achieve them. But why is he so driven?")
-                                                        $ renpy.notify("+15 Self-Awareness")
-                                                        $ self_awareness += 15
-                                                        jump joule_bathtime_1_good_result
-                                                    "I wonder if he cares about what other people think of him"
+                                                                                        "I wonder if he cares about what other people think of him":
+                                                                                            $ bathtime_1_choices.append("I wonder if he cares about what other people think of him")
+                                                                                            jump what_others_think
+                                                        "He seems like the type who sets goals and does everything he can to achieve them. But why is he so driven?":
+                                                            $ bathtime_1_choices.append("He seems like the type who sets goals and does everything he can to achieve them. But why is he so driven?")
+                                                            $ renpy.notify("+15 Self-Awareness")
+                                                            $ self_awareness += 15
+                                                            jump joule_bathtime_1_good_result
+                                                        "I wonder if he cares about what other people think of him":
+                                                            $ bathtime_1_choices.append("I wonder if he cares about what other people think of him")
+                                                            menu what_others_think:
+                                                                with Dissolve(2.0)
+                                                                "Maybe he feels weak himself?":
+                                                                    $ bathtime_1_choices.append("Maybe he feels weak himself")
+                                                                    $ renpy.notify("+15 Self-Awareness")
+                                                                    $ self_awareness += 15
+                                                                    jump joule_bathtime_1_good_result
+                                                                "He seems to appreciate being in control of his life":
+                                                                    $ bathtime_1_choices.append("He seems to appreciate being in control of his life")
+                                                                    jump incontrol_life
+                                                                "I can relate to that":
+                                                                    $ bathtime_1_choices.append("I can relate to that")
+                                                                    jump relate_to_that
+                                                                "Why does it feel like he's putting on an act?":
+                                                                    $ bathtime_1_choices.append("Why does it feel like he's putting on an act")
+                                                                    menu putting_on_act:
+                                                                        with Dissolve(2.0)
+                                                                        "I wonder where that comes from?":
+                                                                            $ bathtime_1_choices.append("I wonder where that comes from?")
+                                                                            jump where_it_comes_from
+                                                                        "It's hard when the person you feel like on the inside doesn't match what's on the outside.":
+                                                                            $ bathtime_1_choices.append("It's hard when the person you feel like on the inside doesn't match what's on the outside")
+                                                                            $ renpy.notify("+20 Self-Awareness")
+                                                                            $ self_awareness += 20
+                                                                            jump joule_bathtime_best_result
                                         "He seems like the type who sets goals and does everything he can to achieve them. But why is he so driven?":
                                             $ bathtime_1_choices.append("He seems to appreciate being in control of his life")
                                             $ renpy.notify("+15 Self-Awareness")
@@ -759,8 +795,12 @@ label joule_bathtime_1:
                                     $ renpy.notify("+10 Self-Awareness")
                                     $ self_awareness += 10
                                     jump joule_bathtime_1_mid_result
-                                "He projects an aura of strength"
-                            "It was cool of him to defend me from that Behemoth creep"
+                                "He projects an aura of strength":
+                                    $ bathtime_1_choices.append("He projects an aura of strength")
+                                    jump strong_aura
+                            "It was cool of him to defend me from that Behemoth creep":
+                                $ bathtime_1_choices.append("It was cool of him to defend me from that Behemoth creep")
+                                jump defend_from_behemoth
                             "I wonder where that comes from?":
                                 $ bathtime_1_choices.append("I wonder where that comes from?")
                                 jump where_it_comes_from
@@ -771,10 +811,49 @@ label joule_bathtime_1:
                             $ renpy.notify("+15 Self-Awareness")
                             $ self_awareness += 15
                             jump joule_bathtime_1_good_result
-                        "He seems to appreciate being in control of his life"
-                        "He seems protective of people"
-                    "He must really enjoy working out"
-                    "He must care about outward appearances"
+                        "He seems to appreciate being in control of his life":
+                            $ bathtime_1_choices.append("He seems to appreciate being in control of his life")
+                            jump incontrol_life
+                        "He seems protective of people":
+                            $ bathtime_1_choices.append("He seems protective of people")
+                            jump joules_protective
+                    "He must really enjoy working out":
+                        $ bathtime_1_choices.append("He must really enjoy working out")
+                        menu enjoy_working_out:
+                            with Dissolve(2.0)
+                            "That's how he got so hot":
+                                $ bathtime_1_choices.append("That's how he got so hot")
+                                $ renpy.notify("+10 Self-Awareness")
+                                $ self_awareness += 10
+                                jump joule_bathtime_1_mid_result
+                            "He must care about outward appearances":
+                                $ bathtime_1_choices.append("He must care about outward appearances")
+                                menu outward_appearances:
+                                    with Dissolve(2.0)
+                                    "There's really nothing for him to be self-conscious about, though":
+                                        $ bathtime_1_choices.append("There's really nothing for him to be self-conscious about, though")
+                                        jump joule_self_conscious
+                                    "It's hard when the person you feel like on the inside doesn't match what's on the outside.":
+                                        $ bathtime_1_choices.append("It's hard when the person you feel like on the inside doesn't match what's on the outside")
+                                        $ renpy.notify("+20 Self-Awareness")
+                                        $ self_awareness += 20
+                                        jump joule_bathtime_best_result
+                                    "That's how he got so hot":
+                                        $ bathtime_1_choices.append("That's how he got so hot")
+                                        $ renpy.notify("+10 Self-Awareness")
+                                        $ self_awareness += 10
+                                        jump joule_bathtime_1_mid_result
+                            "I could learn from that":
+                                $ bathtime_1_choices.append("I could learn from that")
+                                $ renpy.notify("+20 Self-Awareness")
+                                $ self_awareness += 20
+                                jump joule_bathtime_best_result
+                            "I wonder where that comes from?":
+                                $ bathtime_1_choices.append("I wonder where that comes from?")
+                                jump where_it_comes_from
+                    "He must care about outward appearances":
+                        $ bathtime_1_choices.append("He must care about outward appearances")
+                        jump outward_appearances
                     "He seems like a hard worker":
                         $ bathtime_1_choices.append("He seems like a hard worker")
                          menu hard_worker:
@@ -785,14 +864,43 @@ label joule_bathtime_1:
                             "I wonder where that comes from?":
                                 $ bathtime_1_choices.append("I wonder where that comes from?")
                                 jump where_it_comes_from
-                            "I could learn from that"
+                            "I could learn from that":
+                                $ bathtime_1_choices.append("I could learn from that")
+                                $ renpy.notify("+20 Self-Awareness")
+                                $ self_awareness += 20
+                                jump joule_bathtime_best_result
             "He's smaller than I would expect of a gym jock":
                 $ bathtime_1_choices.append("He's smaller than I would expect of a gym jock")
                 menu small_jock:
                 with Dissolve(2.0)
-                "He isn't afraid to take on people bigger than him"
-                "Maybe he feels weak himself?"
-                "It's at odds with his persona"
+                "He isn't afraid to take on people bigger than him":
+                    $ bathtime_1_choices.append("He isn't afraid to take on people bigger than him")
+                    jump bigger_opponents
+                "Maybe he feels weak himself?":
+                    $ bathtime_1_choices.append("Maybe he feels weak himself")
+                    $ renpy.notify("+15 Self-Awareness")
+                    $ self_awareness += 15
+                    jump joule_bathtime_1_good_result
+                "It's at odds with his persona":
+                    $ bathtime_1_choices.append("It's at odds with his persona")
+                    menu odds_with_persona:
+                        with Dissolve(2.0)
+                        "He must care about outward appearances":
+                            $ bathtime_1_choices.append("He must care about outward appearances")
+                            jump outward_appearances
+                        "He always acts like a meathead":
+                            $ bathtime_1_choices.append("He always acts like a meathead")
+                            menu meathead_act:
+                                with Dissolve(2.0)
+                                "Why does it feel like he's putting on an act?":
+                                    $ bathtime_1_choices.append("Why does it feel like he's putting on an act")
+                                    jump putting_on_act
+                                "He must really enjoy working out":
+                                    $ bathtime_1_choices.append("He must really enjoy working out")
+                                    jump enjoy_working_out
+                        "Why does it feel like he's putting on an act?":
+                            $ bathtime_1_choices.append("Why does it feel like he's putting on an act")
+                            jump putting_on_act
             "Hottie with a body!":
                 $ bathtime_1_choices.append("Hottie with a body!")
                 menu joules_hot:
@@ -803,31 +911,36 @@ label joule_bathtime_1:
                         with Dissolve(2.0)
                         "He's super fit":
                             jump super_fit
+                        "He must really enjoy working out":
+                            $ bathtime_1_choices.append("He must really enjoy working out")
+                            jump enjoy_working_out
                         "He projects an aura of strength":
-                        $ bathtime_1_choices.append("He projects an aura of strength")
-                        menu strong_aura:
-                            with Dissolve(2.0)
-                            "He seems to appreciate being in control of his life":
-                                jump incontrol_life
-                            "Why does it feel like he's putting on an act?"
-                            "It's so cool that he's an influencer":
-                                $ bathtime_1_choices.append("It's so cool that he's an influencer")
-                                menu cool_influencer:
-                                    with Dissolve(2.0)
-                                    "It'd be so fun to brag about him being my personal trainer...or more":
-                                        $ bathtime_1_choices.append("It'd be so fun to brag about him being my personal trainer...or more")
-                                        $ renpy.notify("+10 Self-Awareness")
-                                        $ self_awareness += 10
-                                        jump joule_bathtime_1_mid_result
-                                    "He knows a lot about fitness!":
-                                        $ bathtime_1_choices.append("He knows a lot about fitness!")
-                                        menu about_fitness:
-                                            with Dissolve(2.0)
-                                            "He always acts like a meathead"
-                                            "I wonder where that comes from?":
-                                                $ bathtime_1_choices.append("I wonder where that comes from?")
-                                                jump where_it_comes_from
-                                            "I could learn from that"
+                            $ bathtime_1_choices.append("He projects an aura of strength")
+                                menu strong_aura:
+                                with Dissolve(2.0)
+                                "He seems to appreciate being in control of his life":
+                                    jump incontrol_life
+                                "Why does it feel like he's putting on an act?":
+                                    $ bathtime_1_choices.append("Why does it feel like he's putting on an act")
+                                    jump putting_on_act
+                                "It's so cool that he's an influencer":
+                                    $ bathtime_1_choices.append("It's so cool that he's an influencer")
+                                    menu cool_influencer:
+                                        with Dissolve(2.0)
+                                        "It'd be so fun to brag about him being my personal trainer...or more":
+                                            $ bathtime_1_choices.append("It'd be so fun to brag about him being my personal trainer...or more")
+                                            $ renpy.notify("+10 Self-Awareness")
+                                            $ self_awareness += 10
+                                            jump joule_bathtime_1_mid_result
+                                        "He knows a lot about fitness!":
+                                            $ bathtime_1_choices.append("He knows a lot about fitness!")
+                                            menu about_fitness:
+                                                with Dissolve(2.0)
+                                                "He always acts like a meathead"
+                                                "I wonder where that comes from?":
+                                                    $ bathtime_1_choices.append("I wonder where that comes from?")
+                                                    jump where_it_comes_from
+                                                "I could learn from that"
                 "It's so cool that he's an influencer"
                 "He projects an aura of strength"
         "His behavior"
