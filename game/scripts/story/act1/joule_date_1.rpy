@@ -127,7 +127,7 @@ label joule_date_1:
     show joule-hardcore
 
     j "That is literally. So.{w} HARD. {w}CORE."
-    m "As if to emphasize his point, Joule raps his knuckles against his abs with stalwart conviction."
+    m "As if to emphasize his point, Joule raps his knuckles against his abs with stalwart conviction. {w}It almost looks painful."
 
     hide joule-hardcore
     show joule-neutral
@@ -143,7 +143,7 @@ label joule_date_1:
     """
 
     hide joule-neutral
-    show joule-smile
+    show joule-smile at hop
 
     j "“That's great. Strong people know what they want in life and go for it.”"
     m "(Hearing him say it makes me want to believe it!)"
@@ -179,14 +179,26 @@ label joule_date_1:
 
     m """
 
-    (I've never had anyone pay such careful attention to me before.{w} It's a flattering feeling, having someone devote their expertise to you.)
+    (It's strange, but the diligent man in front of me seems so different from the bold and brash defender I met on my first day.)
+ 
+    “You're really knowledgeable, Joule.”
+    """
 
-    “Sure! Ask me anything.”"""
+    hide joule-neutral with dissolve
+    show joule-awkward at squirm
 
-    j "“Great. Above all, I need to know about your goals. What do you want to get out of your training program?”"
+    j "Yeah, well...{w}they make us study for the trainer's certification."
 
-    hide joule-neutral
-    show joule-neutral with dissolve
+    hide joule-awkward
+    show joule-wink
+
+    j "Don't worry -- I partied my brains out after the exam."
+    m "(Clearly not if you still retained that information...)"
+
+    hide joule-wink
+    show joule-neutral
+
+    j "“More importantly, I need to know about your goals. What do you want to get out of your training program?”"
 
     m"""
 
@@ -419,13 +431,15 @@ label joule_date_1:
             j """
             “I don't think you need any physical improvements, personally, but I can help you get closer to the body you feel best in.”
 
-            We'll run through some HIIT style cardio training to optimize fat burning and some targeted strength exercises to help you sculpt that lean muscle.”
+            “We'll run through some HIIT style cardio training to optimize fat burning and some targeted strength exercises to help you sculpt that lean muscle.”
 
-            Now that we've got that out of the way, let's do some fitness tests.”
+            “Now that we've got that out of the way, let's do some fitness tests.”
             """  
 
     hide joule-neutral
     hide joule-smile with dissolve
+    scene gym-inside with dissolve:
+        blur 20
     stop music fadeout 2.0
     m """
     We spend the rest of the session running a few tests to measure my physical condition.
@@ -449,34 +463,54 @@ label joule_date_1:
 
     m "Every so often, he pushes a button on the treadmill, making it harder to keep up."
 
+    scene gym-inside with vpunch:
+        blur 20
+        matrixcolor BrightnessMatrix(value=0.1)
+
     m """
     {cps=30}(I wonder how I'm doing?){/cps}
 
     {cps=60}(Am I doing this right?){/cps}
+    """
+
+    scene gym-inside with vpunch:
+        blur 20
+        matrixcolor BrightnessMatrix(value=0.3)
+
+    m """
 
     {cps=90}(Is there a right way to run?){/cps}
 
     {cps=120}(Why didn't Joule tell me about it?){/cps}
+    """
+    
+    scene gym-inside with vpunch:
+        blur 20
+        matrixcolor BrightnessMatrix(value=0.6)
 
+    m """
     {cps=170}(I wish he'd say {i}something!{/i}){/cps}
     """
 
     play audio "/audio/button-press.mp3"
     stop sound
+    scene gym-inside with vpunch:
+        blur 20
 
     m "“Why'd you stop it?{w} I could've kept running!”"
 
     play music "<from 72>/audio/lonely-souls.mp3" fadein 1.0
-    show joule-sad with dissolve
+    scene gym-inside with dissolve
+    show joule-sad at truecenter with dissolve
 
     j "“Woah woah woah, Menmi!”"
 
-    hide joule-sad
-    show joule-smile
+    hide joule-sad 
+    show joule-softsmile at truecenter
 
     j "“You were running so fast that the treadmill was trying to keep up with {i}you!”"
 
-    hide joule-smile
+    hide joule-softsmile
     show joule-hardcore
 
     j "“Which, in itself, is {w}HARD. {w}CORE.”"
@@ -561,23 +595,22 @@ label joule_date_1:
     “And I don't {i}ever{/i} want to see you get hurt because of me, Menmi.”
     """
 
-    m """
-    (I might be imagining it, but his voice croaked ever so slightly when he said that.)
+    m """(His voice croaks ever so slightly when he says it)
 
-    (He cares for me so genuinely.)
+    “Thanks for looking out for me, Joule.”
     """
 
-    if self_awareness>=50:
-        m "(I wonder what happened to him for him to react that way?)"
+  
 
     hide joule-sad
-    show joule-smile
+    show joule-smile at hop
 
-    j "“As your personal trainer, of course.”"
+    j "“Well yeah -- I'm your personal trainer!”"
 
-    m """“Haha, of course!{w} Don't want a lawsuit on your hands.”
-
+    m """
     (Of course that's what he meant.{w} Ha.)
+
+    “Haha, of course!{w} Don't want a lawsuit on your hands.”
 
     """
     
@@ -588,9 +621,9 @@ label joule_date_1:
     m "His broad palm wraps around my shoulder, giving it a squeeze."
 
     hide joule-neutral
-    show joule-smile
+    show joule-wink
     j "“'Til next time. Take care of yourself, OK?”"
-    hide joule-smile with dissolve
+    hide joule-wink with dissolve
 
     m """
     (Even though this wasn't a formal training session, I do feel lighter than when I came in.)

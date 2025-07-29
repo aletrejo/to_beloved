@@ -11,7 +11,8 @@ label joule_date_2:
 #He tries to bandage himself but he can't because he hurt his dominant hand. Menmi insists on helping him. While she is bandaging him, she talks to him to distract him from the pain. She asks about his instaHam, his goals, and his family (loops back in choice)
 #Joule reveals his values: he wants to be strong enough to protect the ones he loves and stand up fr the weak. 
 #Menmi being perfectionistic about working out; wanting immediate results; not taking rests  
-#Joule central problem: He loses his way and tries to optimize optics. Comparing yourself to others is pointless because there’s no way of knowing a person’s eating habits, sleep schedule, genetic makeup, and all the other things that affect body composition and performance. 
+#Joule central problem: He loses his way and tries to optimize optics. He gets pressured into doing MMA fights for TikTok (because his friends know he can fight)
+#Comparing yourself to others is pointless because there’s no way of kn#wing a person’s eating habits, sleep schedule, genetic makeup, and all the other things that affect body composition and performance. 
 #He lets other people affect his hard core == shattering his sense of self in favor of min maxing and comparing himself to others
 #Menmi feels similarly pressured to conform to other peoples' expectations of "what Joules gf should look liek" -- joules ex (client) shading menmi for weightlifting bc "arent you afraid of getting buff?"
 #Control your body, control your life -- lack of control from feeling weak; always on the defensive; on high alert to appear strong in order to avoid judgment - Joule realizes he can't control Menmi's eating habits and gives up on her until she can help herself
@@ -71,7 +72,7 @@ label joule_date_2:
     j "“And just like a bath, the best way to do this is to ease into it.”"
 
     hide joule-neutral
-    show joule-pumped
+    show joule-hardcore
 
     j "“So are you ready for this, Menmi?”"
     m """(I was nervous at first, but the exercises I've done over the week have me feeling a bit more confident.)
@@ -99,7 +100,7 @@ label joule_date_2:
                 $ renpy.notify("+5 Self-Awareness")
                 $ self_awareness += 5
 
-                hide joule-pumped
+                hide joule-hardcore
                 show joule-smile
 
                 j "That's the spirit, Menmi!!! {w}LET'S GOOOOO!"
@@ -122,7 +123,7 @@ label joule_date_2:
             "Yeah...":
                 c "Your answer reflects what you're feeling -- a realistic mix of excitement and apprehension."
                 m "It's fun to try new things, but people who dive in headfirst usually suffer concussions."
-                hide joule-pumped
+                hide joule-hardcore
                 show joule-thinking
                 j "“Hmmm...not the enthusiastic response I'd hoped for”."
                 hide joule-thinking
@@ -133,7 +134,7 @@ label joule_date_2:
             "No.":
                 c "Girl, you're not ready."
                 m "“I can't do this!!!”"
-                hide joule-pumped
+                hide joule-hardcore
                 show joule-sad
                 j "“Aw hey, I get it. Trying new things can be intimidating.”"
                 hide joule-sad
@@ -176,7 +177,7 @@ label joule_date_2:
         """
 
         hide joule-pep
-        show joule-pep at hardcore
+        show joule-pep-hardcore
 
         j "“Say it with me - YOU. ARE HARD.{w} CORE.”"
         m "“Haha I don't know...(it feels silly)”"
@@ -716,7 +717,7 @@ label joule_date_2:
         j "Instead, {i}I'm{/i} worse off."
         m """No no! Don't apologize. {w}You got hurt because of {i}me.
 
-        (I have to push the admittance out of me, but I have to take accountability for my actions. {w}How else will I do better in the future?)
+        (It's hard to admit it, but I have to take accountability for my actions. {w}How else will I do better in the future?)
 
         """
         hide joule-softsmile

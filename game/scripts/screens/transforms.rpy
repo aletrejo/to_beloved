@@ -50,7 +50,7 @@ transform squirm:
     ease .02 xoffset -8
     ease .01 xoffset 4
     ease .01 xoffset -4
-    ease .01 xoffset 0
+    ease .01 xoffset 0 yoffset -10
 
 
 transform crouch:
