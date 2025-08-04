@@ -594,8 +594,11 @@ label choice_13:
             “For both our sakes.”"""
 
             m "“I'm sorry, Naj...that must have been a really difficult decision. Thank you for trusting me with that.”"
-            $ renpy.notify("Naji feels closer to you!")
-            $ naji_relationship += 10
+            $ naji_relationship +=10
+            show screen relationship_up onlayer overlay
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen relationship_up
             n "“Yeah...thanks for asking. I feel lighter just by telling you.”"
             n "Hey, do you want to see a trick?"
 
@@ -674,8 +677,11 @@ label after_choice_13:
 
     hide naji-bar-lookaway with dissolve
 
-    $ renpy.notify("Naji feels closer to you!")
-    $ naji_relationship += 10
+    $ naji_relationship +=10
+    show screen relationship_up onlayer overlay
+    play sound "/audio/awareness-ding.mp3"
+    pause
+    hide screen relationship_up
 
     m "(Why does that make me feel kind of happy?)"
 

@@ -620,6 +620,12 @@ label joule_date_1:
     j "“Good job today, Menmi. I think I've got what I need to develop an effective training plan.”"
     m "His broad palm wraps around my shoulder, giving it a squeeze."
 
+    $ joule_relationship +=10
+    show screen relationship_up onlayer overlay
+    play sound "/audio/awareness-ding.mp3"
+    pause
+    hide screen relationship_up
+    
     hide joule-neutral
     show joule-wink
     j "“'Til next time. Take care of yourself, OK?”"
@@ -627,7 +633,7 @@ label joule_date_1:
 
     m """
     (Even though this wasn't a formal training session, I do feel lighter than when I came in.)
-
+R
     (Maybe there is something to this whole exercise thing.)
 
     (Look out, world. Menmi's making her metamorphosis!)

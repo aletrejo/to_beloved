@@ -1,4 +1,5 @@
 label naji_date_3:
+    $ lover = "Naji"
     play sound "/audio/pencil-write.mp3"
     hide screen open_planner
     hide screen open_insights
@@ -145,8 +146,11 @@ label naji_date_3:
         hide naji-neutral
         show naji-smile
         m "A quirk passes the edge of his lips."
-        $ renpy.notify("Naji feels closer to you!")
-        $ naji_relationship += 5
+        $ naji_relationship +=10
+        show screen relationship_up onlayer overlay
+        play sound "/audio/awareness-ding.mp3"
+        pause
+        hide screen relationship_up
         n "“Ha, ya caught me.”"
 
     show naji-laugh
@@ -241,7 +245,10 @@ label choice_15:
             pause
             hide screen selfawareup 
             $ self_awareness += 5
-            $ renpy.notify("Naji feels closer to you!")
+            show screen relationship_up onlayer overlay
+            play sound "/audio/awareness-ding.mp3"
+            pause
+            hide screen relationship_up$ renpy.notify("Naji feels closer to you!")
             $ naji_relationship += 10
         "Play along":
             c "He's being polite for your sake. He'd be embarrassed if you grilled him about his real feelings."
@@ -374,8 +381,11 @@ label after_choice_15:
 
     """
 
-    $ renpy.notify("Naji feels closer to you!")
-    $ naji_relationship += 10
+    $ naji_relationship +=10
+    show screen relationship_up onlayer overlay
+    play sound "/audio/awareness-ding.mp3"
+    pause
+    hide screen relationship_up
 
     $ n3=True
     $ week += 1
