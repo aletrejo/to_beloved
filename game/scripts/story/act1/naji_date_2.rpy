@@ -42,11 +42,6 @@ label naji_date_2:
     show naji-surprised at hop
     hide cat
 
-    $ unlocks_dialogue = ["We're super comfortable with each other", "I have a lot of good memories with Naji."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     m "Naji looks up, startled, but the tension in his shoulders uncoils once he sees me."
 
     hide naji-surprised
@@ -74,11 +69,6 @@ label naji_date_2:
     n "“Yeah, actually...ee...”"
     m "“Pardon?”"
 
-    $ unlocks_dialogue = ["It makes me feel insecure that I don't know everything about him", "I thought I knew him better", "I hope he can be open with me someday...", "He's hiding something"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     m """
     (Why's he being shy all of a sudden? He practically whispered that last part.)
 
@@ -102,18 +92,10 @@ label naji_date_2:
         matrixcolor InvertMatrix(value=1.0)
     show naji-blush at truecenter:
         matrixcolor InvertMatrix(value=1.0)
-    $ unlocks_dialogue = ["I always worried that he was out of my league, though", "Why is Naji's opinion of me such a big deal?", "Sometimes I feel insecure.", "I'll learn from my mistakes"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
+
     m "(But It's not like Naji named the cat after *me* or anything...)"
     m "(So why are my cheeks burning?)"
-    $ unlocks_dialogue = ["Maybe I shouldn't have talked about my love life...Compared to him, I must look like a loser", "I hope he doesn't think I'm silly for wanting to be in love", "I always worried that he was out of my league, though"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
+
     i "Naji? Like *you*? Cool dumb thought, Menmi."
 
     if self_awareness>=60:
@@ -121,11 +103,7 @@ label naji_date_2:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ unlocks_dialogue = ["There were times I wondered if we could be more than friends...","I have a lot of good memories with Naji", "It's romantic to fall for the best friend who's been with you all along. Who knows me better than him?", "I choose to believe in myself!"]
-        $ dialogue_matches = []
-        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-        if len(dialogue_matches) > 0:
-            show screen insight(dialogue_matches)
+
         m "(I mean, he *did* get all defensive about it. I can be cautiously optimistic.)"
         $ chosen_sticker = "mimi"
         image sticker_won = "stickers/sticker-mimi.png"
@@ -155,11 +133,6 @@ label naji_date_2:
     show naji-neutral
     show cat at truecenter with easeinbottom
 
-    $ unlocks_dialogue = ["I'm going to have faith and enjoy the ride", "I have to keep that in mind, no matter what happens going forward."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     m """
 
     The cat, having finished her meal, purrs happily as she squeezes her round form around his legs.
@@ -172,11 +145,7 @@ label naji_date_2:
     hide naji-neutral
     hide cat
     show naji-frown
-    $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "He's a good guy."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
+
     n """
     "It's been tricky to care for her with work being so hectic, but it's not like I can leave her alone..."
 
@@ -188,11 +157,6 @@ label naji_date_2:
     hide naji-frown
     show naji-lookaway
 
-    $ unlocks_dialogue = ["Naji's mom dropped him off at our house a lot, so we spent a lot of time together."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     n """
     “I've thought about it, but I'm really not home often enough to care for a cat...cats.”
 
@@ -202,25 +166,13 @@ label naji_date_2:
     hide naji-lookaway
     show naji-neutral
 
-    $ unlocks_dialogue = ["Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
+
     n "“She's her own cat, you know? She's free. She made it this far on her own without anyone's help.”"
 
-    $ unlocks_dialogue = ["Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
+
     n "“Who am I to take away her freedom just so I can feel reassured about her safety?”"
 
-    $ unlocks_dialogue = ["He's not the type to share his feelings", "Naji would always listen to me vent about my feelings, but he never seemed as open with his own", "He's hiding something"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
+
     m """
     (Naji's getting so passionate about this.)
 
@@ -231,29 +183,13 @@ label choice_14:
     menu:
         "Agree":
             c "He wants to be reassured that he's doing the right thing. As his friend, you should validate his feelings."
-            $ unlocks_dialogue = ["That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers", "He's not the type to share his feelings", "Naji's grown with time. I'm curious about what else about him has changed..."]
-            $ dialogue_matches = []
-            $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-            if len(dialogue_matches) > 0:
-                show screen insight(dialogue_matches)
-                m "(It must be difficult for him to share how he really feels.)"
-
-            $ unlocks_dialogue = ["I was protective of him", "I think I just have to learn to accept that I don't know everything, but..."]
-            $ dialogue_matches = []
-            $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-            if len(dialogue_matches) > 0:
-                show screen insight(dialogue_matches)
+            m "(It must be difficult for him to share how he really feels.)"
             m """
             “Yeah, I see where you're coming from.”
 
             Naji nods silently, long fingers brushing behind Mimi's ear for a scratch.
             """
         "Challenge him":
-            $ unlocks_dialogue = ["I hope he can be open with me someday..."]
-            $ dialogue_matches = []
-            $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-            if len(dialogue_matches) > 0:
-                show screen insight(dialogue_matches)
             c """
             It's unlikely that he'll offer more information on his own.
 
@@ -276,11 +212,6 @@ label choice_14:
             hide screen selfawareup 
             $ self_awareness += 5
 
-            $ unlocks_dialogue = ["His past...", "His feelings..., Maybe it was his way of coping", "Naji's dad left when he was a baby, and his mom didn't make time for him.  He had to go through a lot on his own."]
-            $ dialogue_matches = []
-            $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-            if len(dialogue_matches) > 0:
-                show screen insight(dialogue_matches)
             n """
             “I don't know, but...”
 
@@ -297,19 +228,9 @@ label choice_14:
 
             """
 
-            $ unlocks_dialogue = ["He's not the type to share his feelings", "Naji would always listen to me vent about my feelings, but he never seemed as open with his own", "That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers."]
-            $ dialogue_matches = []
-            $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-            if len(dialogue_matches) > 0:
-                show screen insight(dialogue_matches)
             n "“I don't want to talk about this anymore. All I'll say is...”"
 
         "There's something deeper at play..." if self_awareness>=70:
-                $ unlocks_dialogue = ["Where did I get that idea from?", "Naji prioritizes the needs of others before his own", "Maybe it was his way of coping, My family", "His past..."]
-                $ dialogue_matches = []
-                $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-                if len(dialogue_matches) > 0:
-                    show screen insight(dialogue_matches)
                 c "There's a way to make sense of this."
                 scene alleyway with dissolve:
                     blur 50
@@ -326,11 +247,6 @@ label choice_14:
                 scene alleyway
                 show naji-lookaway
 
-                $ unlocks_dialogue = ["Naji's mom dropped him off at our house a lot, so we spent a lot of time together", "That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers", "I wonder if he keeps in touch with her."]
-                $ dialogue_matches = []
-                $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-                if len(dialogue_matches) > 0:
-                    show screen insight(dialogue_matches)
                 m """
                 “Naji, do you think this might have to do with your mom?"
 
@@ -341,11 +257,7 @@ label choice_14:
                         matrixcolor InvertMatrix(value=1.0)
                     stop music
                     play sound "/audio/impact-slam.mp3"
-                    $ unlocks_dialogue = ["Where did I get that idea from?", "They may have shaped my past, but the future isn't set in stone.", "I need to move on."]
-                    $ dialogue_matches = []
-                    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-                    if len(dialogue_matches) > 0:
-                        show screen insight(dialogue_matches)
+
                     m """Did I say something wrong?"
 
                     (I should've just taken him at face value. Feelings aren't meant to be examined!)
@@ -376,11 +288,6 @@ label choice_14:
                 hide screen selfawareup 
                 $ self_awareness += 5
 
-                $ unlocks_dialogue = ["Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own", "He had to go through a lot on his own.", "Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance"]
-                $ dialogue_matches = []
-                $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-                if len(dialogue_matches) > 0:
-                    show screen insight(dialogue_matches)
                 n """
                 “I really admire Mimi's independence.”
 
@@ -389,11 +296,6 @@ label choice_14:
 
 
 label after_choice_14:
-    $ unlocks_dialogue = ["Naji's dad left when he was a baby, and his mom didn't make time for him. He had to go through a lot on his own", "Maybe it was his way of coping", "Naji's mom was always with a new guy who didn't last. That's probably why he never seemed interested in romance."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     show naji-smile
     n "“I don't want to interfere with her autonomy. If you love something, let it go, you know?”"
 
@@ -402,11 +304,6 @@ label after_choice_14:
 
     m "“That makes sense.”"
 
-    $ unlocks_dialogue = ["Everyone has to believe in something, and I choose to believe in love!"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     m """"But for me, if I love something, I'd want to keep it with me forever.”
 
     Naji glances at me, a dark look crossing his face.
@@ -424,11 +321,6 @@ label after_choice_14:
         show text "{image=ol_text}" with easeinbottom
         pause
         hide text with dissolve
-        $ unlocks_dialogue = ["There are times when I admit I can be hard on myself.", "I choose to believe in myself!", "Everyone has to believe in something, and I choose to believe in love!"]
-        $ dialogue_matches = []
-        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-        if len(dialogue_matches) > 0:
-            show screen insight(dialogue_matches)
         c "It's OK to disagree. You're different people, after all."
         m "(Yeah, and I'm not trying to convince him of my views, either. Still...)"
         $ chosen_sticker = renpy.random.choice(available_stickers)
@@ -449,11 +341,6 @@ label after_choice_14:
         $ passed_checks +=1
 
     elif self_awareness <60:
-        $ unlocks_dialogue = ["I keep second-guessing myself and thinking about other possibilities...I can't go back now, though.", "Why's Naji's opinion of me such a big deal?", "Maybe I shouldn't have talked about my love life..."]
-        $ dialogue_matches = []
-        $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-        if len(dialogue_matches) > 0:
-            show screen insight(dialogue_matches)
         m "(I've upset him.)"
         i "Nice going, scatterbrains!"
 
@@ -461,11 +348,6 @@ label after_choice_14:
     play music "<from 15>/audio/najis-theme.mp3"
     show naji-frown
 
-    $ unlocks_dialogue = ["I need to be a better person.", "I must have said something to make him uncomfortable", "I hope he doesn't think I'm silly for wanting to be in love", "I was protective of him"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     m """
     (The vibes are off. I need to fix them.)
 
@@ -476,19 +358,9 @@ label after_choice_14:
     show naji-neutral
     n "“Yeah...thanks. I'll do everything I can to help her out without interfering with her life.”"
 
-    $ unlocks_dialogue = ["Naji prioritizes the needs of others before his own", "That's probably why he's so reticent. Even if he spoke up, his feelings always came second to hers.", "I hope he can be open with me someday..."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     m "(Phew! He took the olive branch.)"
 
-    $ unlocks_dialogue = ["He's not the type to share his feelings", "It's deserved. How else will I learn?", "Trick question, still me.", "They taught me well."]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
-        m "(That was uncomfy for both of us!)"
+    m "(That was uncomfy for both of us!)"
 
     m "“I'll have to remember to save my sardines from pizza for Mimi!”"
 
@@ -502,11 +374,6 @@ label after_choice_14:
     “It's called girl dinner. You wouldn't get it.”
     """
 
-    $ unlocks_dialogue = ["He was my best friend", "We're super comfortable with each other"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
     m "Naji laughs, tension disappearing like a cat in the night."
     n """
     “Speaking of eating, should we get going?”
@@ -524,11 +391,6 @@ label after_choice_14:
 
     $ n2=True
 
-    $ unlocks_dialogue = ["I think I just have to learn to accept that I don't know everything, but...", "I'm going to have faith and enjoy the ride", "They may have shaped my past, but the future isn't set in stone"]
-    $ dialogue_matches = []
-    $ dialogue_matches = check_for_matches(unlocks_dialogue, bathtime_1_choices)
-    if len(dialogue_matches) > 0:
-        show screen insight(dialogue_matches)
 
     $ renpy.notify("Naji feels closer to you!")
     $ naji_relationship += 10
