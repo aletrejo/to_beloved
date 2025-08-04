@@ -90,7 +90,7 @@ label joule_date_2:
 
             "Yeah!!!":
                 c "You've practiced for this. And, like Joule said, you'll ease into it. Trust the process."
-                m """(That's right. Even if I don't have full confidence in myself, I have to trust Joule.)
+                m """(That's right. Even if I don't have full confidence in myself, I trust Joule.)
 
                 (Joule is a pro, and he believes in me! I believe in the he who believes in me!!)
 
@@ -121,8 +121,14 @@ label joule_date_2:
                 hide joule-smile with dissolve
 
             "Yeah...":
-                c "Your answer reflects what you're feeling -- a realistic mix of excitement and apprehension."
-                m "It's fun to try new things, but people who dive in headfirst usually suffer concussions."
+                c "It's normal to feel mix of excitement and apprehension here."
+                m """
+
+                “Yeah...”
+
+                (It's fun to try new things, but people who dive in headfirst usually suffer concussions.)
+
+                """
                 hide joule-hardcore
                 show joule-thinking
                 j "“Hmmm...not the enthusiastic response I'd hoped for”."
@@ -165,7 +171,7 @@ label joule_date_2:
         j "“I'm GASSING you up.”"
         m """“Hahahahaha.”
 
-        (I know that Joule's being a total cheeseball, but I can feel the pressure of performance *lift* off of me.)
+        (I know Joule's being a total cheeseball, but I can feel the pressure to perform *lift* off of me.)
 
         """
         j """“Hey, Menmi.{w} I think it's really cool that you want to improve yourself and are taking steps to achieve it.”
@@ -214,7 +220,7 @@ label joule_date_2:
 
 
     label after_choice_13j:
-        m """He walks over to the power rack and affixes the lightest set of weights to the steel bar.
+        m """He walks over to the power rack and fixes a set of weights to the steel bar.
 
         (They might be the lightest set, but they still look kind of heavy...)
 
