@@ -58,7 +58,7 @@ label joule_date_3:
     play sound "/audio/whoosh.mp3"
     show windbreaker at truecenter with easeinbottom
 
-    m "(Fashion {i}and{/i} function! Who says I'm scatterbrained? Let's go!)"
+    m "(Fashionable {i}and{/i} functional! Let's go!)"
 
     scene park-day with slideleft
 
@@ -73,27 +73,42 @@ label joule_date_3:
     show joule-surprised
 
     j "“Woah! Cool jacket!"
-    m """“Thanks!{w} Aren't you cold, though?”
+    m """
+
+    “Thanks!” (He noticed!)
 
     Joule's in his usual {i}Planet Figness{/i} sleeveless shirt.
+
+    “Aren't you cold?”
 
     """
 
     hide joule-surprised
     show joule-neutral
 
-    j "“Nah, I tend to overheat easily.{w} Especially when I'm physically exerting myself.”"
+    j "“Nah, I tend to overheat easily.{w} Especially when I'm exerting myself.”"
 
     hide joule-neutral
     show joule-thinking
 
     j "“Truth be told, {w}I don't wear a top at all when I'm working out by myself.{w} I'm kind of Anti-Shirt like that.”"
-    m "(He said that so casually, but my face is overheating just imagining it.)"
+    m """My face heats up. (How can he say something like that so casually?)
+
+    (I wish I had a shirt right now...for my face.)
+
+    “M-me too.”
+
+    """
 
     hide joule-thinking
+    show joule-smile at laughter
+
+    j "“You just get it, Menmi.”"
+
+    hide joule-smile
     show joule-neutral
 
-    j "“Anyway, I thought it'd be fun to change things up a bit today and do some cardio in the park.”"
+    j "“Anyway, I thought it'd be fun to change things up today and work on our cardio in the beauty of nature!”"
     m "“I'm wearing my running sneakers and ready to run-ble.”"
 
     hide joule-neutral
@@ -153,9 +168,7 @@ label joule_date_3:
 
     hide joule-softsmile with dissolve
 
-    m """Joule takes me by the hand gently and leads me to a green clearing beneath the shade. 
-
-    His palm is cool and surprisingly soft.
+    m """
 
     It's early on the weekend so there aren't many people around.
 
@@ -171,8 +184,10 @@ label joule_date_3:
     hide joule-smile
     show joule-neutral
 
-    j "“It's not a random shady duffle filled with drugs or anything, {w}if that's what you're thinking.”"
-    m """(I was not thinking that.)
+    j "“It's not some random bag filled with shady stuff or anything.”"
+
+    m 
+    m """
 
     Joule unpacks a blanket from the bag and flicks it up, letting it float flat onto the grass. He gestures for me to sit on it.
 
@@ -598,8 +613,13 @@ label joule_date_3:
         m "Don't be! It's interesting to listen to you talk about a topic you care about."
         hide joule-wink
         show joule-neutral
-        j "Thanks. Let me know if I'm getting carried away, though. {w}There's nothing worse than being an uptight vibe killer."
-        m "(Hm...)"
+        j "Thanks. Let me know if I'm getting carried away, though. {w}There's nothing worse than being a vibe killer."
+        hide joule-neutral
+        show joule-wink
+        j "Uptight just ain't right."
+
+        hide joule-wink
+        show joule-neutral
 
         j """
 
@@ -637,7 +657,7 @@ label joule_date_3:
         j "Yeah! Pretty HARD{w}. CORE."
         hide joule hard-core with dissolve
 
-        m """We sit in silence for a bit, listening to the sounds of bird chirping against the soft rumble of traffic in the distance.
+        m """We sit in silence for a bit, listening to the sounds of bird chirping against the quiet rumble of traffic in the distance.
 
         Beside me, Joule gracefully dips his needle in and out of my jacket sleeve."""
 
